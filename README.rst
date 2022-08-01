@@ -2,7 +2,7 @@
   The MDAnalysis Toolkits Registry
 =====================================
 
-| numfocus | | powered_by_MDA |
+ |numfocus| |powered_by_MDA|
 
 
 Contents
