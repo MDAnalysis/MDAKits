@@ -1,0 +1,26 @@
+## Required entries
+project_name: mdachecker
+authors:
+  - IAlibay
+maintainers:
+  - orbeckst
+  - IAlibay
+description: <
+    AnalysisBase extension to check for structural clashes over the length of
+    a trajectory
+license: GPL-3.0
+project_home: https://github.com/IAlibay/CheckStructure/
+documentation_home: https://github.com/IAlibay/CheckStructure/blob/main/README.md
+documentation_type: README
+
+## Optional entries
+install: pip install git+https://github.com/IAlibay/CheckStructure@main
+python_requires: >=3.8
+mdanalysis_requires: >=2.0.0
+test_run:
+  - pip install pytest
+  - pytest --pyargs mdachecker.tests
+codecov:
+development_status: Beta
+changelog:
+publications:
