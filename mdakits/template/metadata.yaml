@@ -1,0 +1,19 @@
+## Required entries
+project_name: # string
+authors: # path to AUTHORS file or list
+maintainers: # list
+description: # multiline string
+license: # string
+project_home: # string: path to file
+documentation_home: # string: path to file
+documentation_type: # string: free entry description
+
+## Optional entries
+install: # string: command to install package
+python_requires: # string
+mdanalysis_requires: # string
+test_run: # list of commands to run tests
+codecov: # string: path to codecov
+development_status: # string
+changelog: # string: path to changelog
+publications: # list of DOIs
