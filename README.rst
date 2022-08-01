@@ -40,7 +40,11 @@ Workflow
 
 Shown below is the MDAKit framework workflow.
 
-.. image::: assets/MDAKitFramework.png
+
+.. image:: https://github.com/MDAnalysis/MDAKits/blob/main/assets/MDAKitFramework.png
+   :alt: The MDAKit Framework
+   :align: center
+
 
 For more details see the `MDAKit Whitepaper`_.
 
