@@ -3,7 +3,6 @@ project_name: mdachecker
 authors:
   - IAlibay
 maintainers:
-  - orbeckst
   - IAlibay
 description: <
     AnalysisBase extension to check for structural clashes over the length of
