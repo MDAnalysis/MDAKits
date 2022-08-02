@@ -15,10 +15,11 @@ Getting involved
 ================
 
 We would very much like to hear from any interested parties about MDAKits and
-the `MDAKits white paper`_. For any comments, please open an issue on 
-repository or contact the MDAnalysis MDAKit team on `discord`_.
+the `MDAKits white paper`_. For any comments, please `open an issue in this 
+repository`_ or contact the MDAnalysis MDAKit team on `discord`_.
 
 
 .. _`MDAKits white paper`: https://github.com/MDAnalysis/mdakits-whitepaper
+.. _`open an issue in this repository`: https://github.com/MDAnalysis/MDAKits/issues
 .. _discord: https://discord.gg/fXTSfDJyxE
 
