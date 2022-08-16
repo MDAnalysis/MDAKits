@@ -39,6 +39,7 @@ jobs:
     needs: gen_matrix
     runs-on: ubuntu-22.04
     strategy:
+      fail-fast: false
       matrix:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
         jobstep: ['latest', 'develop']
