@@ -30,7 +30,7 @@ under `excludedir`.
 import argparse
 import json
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 
 
 parser = argparse.ArgumentParser(
@@ -56,12 +56,12 @@ parser.add_argument(
     "--matrixname",
     type=str,
     help="name of matrix name writen to json",
-    default="mdakits",
+    default=None,
 )
     
 
 def get_json_subdir_matrix(maindir: str, excludedirs: List[str],
-                      matrixname: str) -> str:
+                           matrixname: Optional[str]) -> str:
     path = Path(f"./{maindir}")
 
     # get list of subdirectories
@@ -71,7 +71,10 @@ def get_json_subdir_matrix(maindir: str, excludedirs: List[str],
             var = str(entry.relative_to(f"./{maindir}"))
             if var not in excludedirs:
                 subdirs.append(var)
-    return json.dumps({matrixname: subdirs})
+    if matrixname is None:
+        return json.dumps(subdirs)
+    else:
+        return json.dumps({matrixname: subdirs})
 
 
 if __name__ == "__main__":

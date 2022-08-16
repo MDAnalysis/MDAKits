@@ -33,7 +33,7 @@ jobs:
       - id: get-mdakits
         run: |
           mdakit=$(python utils/get_dir_matrix.py)
-          echo "::set-output name=matrix::[\"latest\", \"develop\"]"
+          echo "::set-output name=matrix::${mdakit}"
   mdakit-ci:
     needs: gen_matrix
     runs-on: ubuntu-latest
