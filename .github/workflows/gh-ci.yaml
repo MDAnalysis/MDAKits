@@ -35,7 +35,7 @@ jobs:
           mdakit=$(python utils/get_dir_matrix.py)
           jobstep="{\"ci-steps\": [\"develop\", \"latest\"]}"
           matrix=$(python utilts/combine_json.py --jsonstrs ${mdakits} ${jobsteps})
-          echo "::set-output name=matrix::${jsonmatrix}"
+          echo "::set-output name=matrix::${matrix}"
   job2:
     needs: gen_matrix
     runs-on: ubuntu-latest
