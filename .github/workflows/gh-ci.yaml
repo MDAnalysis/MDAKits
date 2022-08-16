@@ -23,8 +23,7 @@ jobs:
     outputs:
       matrix: ${{ steps.get-mdakits.outputs.matrix }}
     steps:
-      - id: checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - id: get-python
         uses: actions/setup-python@v3
@@ -42,6 +41,6 @@ jobs:
       mdakits: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
     steps:
       - id: echo
-        with:
+        run:
             echo ${{ matrix.mdakits }}
 
