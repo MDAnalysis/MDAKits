@@ -84,12 +84,12 @@ jobs:
          echo "install=${install}"
          eval ${install}
 
-       - id: install-test-requirements
-         run: |
-           install=$(python utils/extract-yaml.py --field "test_dependencies")
-           echo "install tests:${install}"
-           eval ${install}
-
+         #       - id: install-test-requirements
+         #         run: |
+         #           install=$(python utils/extract-yaml.py --field "test_dependencies")
+         #           echo "install tests:${install}"
+         #           eval ${install}
+         #
          #       - id: install-mdanalysis
          #         uses: MDAnalysis/install-mdanalysis@main
          #         with:
