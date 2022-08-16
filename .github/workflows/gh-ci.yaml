@@ -72,17 +72,17 @@ jobs:
           auto-update-conda: true
           show-channel-urls: true
 
-       - id: install mdakit
-         run: |
-          if $[[ {{ matrix.jobstep }} == "develop" ]]; then
-            field="src_install"
-          else
-            field="install"
-          fi
+          #- id: install mdakit
+          #  run: |
+          #   if $[[ {{ matrix.jobstep }} == "develop" ]]; then
+          #     field="src_install"
+          #   else
+          #     field="install"
+          #   fi
 
-          install=$(python utils/extract-yaml.py --field ${field})
-          echo "install=${install}"
-          eval ${install}
+          #   install=$(python utils/extract-yaml.py --field ${field})
+          #   echo "install=${install}"
+          #   eval ${install}
 
           #       - id: install test requirements
           #         run: |
