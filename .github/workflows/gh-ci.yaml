@@ -33,14 +33,14 @@ jobs:
       - id: get-mdakits
         run: |
           mdakit=$(python utils/get_dir_matrix.py)
-          echo "::set-output name=matrix::${mdakit}"
+          echo "::set-output name=matrix::[\"latest\", \"develop\"]"
   mdakit-ci:
     needs: gen_matrix
     runs-on: ubuntu-latest
     strategy:
       matrix:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
-        # jobstep: ['latest', 'develop']
+        jobstep: ['latest', 'develop']
     steps:
       - id: echo
         run:
