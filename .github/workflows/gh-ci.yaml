@@ -37,7 +37,7 @@ jobs:
 
   mdakit-ci:
     needs: gen_matrix
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
