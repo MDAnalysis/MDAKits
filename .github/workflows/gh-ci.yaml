@@ -73,6 +73,10 @@ jobs:
           auto-update-conda: true
           show-channel-urls: true
 
+      - id: install-conda-base-deps
+        run: |
+          mamba install pyyaml
+
       - id: install-mdakit
         run: |
          if [[ ${{ matrix.jobstep }} == "develop" ]]; then
