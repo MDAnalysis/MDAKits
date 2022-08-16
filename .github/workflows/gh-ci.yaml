@@ -80,7 +80,7 @@ jobs:
            field="install"
          fi
       
-         install=$(python utils/extract-yaml.py --field ${field})
+         install=$(python utils/extract-yaml.py --field ${field} --mdakit ${{matrix.mdakit}})
          echo "install=${install}"
          eval ${install}
 
