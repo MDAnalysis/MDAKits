@@ -58,7 +58,7 @@ jobs:
       - id: check-set-python-bounds
         run: |
           basepy=${{steps.prev-python-ver.outputs.python-version}}
-          pyver=$(python utils/checkpython-ver.py --mdakit "${{matrix.mdakit}}" --pyver ${basepy})
+          pyver=$(python utils/checkpython-ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${basepy})
           echo "PYVER=${pyver}" >> $GITHUB_ENV
           
       - id: install-conda-env
@@ -85,11 +85,11 @@ jobs:
          echo "install=${install}"
          eval ${install}
 
-         #       - id: install-test-requirements
-         #         run: |
-         #           install=$(python utils/extract-yaml.py --field "test_dependencies")
-         #           echo "install tests:${install}"
-         #           eval ${install}
+      - id: install-test-requirements
+        run: |
+          install=$(python utils/extract-yaml.py --field "test_dependencies" --mdakit ${{matrix.mdakit}})
+          echo "install tests:${install}"
+          eval ${install}
          #
          #       - id: install-mdanalysis
          #         uses: MDAnalysis/install-mdanalysis@main

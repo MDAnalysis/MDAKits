@@ -17,9 +17,8 @@ install: pip install propkatraj
 src_install: pip install git+https://github.com/Becksteinlab/propkatraj@master
 python_requires: ">=2.7"
 mdanalysis_requires: "<2.0.0"
-test_run: 
-  - pip install pytest
-  - pytest --pyargs propkatraj.tests
+test_run: pytest --pyargs propkatraj.tests
+test_dependencies: pip install pytest
 codecov: https://codecov.io/gh/Becksteinlab/propkatraj/branch/master
 development_status: Mature
 changelog: 
