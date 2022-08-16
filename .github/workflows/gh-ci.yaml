@@ -60,7 +60,7 @@ jobs:
           pyver=$(python utils/checkpython-ver.py --mdakit "${{matrix.mdakit}}" --pyver ${basepy})
           echo "PYVER=${pyver}" >> $GITHUB_ENV
           
-      - id: install conda env
+      - id: install-conda-env
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: ${{ env.PYVER }}
