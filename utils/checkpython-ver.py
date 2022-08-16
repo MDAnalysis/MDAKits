@@ -127,7 +127,7 @@ def get_allowed_version(python_pin: Optional[str], max_version: str,
         for spec in version_spec:
             compatible_version = _operators[spec.operator](
               current_version.to_string(),
-              spec.version,  
+              spec.version,
             )
 
         if compatible_version:

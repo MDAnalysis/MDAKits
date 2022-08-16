@@ -132,7 +132,7 @@ jobs:
 
           return_dict['python'] = os.environ['python_bounds']
           return_dict['mdakit_install'] = os.environ['mdakit_install']
-          return_dict['test_install'] = os.environ['test_install']
+          return_dict['tests_install'] = os.environ['tests_install']
           return_dict['mda_install'] = os.environ['mda_install']
           return_dict['tests'] = os.environ['test_out']
           print(json.dumps(return_dict))
