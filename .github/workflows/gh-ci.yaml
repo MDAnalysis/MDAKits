@@ -106,6 +106,6 @@ jobs:
           
       - id: run-tests
         run: |
-          tests=$(python utils/extract-yaml.py --field "run_tests")
+          tests=$(python utils/extract-yaml.py --field "run_tests" --mdakit ${{matrix.mdakit}})
           echo "tests: ${tests}"
           eval ${tests}
