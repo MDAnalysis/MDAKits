@@ -39,8 +39,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
+        test: ['develop', 'latest']
     steps:
       - id: echo
         run:
-            echo ${{ matrix.mdakits }}
+            echo ${{ matrix.mdakits }} ${{matrix.test }}
 
