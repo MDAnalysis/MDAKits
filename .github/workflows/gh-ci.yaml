@@ -19,7 +19,7 @@ defaults:
 
 jobs:
   gen_matrix:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     outputs:
       matrix: ${{ steps.get-mdakits.outputs.matrix }}
     steps:
@@ -37,7 +37,7 @@ jobs:
 
   mdakit-ci:
     needs: gen_matrix
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
@@ -54,56 +54,56 @@ jobs:
         run: |
           pip install pyyaml packaging
 
-      - id: check-set-python-bounds
-        run: |
-          basepy=${{steps.prev-python-ver.outputs.python-version}}
-          pyver=$(python utils/checkpython-ver.py --mdakit "${{matrix.mdakit}}" --pyver ${basepy})
-          echo "PYVER=${pyver}" >> $GITHUB_ENV
-
-      - id: install conda env
-        uses: conda-incubator/setup-miniconda@v2
-        with:
-          python-version: ${{ env.PYVER }}
-          add-pip-as-python-dependency: true
-          architecture: x64
-          mamba-version: "*"
-          channels: conda-forge, defaults
-          channel-priority: flexible
-          auto-update-conda: true
-          show-channel-urls: true
-
-       - id: install mdakit
-         run: |
-          if $[[ {{ matrix.jobstep }} == "develop" ]]; then
-            field="src_install"
-          else
-            field="install"
-          fi
-
-          install=$(python utils/extract-yaml.py --field ${field})
-          echo "install=${install}"
-          eval ${install}
-
-       - id: install test requirements
-         run: |
-           install=$(python utils/extract-yaml.py --field "test_dependencies")
-           echo "install tests:${install}"
-           eval ${install}
-
-       - id: install mdanalysis
-         uses: MDAnalysis/install-mdanalysis@main
-         with:
-           version: ${{ matrix.jobstep }}
-           install-tests: false
-           installer: mamba
-           shell: bash -l {0}
-
-       - id: install extras
-         run: |
-           mamba install pyyaml
-
-       - id: run tests
-         run: |
-           tests=$(python utils/extract-yaml.py --field "run_tests")
-           echo "tests: ${tests}"
-           eval ${tests}
+          #      - id: check-set-python-bounds
+          #        run: |
+          #          basepy=${{steps.prev-python-ver.outputs.python-version}}
+          #          pyver=$(python utils/checkpython-ver.py --mdakit "${{matrix.mdakit}}" --pyver ${basepy})
+          #          echo "PYVER=${pyver}" >> $GITHUB_ENV
+          #
+          #      - id: install conda env
+          #        uses: conda-incubator/setup-miniconda@v2
+          #        with:
+          #          python-version: ${{ env.PYVER }}
+          #          add-pip-as-python-dependency: true
+          #          architecture: x64
+          #          mamba-version: "*"
+          #          channels: conda-forge, defaults
+          #          channel-priority: flexible
+          #          auto-update-conda: true
+          #          show-channel-urls: true
+          #
+          #       - id: install mdakit
+          #         run: |
+          #          if $[[ {{ matrix.jobstep }} == "develop" ]]; then
+          #            field="src_install"
+          #          else
+          #            field="install"
+          #          fi
+          #
+          #          install=$(python utils/extract-yaml.py --field ${field})
+          #          echo "install=${install}"
+          #          eval ${install}
+          #
+          #       - id: install test requirements
+          #         run: |
+          #           install=$(python utils/extract-yaml.py --field "test_dependencies")
+          #           echo "install tests:${install}"
+          #           eval ${install}
+          #
+          #       - id: install mdanalysis
+          #         uses: MDAnalysis/install-mdanalysis@main
+          #         with:
+          #           version: ${{ matrix.jobstep }}
+          #           install-tests: false
+          #           installer: mamba
+          #           shell: bash -l {0}
+          #
+          #       - id: install extras
+          #         run: |
+          #           mamba install pyyaml
+          #
+          #       - id: run tests
+          #         run: |
+          #           tests=$(python utils/extract-yaml.py --field "run_tests")
+          #           echo "tests: ${tests}"
+          #           eval ${tests}
