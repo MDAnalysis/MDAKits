@@ -56,6 +56,7 @@ jobs:
           pip install pyyaml packaging
 
       - id: check-set-python-bounds
+        continue-on-error: true
         run: |
           basepy=${{steps.prev-python-ver.outputs.python-version}}
           pyver=$(python utils/checkpython-ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${basepy})
@@ -78,6 +79,7 @@ jobs:
           mamba install pyyaml
 
       - id: install-mdakit
+        continue-on-error: true
         run: |
          if [[ ${{ matrix.jobstep }} == "develop" ]]; then
            field="src_install"
@@ -90,6 +92,7 @@ jobs:
          eval ${install}
 
       - id: install-test-requirements
+        continue-on-error: true
         run: |
           install=$(python utils/extract-yaml.py --field "test_dependencies" --mdakit ${{matrix.mdakit}})
           echo "install tests:${install}"
@@ -97,6 +100,7 @@ jobs:
 
       - id: install-mdanalysis
         uses: MDAnalysis/install-mdanalysis@main
+        continue-on-error: true
         with:
           version: ${{ matrix.jobstep }}
           install-tests: false
@@ -105,6 +109,7 @@ jobs:
 
           
       - id: run-tests
+        continue-on-error: true
         run: |
           tests=$(python utils/extract-yaml.py --field "run_tests" --mdakit ${{matrix.mdakit}})
           echo "tests: ${tests}"

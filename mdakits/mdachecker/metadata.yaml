@@ -17,7 +17,7 @@ install: pip install git+https://github.com/IAlibay/CheckStructure@main
 src_install: pip install git+https://github.com/IAlibay/CheckStructure@main
 python_requires: ">=3.8"
 mdanalysis_requires: ">=2.0.0"
-test_run: pytest --pyargs mdachecker.tests
+run_tests: pytest --pyargs mdachecker.tests
 test_dependencies: pip install pytest
 codecov:
 development_status: Beta
