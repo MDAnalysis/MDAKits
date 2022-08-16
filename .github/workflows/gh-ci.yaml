@@ -104,7 +104,7 @@ jobs:
           shell: bash -l {0}
 
           
-      - id: run tests
+      - id: run-tests
         run: |
           tests=$(python utils/extract-yaml.py --field "run_tests")
           echo "tests: ${tests}"
