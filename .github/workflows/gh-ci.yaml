@@ -117,4 +117,5 @@ jobs:
       - id: access-errors
         shell: python
         run: |
+          import os
           print(os.environ)
