@@ -94,18 +94,15 @@ jobs:
           install=$(python utils/extract-yaml.py --field "test_dependencies" --mdakit ${{matrix.mdakit}})
           echo "install tests:${install}"
           eval ${install}
-         #
-         #       - id: install-mdanalysis
-         #         uses: MDAnalysis/install-mdanalysis@main
-         #         with:
-         #           version: ${{ matrix.jobstep }}
-         #           install-tests: false
-         #           installer: mamba
-         #           shell: bash -l {0}
-         #
-         #       - id: install-extras
-         #         run: |
-         #           mamba install pyyaml
+
+      - id: install-mdanalysis
+        uses: MDAnalysis/install-mdanalysis@main
+        with:
+          version: ${{ matrix.jobstep }}
+          install-tests: false
+          installer: mamba
+          shell: bash -l {0}
+
           #
           #       - id: run tests
           #         run: |
