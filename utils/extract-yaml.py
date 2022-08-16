@@ -11,8 +11,8 @@
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
 
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -23,40 +23,48 @@
 # SOFTWARE.
 
 """
-Script to generate an output matrix (in JSON) based on the
-directories within `targetdir`, excluding any directories defined
-under `excludedir`.
+Script to extract relevant information from an mdakit metadata.yaml.
 """
 import argparse
-import json
-from pathlib import Path
-from typing import List
+import yaml
+from yaml.loader import SafeLoader
 
 
 parser = argparse.ArgumentParser(
-    description="Combine one or more JSON entries",
+    description="Get metadata yaml info",
 )
 
 parser.add_argument(
-    "--jsonstrs",
+    "--field",
     type=str,
-    nargs="+",
-    help="Json strings to combine",
+    help="yaml field to get data from",
+)
+
+parser.add_argument(
+    "--mdakit",
+    type=str,
+    help="name of mdakit to obtain info from",
 )
 
 
-def combine_json(jsonstrs: List[str]) -> str:
-    combined = {}
-    for entry in jsonstrs:
-        print(entry)
-        combined.update(json.loads(entry))
+def get_yaml_info(yamlfile: str, field: str):
+    
+    with open(yamlfile) as f:
+        data = yaml.load(f, Loader=SafeLoader)
 
-    return json.dumps(combined)
+    value = data[field]
+
+    if isinstance(value, list):
+        return ';'.join(value)
+    else:
+        return value
 
 
 if __name__ == "__main__":
     args = parser.parse_args()
 
-    jsonreturn = combine_json(args.jsonstrs)
+    yamlfile = f"mdakits/{args.mdakit}/metadata.yaml"
 
-    print(jsonreturn)
+    info = get_yaml_info(yamlfile, args.field)
+
+    print(info)

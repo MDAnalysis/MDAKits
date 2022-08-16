@@ -14,8 +14,8 @@ documentation_type: README
 
 ## Optional entries
 install: pip install propkatraj
-python_requires: >=2.7
-mdanalysis_requires: <2.0.0
+python_requires: ">=2.7"
+mdanalysis_requires: "<2.0.0"
 test_run: 
   - pip install pytest
   - pytest --pyargs propkatraj.tests
