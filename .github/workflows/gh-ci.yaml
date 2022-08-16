@@ -38,7 +38,7 @@ jobs:
     needs: gen_matrix
     runs-on: ubuntu-latest
     strategy:
-      mdakits: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
+      matrix: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
     steps:
       - id: echo
         run:
