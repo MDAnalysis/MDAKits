@@ -107,10 +107,15 @@ jobs:
           installer: mamba
           shell: bash -l {0}
 
-          
       - id: run-tests
         continue-on-error: true
         run: |
           tests=$(python utils/extract-yaml.py --field "run_tests" --mdakit ${{matrix.mdakit}})
           echo "tests: ${tests}"
           eval ${tests}
+
+      - id: gather-errors
+        shell: python
+        run: |
+          import os
+          print(os.environ['steps'])
