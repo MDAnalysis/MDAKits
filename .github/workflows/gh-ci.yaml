@@ -40,7 +40,7 @@ jobs:
     strategy:
       matrix:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
-        jobstep: ['latest', 'develop']
+        # jobstep: ['latest', 'develop']
     steps:
       - id: echo
         run:
