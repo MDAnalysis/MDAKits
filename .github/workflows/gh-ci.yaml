@@ -1,0 +1,47 @@
+name: GH Actions CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  # Commits to develop/master will cancel each other, but PRs will only cancel
+  # commits within the same PR
+  group: "${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  gen_matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.get-mdakits.outputs.matrix }}
+    steps:
+      - id: checkout
+        uses: actions/checkout@v3
+
+      - id: get-python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - id: get-mdakits
+        run: |
+          jsonmatrix=$(python utils/get_dir_matrix.py)
+          echo "::set-output name=matrix::${jsonmatrix}"
+  job2:
+    needs: gen_matrix
+    runs-on: ubuntu-latest
+    strategy:
+      mdakits: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
+    steps:
+      - id: echo
+        with:
+            echo ${{ matrix.mdakits }}
+
