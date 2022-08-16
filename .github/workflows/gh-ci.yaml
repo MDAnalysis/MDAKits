@@ -114,8 +114,7 @@ jobs:
           echo "tests: ${tests}"
           eval ${tests}
 
-      - id: gather-errors
+      - id: access-errors
         shell: python
         run: |
-          import os
-          print(os.environ['steps'])
+          print(os.environ)
