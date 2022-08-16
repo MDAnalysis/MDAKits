@@ -67,22 +67,22 @@ parser.add_argument(
 
 
 class TargetVersion(NamedTuple):
-  major: int
-  minor: int
+    major: int
+    minor: int
 
-  @classmethod
-  def from_str(cls, input_str: str):
-    ver = version.Version(input_str)
-    return cls(
-        major=ver.major,
-        minor=ver.minor,
-    )
+    @classmethod
+    def from_str(cls, input_str: str):
+        ver = version.Version(input_str)
+        return cls(
+            major=ver.major,
+            minor=ver.minor,
+        )
 
-  def to_version(self):
-    return version.Version(self.to_string())
+    def to_version(self):
+        return version.Version(self.to_string())
 
-  def to_string(self):
-    return f"{self.major}.{self.minor}"
+    def to_string(self):
+        return f"{self.major}.{self.minor}"
 
 
 # Taken from packaging under an Apache 2.0 and BSD license

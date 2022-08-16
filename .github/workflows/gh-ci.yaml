@@ -91,7 +91,7 @@ jobs:
          echo "install=${install}"
          eval ${install}
 
-      - id: install-test-requirements
+      - id: install-test-deps
         continue-on-error: true
         run: |
           install=$(python utils/extract-yaml.py --field "test_dependencies" --mdakit ${{matrix.mdakit}})
@@ -114,8 +114,25 @@ jobs:
           echo "tests: ${tests}"
           eval ${tests}
 
+      - id: store-errors
+        run: |
+          echo "python_bounds=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
+          echo "mdakit_install=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
+          echo "tests_install=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
+          echo "mda_install=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
+          echo "test_out=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
+
       - id: access-errors
         shell: python
         run: |
           import os
-          print(os.environ)
+          import json
+
+          return_dict = {}
+
+          return_dict['python'] = os.environ['python_bounds']
+          return_dict['mdakit_install'] = os.environ['mdakit_install']
+          return_dict['test_install'] = os.environ['test_install']
+          return_dict['mda_install'] = os.environ['mda_install']
+          return_dict['tests'] = os.environ['test_out']
+          print(json.dumps(return_dict))

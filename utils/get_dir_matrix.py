@@ -58,7 +58,7 @@ parser.add_argument(
     help="name of matrix name writen to json",
     default=None,
 )
-    
+
 
 def get_json_subdir_matrix(maindir: str, excludedirs: List[str],
                            matrixname: Optional[str]) -> str:

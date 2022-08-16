@@ -48,7 +48,7 @@ parser.add_argument(
 
 
 def get_yaml_info(yamlfile: str, field: str):
-    
+
     with open(yamlfile) as f:
         data = yaml.load(f, Loader=SafeLoader)
 
