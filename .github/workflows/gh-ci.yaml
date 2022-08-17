@@ -155,7 +155,6 @@ jobs:
 
       - uses: actions/download-artifact@v3
         with:
-          name: cron-statuses-*
           path: json-statuses/
 
       - name: list-files
