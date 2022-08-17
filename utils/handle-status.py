@@ -68,7 +68,7 @@ class Status:
             if item is False:
                 curr_job_fail = True
 
-            setattr(self, 'key', item)
+            setattr(self, key, item)
 
         if curr_job_fail:
             self.numfails += 1
