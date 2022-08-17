@@ -39,7 +39,7 @@ parser.add_argument(
 
 
 class Status:
-    def __init__(jobtype: str, jsonfile: str, yamlfile: str):
+    def __init__(self, jobtype: str, jsonfile: str, yamlfile: str):
         self.jobtype = jobtype
         # read the numfailures from the yaml
         self.numfails = self._numfails_from_yaml(jobtype, yamfile)
