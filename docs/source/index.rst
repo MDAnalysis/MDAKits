@@ -1,8 +1,8 @@
-.. MDAKits repository documentation master file.
+.. MDAKits registry documentation master file.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-The MDAKit Repository
+The MDAKit Registry
 =====================
 
 .. toctree::

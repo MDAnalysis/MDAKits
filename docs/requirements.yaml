@@ -1,4 +1,4 @@
-name: MDAKitRepository-docs
+name: MDAKitRegistry-docs
 channels:
 dependencies:
     # Base depends
