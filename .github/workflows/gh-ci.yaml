@@ -126,11 +126,11 @@ jobs:
       - id: store-errors
         name: store-errors
         run: |
-          echo "python_bounds=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
-          echo "mdakit_install=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
-          echo "tests_install=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
-          echo "mda_install=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
-          echo "test_out=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
+          echo "install-python=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
+          echo "install-mdakit=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
+          echo "install-test-deps=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
+          echo "install-mda=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
+          echo "run-tests=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
 
       - id: write-errors
         name: write-errors
@@ -157,5 +157,15 @@ jobs:
         with:
           path: json-statuses/
 
-      - name: list-files
+      - name: list-temp-files
         run: ls -l json-statuses/
+
+      - id: get-base-python-deps
+        name: get-base-python-deps
+        run: |
+          pip install pyyaml PyGithub
+
+      - id: combine-write-raise-issues
+        name: combine-write-raise-issues
+        run: |
+          python utils/handle-status.py 

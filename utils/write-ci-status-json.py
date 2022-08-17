@@ -48,12 +48,11 @@ parser.add_argument(
 )
 
 
-def get_statuses(tag: str, env_values: List[str]) -> Dict[str, str]:
-
+def get_statuses(env_values: List[str]) -> Dict[str, str]:
     status_dict = {}
 
     for entry in env_values:
-        status_dict[f"{entry}-{tag}"] = os.environ[entry]
+        status_dict[entry] = os.environ[entry]
 
     return status_dict
 
@@ -61,10 +60,10 @@ def get_statuses(tag: str, env_values: List[str]) -> Dict[str, str]:
 if __name__ == "__main__":
     args = parser.parse_args()
 
-    env_statuses = ['python_bounds', 'mdakit_install', 'tests_install',
-                    'mda_install', 'test_out']
+    env_statuses = ['install-python', 'install-mdakit', 'install-mda',
+                    'install-test-deps', 'run-tests']
 
-    status_dict = get_statuses(args.tag, env_statuses)
+    status_dict = get_statuses(env_statuses)
 
     outfile = f"{args.mdakit}-{args.tag}-statuses.json"
 
