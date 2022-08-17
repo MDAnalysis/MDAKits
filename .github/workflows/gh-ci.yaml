@@ -36,8 +36,9 @@ jobs:
           format: 'json'
       - id: get changed mdakits matrix
         run: |
-          mdakit=$(python utils/get_changed_mdakits.py)
-          echo "::set-output name=matrix::${mdakit}"
+          echo ${{ steps.files.outputs.all }}
+          #mdakit=$(python utils/get_changed_mdakits.py)
+          #echo "::set-output name=matrix::${mdakit}"
 
   mdakit-ci:
     needs: gen_matrix
@@ -63,7 +64,7 @@ jobs:
 
       - id: check-set-python-bounds
         name: check-set-python-bounds
-        continue-on-error: true
+        continue-on-error: false
         run: |
           basepy=${{steps.prev-python-ver.outputs.python-version}}
           pyver=$(python utils/checkpython-ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${basepy})
@@ -89,7 +90,7 @@ jobs:
 
       - id: install-mdakit
         name: install-mdakit
-        continue-on-error: true
+        continue-on-error: false
         run: |
          if [[ ${{ matrix.jobstep }} == "develop" ]]; then
            field="src_install"
@@ -103,7 +104,7 @@ jobs:
 
       - id: install-test-deps
         name: install-test-deps
-        continue-on-error: true
+        continue-on-error: false
         run: |
           install=$(python utils/extract-yaml.py --field "test_dependencies" --mdakit ${{matrix.mdakit}})
           echo "install tests:${install}"
@@ -112,7 +113,7 @@ jobs:
       - id: install-mdanalysis
         name: install-mdanalysis
         uses: MDAnalysis/install-mdanalysis@main
-        continue-on-error: true
+        continue-on-error: false
         with:
           version: ${{ matrix.jobstep }}
           install-tests: false
@@ -121,70 +122,8 @@ jobs:
 
       - id: run-tests
         name: run-tests
-        continue-on-error: true
+        continue-on-error: false
         run: |
           tests=$(python utils/extract-yaml.py --field "run_tests" --mdakit ${{matrix.mdakit}})
           echo "tests: ${tests}"
           eval ${tests}
-
-      - id: store-errors
-        name: store-errors
-        run: |
-          echo "install-python=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
-          echo "install-mdakit=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
-          echo "install-test-deps=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
-          echo "install-mda=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
-          echo "run-tests=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
-
-      - id: write-errors
-        name: write-errors
-        run: |
-          python utils/write-ci-status-json.py --tag ${{ matrix.jobstep }} --mdakit ${{ matrix.mdakit }}
-
-      - id: upload-artifacts
-        name: upload-artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: cron-statuses-${{ matrix.mdakit }}-${{ matrix.jobstep }}
-          path: ${{ matrix.mdakit }}-${{ matrix.jobstep }}-statuses.json
-          retention-days: 1
-          if-no-files-found: error
- 
-  process_results:
-    if: ${{ always() }}
-    needs: mdakit-ci
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-      pull-requests: write 
-      packages: none
-      issues: write
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
-
-      - uses: actions/download-artifact@v3
-        with:
-          path: json-statuses/
-
-      - name: list-temp-files
-        run: ls -l json-statuses/*/
-
-      - id: get-base-python-deps
-        name: get-base-python-deps
-        run: |
-          pip install pyyaml PyGithub
-
-      - id: combine-write-raise-issues
-        name: combine-write-raise-issues
-        run: |
-          python utils/handle-status.py 
-        env:
-          GITHUB_TOKEN:  ${{ github.token }}
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: commit changes to status files
-          skip_dirty_check: false
-          skip_fetch: false
