@@ -128,7 +128,7 @@ def raise_issue(maindir: str, mdakit: str, status):
     with open(f'{maindir}/{mdakit}/metadata.yaml') as f:
         metadata = yaml.load(f, Loader=SafeLoader)
 
-    maintainers = mdatadata['maintainers']
+    maintainers = metadata['maintainers']
 
     issue_title = f"{issue_tag} Failed CI run"
 
