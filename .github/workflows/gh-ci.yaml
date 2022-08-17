@@ -135,7 +135,7 @@ jobs:
       - id: write-errors
         name: write-errors
         run: |
-          python utils/write-ci-status-json.py --tags ${{ matrix.jobstep }} --mdakit ${{ matrix.mdakit }}
+          python utils/write-ci-status-json.py --tag ${{ matrix.jobstep }} --mdakit ${{ matrix.mdakit }}
 
       - id: upload-artifacts
         name: upload-artifacts
