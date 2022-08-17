@@ -18,7 +18,7 @@ jobs:
   gen_matrix:
     runs-on: ubuntu-22.04
     outputs:
-      matrix: ${{ steps.get-mdakits.outputs.matrix }}
+      matrix: ${{ steps.get-changed-mdakits.outputs.matrix }}
     steps:
       - uses: actions/checkout@v3
 
@@ -32,7 +32,7 @@ jobs:
         uses: jitterbit/get-changed-files@v1
         with:
           format: 'json'
-      - id: get-changed-mdakits-matrix
+      - id: get-changed-mdakits
         name: build mdakit matrix
         run: |
           echo ${{ steps.files.outputs.all }}
@@ -46,7 +46,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
+        mdakit: ${{fromJSON(needs.get-changed-mdakits.outputs.matrix)}}
         jobstep: ['latest', 'develop']
     steps:
       - uses: actions/checkout@v3
