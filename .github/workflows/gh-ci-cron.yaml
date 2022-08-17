@@ -1,4 +1,4 @@
-name: GH Actions CI
+name: GH Actions Cron CI
 on:
   push:
     branches:
@@ -30,13 +30,9 @@ jobs:
         with:
           python-version: 3.9
 
-      - id: get-changed files
-        uses: jitterbit/get-changed-files@v1
-        with:
-          format: 'json'
-      - id: get changed mdakits matrix
+      - id: get-mdakits
         run: |
-          mdakit=$(python utils/get_changed_mdakits.py)
+          mdakit=$(python utils/get_dir_matrix.py)
           echo "::set-output name=matrix::${mdakit}"
 
   mdakit-ci:
