@@ -157,6 +157,8 @@ jobs:
       issues: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - uses: actions/download-artifact@v3
         with:
@@ -176,3 +178,9 @@ jobs:
           python utils/handle-status.py 
         env:
           GITHUB_TOKEN:  ${{ github.token }}
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: commit changes to status files
+          skip_dirty_check: false
+          skip_fetch: false

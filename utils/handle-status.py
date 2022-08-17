@@ -100,7 +100,7 @@ def handle_mdakit(maindir: str, jsondir: str,
     statuses = {}
     for job in jobtypes:
         jsonfile = f"{jsondir}/cron-statuses-{mdakit}-{job}"
-        yamfile = f"{maindir}/{mdakit}/status.yaml"
+        yamlfile = f"{maindir}/{mdakit}/status.yaml"
         statuses[job] = Status(job, jsonfile, yamlfile)
 
     # scan through statuses and raise an issue if necessary
