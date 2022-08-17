@@ -147,6 +147,7 @@ jobs:
           if-no-files-found: error
  
   process_results:
+    if: ${{ always() }}
     needs: mdakit-ci
     runs-on: ubunut-22.04
     steps:
