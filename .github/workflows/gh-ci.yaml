@@ -36,7 +36,7 @@ jobs:
         name: build mdakit matrix
         run: |
           echo ${{ steps.files.outputs.all }}
-          mdakit=$(utils/get_affected_mdakits.py)
+          mdakit=$(python utils/get_affected_mdakits.py)
           echo "::set-output name=matrix::${mdakit}"
 
   mdakit-ci:
