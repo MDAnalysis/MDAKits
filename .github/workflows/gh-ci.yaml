@@ -1,8 +1,5 @@
 name: GH Actions CI
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -39,8 +36,8 @@ jobs:
         name: build mdakit matrix
         run: |
           echo ${{ steps.files.outputs.all }}
-          #mdakit=$(python utils/get_changed_mdakits.py)
-          #echo "::set-output name=matrix::${mdakit}"
+          mdakit=$(utils/get_affected_mdakits.py)
+          echo "::set-output name=matrix::${mdakit}"
 
   mdakit-ci:
     needs: gen_matrix
