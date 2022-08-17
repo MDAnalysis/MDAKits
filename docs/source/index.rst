@@ -5,6 +5,9 @@
 The MDAKit Registry
 =====================
 
+A registry for MDAKits - packages based on MDAnalysis.
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
