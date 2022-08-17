@@ -149,7 +149,7 @@ jobs:
   process_results:
     if: ${{ always() }}
     needs: mdakit-ci
-    runs-on: ubunut-22.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
 
