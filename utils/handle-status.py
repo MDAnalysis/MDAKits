@@ -45,7 +45,7 @@ class Status:
         self.numfails = self._numfails_from_yaml(jobtype, yamlfile)
 
         # read inputs from json
-        self._read_from_json(input_json)
+        self._read_from_json(jsonfile)
 
     @staticmethod
     def _numfails_from_yaml(jobtype: str, yamlfile: str) -> int:
