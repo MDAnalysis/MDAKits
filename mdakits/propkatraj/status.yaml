@@ -3,12 +3,12 @@ develop:
   install_mdakit: true
   install_python: true
   install_test_deps: true
-  numfails: 5
+  numfails: 6
   run_tests: false
 latest:
   install_mda: true
   install_mdakit: true
   install_python: true
   install_test_deps: true
-  numfails: 5
+  numfails: 6
   run_tests: false
