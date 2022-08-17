@@ -126,11 +126,11 @@ jobs:
       - id: store-errors
         name: store-errors
         run: |
-          echo "install-python=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
-          echo "install-mdakit=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
-          echo "install-test-deps=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
-          echo "install-mda=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
-          echo "run-tests=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
+          echo "install_python=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
+          echo "install_mdakit=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
+          echo "install_test-deps=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
+          echo "install_mda=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
+          echo "run_tests=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
 
       - id: write-errors
         name: write-errors

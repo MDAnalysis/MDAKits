@@ -76,11 +76,11 @@ class Status:
     def to_dict(self):
         return {self.jobtype: {
             'numfails': self.numfails,
-            'install-python': self.install-python,
-            'install-mdakit': self.install-mdakit,
-            'install-mda': self.install-mda,
-            'install-test-deps': self.install-test-deps,
-            'run-tests': self.run-tests, }}
+            'install_python': self.install_python,
+            'install_mdakit': self.install_mdakit,
+            'install_mda': self.install_mda,
+            'install_test_deps': self.install_test_deps,
+            'run_tests': self.run_tests, }}
 
 
 def get_mdakit_list(maindir: str, excludedirs: List[str]) -> List[str]:
@@ -138,9 +138,9 @@ def raise_issue(maindir: str, mdakit: str, status):
 
     issue_body = (f"At least two repeated CI runs for {mdakit} have failed.\n "
                   "Here is last recorded status of the tests:\n"
-                  f"  - installing python: {bool_status(status.install-python)}\n"
-                  f"  - installing the mdakit: {bool_status(status.install-mdakit)}\n"
-                  f"  - installing the test dependencies: {bool_status(status.install-test-deps)}\n"
+                  f"  - installing python: {bool_status(status.install_python)}\n"
+                  f"  - installing the mdakit: {bool_status(status.install_mdakit)}\n"
+                  f"  - installing the test dependencies: {bool_status(status.install_test_deps)}\n"
                   f"  - running tests: {bool_status(status.run_tests)}\n"
                   f"Pinging maintainers: {' '.join(maintainers)}")
 

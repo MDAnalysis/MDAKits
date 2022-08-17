@@ -30,11 +30,13 @@ jobs:
         with:
           python-version: 3.9
 
-      - id: get-changed files
+      - id: files
+        name: get changed filed
         uses: jitterbit/get-changed-files@v1
         with:
           format: 'json'
-      - id: get changed mdakits matrix
+      - id: get-changed-mdakits-matrix
+        name: build mdakit matrix
         run: |
           echo ${{ steps.files.outputs.all }}
           #mdakit=$(python utils/get_changed_mdakits.py)
