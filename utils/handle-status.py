@@ -99,7 +99,8 @@ def handle_mdakit(maindir: str, jsondir: str,
     # get the status of the recent CI build
     statuses = {}
     for job in jobtypes:
-        jsonfile = f"{jsondir}/cron-statuses-{mdakit}-{job}"
+        jsonfile = (f"{jsondir}/cron-statuses-{mdakit}-"
+                    f"{job}/{mdakit}-{job}-statuses.json")
         yamlfile = f"{maindir}/{mdakit}/status.yaml"
         statuses[job] = Status(job, jsonfile, yamlfile)
 
