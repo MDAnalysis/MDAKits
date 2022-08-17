@@ -1,12 +1,17 @@
 ## Required entries
 project_name: propktraj
-authors: https://github.com/Becksteinlab/propkatraj/blob/master/AUTHORS
+authors:
+  - https://github.com/Becksteinlab/propkatraj/blob/master/AUTHORS
 maintainers:
   - orbeckst
   - IAlibay
 description: <
     Calculate pKa estimates over the length of a trajectory using
     PROPKA 3. Currently only handles protein pka.
+keywords:
+  - pKa estimate
+  - proteins
+  - propka3
 license: GPL-3.0
 project_home: https://github.com/Becksteinlab/propkatraj
 documentation_home: https://github.com/Becksteinlab/propkatraj/blob/master/README.md

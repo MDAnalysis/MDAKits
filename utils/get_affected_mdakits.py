@@ -23,9 +23,8 @@
 # SOFTWARE.
 
 """
-Script to generate an output matrix (in JSON) based on the
-directories within `targetdir`, excluding any directories defined
-under `excludedir`.
+Script to generate an output matrix (in JSON) for mdakits which have been
+changed in the given PR
 """
 import argparse
 import json

@@ -3,15 +3,15 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  schedule:
+    # once a week at midnight on Sunday
+    - cron: "0 3 * * 0"
 
-# concurrency:
+concurrency:
   # Commits to develop/master will cancel each other, but PRs will only cancel
   # commits within the same PR
-  # group: "${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}"
-  # cancel-in-progress: true
+  group: "${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}"
+  cancel-in-progress: true
 
 defaults:
   run:
@@ -157,8 +157,6 @@ jobs:
       issues: write
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.head_ref }}
 
       - uses: actions/download-artifact@v3
         with:

@@ -7,6 +7,9 @@ maintainers:
 description: <
     AnalysisBase extension to check for structural clashes over the length of
     a trajectory
+keywords:
+  - structure analysis
+  - conformation checks
 license: GPL-3.0
 project_home: https://github.com/IAlibay/CheckStructure/
 documentation_home: https://github.com/IAlibay/CheckStructure/blob/main/README.md
