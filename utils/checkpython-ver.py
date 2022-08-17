@@ -31,7 +31,8 @@ import argparse
 import yaml
 from yaml.loader import SafeLoader
 from setuptools._vendor.packaging import specifiers, version
-from typing import NamedTuple, Optional, Dict, Callable
+from typing import Optional, Dict, Callable
+from dataclasses import dataclass
 
 
 Operator = Callable[[str, str], bool]
@@ -66,7 +67,8 @@ parser.add_argument(
 )
 
 
-class TargetVersion(NamedTuple):
+@dataclass
+class TargetVersion:
     major: int
     minor: int
 
