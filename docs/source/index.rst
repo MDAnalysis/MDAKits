@@ -9,9 +9,10 @@ A registry for MDAKits - packages based on MDAnalysis.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
+   mdakits
 
 
 
