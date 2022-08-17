@@ -47,15 +47,18 @@ jobs:
       - uses: actions/checkout@v3
 
       - id: prev-python-ver
+        name: prev-python-ver
         uses: MDAnalysis/get-latest-python-version@main
         with:
           last-n-minor-release: 1
 
       - id: get-base-python-deps
+        name: get-base-python-deps
         run: |
           pip install pyyaml packaging
 
       - id: check-set-python-bounds
+        name: check-set-python-bounds
         continue-on-error: true
         run: |
           basepy=${{steps.prev-python-ver.outputs.python-version}}
@@ -63,6 +66,7 @@ jobs:
           echo "PYVER=${pyver}" >> $GITHUB_ENV
           
       - id: install-conda-env
+        name: install-conda-env
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: ${{ env.PYVER }}
@@ -75,10 +79,12 @@ jobs:
           show-channel-urls: true
 
       - id: install-conda-base-deps
+        name: install-conda-base-deps
         run: |
           mamba install pyyaml
 
       - id: install-mdakit
+        name: install-mdakit
         continue-on-error: true
         run: |
          if [[ ${{ matrix.jobstep }} == "develop" ]]; then
@@ -92,6 +98,7 @@ jobs:
          eval ${install}
 
       - id: install-test-deps
+        name: install-test-deps
         continue-on-error: true
         run: |
           install=$(python utils/extract-yaml.py --field "test_dependencies" --mdakit ${{matrix.mdakit}})
@@ -99,6 +106,7 @@ jobs:
           eval ${install}
 
       - id: install-mdanalysis
+        name: install-mdanalysis
         uses: MDAnalysis/install-mdanalysis@main
         continue-on-error: true
         with:
@@ -108,6 +116,7 @@ jobs:
           shell: bash -l {0}
 
       - id: run-tests
+        name: run-tests
         continue-on-error: true
         run: |
           tests=$(python utils/extract-yaml.py --field "run_tests" --mdakit ${{matrix.mdakit}})
@@ -115,6 +124,7 @@ jobs:
           eval ${tests}
 
       - id: store-errors
+        name: store-errors
         run: |
           echo "python_bounds=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
           echo "mdakit_install=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
@@ -122,17 +132,16 @@ jobs:
           echo "mda_install=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
           echo "test_out=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
 
-      - id: access-errors
-        shell: python
+      - id: write-errors
+        name: write-errors
         run: |
-          import os
-          import json
+          python utils/write-ci-status-json.py --tags ${{ matrix.jobstep }} --mdakit ${{ matrix.mdakit }}
 
-          return_dict = {}
-
-          return_dict['python'] = os.environ['python_bounds']
-          return_dict['mdakit_install'] = os.environ['mdakit_install']
-          return_dict['tests_install'] = os.environ['tests_install']
-          return_dict['mda_install'] = os.environ['mda_install']
-          return_dict['tests'] = os.environ['test_out']
-          print(json.dumps(return_dict))
+      - id: upload-artifacts
+        name: upload-artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: cron-statuses-${{ matrix.mdakit }}-${{ matrix.jobstep }}
+          path: ${{ matrix.mdakit }}-${{ matrix.jobstep }}-statuses.json
+          retention-days: 1
+          if-no-files-found: error
