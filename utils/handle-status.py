@@ -50,7 +50,7 @@ class Status:
     def _numfails_from_yaml(jobtype: str, yamlfile: str) -> int:
         try:
             with open(yamlfile) as f:
-                prev_status =  yaml.load(f, Loader=SafeLoader)
+                prev_status = yaml.load(f, Loader=SafeLoader)
             return prev_status[jobtype]['numfails']
         except FileNotFoundError:
             return 0
@@ -74,12 +74,12 @@ class Status:
 
     def to_dict(self):
         return {self.jobtype: {
-                   'numfails': self.numfails,
-                   'install-python': self.install-python,
-                   'install-mdakit': self.install-mdakit,
-                   'install-mda': self.install-mda,
-                   'install-test-deps': self.install-test-deps,
-                   'run-tests': self.run-tests,}}
+            'numfails': self.numfails,
+            'install-python': self.install-python,
+            'install-mdakit': self.install-mdakit,
+            'install-mda': self.install-mda,
+            'install-test-deps': self.install-test-deps,
+            'run-tests': self.run-tests, }}
 
 
 def get_mdakit_list(maindir: str, excludedirs: List[str]) -> List[str]:
@@ -90,10 +90,11 @@ def get_mdakit_list(maindir: str, excludedirs: List[str]) -> List[str]:
             var = str(entry.relative_to(f"./{maindir}"))
             if var not in excludedirs:
                 mdakits.append(var)
-    return mdakits    
+    return mdakits
 
-   
-def handle_mdakit(maindir: str, jsondir: str, mdakit: str, jobtypes: List[str]):
+
+def handle_mdakit(maindir: str, jsondir: str,
+                  mdakit: str, jobtypes: List[str]):
     # get the status of the recent CI build
     statuses = {}
     for job in jobtypes:
@@ -123,7 +124,7 @@ def raise_issue(maindir: str, mdakit: str, status):
 
     # Get maintainers
     with open(f'{maindir}/{mdakit}/metadata.yaml') as f:
-        metadata =  yaml.load(f, Loader=SafeLoader)
+        metadata = yaml.load(f, Loader=SafeLoader)
 
     maintainers = mdatadata['maintainers']
 

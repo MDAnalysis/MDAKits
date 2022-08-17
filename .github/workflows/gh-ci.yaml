@@ -150,6 +150,11 @@ jobs:
     if: ${{ always() }}
     needs: mdakit-ci
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: write 
+      packages: none
+      issues: write
     steps:
       - uses: actions/checkout@v3
 
@@ -169,3 +174,5 @@ jobs:
         name: combine-write-raise-issues
         run: |
           python utils/handle-status.py 
+        env:
+          GITHUB_TOKEN:  ${{ github.token }}
