@@ -107,7 +107,7 @@ def handle_mdakit(maindir: str, jsondir: str,
     # scan through statuses and raise an issue if necessary
     for status in statuses:
         if status.numfails > 1:
-            raise_issue(mdakit, status)
+            raise_issue(maindir, mdakit, status)
 
     # write the issues out
     write_mdakit_status(maindir, mdakit, statuses)
