@@ -165,7 +165,7 @@ jobs:
           path: json-statuses/
 
       - name: list-temp-files
-        run: ls -l json-statuses/
+        run: ls -l json-statuses/*/
 
       - id: get-base-python-deps
         name: get-base-python-deps
