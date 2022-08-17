@@ -15,6 +15,7 @@
 # Incase the project was not installed
 import sys
 import datetime
+import pathlib
 
 SCRIPT_DIR = pathlib.Path(__file__).parent.parent.resolve() / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
