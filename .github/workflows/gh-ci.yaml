@@ -46,7 +46,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mdakit: ${{fromJSON(needs.get-changed-mdakits.outputs.matrix)}}
+        mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
         jobstep: ['latest', 'develop']
     steps:
       - uses: actions/checkout@v3
