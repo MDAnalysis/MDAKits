@@ -129,6 +129,9 @@ def raise_issue(maindir: str, mdakit: str, status):
         metadata = yaml.load(f, Loader=SafeLoader)
 
     maintainers = metadata['maintainers']
+    maint = ""
+    for m in maintainers:
+        maint += f"@{m} "
 
     issue_title = f"{issue_tag} Failed CI run"
 
@@ -142,7 +145,7 @@ def raise_issue(maindir: str, mdakit: str, status):
                   f"  - installing the mdakit: {bool_status(status.install_mdakit)}\n"
                   f"  - installing the test dependencies: {bool_status(status.install_test_deps)}\n"
                   f"  - running tests: {bool_status(status.run_tests)}\n"
-                  f"Pinging maintainers: {' '.join(maintainers)}")
+                  f"Pinging maintainers: {maint}")
 
     # raise issue - TODO use labels
     repo.create_issue(title=issue_title, body=issue_body)
