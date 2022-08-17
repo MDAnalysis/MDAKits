@@ -145,3 +145,17 @@ jobs:
           path: ${{ matrix.mdakit }}-${{ matrix.jobstep }}-statuses.json
           retention-days: 1
           if-no-files-found: error
+ 
+  process_results:
+    needs: mdakit-ci
+    runs-on: ubunut-22.04
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: cron-statuses-*
+          path: json-statuses/
+
+      - name: list-files
+        run: ls -l json-statuses/
