@@ -2,9 +2,9 @@
   The MDAKit White Paper
 ==========================
 
-Current release: 0.1.0b
+Current release: 0.1.0
 
-Status: To be reviewed by key stakeholders
+Status: Published (https://doi.org/10.6084/m9.figshare.20520726.v1)
 
 Held here is the current version of the white paper defining the MDAKit Framework. 
 It details the key overarching components which define the creation, registration 
