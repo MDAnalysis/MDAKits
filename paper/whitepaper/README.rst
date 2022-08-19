@@ -10,6 +10,9 @@ Held here is the current version of the white paper defining the MDAKit Framewor
 It details the key overarching components which define the creation, registration 
 and ongoing validation of MDAKits within this repository.
 
+(For the LaTeX sources see
+https://github.com/MDAnalysis/mdakits-whitepaper .)
+
 
 Getting involved
 ================
