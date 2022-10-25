@@ -86,13 +86,22 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
     table_header = ("+----------------+------------+-----------+-----------+\n"
                     "|      MDAKit    |  Keywords  |  Authors  | CI badges |\n"
                     "+================+============+===========+===========+\n")
-         
+
+    table_headers = ['MDAKit', 'Keywords', 'Authors', 'CI badges']
+
     urls = []
 
     with open('mdakits.rst', 'w') as f:
         f.write(body1)
 
-        f.write(table_header)
+        f.write('.. list-table:: List of registered MDAKits\n')
+        f.write('  :widths: 25 25 50\n')
+        f.write('  :header-rows: 1\n')
+
+        f.write('  * - MDAKit\n')
+        f.write('    - Keywords\n')
+        f.write('    - Authors\n')
+        f.write('    - CI badges\n')
 
         for kit in mdakits:
             kit_data = get_yaml(kit, 'metadata.yaml')
@@ -130,11 +139,10 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
                        f"   :alt: {mdakit_name} develop CI status\n"
                        f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
 
-            row = (f"|  {mdakit_name} | {keywords} | {authors} | {latest}  |\n"
-                   f"|                |            |           | {develop} |\n"
-                    "+----------------+------------+-----------+-----------+\n")
-
-            f.write(row)
+            f.write(f'  * - {mdakit_name}\n')
+            f.write(f'    - {keywords}\n')
+            f.write(f'    - {authors}\n')
+            f.write(f'    - {latest} {develop}\n')
 
         # write out the url data
         f.write('\n\n')
