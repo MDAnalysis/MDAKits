@@ -122,17 +122,17 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
             latest = f"|{mdakit_name}_latest|"
 
             latest_badge = get_custom_badge(
-                    {mdakit_name},
+                    mdakit_name,
                     "latest",
                     "red" if ci_data['latest']['numfails'] > 0 else 'green',
             )
             urls.append(f".. |{mdakit_name}_latest| image:: {latest_badge}\n"
-                       f"   :alt: {mdakit_name} latest CI status\n"
-                       f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
+                        f"   :alt: {mdakit_name} latest CI status\n"
+                        f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
 
             develop = f"|{mdakit_name}_develop|"
             develop_badge = get_custom_badge(
-                    {mdakit_name},
+                    mdakit_name,
                     "develop",
                     "red" if ci_data['develop']['numfails'] > 0 else 'green',
             )
