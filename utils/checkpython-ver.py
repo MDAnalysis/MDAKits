@@ -40,7 +40,7 @@ Operator = Callable[[str, str], bool]
 
 parser = argparse.ArgumentParser(
     description=("Get a Python version which satisfies the bounds "
-                 "defined in the mdakit yamlm file"),
+                 "defined in the mdakit yaml file"),
 )
 
 

@@ -5,7 +5,7 @@ authors:
 maintainers:
   - orbeckst
   - IAlibay
-description: <
+description:
     Calculate pKa estimates over the length of a trajectory using
     PROPKA 3. Currently only handles protein pka.
 keywords:

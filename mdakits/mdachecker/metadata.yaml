@@ -4,7 +4,7 @@ authors:
   - IAlibay
 maintainers:
   - IAlibay
-description: <
+description:
     AnalysisBase extension to check for structural clashes over the length of
     a trajectory
 keywords:
