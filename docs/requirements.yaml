@@ -8,5 +8,7 @@ dependencies:
     - sphinx
     - sphinx_rtd_theme
 
+    - pyyaml
+
     # Pip-only installs
     #- pip:

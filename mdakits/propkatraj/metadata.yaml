@@ -1,12 +1,17 @@
 ## Required entries
 project_name: propktraj
-authors: https://github.com/Becksteinlab/propkatraj/blob/master/AUTHORS
+authors:
+  - https://github.com/Becksteinlab/propkatraj/blob/master/AUTHORS
 maintainers:
   - orbeckst
   - IAlibay
-description: <
+description:
     Calculate pKa estimates over the length of a trajectory using
     PROPKA 3. Currently only handles protein pka.
+keywords:
+  - pKa estimate
+  - proteins
+  - propka3
 license: GPL-3.0
 project_home: https://github.com/Becksteinlab/propkatraj
 documentation_home: https://github.com/Becksteinlab/propkatraj/blob/master/README.md
@@ -14,11 +19,11 @@ documentation_type: README
 
 ## Optional entries
 install: pip install propkatraj
-python_requires: >=2.7
-mdanalysis_requires: <2.0.0
-test_run: 
-  - pip install pytest
-  - pytest --pyargs propkatraj.tests
+src_install: pip install git+https://github.com/Becksteinlab/propkatraj@master
+python_requires: ">=2.7"
+mdanalysis_requires: "<2.0.0"
+run_tests: pytest --pyargs propkatraj.tests
+test_dependencies: pip install pytest
 codecov: https://codecov.io/gh/Becksteinlab/propkatraj/branch/master
 development_status: Mature
 changelog: 
