@@ -12,7 +12,7 @@ keywords:
   - pKa
   - protein
 license: GPL-2.0-or-later
-project_home: https://github.com/Becksteinlab/propkatraj
+project_home: https://github.com/Becksteinlab/propkatraj/
 documentation_home: https://becksteinlab.github.io/propkatraj/
 documentation_type: UserGuide + API
 

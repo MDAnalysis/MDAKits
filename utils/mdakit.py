@@ -381,6 +381,7 @@ class MDAKit:
     def write_mdakit_page(self):
         name = self.metadata.project_name
         urls = []
+        authors = self.gen_authors(urls)
 
         title = ("************************\n"
                  f"{name}\n"
@@ -391,7 +392,7 @@ class MDAKit:
 
         keywords = f"| 🔑**Keywords:** {', '.join(self.metadata.keywords)}\n"
 
-        authors = f"| 🖋️**Authors**: {self.gen_authors(urls)}\n"
+        authors = f"| 🖋️**Authors**: {authors}\n"
         project_home = f"| 🏠**Project home:** {self.metadata.project_home}\n"
         documentation_home = f"| 📖**Documentation:** {self.metadata.documentation_home}\n"
         license = f"| ⚖️**License:** {self.metadata.license}\n"
@@ -413,11 +414,11 @@ class MDAKit:
         else:
             publications = ""
 
-        latest_ci = f"| **Tests (latest):** {self.gen_ci_badges('latest')}\n"
-        develop_ci = f"| **Tests (develop):** {self.gen_ci_badges('develop')}\n"
+        latest_ci = f"| 🧪**Tests (latest):** {self.gen_ci_badges('latest')}\n"
+        develop_ci = f"| 🧪**Tests (develop):** {self.gen_ci_badges('develop')}\n"
 
         if self.gen_code_badges() != '':
-            badges = (f"| **Badges**\n"
+            badges = (f"| 📛**Badges**\n"
                       f" {self.gen_code_badges()}\n")
         else:
             badges = "\n"
