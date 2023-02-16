@@ -476,7 +476,7 @@ class MDAKit:
             for entry in urls:
                 kitf.write(entry)
 
-    def get_table_entry(self, f, urls, toctree):
+    def write_table_entry(self, f, urls, toctree):
         name = self.metadata.project_name
         keywords = ', '.join(self.metadata.keywords)
         authors = self.gen_authors()
