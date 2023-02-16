@@ -1,0 +1,48 @@
+.. _propkatraj:
+
+************************
+propkatraj
+************************
+
+| 🖋️ **Authors**: `propkatraj authors`_
+| 🏠 **Project home:** https://github.com/Becksteinlab/propkatraj/
+| 📖 **Documentation:** https://becksteinlab.github.io/propkatraj/
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** pKa, protein
+| 🚀 **Development status:** Mature
+| 📑 **Publications:**
+|    - https://zenodo.org/record/7647010
+|    - https://doi.org/10.1021/ct200133y
+|    - https://doi.org/10.1085/jgp.201411219
+| 🧪 **Tests (latest):** |propkatraj_latest| 
+| 🧪 **Tests (develop):** |propkatraj_develop| 
+| **Description:**
+| *pKa estimates for proteins using an ensemble approach*
+
+
+
+Installation instructions
+=========================
+
+The latest version of propkatraj can be installed using the following:
+
+.. code-block:: bash
+
+    pip install propkatraj
+The source code of propkatraj can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/Becksteinlab/propkatraj@main
+
+.. _`propkatraj authors`:
+   https://github.com/Becksteinlab/propkatraj/blob/main/AUTHORS
+
+.. |propkatraj_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: propkatraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |propkatraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: propkatraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
