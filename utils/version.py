@@ -23,49 +23,46 @@
 # SOFTWARE.
 
 """
-Script to write out errors to a JSON file for temporary storage.
+Script to check for a compatible python version given an input value
+and a predefined python spec
 """
-import argparse
-import os
-import json
-from typing import List, Dict
+import operator
+from setuptools._vendor.packaging import specifiers, version
+from typing import Optional, Dict, Callable
+from dataclasses import dataclass
 
 
-parser = argparse.ArgumentParser(
-    description="Write out CI status as JSON",
-)
+@dataclass
+class TargetVersion:
+    major: int
+    minor: int
 
-parser.add_argument(
-    "--tag",
-    type=str,
-    help="Name to tag errors with",
-)
+    @classmethod
+    def from_str(cls, input_str: str):
+        ver = version.Version(input_str)
+        return cls(
+            major=ver.major,
+            minor=ver.minor,
+        )
 
-parser.add_argument(
-    "--mdakit",
-    type=str,
-    help="name of mdakit we are writing errors for",
-)
+    def to_version(self):
+        return version.Version(self.to_string())
 
-
-def get_statuses(env_values: List[str]) -> Dict[str, str]:
-    status_dict = {}
-
-    for entry in env_values:
-        status_dict[entry] = os.environ[entry]
-
-    return status_dict
+    def to_string(self):
+        return f"{self.major}.{self.minor}"
 
 
-if __name__ == "__main__":
-    args = parser.parse_args()
+# Taken from packaging under an Apache 2.0 and BSD license
+Operator = Callable[[str, str], bool]
 
-    env_statuses = ['install_python', 'install_mdakit', 'install_mda',
-                    'install_test_deps', 'run_tests']
 
-    status_dict = get_statuses(env_statuses)
-
-    outfile = f"{args.mdakit}-{args.tag}-statuses.json"
-
-    with open(outfile, 'w') as f:
-        json.dump(status_dict, f)
+_operators: Dict[str, Operator] = {
+    "in": lambda lhs, rhs: lhs in rhs,
+    "not in": lambda lhs, rhs: lhs not in rhs,
+    "<": operator.lt,
+    "<=": operator.le,
+    "==": operator.eq,
+    "!=": operator.ne,
+    ">=": operator.ge,
+    ">": operator.gt,
+}
