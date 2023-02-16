@@ -392,7 +392,7 @@ class MDAKit:
 
         keywords = f"| 🔑 **Keywords:** {', '.join(self.metadata.keywords)}\n"
 
-        authors = f"| 🖋️ **Authors**: \n"#{authors}\n"
+        authors = f"| 🖋️ **Authors**: {authors}\n"
         project_home = f"| 🏠 **Project home:** {self.metadata.project_home}\n"
         documentation_home = f"| 📖 **Documentation:** {self.metadata.documentation_home}\n"
         license = f"| ⚖️ **License:** {self.metadata.license}\n"
@@ -410,7 +410,7 @@ class MDAKit:
         if self.metadata.publications is not None:
             publications = f"| 📑 **Publications:**\n"
             for pub in self.metadata.publications:
-                publications += f"| {pub}\n"
+                publications += f"|    - {pub}\n"
         else:
             publications = ""
 
