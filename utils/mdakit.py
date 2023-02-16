@@ -393,9 +393,7 @@ class MDAKit:
         keywords = f"| 🔑 **Keywords:** {', '.join(self.metadata.keywords)}\n"
 
         authors = f"| 🖋️ **Authors**: \n"#{authors}\n"
-        assert self.metadata.project_home is not None
         project_home = f"| 🏠 **Project home:** {self.metadata.project_home}\n"
-        assert self.metadata.documentation_home is not None
         documentation_home = f"| 📖 **Documentation:** {self.metadata.documentation_home}\n"
         license = f"| ⚖️ **License:** {self.metadata.license}\n"
 
