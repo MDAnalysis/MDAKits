@@ -32,6 +32,7 @@ from pathlib import Path
 import yaml
 from yaml.loader import SafeLoader
 from typing import List
+from mdakit import MDAKit
 
 
 parser = argparse.ArgumentParser(
