@@ -4,21 +4,28 @@ authors:
   - IAlibay
 maintainers:
   - IAlibay
-description: <
+description:
     AnalysisBase extension to check for structural clashes over the length of
     a trajectory
+keywords:
+  - structure analysis
+  - conformation checks
 license: GPL-3.0
 project_home: https://github.com/IAlibay/CheckStructure/
 documentation_home: https://github.com/IAlibay/CheckStructure/blob/main/README.md
 documentation_type: README
 
 ## Optional entries
-install: pip install git+https://github.com/IAlibay/CheckStructure@main
-python_requires: >=3.8
-mdanalysis_requires: >=2.0.0
-test_run:
-  - pip install pytest
+install:
+  - pip install git+https://github.com/IAlibay/CheckStructure@main
+src_install:
+  - pip install git+https://github.com/IAlibay/CheckStructure@main
+python_requires: ">=3.8"
+mdanalysis_requires: ">=2.0.0"
+run_tests:
   - pytest --pyargs mdachecker.tests
+test_dependencies:
+  - pip install pytest
 codecov:
 development_status: Beta
 changelog:

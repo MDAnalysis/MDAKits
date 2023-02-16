@@ -1,0 +1,215 @@
+name: GH Actions Cron CI
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    # once a week at midnight on Sunday
+    - cron: "0 3 * * 0"
+
+concurrency:
+  # Commits to develop/master will cancel each other, but PRs will only cancel
+  # commits within the same PR
+  group: "${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}"
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  gen_matrix:
+    runs-on: ubuntu-22.04
+    outputs:
+      matrix: ${{ steps.get-mdakits.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: get-python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - id: get-mdakits
+        run: |
+          mdakit=$(python utils/get_dir_matrix.py)
+          echo "::set-output name=matrix::${mdakit}"
+
+  mdakit-ci:
+    needs: gen_matrix
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
+        jobstep: ['latest', 'develop']
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: prev-python-ver
+        name: prev-python-ver
+        uses: MDAnalysis/get-latest-python-version@main
+        with:
+          last-n-minor-release: 1
+
+      - id: get-base-python-deps
+        name: get-base-python-deps
+        run: |
+          pip install requests setuptools packaging pyyaml pydantic PyGithub
+
+      - id: check-set-python-bounds
+        name: check-set-python-bounds
+        continue-on-error: true
+        run: |
+          basepy=${{steps.prev-python-ver.outputs.python-version}}
+          pyver=$(python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${basepy})
+          echo "PYVER=${pyver}" >> $GITHUB_ENV
+          
+      - id: install-conda-env
+        name: install-conda-env
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: ${{ env.PYVER }}
+          add-pip-as-python-dependency: true
+          architecture: x64
+          use-mamba: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge, defaults
+          channel-priority: flexible
+          auto-update-conda: true
+          show-channel-urls: true
+
+      - id: install-conda-base-deps
+        name: install-conda-base-deps
+        run: |
+          mamba install requests setuptools packaging pyyaml pydantic
+          pip install PyGithub
+
+      - id: install-mdakit
+        name: install-mdakit
+        continue-on-error: true
+        run: |
+         if [[ ${{ matrix.jobstep }} == "develop" ]]; then
+           type="src"
+         else
+           type="install"
+         fi
+
+         install=$(python utils/get_install.py --itype ${type} --mdakit ${{matrix.mdakit}})
+         echo "install=${install}"
+         eval ${install}
+
+      - id: install-test-deps
+        name: install-test-deps
+        continue-on-error: true
+        run: |
+          install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
+          echo "install tests:${install}"
+          eval ${install}
+
+      - id: install-mdanalysis
+        name: install-mdanalysis
+        uses: MDAnalysis/install-mdanalysis@main
+        continue-on-error: true
+        with:
+          version: ${{ matrix.jobstep }}
+          install-tests: false
+          installer: mamba
+          shell: bash -l {0}
+
+      - id: run-tests
+        name: run-tests
+        continue-on-error: true
+        run: |
+          tests=$(python utils/get_runtests.py --mdakit ${{matrix.mdakit}})
+          echo "tests: ${tests}"
+          eval ${tests}
+
+      - id: store-errors
+        name: store-errors
+        run: |
+          echo "install_python=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
+          echo "install_mdakit=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
+          echo "install_test_deps=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
+          echo "install_mda=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
+          echo "run_tests=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
+
+      - id: write-errors
+        name: write-errors
+        run: |
+          python utils/write-ci-status-json.py --tag ${{ matrix.jobstep }} --mdakit ${{ matrix.mdakit }}
+
+      - id: upload-artifacts
+        name: upload-artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: cron-statuses-${{ matrix.mdakit }}-${{ matrix.jobstep }}
+          path: ${{ matrix.mdakit }}-${{ matrix.jobstep }}-statuses.json
+          retention-days: 1
+          if-no-files-found: error
+ 
+  process_results:
+    if: ${{ always() }}
+    needs: mdakit-ci
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: write 
+      packages: none
+      issues: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          path: json-statuses/
+
+      - name: list-temp-files
+        run: ls -l json-statuses/*/
+
+      - id: get-base-python-deps
+        name: get-base-python-deps
+        run: |
+          pip install requests setuptools packaging pyyaml pydantic PyGithub
+
+      - id: combine-write-raise-issues
+        name: combine-write-raise-issues
+        run: |
+          python utils/handle-status.py 
+        env:
+          GITHUB_TOKEN:  ${{ github.token }}
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: commit changes to status files
+          skip_dirty_check: false
+          skip_fetch: false
+
+  deploy_docs:
+    if: ${{ always() }}
+    needs: process_results
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup_miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: 3.9
+          auto-update-conda: true
+          channel-priority: flexible
+          channels: conda-forge
+          add-pip-as-python-dependency: true
+          architecture: x64
+          use-mamba: true
+          miniforge-variant: Mambaforge
+          environment-file: docs/requirements.yaml
+      - name: build_docs
+        run: |
+          cd docs && sphinx-build -b html source build
+      - name: deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build
+          user_name: 'github-actions'
+          user_email: 'github-action@users.noreply.github.com'

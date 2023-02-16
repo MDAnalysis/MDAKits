@@ -1,0 +1,131 @@
+name: GH Actions CI
+on:
+  pull_request:
+    branches:
+      - main
+
+# concurrency:
+  # Commits to develop/master will cancel each other, but PRs will only cancel
+  # commits within the same PR
+  # group: "${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}"
+  # cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash -l {0}
+
+jobs:
+  gen_matrix:
+    runs-on: ubuntu-22.04
+    outputs:
+      matrix: ${{ steps.get-changed-mdakits.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: get-python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+
+      - id: files
+        name: get changed filed
+        uses: jitterbit/get-changed-files@v1
+        with:
+          format: 'json'
+      - id: get-changed-mdakits
+        name: build mdakit matrix
+        run: |
+          echo ${{ steps.files.outputs.all }}
+          mdakit=$(python utils/get_affected_mdakits.py --json '${{ steps.files.outputs.all }}')
+          echo ${mdakit}
+          echo "::set-output name=matrix::${mdakit}"
+
+  mdakit-ci:
+    needs: gen_matrix
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
+        jobstep: ['latest', 'develop']
+    steps:
+      - uses: actions/checkout@v3
+
+      - id: prev-python-ver
+        name: prev-python-ver
+        uses: MDAnalysis/get-latest-python-version@main
+        with:
+          last-n-minor-release: 1
+
+      - id: get-base-python-deps
+        name: get-base-python-deps
+        run: |
+          pip install requests setuptools packaging pyyaml pydantic PyGithub
+
+      - id: check-set-python-bounds
+        name: check-set-python-bounds
+        continue-on-error: false
+        run: |
+          basepy=${{steps.prev-python-ver.outputs.python-version}}
+          pyver=$(python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${basepy})
+          echo "PYVER=${pyver}" >> $GITHUB_ENV
+          
+      - id: install-conda-env
+        name: install-conda-env
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: ${{ env.PYVER }}
+          add-pip-as-python-dependency: true
+          architecture: x64
+          use-mamba: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge, defaults
+          channel-priority: flexible
+          auto-update-conda: true
+          show-channel-urls: true
+
+      - id: install-conda-base-deps
+        name: install-conda-base-deps
+        run: |
+          mamba install requests setuptools packaging pyyaml pydantic
+          pip install PyGithub
+
+      - id: install-mdakit
+        name: install-mdakit
+        continue-on-error: false
+        run: |
+         if [[ ${{ matrix.jobstep }} == "develop" ]]; then
+           type="src"
+         else
+           type="install"
+         fi
+      
+         install=$(python utils/get_install.py --itype ${type} --mdakit ${{matrix.mdakit}})
+         echo "install=${install}"
+         eval ${install}
+
+      - id: install-test-deps
+        name: install-test-deps
+        continue-on-error: false
+        run: |
+          install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
+          echo "install tests:${install}"
+          eval ${install}
+
+      - id: install-mdanalysis
+        name: install-mdanalysis
+        uses: MDAnalysis/install-mdanalysis@main
+        continue-on-error: false
+        with:
+          version: ${{ matrix.jobstep }}
+          install-tests: false
+          installer: mamba
+          shell: bash -l {0}
+
+      - id: run-tests
+        name: run-tests
+        continue-on-error: false
+        run: |
+          tests=$(python utils/get_runtests.py --mdakit ${{matrix.mdakit}})
+          echo "tests: ${tests}"
+          eval ${tests}
