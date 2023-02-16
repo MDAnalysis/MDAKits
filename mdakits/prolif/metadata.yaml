@@ -24,7 +24,8 @@ src_install:
 python_requires: ">=3.8"
 mdanalysis_requires: ">=2.2.0"
 run_tests:
-  - pytest --pyargs propkatraj.tests
+  - git clone latest
+  - pytest -v ProLIF/tests
 test_dependencies:
   - mamba install pytest
 orgname: chemosim-lab
