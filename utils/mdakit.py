@@ -393,7 +393,9 @@ class MDAKit:
         keywords = f"| 🔑 **Keywords:** {', '.join(self.metadata.keywords)}\n"
 
         authors = f"| 🖋️ **Authors**: \n"#{authors}\n"
+        assert self.metadata.project_home is not None
         project_home = f"| 🏠 **Project home:** {self.metadata.project_home}\n"
+        assert self.metadata.documentation_home is not None
         documentation_home = f"| 📖 **Documentation:** {self.metadata.documentation_home}\n"
         license = f"| ⚖️ **License:** {self.metadata.license}\n"
 
@@ -414,8 +416,16 @@ class MDAKit:
         else:
             publications = ""
 
-        latest_ci = f"| 🧪 **Tests (latest):** {self.gen_ci_badges('latest')}\n"
-        develop_ci = f"| 🧪 **Tests (develop):** {self.gen_ci_badges('develop')}\n"
+        latest_ci = f"| 🧪 **Tests (latest):** |{name}_latest| \n"
+        develop_ci = f"| 🧪 **Tests (develop):** |{name}_develop| \n"
+
+        urls.append(f".. |{name}_latest| image:: {self.gen_ci_badges('latest')}\n"
+                    f"   :alt: {name} develop CI status\n"
+                    f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
+
+        urls.append(f".. |{name}_develop| image:: {self.gen_ci_badges('develop')}\n"
+                    f"   :alt: {name} develop CI status\n"
+                    f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
 
         if self.gen_code_badges() != '':
             badges = (f"| 📛 **Badges**\n"
