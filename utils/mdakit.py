@@ -368,7 +368,7 @@ class MDAKit:
 
         return ' '.join(badges)
 
-    def gen_authors(self):
+    def gen_authors(self, urls):
         if 'https' in self.metadata.authors[0]:
             auths = f"`{self.metadata.project_name} authors`_"
             urls.append(f".. _`{self.metadata.project_name} authors`:\n"
@@ -391,7 +391,7 @@ class MDAKit:
 
         keywords = f"| 🔑**Keywords:** {', '.join(self.metadata.keywords)}\n"
 
-        authors = f"| 🖋️**Authors**: {self.gen_authors()}\n"
+        authors = f"| 🖋️**Authors**: {self.gen_authors(urls)}\n"
         project_home = f"| 🏠**Project home:** {self.metadata.project_home}\n"
         documentation_home = f"| 📖**Documentation:** {self.metadata.documentation_home}\n"
         license = f"| ⚖️**License:** {self.metadata.license}\n"
@@ -479,7 +479,7 @@ class MDAKit:
     def write_table_entry(self, f, urls, toctree):
         name = self.metadata.project_name
         keywords = ', '.join(self.metadata.keywords)
-        authors = self.gen_authors()
+        authors = self.gen_authors(urls)
         ci_latest = f"|{name}_latest|"
         ci_develop = f"|{name}_develop|"
 
