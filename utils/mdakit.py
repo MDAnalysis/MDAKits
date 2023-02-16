@@ -390,35 +390,35 @@ class MDAKit:
         description = (f"| **Description:**\n"
                        f"| *{self.metadata.description}*\n")
 
-        keywords = f"| 🔑**Keywords:** {', '.join(self.metadata.keywords)}\n"
+        keywords = f"| 🔑 **Keywords:** {', '.join(self.metadata.keywords)}\n"
 
-        authors = f"| 🖋️**Authors**: {authors}\n"
-        project_home = f"| 🏠**Project home:** {self.metadata.project_home}\n"
-        documentation_home = f"| 📖**Documentation:** {self.metadata.documentation_home}\n"
-        license = f"| ⚖️**License:** {self.metadata.license}\n"
+        authors = f"| 🖋️ **Authors**: \n"#{authors}\n"
+        project_home = f"| 🏠 **Project home:** {self.metadata.project_home}\n"
+        documentation_home = f"| 📖 **Documentation:** {self.metadata.documentation_home}\n"
+        license = f"| ⚖️ **License:** {self.metadata.license}\n"
 
         if self.metadata.development_status is not None:
-            development_status = f"| 🚀**Development status:** {self.metadata.development_status}\n"
+            development_status = f"| 🚀 **Development status:** {self.metadata.development_status}\n"
         else:
             development_status = ""
 
         if self.metadata.changelog is not None:
-            changelog = f"| 📜**Changelog:** {self.metadata.changelog}\n"
+            changelog = f"| 📜 **Changelog:** {self.metadata.changelog}\n"
         else:
             changelog = ""
 
         if self.metadata.publications is not None:
-            publications = f"| 📑**Publications:**\n"
+            publications = f"| 📑 **Publications:**\n"
             for pub in self.metadata.publications:
                 publications += f"| {pub}\n"
         else:
             publications = ""
 
-        latest_ci = f"| 🧪**Tests (latest):** {self.gen_ci_badges('latest')}\n"
-        develop_ci = f"| 🧪**Tests (develop):** {self.gen_ci_badges('develop')}\n"
+        latest_ci = f"| 🧪 **Tests (latest):** {self.gen_ci_badges('latest')}\n"
+        develop_ci = f"| 🧪 **Tests (develop):** {self.gen_ci_badges('develop')}\n"
 
         if self.gen_code_badges() != '':
-            badges = (f"| 📛**Badges**\n"
+            badges = (f"| 📛 **Badges**\n"
                       f" {self.gen_code_badges()}\n")
         else:
             badges = "\n"
