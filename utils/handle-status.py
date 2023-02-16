@@ -89,7 +89,7 @@ def get_mdakit_list(maindir: str, excludedirs: List[str]) -> List[str]:
         if entry.is_dir():
             var = str(entry.relative_to(f"./{maindir}"))
             if var not in excludedirs:
-                mdakits.append(MDAKit(var))
+                mdakits.append(MDAKit(path / var))
     return mdakits
 
 
@@ -98,8 +98,8 @@ def handle_mdakit(maindir: str, statusdir: str,
     # get the status of the recent CI build
     statuses = []
     for job in jobtypes:
-        jsonfile = (f"{jsondir}/cron-statuses-{mdakit}-"
-                    f"{job}/{mdakit}-{job}-statuses.json")
+        jsonfile = (f"{statusdir}/cron-statuses-{mdakit.metadata.project_name}-"
+                    f"{job}/{mdakit.metadata.project_name}-{job}-statuses.json")
         update_from_json(mdakit, jsonfile, job)
 
     # upate the badges
