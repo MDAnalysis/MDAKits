@@ -74,7 +74,7 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
              "and how they interact with the latest versions of MDAnalysis\n"
              "Each of the MDAKits in the following table links to a page with "
              "more details about what the MDAKits do, how they can be "
-             "installed and how to participate in their development."
+             "installed and how to participate in their development.")
 
     urls = []
     toctree = []
