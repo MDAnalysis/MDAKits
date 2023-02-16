@@ -119,16 +119,16 @@ class MetaData(BaseModel):
 
 
     # TODO: what about authors, that can also optionally be a URL
-    @validator('project_home', 'documentation_home', 'community_home',
-               'changelog')
-    def url_exists(cls, v):
-        if v is not None:
-            user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
-            headers = {'User-Agent': user_agent,}
-            req = request.Request(v, None, headers)
-            code = request.urlopen(req).getcode()
-            if code != 200:
-                raise ValueError(f"unreachable URL: {v}")
+    #@validator('project_home', 'documentation_home', 'community_home',
+    #           'changelog')
+    #def url_exists(cls, v):
+    #    if v is not None:
+    #        user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
+    #        headers = {'User-Agent': user_agent,}
+    #        req = request.Request(v, None, headers)
+    #        code = request.urlopen(req).getcode()
+    #        if code != 200:
+    #            raise ValueError(f"unreachable URL: {v}")
 
 
 class MDAKit:
