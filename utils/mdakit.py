@@ -119,16 +119,16 @@ class MetaData(BaseModel):
 
 
     # TODO: what about authors, that can also optionally be a URL
-    @validator('project_home', 'documentation_home', 'community_home',
-               'changelog')
-    def url_exists(cls, v):
-        if v is not None:
-            user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
-            headers = {'User-Agent': user_agent,}
-            req = request.Request(v, None, headers)
-            code = request.urlopen(req).getcode()
-            if code != 200:
-                raise ValueError(f"unreachable URL: {v}")
+    #@validator('project_home', 'documentation_home', 'community_home',
+    #           'changelog')
+    #def url_exists(cls, v):
+    #    if v is not None:
+    #        user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
+    #        headers = {'User-Agent': user_agent,}
+    #        req = request.Request(v, None, headers)
+    #        code = request.urlopen(req).getcode()
+    #        if code != 200:
+    #            raise ValueError(f"unreachable URL: {v}")
 
 
 class MDAKit:
@@ -368,10 +368,10 @@ class MDAKit:
 
         return ' '.join(badges)
 
-    def gen_authors(self):
+    def gen_authors(self, urls):
         if 'https' in self.metadata.authors[0]:
-            auths = f"`{name} authors`_"
-            urls.append(f".. _`{name} authors`:\n"
+            auths = f"`{self.metadata.project_name} authors`_"
+            urls.append(f".. _`{self.metadata.project_name} authors`:\n"
                         f"   {self.metadata.authors[0]}\n\n")
         else:
             auths = ','.join(self.metadata.authors)
@@ -381,6 +381,7 @@ class MDAKit:
     def write_mdakit_page(self):
         name = self.metadata.project_name
         urls = []
+        authors = self.gen_authors(urls)
 
         title = ("************************\n"
                  f"{name}\n"
@@ -389,35 +390,43 @@ class MDAKit:
         description = (f"| **Description:**\n"
                        f"| *{self.metadata.description}*\n")
 
-        keywords = f"| 🔑**Keywords:** {', '.join(self.metadata.keywords)}\n"
+        keywords = f"| 🔑 **Keywords:** {', '.join(self.metadata.keywords)}\n"
 
-        authors = f"| 🖋️**Authors**: {self.gen_authors()}\n"
-        project_home = f"| 🏠**Project home:** {self.metadata.project_home}\n"
-        documentation_home = f"| 📖**Documentation:** {self.metadata.documentation_home}\n"
-        license = f"| ⚖️**License:** {self.metadata.license}\n"
+        authors = f"| 🖋️ **Authors**: {authors}\n"
+        project_home = f"| 🏠 **Project home:** {self.metadata.project_home}\n"
+        documentation_home = f"| 📖 **Documentation:** {self.metadata.documentation_home}\n"
+        license = f"| ⚖️ **License:** {self.metadata.license}\n"
 
         if self.metadata.development_status is not None:
-            development_status = f"| 🚀**Development status:** {self.metadata.development_status}\n"
+            development_status = f"| 🚀 **Development status:** {self.metadata.development_status}\n"
         else:
             development_status = ""
 
         if self.metadata.changelog is not None:
-            changelog = f"| 📜**Changelog:** {self.metadata.changelog}\n"
+            changelog = f"| 📜 **Changelog:** {self.metadata.changelog}\n"
         else:
             changelog = ""
 
         if self.metadata.publications is not None:
-            publications = f"| 📑**Publications:**\n"
+            publications = f"| 📑 **Publications:**\n"
             for pub in self.metadata.publications:
-                publications += f"| {pub}\n"
+                publications += f"|    - {pub}\n"
         else:
             publications = ""
 
-        latest_ci = f"| **Tests (latest):** {self.gen_ci_badges('latest')}\n"
-        develop_ci = f"| **Tests (develop):** {self.gen_ci_badges('develop')}\n"
+        latest_ci = f"| 🧪 **Tests (latest):** |{name}_latest| \n"
+        develop_ci = f"| 🧪 **Tests (develop):** |{name}_develop| \n"
+
+        urls.append(f".. |{name}_latest| image:: {self.gen_ci_badges('latest')}\n"
+                    f"   :alt: {name} develop CI status\n"
+                    f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
+
+        urls.append(f".. |{name}_develop| image:: {self.gen_ci_badges('develop')}\n"
+                    f"   :alt: {name} develop CI status\n"
+                    f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
 
         if self.gen_code_badges() != '':
-            badges = (f"| **Badges**\n"
+            badges = (f"| 📛 **Badges**\n"
                       f" {self.gen_code_badges()}\n")
         else:
             badges = "\n"
@@ -479,7 +488,7 @@ class MDAKit:
     def write_table_entry(self, f, urls, toctree):
         name = self.metadata.project_name
         keywords = ', '.join(self.metadata.keywords)
-        authors = self.gen_authors()
+        authors = self.gen_authors(urls)
         ci_latest = f"|{name}_latest|"
         ci_develop = f"|{name}_develop|"
 
