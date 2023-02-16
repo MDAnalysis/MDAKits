@@ -89,7 +89,7 @@ def get_mdakit_list(maindir: str, excludedirs: List[str]) -> List[str]:
         if entry.is_dir():
             var = str(entry.relative_to(f"./{maindir}"))
             if var not in excludedirs:
-                mdakits.append(MDAKit(var))
+                mdakits.append(MDAKit(path / var))
     return mdakits
 
 
