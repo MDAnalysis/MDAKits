@@ -26,7 +26,7 @@ mdanalysis_requires: ">=2.0.0"
 run_tests:
   - pytest --pyargs propkatraj.tests
 test_dependencies:
-  - pip install pytest MDAnalysisTests
+  - mamba install pytest MDAnalysisTests
 orgname: Becksteinlab 
 development_status: Mature
 publications:

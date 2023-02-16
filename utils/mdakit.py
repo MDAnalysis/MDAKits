@@ -370,8 +370,8 @@ class MDAKit:
 
     def gen_authors(self):
         if 'https' in self.metadata.authors[0]:
-            auths = f"`{name} authors`_"
-            urls.append(f".. _`{name} authors`:\n"
+            auths = f"`{self.metadata.project_name} authors`_"
+            urls.append(f".. _`{self.metadata.project_name} authors`:\n"
                         f"   {self.metadata.authors[0]}\n\n")
         else:
             auths = ','.join(self.metadata.authors)
