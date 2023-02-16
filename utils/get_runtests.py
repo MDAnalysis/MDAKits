@@ -22,50 +22,24 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-"""
-Script to write out errors to a JSON file for temporary storage.
-"""
 import argparse
-import os
-import json
-from typing import List, Dict
+from mdakit import MDAKit
 
 
 parser = argparse.ArgumentParser(
-    description="Write out CI status as JSON",
+    description=("Get run test instructions from mdakit"),
 )
 
-parser.add_argument(
-    "--tag",
-    type=str,
-    help="Name to tag errors with",
-)
 
 parser.add_argument(
     "--mdakit",
     type=str,
-    help="name of mdakit we are writing errors for",
+    help="name of mdakit to obtain info from",
 )
-
-
-def get_statuses(env_values: List[str]) -> Dict[str, str]:
-    status_dict = {}
-
-    for entry in env_values:
-        status_dict[entry] = os.environ[entry]
-
-    return status_dict
 
 
 if __name__ == "__main__":
     args = parser.parse_args()
-
-    env_statuses = ['install_python', 'install_mdakit', 'install_mda',
-                    'install_test_deps', 'run_tests']
-
-    status_dict = get_statuses(env_statuses)
-
-    outfile = f"{args.mdakit}-{args.tag}-statuses.json"
-
-    with open(outfile, 'w') as f:
-        json.dump(status_dict, f)
+    kit = MDAKit(f"mdakits/{args.mdakit}")
+    instructions = kit.get_run_tests()
+    print(instructions)

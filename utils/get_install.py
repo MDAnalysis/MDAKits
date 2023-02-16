@@ -23,21 +23,23 @@
 # SOFTWARE.
 
 """
-Script to extract relevant information from an mdakit metadata.yaml.
+Script to check for a compatible python version given an set input
+and a python spec defined in the mdakit metadata.yaml file
 """
 import argparse
-import yaml
-from yaml.loader import SafeLoader
+from mdakit import MDAKit
 
 
 parser = argparse.ArgumentParser(
-    description="Get metadata yaml info",
+    description=("Get install instructions from mdakit"),
 )
 
+
 parser.add_argument(
-    "--field",
+    "--itype",
     type=str,
-    help="yaml field to get data from",
+    help="Installation type",
+    default="install",
 )
 
 parser.add_argument(
@@ -47,24 +49,8 @@ parser.add_argument(
 )
 
 
-def get_yaml_info(yamlfile: str, field: str):
-
-    with open(yamlfile) as f:
-        data = yaml.load(f, Loader=SafeLoader)
-
-    value = data[field]
-
-    if isinstance(value, list):
-        return ';'.join(value)
-    else:
-        return value
-
-
 if __name__ == "__main__":
     args = parser.parse_args()
-
-    yamlfile = f"mdakits/{args.mdakit}/metadata.yaml"
-
-    info = get_yaml_info(yamlfile, args.field)
-
-    print(info)
+    kit = MDAKit(f"mdakits/{args.mdakit}")
+    instructions = kit.get_install(f"{args.itype}")
+    print(instructions)

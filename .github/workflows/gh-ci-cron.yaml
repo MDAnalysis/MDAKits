@@ -55,14 +55,14 @@ jobs:
       - id: get-base-python-deps
         name: get-base-python-deps
         run: |
-          pip install pyyaml packaging
+          pip install requests setuptools packaging pyyaml pydantic PyGithub
 
       - id: check-set-python-bounds
         name: check-set-python-bounds
         continue-on-error: true
         run: |
           basepy=${{steps.prev-python-ver.outputs.python-version}}
-          pyver=$(python utils/checkpython-ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${basepy})
+          pyver=$(python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${basepy})
           echo "PYVER=${pyver}" >> $GITHUB_ENV
           
       - id: install-conda-env
@@ -72,7 +72,7 @@ jobs:
           python-version: ${{ env.PYVER }}
           add-pip-as-python-dependency: true
           architecture: x64
-          mamba-version: "*"
+          use-mamba: true
           channels: conda-forge, defaults
           channel-priority: flexible
           auto-update-conda: true
@@ -81,19 +81,20 @@ jobs:
       - id: install-conda-base-deps
         name: install-conda-base-deps
         run: |
-          mamba install pyyaml
+          mamba install requests setuptools packaging pyyaml pydantic
+          pip install PyGithub
 
       - id: install-mdakit
         name: install-mdakit
         continue-on-error: true
         run: |
          if [[ ${{ matrix.jobstep }} == "develop" ]]; then
-           field="src_install"
+           type="src"
          else
-           field="install"
+           type="install"
          fi
-      
-         install=$(python utils/extract-yaml.py --field ${field} --mdakit ${{matrix.mdakit}})
+
+         install=$(python utils/get_install.py --itype ${type} --mdakit ${{matrix.mdakit}})
          echo "install=${install}"
          eval ${install}
 
@@ -101,7 +102,7 @@ jobs:
         name: install-test-deps
         continue-on-error: true
         run: |
-          install=$(python utils/extract-yaml.py --field "test_dependencies" --mdakit ${{matrix.mdakit}})
+          install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
           echo "install tests:${install}"
           eval ${install}
 
@@ -119,7 +120,7 @@ jobs:
         name: run-tests
         continue-on-error: true
         run: |
-          tests=$(python utils/extract-yaml.py --field "run_tests" --mdakit ${{matrix.mdakit}})
+          tests=$(python utils/get_runtests.py --mdakit ${{matrix.mdakit}})
           echo "tests: ${tests}"
           eval ${tests}
 
@@ -168,7 +169,7 @@ jobs:
       - id: get-base-python-deps
         name: get-base-python-deps
         run: |
-          pip install pyyaml PyGithub
+          pip install requests setuptools packaging pyyaml pydantic PyGithub
 
       - id: combine-write-raise-issues
         name: combine-write-raise-issues

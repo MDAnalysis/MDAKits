@@ -23,49 +23,45 @@
 # SOFTWARE.
 
 """
-Script to write out errors to a JSON file for temporary storage.
+Script to check for a compatible python version given an set input
+and a python spec defined in the mdakit metadata.yaml file
 """
 import argparse
-import os
-import json
-from typing import List, Dict
+from mdakit import MDAKit
 
 
 parser = argparse.ArgumentParser(
-    description="Write out CI status as JSON",
+    description=("Get a Python version which satisfies the bounds "
+                 "defined in the mdakit yaml file"),
 )
 
+
 parser.add_argument(
-    "--tag",
+    "--maxpyver",
     type=str,
-    help="Name to tag errors with",
+    help="Maximum allowed python version",
+    default="3.9",
 )
+
+
+parser.add_argument(
+    "--minpyver",
+    type=str,
+    help="Minimum allowed python version",
+    default="3.6",
+)
+
 
 parser.add_argument(
     "--mdakit",
     type=str,
-    help="name of mdakit we are writing errors for",
+    help="name of mdakit to obtain info from",
 )
-
-
-def get_statuses(env_values: List[str]) -> Dict[str, str]:
-    status_dict = {}
-
-    for entry in env_values:
-        status_dict[entry] = os.environ[entry]
-
-    return status_dict
 
 
 if __name__ == "__main__":
     args = parser.parse_args()
-
-    env_statuses = ['install_python', 'install_mdakit', 'install_mda',
-                    'install_test_deps', 'run_tests']
-
-    status_dict = get_statuses(env_statuses)
-
-    outfile = f"{args.mdakit}-{args.tag}-statuses.json"
-
-    with open(outfile, 'w') as f:
-        json.dump(status_dict, f)
+    kit = MDAKit(f"mdakits/{args.mdakit}")
+    python_ver = kit.get_matching_version(max_ver=args.maxpyver,
+                                          min_ver=args.minpyver)
+    print(python_ver)
