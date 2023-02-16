@@ -532,7 +532,7 @@ class MDAKit:
         for step in self.metadata.run_tests:
             # special case for cloning the latest tag
             if step == "git clone latest":
-                test_steps.append(f"git clone {project_home}.git")
+                test_steps.append(f"git clone {self.metadata.project_home}.git")
                 test_steps.append("git fetch --tags")
                 test_steps.append("latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)")
                 test_steps.append("git checkout $latestTag")
