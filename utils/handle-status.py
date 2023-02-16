@@ -64,7 +64,7 @@ parser.add_argument(
 
 def update_from_json(mdakit, jsonfile, rtype) -> None:
     with open(jsonfile) as f:
-        status_dict = json.load()
+        status_dict = json.load(f)
 
     status = getattr(mdakit.status.data, rtype)
 
