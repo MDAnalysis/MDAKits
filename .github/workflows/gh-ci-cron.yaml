@@ -131,7 +131,7 @@ jobs:
           echo "install_python=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
           echo "install_mdakit=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
           echo "install_test_deps=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
-          echo "install_mda=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
+          echo "install_mdanalysis=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
           echo "run_tests=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
 
       - id: write-errors
