@@ -289,7 +289,7 @@ class MDAKit:
             return 'passed' if argument else 'fail'
 
         def _create_issue(run_type: str):
-            stat = getattr(self.status, run_type)
+            stat = getattr(self.status.data, run_type)
 
             # don't raise an issue if not failed at least twice
             if stat.numfails < 1:
