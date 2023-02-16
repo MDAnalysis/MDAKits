@@ -60,7 +60,7 @@ def get_statuses(env_values: List[str]) -> Dict[str, str]:
 if __name__ == "__main__":
     args = parser.parse_args()
 
-    env_statuses = ['install_python', 'install_mdakit', 'install_mda',
+    env_statuses = ['install_python', 'install_mdakit', 'install_mdanalysis',
                     'install_test_deps', 'run_tests']
 
     status_dict = get_statuses(env_statuses)
