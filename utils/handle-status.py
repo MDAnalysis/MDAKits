@@ -65,7 +65,7 @@ def update_from_json(mdakit, jsonfile, rtype) -> None:
     with open(jsonfile) as f:
         status_dict = json.load()
 
-    status = getattr(mdakit.status, rtype)
+    status = getattr(mdakit.status.data, rtype)
 
     job_fail = False
     for key, item in status_dict.items():
@@ -78,7 +78,7 @@ def update_from_json(mdakit, jsonfile, rtype) -> None:
     if job_fail:
         status.numfails += 1
 
-    setattr(mdakit.status, rtype, status)
+    setattr(mdakit.status.data, rtype, status)
     
 
 def get_mdakit_list(maindir: str, excludedirs: List[str]) -> List[str]:

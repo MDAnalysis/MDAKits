@@ -184,3 +184,32 @@ jobs:
           commit_message: commit changes to status files
           skip_dirty_check: false
           skip_fetch: false
+
+  deploy_docs:
+    if: ${{ always() }}
+    needs: process_results
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup_miniconda
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: 3.9
+          auto-update-conda: true
+          channel-priority: flexible
+          channels: conda-forge
+          add-pip-as-python-dependency: true
+          architecture: x64
+          use-mamba: true
+          miniforge-variant: Mambaforge
+          environment-file: docs/requirements.yaml
+      - name: build_docs
+        run: |
+          cd docs && sphinx-build -b html source build
+      - name: deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build
+          user_name: 'github-actions'
+          user_email: 'github-action@users.noreply.github.com'

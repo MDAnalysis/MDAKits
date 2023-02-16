@@ -9,6 +9,11 @@ dependencies:
     - sphinx_rtd_theme
 
     - pyyaml
+    - pydantic
+    - requests
+    - setuptools
+    - packaging
 
     # Pip-only installs
-    #- pip:
+    - pip:
+      - PyGithub

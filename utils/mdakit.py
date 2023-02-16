@@ -185,7 +185,7 @@ class MDAKit:
         except:
             badges.coverage = False
 
-        self.status.badges = badges
+        self.status.data.badges = badges
 
     @staticmethod
     def _get_class_badges(name: Optional[str]):
@@ -330,7 +330,7 @@ class MDAKit:
         return f"https://img.shields.io/badge/{left}-{right}-{colour}.svg"
 
     def gen_ci_badges(self, run_type):
-        status = getattr(self.status, run_type)
+        status = getattr(self.status.data, run_type)
 
         if ((self.metadata.run_tests is None) or
             (run_type == 'develop' and self.metadata.install is None) or
@@ -345,25 +345,25 @@ class MDAKit:
         badges = []
         
         # coverage
-        if self.status.badges.coverage:
+        if self.status.data.badges.coverage:
             badges.append(self._get_custom_badge('coverage', '> 80%', 'ff69b4'))
 
-        if self.status.badges.converter:
+        if self.status.data.badges.converter:
             badges.append(self._get_custom_badge('type', 'converter', 'blue'))
 
-        if self.status.badges.reader:
+        if self.status.data.badges.reader:
             badges.append(self._get_custom_badge('type', 'reader', 'blue'))
 
-        if self.status.badges.writer:
+        if self.status.data.badges.writer:
             badges.append(self._get_custom_badge('type', 'writer', 'blue'))
 
-        if self.status.badges.topology:
+        if self.status.data.badges.topology:
             badges.append(self._get_custom_badge('type', 'topology', 'blue'))
 
-        if self.status.badges.transformation:
+        if self.status.data.badges.transformation:
             badges.append(self._get_custom_badge('type', 'transformation', 'blue'))
 
-        if self.status.badges.analysis:
+        if self.status.data.badges.analysis:
             badges.append(self._get_custom_badge('type', 'analysis', 'blue'))
 
         return ' '.join(badges)
@@ -441,7 +441,7 @@ class MDAKit:
                     )
             if self.metadata.src_install is not None:
                 installation_instructions += (
-                    f"The source code of {mdakit_name} can be "
+                    f"The source code of {name} can be "
                     "installed using the following:\n\n"
                     ".. code-block:: bash\n\n"
                 )
@@ -471,7 +471,7 @@ class MDAKit:
             kitf.write("\n\n")
 
             if installation_instructions is not None:
-                kitf.write(instalation_instructions)
+                kitf.write(installation_instructions)
 
             for entry in urls:
                 kitf.write(entry)
@@ -483,11 +483,11 @@ class MDAKit:
         ci_latest = f"|{name}_latest|"
         ci_develop = f"|{name}_develop|"
 
-        urls.append(f".. |{name}_latest| image:: {gen_ci_badges('latest')}\n"
+        urls.append(f".. |{name}_latest| image:: {self.gen_ci_badges('latest')}\n"
                     f"   :alt: {name} develop CI status\n"
                     f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
 
-        urls.append(f".. |{name}_develop| image:: {gen_ci_badges('develop')}\n"
+        urls.append(f".. |{name}_develop| image:: {self.gen_ci_badges('develop')}\n"
                     f"   :alt: {name} develop CI status\n"
                     f"   :target: https://github.com/MDAnalysis/MDAKits/actions\n\n")
 

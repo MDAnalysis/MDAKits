@@ -52,7 +52,7 @@ def get_mdakit_matrix(excludedirs=["template",]):
         if entry.is_dir():
             var = str(entry.relative_to(str(MDAKIT_PATH)))
             if var not in excludedirs:
-                mdakits.append(MDAKit(var))
+                mdakits.append(MDAKit(MDAKIT_PATH / var))
 
     return mdakits
 
