@@ -25,7 +25,7 @@ python_requires: ">=3.8"
 mdanalysis_requires: ">=2.2.0"
 run_tests:
   - git clone latest
-  - pytest -v ProLIF/tests
+  - pytest -v ./tests
 test_dependencies:
   - mamba install pytest
 orgname: chemosim-lab
