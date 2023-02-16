@@ -98,8 +98,8 @@ def handle_mdakit(maindir: str, statusdir: str,
     # get the status of the recent CI build
     statuses = []
     for job in jobtypes:
-        jsonfile = (f"{statusdir}/cron-statuses-{mdakit}-"
-                    f"{job}/{mdakit}-{job}-statuses.json")
+        jsonfile = (f"{statusdir}/cron-statuses-{mdakit.metadata.project_name}-"
+                    f"{job}/{mdakit.metadata.project_name}-{job}-statuses.json")
         update_from_json(mdakit, jsonfile, job)
 
     # upate the badges
