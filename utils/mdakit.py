@@ -56,7 +56,7 @@ class Status:
             self.data = StatusData()
 
     def write_status(self, basepath):
-        outfile = basepath
+        outfile = basepath / "status.yaml"
         with open(outfile, 'w') as f:
             yaml.dump(self.data.dict(), f, default_flow_style=False)
 
