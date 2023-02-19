@@ -46,6 +46,6 @@ parser.add_argument(
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    kit = MDAKit(f"mdakits/{args.mdakit}", args.runtype)
-    instructions = kit.get_run_tests()
+    kit = MDAKit(f"mdakits/{args.mdakit}")
+    instructions = kit.get_run_tests(args.runtype)
     print(instructions)
