@@ -1,0 +1,45 @@
+.. _ProLIF:
+
+************************
+ProLIF
+************************
+
+| 🖋️ **Authors**: Cédric Bouysset
+| 🏠 **Project home:** https://github.com/chemosim-lab/ProLIF
+| 📖 **Documentation:** https://prolif.readthedocs.io/en/latest/
+| ⚖️ **License:** Apache License 2.0
+| 🔑 **Keywords:** drug-design, cheminformatics, molecular-dynamics
+| 🚀 **Development status:** Production/Stable
+| 📑 **Publications:**
+|    - https://doi.org/10.1186/s13321-021-00548-6
+|    - https://zenodo.org/record/7332369
+| 🧪 **Tests (latest):** |ProLIF_latest| 
+| 🧪 **Tests (develop):** |ProLIF_develop| 
+| **Description:**
+| *Interaction Fingerprints for protein-ligand complexes and more*
+
+
+
+Installation instructions
+=========================
+
+The latest version of ProLIF can be installed using the following:
+
+.. code-block:: bash
+
+    conda install -c conda-forge prolif
+The source code of ProLIF can be installed using the following:
+
+.. code-block:: bash
+
+    pip install rdkit
+    pip install git+https://github.com/chemosim-lab/ProLIF@master
+
+.. |ProLIF_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: ProLIF develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: ProLIF develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
