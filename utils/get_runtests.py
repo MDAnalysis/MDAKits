@@ -37,9 +37,15 @@ parser.add_argument(
     help="name of mdakit to obtain info from",
 )
 
+parser.add_argument(
+   "--runtype",
+   type=str,
+   help="type of tests to run; either `latest` or `develop`",
+)
+
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    kit = MDAKit(f"mdakits/{args.mdakit}")
+    kit = MDAKit(f"mdakits/{args.mdakit}", args.runtype)
     instructions = kit.get_run_tests()
     print(instructions)
