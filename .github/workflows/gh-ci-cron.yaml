@@ -121,7 +121,7 @@ jobs:
         name: run-tests
         continue-on-error: true
         run: |
-          tests=$(python utils/get_runtests.py --mdakit ${{matrix.mdakit}})
+          tests=$(python utils/get_runtests.py --mdakit ${{matrix.mdakit}} --runtype ${{matrix.jobstep}})
           echo "tests: ${tests}"
           eval ${tests}
 

@@ -524,7 +524,7 @@ class MDAKit:
 
         return ';'.join(self.metadata.test_dependencies)
 
-    def get_run_tests(self):
+    def get_run_tests(self, runtype):
         if self.metadata.run_tests is None:
             return ""
 
@@ -532,10 +532,11 @@ class MDAKit:
         for step in self.metadata.run_tests:
             # special case for cloning the latest tag
             if step == "git clone latest":
-                test_steps.append(f"git clone {project_home}.git")
-                test_steps.append("git fetch --tags")
-                test_steps.append("latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)")
-                test_steps.append("git checkout $latestTag")
+                test_steps.append(f'git clone {self.metadata.project_home}.git && cd "$(basename "$_" .git)"')
+                if runtype == "latest":
+                    test_steps.append("git fetch --tags")
+                    test_steps.append("latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)")
+                    test_steps.append("git checkout $latestTag")
             else:
                 test_steps.append(step)
 
