@@ -51,7 +51,7 @@ class Status:
             develop = TestStatusDict(**status['develop'])
             latest = TestStatusDict(**status['latest'])
             badges = BadgesStatusDict(**status['badges'])
-            self.data = StatusData(develop, latest, badges)
+            self.data = StatusData(develop=develop, latest=latest, badges=badges)
         else:
             self.data = StatusData()
 
