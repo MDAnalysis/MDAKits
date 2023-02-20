@@ -1,0 +1,30 @@
+## Required entries
+project_name: lipyds
+authors:
+  - lilyminium
+maintainers:
+  - lilyminium
+description:
+    A toolkit for leaflet-based membrane analysis.
+keywords:
+  - lipids
+  - membranes
+license: LGPL-3.0
+project_home: https://github.com/lilyminium/lipyds
+documentation_home: https://lipyds.readthedocs.io/en/latest/
+documentation_type: API
+
+## Optional entries
+install:
+  - pip install git+https://github.com/lilyminium/lipyds@main
+src_install:
+  - pip install git+https://github.com/lilyminium/lipyds@main
+python_requires: ">=3.6"
+mdanalysis_requires: ">=1.0.0"
+run_tests:
+  - pytest --pyargs lipyds.tests
+test_dependencies:
+  - pip install pytest
+development_status: Beta
+publications:
+  - https://doi.org/10.1016/j.bbadva.2021.100010
