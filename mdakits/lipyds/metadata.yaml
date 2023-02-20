@@ -24,7 +24,8 @@ src_install:
 python_requires: ">=3.6"
 mdanalysis_requires: ">=1.0.0"
 run_tests:
-  - pytest --pyargs lipyds.tests
+  - git clone latest
+  - pytest -v ./lipyds/tests
 test_dependencies:
   - pip install pytest
 development_status: Beta
