@@ -16,8 +16,10 @@ documentation_type: API
 
 ## Optional entries
 install:
+  - mamba install -c conda-forge cython matplotlib nptyping "numpy>=1.20.0" pandas "scikit-learn>=0.21.0" scipy
   - pip install git+https://github.com/lilyminium/lipyds@main
 src_install:
+  - mamba install -c conda-forge cython matplotlib nptyping "numpy>=1.20.0" pandas "scikit-learn>=0.21.0" scipy
   - pip install git+https://github.com/lilyminium/lipyds@main
 python_requires: ">=3.6"
 mdanalysis_requires: ">=1.0.0"
