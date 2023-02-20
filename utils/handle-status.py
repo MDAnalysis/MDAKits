@@ -78,6 +78,8 @@ def update_from_json(mdakit, jsonfile, rtype) -> None:
 
     if job_fail:
         status.numfails += 1
+    else:
+        status.numfails = 0
 
     setattr(mdakit.status.data, rtype, status)
     
