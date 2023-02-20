@@ -288,18 +288,8 @@ class MDAKit:
         def _bool_status(arg: bool) -> str:
             return 'passed' if argument else 'fail'
 
-        def _close_issue(run_type: str):
-            for issue in issues:
-                if issue_tag in issue.title:
-                    issue.edit(state="closed")
-
         def _create_issue(run_type: str):
             stat = getattr(self.status.data, run_type)
-
-            # don't raise an issue if not failed at least twice
-            if stat.numfails < 1:
-                _close_issue(run_type)
-                return
 
             issue_tag = f"[{self.metadata.project_name}-{run_type}]"
             issue_title = f"{issue_tag} Failed CI run"
@@ -307,7 +297,14 @@ class MDAKit:
             # quit if issue already exists
             for issue in issues:
                 if issue_tag in issue.title:
+                    # clear issues if resolved
+                    if stat.numfails == 0:
+                        issue.edit(state="closed")
                     return
+
+            # if numfails < 1 and you've not done so yet return
+            if stat.numfails < 1:
+                return
 
             # generate list of maintainers to tag
             maint = ""
