@@ -24,7 +24,7 @@ python_requires: ">=3.7"
 mdanalysis_requires: ">=2.1.0"
 run_tests:
   - git clone latest
-  - tox
+  - tox -e test
 test_dependencies:
   - mamba install "tox<4" tox-conda -c conda-forge
 orgname: MDAnalysis
