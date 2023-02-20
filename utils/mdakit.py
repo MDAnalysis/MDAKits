@@ -528,6 +528,10 @@ class MDAKit:
         if self.metadata.run_tests is None:
             return ""
 
+        if ((runtype == "latest" and self.metadata.install is None) or
+            (runtype == "develop" and self.metadata.src_install is None)):
+            return ""
+
         test_steps = []
         for step in self.metadata.run_tests:
             # special case for cloning the latest tag
