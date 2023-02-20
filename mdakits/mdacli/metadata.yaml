@@ -26,7 +26,7 @@ run_tests:
   - git clone latest
   - tox
 test_dependencies:
-  - mamba install tox tox-conda -c conda-forge
+  - mamba install "tox<4" tox-conda -c conda-forge
 orgname: MDAnalysis
 development_status: Beta
 changelog: https://github.com/MDAnalysis/mdacli/blob/main/docs/CHANGELOG.rst
