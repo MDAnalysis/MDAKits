@@ -288,11 +288,17 @@ class MDAKit:
         def _bool_status(arg: bool) -> str:
             return 'passed' if argument else 'fail'
 
+        def _close_issue(run_type: str):
+            for issue in issues:
+                if issue_tag in issue.title:
+                    issue.edit(state="closed")
+
         def _create_issue(run_type: str):
             stat = getattr(self.status.data, run_type)
 
             # don't raise an issue if not failed at least twice
             if stat.numfails < 1:
+                _close_issue(run_type)
                 return
 
             issue_tag = f"[{self.metadata.project_name}-{run_type}]"
