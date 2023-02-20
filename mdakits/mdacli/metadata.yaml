@@ -1,0 +1,32 @@
+## Required entries
+project_name: mdacli
+authors:
+  - https://github.com/MDAnalysis/mdacli/blob/main/docs/AUTHORS.rst
+maintainers:
+  - PicoCentauri
+  - joaomcteixeira
+description:
+    A simple command line interface to the analysis classes of MDAnalysis using argparse.
+keywords:
+  - command line interface
+  - molecular-dynamics
+license: GPLv3
+project_home: https://github.com/MDAnalysis/mdacli
+documentation_home: https://mdacli.readthedocs.io/
+documentation_type: UserGuide + API
+
+## Optional entries
+install:
+  - mamba install -c conda-forge mdacli
+src_install:
+  - pip install git+https://github.com/MDAnalysis/mdacli@main
+python_requires: ">=3.7"
+mdanalysis_requires: ">=2.1.0"
+run_tests:
+  - git clone latest
+  - tox -e test
+test_dependencies:
+  - mamba install "tox<4" tox-conda -c conda-forge
+orgname: MDAnalysis
+development_status: Beta
+changelog: https://github.com/MDAnalysis/mdacli/blob/main/docs/CHANGELOG.rst
