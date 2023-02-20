@@ -20,7 +20,9 @@ install:
   - pip install git+https://github.com/lilyminium/lipyds@main
 src_install:
   - mamba install -c conda-forge cython matplotlib nptyping "numpy>=1.20.0" pandas "scikit-learn>=0.21.0" scipy
-  - pip install git+https://github.com/lilyminium/lipyds@main
+  - git clone https://github.com/lilyminium/lipyds.git
+  - cd lipyds
+  - python setup.py install
 python_requires: ">=3.6"
 mdanalysis_requires: ">=1.0.0"
 run_tests:
