@@ -14,10 +14,10 @@ functionality of the `MDAnalysis library`_
 
 .. toctree::
    :maxdepth: 1
-   :numbered:
    :caption: Table of Contents
 
    mdakits
+   about
 
 
 Acknowledgements
