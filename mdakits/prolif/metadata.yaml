@@ -28,7 +28,7 @@ run_tests:
   - pytest -v ./tests
 test_dependencies:
   - mamba install pytest
-orgname: chemosim-lab
+project_org: chemosim-lab
 development_status: Production/Stable
 publications:
   - https://doi.org/10.1186/s13321-021-00548-6

@@ -413,7 +413,7 @@ class MDAKit:
         if self.metadata.publications is not None:
             publications = f"| 📑 **Publications:**\n"
             for pub in self.metadata.publications:
-                publications += f"|    - {pub}\n"
+                publications += f"|    * {pub}\n"
         else:
             publications = ""
 

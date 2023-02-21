@@ -27,7 +27,7 @@ run_tests:
   - pytest --pyargs propkatraj.tests
 test_dependencies:
   - mamba install pytest MDAnalysisTests
-orgname: Becksteinlab 
+project_org: Becksteinlab 
 development_status: Mature
 publications:
   - https://zenodo.org/record/7647010
