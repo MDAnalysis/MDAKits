@@ -8,6 +8,7 @@ The MDAKit registry contains a list of all MDAKits which have been added to this
 Each of the MDAKits in the following table links to a page with more details about what the MDAKits do, how they can be installed and how to participate in their development.
 
 .. list-table:: List of registered MDAKits
+    :class: datatable
     :widths: 25 25 25 25
     :header-rows: 1
 
