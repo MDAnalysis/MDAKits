@@ -36,6 +36,16 @@ subtantial effort require to make software FAIR-compliant.
    :alt: Scientific code often falls short of FAIR tenets
 
 
+One potential option, and one that MDAnalysis has historically attempted, is to attempt
+to add as many methods as possible in a single centralised library. However, this is
+a non-ideal solution.
+
+
+.. image:: _static/images/MDAcats_MDAnalysis.png
+   :width: 600
+   :alt: Centralising code to MDAnalysis is a limited solution
+
+
 Our goal with MDAKits is to **lower the barrier for researchers to produce FAIR software**.
 
 We wish to support developers in creating new pakages, guiding them through the process
