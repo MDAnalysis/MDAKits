@@ -44,14 +44,14 @@ To learn more about MDAKits and our vision for more sustainable community
 developed molecular simulation tools, please see our `whitepaper`_.
 
 
-.. _`MDAnalysis library`
+.. _`MDAnalysis library`:
    https://docs.mdanalysis.org
 
-.. _`whitepaper`
+.. _`whitepaper`:
    https://github.com/MDAnalysis/MDAKits/blob/main/paper/whitepaper/MDAKits_whitepaper.pdf
 
-.. _`listed here`
+.. _`listed here`:
    mdakits
 
-.. _`FAIR`
+.. _`FAIR`:
    https://doi.org/10.15497/RDA00068

@@ -27,5 +27,5 @@ Initiative under an EOSS4 award.
 
 
 
-.. _`MDAnalysis library`
+.. _`MDAnalysis library`:
    https://docs.mdanalysis.org
