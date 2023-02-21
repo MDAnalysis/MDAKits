@@ -21,7 +21,8 @@ Initiative under an EOSS4 award.
 
 .. toctree::
    :maxdepth: 1
-   :caption: MDAKit Registry
+   :numbered:
+   :caption: Table of Contents
 
    mdakits
 
