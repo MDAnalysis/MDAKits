@@ -54,7 +54,7 @@ useful to a broader community.
 
 
 .. image:: _static/images/MDAcats_MDAKits.png
-   :with: 600
+   :width: 600
    :alt: MDAKits, an ecosystem of downstream packages, may be more sustainable
 
 
