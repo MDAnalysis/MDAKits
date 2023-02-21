@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adding an MDAKit to the Registry &mdash; MDAKits Registry  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script src="_static/main.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="About MDAKits" href="about.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/mdanalysis-logo-200x150.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About MDAKits</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Adding an MDAKit to the Registry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#an-example-metadata-yaml-file">An example <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MDAKits Registry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Adding an MDAKit to the Registry</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/add.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="adding-an-mdakit-to-the-registry">
+<h1>Adding an MDAKit to the Registry<a class="headerlink" href="#adding-an-mdakit-to-the-registry" title="Permalink to this heading"></a></h1>
+<p>Do you have an MDAKit? Consider adding it to the Registry!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The MDAKit registry is still in its infancy, we expect that the
+way in which MDAKits are added, and the type of information required,
+may change over time. Please reach out via the <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/issues">issue tracker</a> if you
+have any questions.</p>
+</div>
+<dl class="simple">
+<dt>Adding an MDAKit is a simple process, and follows the following steps:</dt><dd><ul class="simple">
+<li><p>Create a fork the MDAKit repository</p></li>
+<li><p>Make a new branch</p></li>
+<li><p>Add a new folder under <code class="docutils literal notranslate"><span class="pre">mdakits</span></code> with the name of your MDAKit</p></li>
+<li><p>Add a metadata YAML file with your MDAKit’s details (a template can be found under <code class="docutils literal notranslate"><span class="pre">mdakits/template</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<section id="an-example-metadata-yaml-file">
+<h2>An example <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file<a class="headerlink" href="#an-example-metadata-yaml-file" title="Permalink to this heading"></a></h2>
+<p>The following is an example metadata file for propkatraj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Required entries</span>
+<span class="c1">## str: name of the project (the respository name)</span>
+<span class="n">project_name</span><span class="p">:</span> <span class="n">propkatraj</span>
+<span class="c1">## List(str): a list of authors (or a link to the authors file)</span>
+<span class="n">authors</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Becksteinlab</span><span class="o">/</span><span class="n">propkatraj</span><span class="o">/</span><span class="n">blob</span><span class="o">/</span><span class="n">main</span><span class="o">/</span><span class="n">AUTHORS</span>
+<span class="c1">## List(str): a list of maintainers</span>
+<span class="n">maintainers</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">ianmkenney</span>
+  <span class="o">-</span> <span class="n">IAlibay</span>
+  <span class="o">-</span> <span class="n">orbeckst</span>
+<span class="c1">## str: a free form description of the mdakit</span>
+<span class="n">description</span><span class="p">:</span>
+    <span class="n">pKa</span> <span class="n">estimates</span> <span class="k">for</span> <span class="n">proteins</span> <span class="n">using</span> <span class="n">an</span> <span class="n">ensemble</span> <span class="n">approach</span>
+<span class="c1">## List(str): a list of keywords which describe the mdakit</span>
+<span class="n">keywords</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">pKa</span>
+  <span class="o">-</span> <span class="n">protein</span>
+<span class="c1">## str: the license the mdakit falls under</span>
+<span class="n">license</span><span class="p">:</span> <span class="n">GPL</span><span class="o">-</span><span class="mf">2.0</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">later</span>
+<span class="c1">## str: the link to the project&#39;s code</span>
+<span class="n">project_home</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Becksteinlab</span><span class="o">/</span><span class="n">propkatraj</span><span class="o">/</span>
+<span class="c1">## str: the link to the project&#39;s documentation</span>
+<span class="n">documentation_home</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">becksteinlab</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">propkatraj</span><span class="o">/</span>
+<span class="c1">## str: the type of documentation available [UserGuide, API, README]</span>
+<span class="n">documentation_type</span><span class="p">:</span> <span class="n">UserGuide</span> <span class="o">+</span> <span class="n">API</span>
+
+<span class="c1"># Optional entries</span>
+<span class="c1">## List(str): a list of commands to use when installing the latest</span>
+<span class="c1">## release of the code. Note: only one installation method can currently</span>
+<span class="c1">## be defined. We suggest using conda/mamba where possible.</span>
+<span class="n">install</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">propkatraj</span>
+<span class="c1">## List(str): a list of commands to use when installing the mdakit from its</span>
+<span class="c1">## source code.</span>
+<span class="n">src_install</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Becksteinlab</span><span class="o">/</span><span class="n">propkatraj</span><span class="nd">@main</span>
+<span class="c1">## str: the package name used to import the mdakit</span>
+<span class="n">import_name</span><span class="p">:</span> <span class="n">propkatraj</span>
+<span class="c1">## str: a specification for the range of Python versions supported by this MDAKit</span>
+<span class="n">python_requires</span><span class="p">:</span> <span class="s2">&quot;&gt;=3.8&quot;</span>
+<span class="c1">## str: a specification for the range of MDAnalysis versions supported by this MDAKit</span>
+<span class="n">mdanalysis_requires</span><span class="p">:</span> <span class="s2">&quot;&gt;=2.0.0&quot;</span>
+<span class="c1">## List(str): a list of commands to use when attempting to run the MDAKit&#39;s tests</span>
+<span class="n">run_tests</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">pytest</span> <span class="o">--</span><span class="n">pyargs</span> <span class="n">propkatraj</span><span class="o">.</span><span class="n">tests</span>
+<span class="c1">## List(str): a list of commands to use to install the necessary dependencies required</span>
+<span class="c1">## to run the MDAKit&#39;s tests</span>
+<span class="n">test_dependencies</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">mamba</span> <span class="n">install</span> <span class="n">pytest</span> <span class="n">MDAnalysisTests</span>
+<span class="c1">## str: the organisation name the MDAKit falls under</span>
+<span class="n">project_org</span><span class="p">:</span> <span class="n">Becksteinlab</span>
+<span class="c1">## str: the development status of the MDAKit</span>
+<span class="n">development_status</span><span class="p">:</span> <span class="n">Mature</span>
+<span class="c1">## List(str) a list of publications to cite when using the MDAKit</span>
+<span class="n">publications</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">zenodo</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">record</span><span class="o">/</span><span class="mi">7647010</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1021</span><span class="o">/</span><span class="n">ct200133y</span>
+  <span class="o">-</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1085</span><span class="o">/</span><span class="n">jgp</span><span class="mf">.201411219</span>
+<span class="c1">## str: a link to the MDAKit&#39;s community (mailing list, github discussions, etc...)</span>
+<span class="n">community_home</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">alinktoamailinglist</span><span class="o">.</span><span class="n">org</span>
+<span class="c1">## str: a link to the MDAKit&#39;s changelog</span>
+<span class="n">changelog</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">alinktoachangelog</span><span class="o">.</span><span class="n">org</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="about.html" class="btn btn-neutral float-left" title="About MDAKits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2023, .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+ 
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

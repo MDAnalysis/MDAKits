@@ -11,8 +11,8 @@ ProLIF
 | 🔑 **Keywords:** drug-design, cheminformatics, molecular-dynamics
 | 🚀 **Development status:** Production/Stable
 | 📑 **Publications:**
-|    - https://doi.org/10.1186/s13321-021-00548-6
-|    - https://zenodo.org/record/7332369
+|    * https://doi.org/10.1186/s13321-021-00548-6
+|    * https://zenodo.org/record/7332369
 | 🧪 **Tests (latest):** |ProLIF_latest| 
 | 🧪 **Tests (develop):** |ProLIF_develop| 
 | **Description:**

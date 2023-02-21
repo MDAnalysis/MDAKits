@@ -6,7 +6,19 @@
 MDAnalysis Toolkits (MDAKits)
 *****************************
 
-A registry for MDAKits - packages based on MDAnalysis.
+Welcome to the MDAKit registry!
+
+Showcased here are a list of community generated packages which extend the
+functionality of the `MDAnalysis library`_
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Table of Contents
+
+   mdakits
+   about
+   add
 
 
 Acknowledgements
@@ -15,9 +27,6 @@ The development of this repository is supported by a grant from the Chan Zuckerb
 Initiative under an EOSS4 award.
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: MDAKit Registry
-   :hidden:
 
-   mdakits
+.. _`MDAnalysis library`:
+   https://docs.mdanalysis.org

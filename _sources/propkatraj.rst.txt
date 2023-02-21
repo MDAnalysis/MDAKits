@@ -11,9 +11,9 @@ propkatraj
 | 🔑 **Keywords:** pKa, protein
 | 🚀 **Development status:** Mature
 | 📑 **Publications:**
-|    - https://zenodo.org/record/7647010
-|    - https://doi.org/10.1021/ct200133y
-|    - https://doi.org/10.1085/jgp.201411219
+|    * https://zenodo.org/record/7647010
+|    * https://doi.org/10.1021/ct200133y
+|    * https://doi.org/10.1085/jgp.201411219
 | 🧪 **Tests (latest):** |propkatraj_latest| 
 | 🧪 **Tests (develop):** |propkatraj_develop| 
 | **Description:**

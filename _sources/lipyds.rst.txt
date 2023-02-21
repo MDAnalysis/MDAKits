@@ -11,7 +11,7 @@ lipyds
 | 🔑 **Keywords:** lipids, membranes
 | 🚀 **Development status:** Beta
 | 📑 **Publications:**
-|    - https://doi.org/10.1016/j.bbadva.2021.100010
+|    * https://doi.org/10.1016/j.bbadva.2021.100010
 | 🧪 **Tests (latest):** |lipyds_latest| 
 | 🧪 **Tests (develop):** |lipyds_develop| 
 | **Description:**
