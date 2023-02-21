@@ -24,6 +24,7 @@ python_requires: ">=3.6"
 mdanalysis_requires: ">=1.0.0"
 run_tests:
   - cd lipyds
+  - pip install -e .
   - pytest -v ./lipyds/tests
 test_dependencies:
   - pip install pytest
