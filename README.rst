@@ -27,12 +27,14 @@ projects, a `cookiecutter`_ has been made available.
 Adding a new MDAKit
 ===================
 
-The registry is currently in development, we do not currently accept
-external MDAKits at the moment. Once the registry becomes publicly
-available, adding a new MDAKit will solely involve making a PR against
+The registry is currently in development, the way by which new MDAKits
+are added is likely to change significantly over time. If you have any
+concerns or questions about the process, please reach out by raising an
+issue!
+
+Adding a new MDAKit involves making a PR against
 this repository and adding a new `metadata`_ file within it's own
-respective directory under `mdakits`. Please see Section 4 of the
-`MDAKit Whitepaper`_ for more details.
+respective directory under `mdakits`.
 
 
 Workflow

@@ -72,7 +72,7 @@ developed molecular simulation tools, please see our `whitepaper`_.
    https://github.com/MDAnalysis/MDAKits/blob/main/paper/whitepaper/MDAKits_whitepaper.pdf
 
 .. _`listed here`:
-   mdakits
+   mdakits.html
 
 .. _`FAIR`:
    https://doi.org/10.15497/RDA00068
