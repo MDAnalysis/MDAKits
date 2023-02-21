@@ -6,7 +6,7 @@ maintainers:
   - PicoCentauri
   - joaomcteixeira
 description:
-    A simple command line interface to the analysis classes of MDAnalysis using argparse.
+    An ecosystem of command line interfaces for MDAnalysis analysis classes.
 keywords:
   - command line interface
   - molecular-dynamics
