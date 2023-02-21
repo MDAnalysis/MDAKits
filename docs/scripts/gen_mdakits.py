@@ -84,7 +84,7 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
         f.write(body1)
 
         f.write('\n.. list-table:: List of registered MDAKits\n')
-        f.write('\n  :class: datatable\n')
+        f.write('    :class: datatable\n')
         f.write('    :widths: 25 25 25 25\n')
         f.write('    :header-rows: 1\n\n')
 
