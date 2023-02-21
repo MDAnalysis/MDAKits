@@ -136,7 +136,7 @@ html_js_files = [
     'main.js',
 ]
 
-html_logo = "_static/logos/mdanalysis-logo-127x55.png"
+html_logo = "_static/logos/mdanalysis-logo-200x150.png"
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
