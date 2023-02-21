@@ -1,0 +1,26 @@
+## Required entries
+project_name: hole2-mdakit
+authors:
+  - https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
+maintainers:
+  - ianmkenney
+description:
+    A Python interface for the HOLE suite tools to analyze an ion channel pore or transporter pathway as a function of time or arbitrary order parameters.
+keywords:
+  - pores
+  - ion channels
+  - transporters
+  - HOLE
+license: GPL-3.0
+project_home: https://github.com/MDAnalysis/hole2-mdakit
+documentation_home: https://www.mdanalysis.org/hole2-mdakit/
+documentation_type: API
+
+## Optional entries
+src_install:
+  - git clone https://github.com/MDAnalysis/hole2-mdakit.git
+  - conda install conda-build
+  - conda build . && conda install --use-local mdakithole2
+python_requires: ">=3.8"
+mdanalysis_requires: ">=2.0.0"
+development_status: Beta
