@@ -30,11 +30,22 @@ accessibility, interoperability, and reusability) is essential to robust, reprod
 and transparent science. However, scientists typically are not supported in making the
 subtantial effort require to make software FAIR-compliant.
 
+
+.. image:: _static/images/MDAcats_FAIR.png
+   :width: 600
+   :alt: Scientific code often falls short of FAIR tenets
+
+
 Our goal with MDAKits is to **lower the barrier for researchers to produce FAIR software**.
 
 We wish to support developers in creating new pakages, guiding them through the process
 of achieving best practices and FAIR compliance. At the same time, we hope to make MDAnalysis
 useful to a broader community.
+
+
+.. image:: _static/images/MDAcats_MDAKits.png
+   :with: 600
+   :alt: MDAKits, an ecosystem of downstream packages, may be more sustainable
 
 
 Read our whitepaper!
