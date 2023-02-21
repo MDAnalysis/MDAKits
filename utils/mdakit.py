@@ -286,7 +286,7 @@ class MDAKit:
         issues = [issue for issue in repo.get_issues()]
 
         def _bool_status(arg: bool) -> str:
-            return 'passed' if argument else 'fail'
+            return 'passed' if arg else 'fail'
 
         def _create_issue(run_type: str):
             stat = getattr(self.status.data, run_type)
