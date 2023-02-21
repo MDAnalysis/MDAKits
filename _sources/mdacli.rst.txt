@@ -14,7 +14,7 @@ mdacli
 | 🧪 **Tests (latest):** |mdacli_latest| 
 | 🧪 **Tests (develop):** |mdacli_develop| 
 | **Description:**
-| *A simple command line interface to the analysis classes of MDAnalysis using argparse.*
+| *An ecosystem of command line interfaces for MDAnalysis analysis classes.*
 
 
 
