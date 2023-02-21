@@ -23,6 +23,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - pKa, protein
       - `propkatraj authors`_
       - |propkatraj_latest| |propkatraj_develop|
+    * - :ref:`lipyds`
+      - lipids, membranes
+      - lilyminium
+      - |lipyds_latest| |lipyds_develop|
     * - :ref:`mdacli`
       - command line interface, molecular-dynamics
       - `mdacli authors`_
@@ -39,6 +43,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 
    ProLIF
    propkatraj
+   lipyds
    mdacli
    mdachecker
 
@@ -60,6 +65,14 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |propkatraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: propkatraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |lipyds_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: lipyds develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |lipyds_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
+   :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`mdacli authors`:
