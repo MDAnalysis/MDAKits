@@ -16,6 +16,22 @@ Each of the MDAKits in the following table links to a page with more details abo
       - Keywords
       - Authors
       - CI badges
+    * - :ref:`propkatraj`
+      - pKa, protein
+      - `propkatraj authors`_
+      - |propkatraj_latest| |propkatraj_develop|
+    * - :ref:`lipyds`
+      - lipids, membranes
+      - lilyminium
+      - |lipyds_latest| |lipyds_develop|
+    * - :ref:`ProLIF`
+      - drug-design, cheminformatics, molecular-dynamics
+      - Cédric Bouysset
+      - |ProLIF_latest| |ProLIF_develop|
+    * - :ref:`hole2-mdakit`
+      - pores, ion channels, transporters, HOLE
+      - `hole2-mdakit authors`_
+      - |hole2-mdakit_latest| |hole2-mdakit_develop|
     * - :ref:`mdacli`
       - command line interface, molecular-dynamics
       - `mdacli authors`_
@@ -24,35 +40,57 @@ Each of the MDAKits in the following table links to a page with more details abo
       - structure analysis, conformation checks
       - IAlibay
       - |mdachecker_latest| |mdachecker_develop|
-    * - :ref:`hole2-mdakit`
-      - pores, ion channels, transporters, HOLE
-      - `hole2-mdakit authors`_
-      - |hole2-mdakit_latest| |hole2-mdakit_develop|
-    * - :ref:`propkatraj`
-      - pKa, protein
-      - `propkatraj authors`_
-      - |propkatraj_latest| |propkatraj_develop|
-    * - :ref:`ProLIF`
-      - drug-design, cheminformatics, molecular-dynamics
-      - Cédric Bouysset
-      - |ProLIF_latest| |ProLIF_develop|
-    * - :ref:`lipyds`
-      - lipids, membranes
-      - lilyminium
-      - |lipyds_latest| |lipyds_develop|
 
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
+   propkatraj
+   lipyds
+   ProLIF
+   hole2-mdakit
    mdacli
    mdachecker
-   hole2-mdakit
-   propkatraj
-   ProLIF
-   lipyds
 
+
+.. _`propkatraj authors`:
+   https://github.com/Becksteinlab/propkatraj/blob/main/AUTHORS
+
+.. |propkatraj_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: propkatraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |propkatraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: propkatraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |lipyds_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: lipyds develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |lipyds_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
+   :alt: lipyds develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |ProLIF_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: ProLIF develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: ProLIF develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`hole2-mdakit authors`:
+   https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
+
+.. |hole2-mdakit_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+   :alt: hole2-mdakit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
+   :alt: hole2-mdakit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`mdacli authors`:
    https://github.com/MDAnalysis/mdacli/blob/main/docs/AUTHORS.rst
@@ -71,43 +109,5 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |mdachecker_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdachecker develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. _`hole2-mdakit authors`:
-   https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
-
-.. |hole2-mdakit_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
-   :alt: hole2-mdakit develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
-   :alt: hole2-mdakit develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. _`propkatraj authors`:
-   https://github.com/Becksteinlab/propkatraj/blob/main/AUTHORS
-
-.. |propkatraj_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: propkatraj develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |propkatraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
-   :alt: propkatraj develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |ProLIF_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: ProLIF develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
-   :alt: ProLIF develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |lipyds_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: lipyds develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |lipyds_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
-   :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
