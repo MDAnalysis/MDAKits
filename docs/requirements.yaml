@@ -5,7 +5,7 @@ dependencies:
     - python
     - pip
 
-    - sphinx
+    - sphinx==5.3.0
     - sphinx_rtd_theme
 
     - pyyaml
