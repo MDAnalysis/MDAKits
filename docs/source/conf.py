@@ -128,11 +128,11 @@ html_theme_options = {
 html_static_path = ['_static']
 html_css_files = [
         'custom.css',
-        'https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css',
+        'https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css',
 ]
 
 html_js_files = [
-    'https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js',
+    'https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js',
     'main.js',
 ]
 
