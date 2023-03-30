@@ -50,6 +50,11 @@ Shown below is the MDAKit framework workflow.
 
 For more details see the `MDAKit Whitepaper`_.
 
+License
+=======
+
+All written documentation materials are provided under a CC-BY-4.0-SA license, whilst codes (CI, utilities, etc...)
+are licensed under ther terms of the MIT license. Please see the `LICENSE`_ for more details.
 
 Acknowledgements
 ================
@@ -61,6 +66,8 @@ The development of this repository is supported by a grant from the Chan Zuckerb
 .. _`MDAKit Whitepaper`: paper/whitepaper/MDAKits_whitepaper.pdf
 
 .. _`cookiecutter`: https://github.com/MDAnalysis/cookiecutter-mdakit
+
+.. _`LICENSE`: LICENSE
 
 .. |numfocus| image:: https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A
    :alt: Powered by NumFOCUS
