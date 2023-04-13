@@ -298,7 +298,7 @@ environment using ``conda`` or ``mamba`` (recommended).
 	$ mamba env update --name rmsfkit --file devtools/conda-envs/test_env.yaml
 	$ pip install -e .
 
-This installs the package as well as the testing environment. We can run test locally using:
+This installs the package as well as the testing environment. We can run tests locally using:
 
 .. code-block:: bash
 
@@ -455,7 +455,53 @@ Additionally, we can update ``getting_started.rst`` to let potential users know 
 	    cd rmsfkit/
 	    pip install .
 
-Run the ``make`` command again to view the resulting changes.
+Run the ``make html`` command again and refresh the browser window to view the resulting changes.
+You'll notice the RMSF class documentation has an unformatted citation (``:cite:p:`Welford1962```).
+If your documentation need citations, you can easily include them using the bibtex format.
+We first create the bibtex file, ``references.bib`` in the ``doc/source/`` directory:
+
+.. code-block::
+
+	@article{Welford1962,
+	    author = { B. P.   Welford},
+	    title = {Note on a Method for Calculating Corrected Sums of Squares and Products},
+	    journal = {Technometrics},
+	    volume = {4},
+	    number = {3},
+	    pages = {419-420},
+	    year  = {1962},
+	    publisher = {Taylor & Francis},
+	    doi = {10.1080/00401706.1962.10490022}
+	}
+
+In ``conf.py``, we need to add a new extension (``sphinxcontrib.bibtex``) as well as the name of the bibtex file.
+
+.. code-block::
+
+	extensions = [
+	    'sphinx.ext.autosummary',
+	    'sphinx.ext.autodoc',
+	    'sphinx.ext.mathjax',
+	    'sphinx.ext.viewcode',
+	    'sphinx.ext.napoleon',
+	    'sphinx.ext.intersphinx',
+	    'sphinx.ext.extlinks',
+	    'sphinxcontrib.bibtex',  # add this line
+	]
+	
+	bibtex_bibfiles = ['references.bib']
+
+In addition, we have to add this extension the install requirements in ``docs/requirements.yaml``.
+Add ``- sphinxcontrib-bibtex`` as an additional dependency here.
+
+Update your environment with
+
+.. code-block::bash
+
+	mamba env update --name rmsfkit -f requirements.yaml
+
+before once again running `make html`.
+Refeshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.
 
 Deploying the documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -474,8 +520,8 @@ badge in the GitHub rendered ``README.md`` is now green.
 Making an initial release
 *************************
 
-The MDAKit cookiecutter uses the ``versioneer utility <https://github.com/python-versioneer/python-versioneer>``_ for version management. 
-In brief, software versions are set through ``git tags <https://git-scm.com/book/en/v2/Git-Basics-Tagging>``_. 
+The MDAKit cookiecutter uses the `versioneer utility <https://github.com/python-versioneer/python-versioneer>`_ for version management.
+In brief, software versions are set through `git tags <https://git-scm.com/book/en/v2/Git-Basics-Tagging>`_.
 Since the kit is initiated without tags, the current version is set to ``0.0.0``. 
 
 .. code-block::
@@ -505,16 +551,67 @@ Tags are not pushed to remote repositories by default. To push the `0.1.0` tag, 
 	git push --tags
 
 Viewing the repository tags page on GitHub, you should now see a ``0.1.0`` tag, which can then be used to create a release by expanding its menu options.
-TODO: Add gif.
+
+TODO: Add video.
+
 Enter a release name, such as `v0.1.0` and publish!
 
 Submitting the kit to the registry
 **********************************
 
-Fill this out and include recording
+In order to submit your MDAKit to the registry, you will need to create a pull request on GitHub against the MDAnalysis/MDAKits repository.
+Do this by creating a fork of the MDAnalysis/MDAKits repository.
+Clone the fork to your machine, navigate into ``MDAKits/mdakits/``, and make an empty directory with your MDAKit name:
 
-#. Fork MDAnalysis/MDAKits
-#. Clone <username>/MDAKits
-#. Add MDAKits/mdakits/rmsfkit/metadata.yaml
-#. Push code
-#. Create PR
+.. code-block:: bash
+
+	git clone git@github.com:yourusername/MDAKits
+	cd MDAKits/mdakits
+	mkdir rmsfkit/
+	cd rmsfkit
+
+Add the ``metadata.yaml`` for your MDAKit in this directory.
+The contents of ``metadata.yaml`` for ``rmsfkit`` are:
+
+.. code-block:: yaml
+
+	project_name: rmsfkit
+	authors:
+	  - https://github.com/ianmkenney/rmsfkit/blob/main/AUTHORS.md
+	maintainers:
+	  - ianmkenney
+	description:
+	    An analysis module for calculating the root-mean-square fluctuation of atoms in molecular dynamics simulations.
+	keywords:
+	  - rms
+	  - rmsf
+	license: GPL-2.0-or-later
+	project_home: https://github.com/MDAnalysis/hole2-mdakit
+	documentation_home: https://rmsfkit.readthedocs.io/en/latest/
+	documentation_type: API
+
+	## Optional entries
+	src_install:
+	  - git clone https://github.com/ianmkenney/rmsfkit.git
+	  - cd rmsfkit/
+	  - pip install .
+	python_requires: ">=3.8"
+	mdanalysis_requires: ">=2.0.0"
+	run_tests:
+	  - pytest --pyargs rmsfkit.tests
+	development_status: Beta
+
+Commit and push this to your fork:
+
+.. code-block:: bash
+
+	git add metadata.yaml
+	git commit -m "Adding rmsfkit"
+	git push origin main
+
+Refresh the forked repository page in your browser. 
+Under "Contribute", open a pull request.  
+Add a title with the name of the kit and add a quick description.
+Click "Create pull request" and wait for the tests to pass.
+Once this is done, you can add a comment along the lines of "@MDAnalysis/mdakits-reviewers, ready for review".
+The reviewers will get back to you with any change requests before merging it in as a kit.
