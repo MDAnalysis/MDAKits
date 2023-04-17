@@ -1,0 +1,25 @@
+project_name: rmsfkit
+authors:
+  - https://github.com/ianmkenney/rmsfkit/blob/main/AUTHORS.md
+maintainers:
+  - ianmkenney
+description:
+    An analysis module for calculating the root-mean-square fluctuation of atoms in molecular dynamics simulations.
+keywords:
+  - rms
+  - rmsf
+license: GPL-2.0-or-later
+project_home: https://github.com/MDAnalysis/hole2-mdakit
+documentation_home: https://rmsfkit.readthedocs.io/en/latest/
+documentation_type: API
+
+## Optional entries
+install:
+  - pip install git+https://github.com/ianmkenney/rmsfkit@main
+src_install:
+  - pip install git+https://github.com/ianmkenney/rmsfkit@main
+python_requires: ">=3.8"
+mdanalysis_requires: ">=2.0.0"
+run_tests:
+  - pytest --pyargs rmsfkit.tests
+development_status: Beta
