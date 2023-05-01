@@ -2,11 +2,9 @@
 Making an MDAKit
 ****************
 
-Features of an MDAKit:
-
-Required:
-
-In order for a package to be accepted as an MDAKit, it must satisfy the following:
+Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
+Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
+In order to be accepted, there are several requirements that must be addressed:
 
 #. Code in the package uses MDAnalysis
 #. Open source code is published under an OSI approved license
@@ -20,21 +18,19 @@ It is also highly encouraged that the MDAKit also satisfies:
 #. Code is installable as a standard package
 #. Information on bug reporting, user discussions, and community guidelines is made available
 
+These requirements ensure that registered packages are FAIR-compliant and hold up to an ideal scientific standard.
+Without prior experience, some of the requirements listed above can be daunting.
+For this reason, we make use of the MDAKit cookiecutter in this example.
+
 Building from the cookiecutter
 ##############################
 
-The MDAKits cookiecutter template can be used to rapidly develop a FAIR-
-compliant MDAKit by generating placeholder code for documentation,
-testing, and installation. While its usage is outlined in detail in the
-MDAKit `cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_
-documentation, here provide a full walkthrough for creating an RMSF
-analysis kit, recreating the functionality of the 
-`RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_
-in the core library.
+The MDAKits cookiecutter template can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation. 
+While its usage is outlined in detail in the MDAKit `cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_ documentation, here we provide a full walkthrough for creating an RMSF analysis kit, recreating the functionality of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ in the core library.
 
 Starting from an environment with Python 3.8+ and the `cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_, the MDAKit template is generated using
 
-.. code-block:: bash
+.. code-block::
 
 	$ cookiecutter gh:MDAnalysis/cookiecutter-mdakit
 
@@ -57,10 +53,8 @@ Starting from an environment with Python 3.8+ and the `cookiecutter tool <https:
 	Choose from 1, 2 [1]: 
 	template_analysis_class [Class name to template (e.g. Rmsfkit ). Press Enter to skip including analysis templates]:
 
-This generates a new git repository named ``rmsfkit`` (note that the author of
-the initial commit will match that of the user's global git configurations).
-Navigating into this directory, we find the following notable files and
-directories:
+This generates a new git repository named ``rmsfkit`` (note that the author of the initial commit will match that of the user's global git configurations).
+Navigating into this directory, we find the following notable files and directories:
 
 #. LICENSE -- defaults to GLPv2
 #. pyproject.toml -- pip dependencies
@@ -83,7 +77,7 @@ Inserting our code
 
 Since we are recreating the RMSF analysis,  we are simply copy and pasting the
 analysis class into the ``rmsfkit.py`` file, where the documentation has been
-trimmed for the sake of brevity. Documentation is written in restructured text
+trimmed for the sake of brevity. Documentation is written in `reStructuredText <https://docutils.sourceforge.io/rst.html>`_
 syntax for building with Sphinx. The contents of the file should now resemble
 the following code block:
 
@@ -511,6 +505,12 @@ dashboard. Click the "Import a Project" button and find the repository in the
 list. Click the "+" and confirm that the name, URL, and default branch are
 correct.
 
+.. image:: img/rmsftutorial/import.png
+	:alt: Import a project into RTD
+
+.. image:: img/rmsftutorial/adding.png
+	:alt: Adding your repository to RTD
+
 Clicking next will begin the deployment. The immediately starts the build
 process, which can be confirmed by clicking the "Builds" tab. Once the build is
 completed, you can view the deployed documentation, which is now public. This
@@ -534,7 +534,7 @@ We can bump this to a ``0.1.0`` in preparation for an initial release on GitHub.
 
 .. code-block:: bash
 
-	git tag 0.1.0
+	$ git tag 0.1.0
 
 This should now be reflected in the interpreter (may require a package reinstall):
 
@@ -548,13 +548,13 @@ Tags are not pushed to remote repositories by default. To push the `0.1.0` tag, 
 
 .. code-block:: bash
 
-	git push --tags
+	$ git push --tags
 
 Viewing the repository tags page on GitHub, you should now see a ``0.1.0`` tag, which can then be used to create a release by expanding its menu options.
-
-TODO: Add video.
-
 Enter a release name, such as `v0.1.0` and publish!
+
+.. image:: img/rmsftutorial/creating_a_release.gif
+	:alt: Process for creating a release by making a tag
 
 Submitting the kit to the registry
 **********************************
@@ -615,3 +615,16 @@ Add a title with the name of the kit and add a quick description.
 Click "Create pull request" and wait for the tests to pass.
 Once this is done, you can add a comment along the lines of "@MDAnalysis/mdakits-reviewers, ready for review".
 The reviewers will get back to you with any change requests before merging it in as a kit.
+At this point there are no additional steps for registering your kit!
+
+.. image:: img/rmsftutorial/submitting.gif
+	:alt: Process for submitting a kit to the registry
+
+Maintaining a kit
+#################
+
+There are a variety of reasons a kit may behave unexpectedly after being submitted to the registry.
+Appart from actively developing the kit, changes in kit dependencies, or even Python itself, can introduce (deprecate) new (old) functionality.
+For this reason, the kits' continuous integration is rerun weekly to confirm the kits expected behavior.
+In the event that a kit no longer passes its tests, an issue in MDAnalysis/MDAKits is automatically raised while notifying the maintainers indicated in the `metadata.yaml` file.
+
