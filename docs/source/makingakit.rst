@@ -6,11 +6,11 @@ Here, we outline the process of creating an MDAKit that fulfills all of the requ
 Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
 In order to be accepted, there are several requirements that must be addressed:
 
-#. Code in the package uses MDAnalysis
-#. Open source code is published under an OSI approved license
-#. Code is versioned and provides in an accessible version-controlled repository
+#. Code in the package uses the MDAnalysis library
+#. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
+#. Code is versioned and provides in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
 #. Code authors and maintainers are clearly designated
-#. Documentation is provided
+#. Minimal documentation is provided
 #. Tests and continuous integration are present
 
 It is also highly encouraged that the MDAKit also satisfies:
@@ -20,15 +20,15 @@ It is also highly encouraged that the MDAKit also satisfies:
 
 These requirements ensure that registered packages are FAIR-compliant and hold up to an ideal scientific standard.
 Without prior experience, some of the requirements listed above can be daunting.
-For this reason, we make use of the MDAKit cookiecutter in this example.
+To aid in this process, we make use of the MDAKit cookiecutter in this example.
 
 Building from the cookiecutter
 ##############################
 
-The MDAKits cookiecutter template can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation. 
-While its usage is outlined in detail in the MDAKit `cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_ documentation, here we provide a full walkthrough for creating an RMSF analysis kit, recreating the functionality of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ in the core library.
+The MDAKits cookiecutter template (using the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_) can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation. 
+While its usage is outlined in detail in the `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_ documentation, here we provide a full walkthrough for creating an RMSF analysis kit, recreating the functionality of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ in the core library.
 
-Starting from an environment with Python 3.8+ and the `cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_, the MDAKit template is generated using
+Starting from an environment with Python 3.9+ and the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_, the MDAKit template is generated using
 
 .. code-block::
 
@@ -56,7 +56,7 @@ Starting from an environment with Python 3.8+ and the `cookiecutter tool <https:
 This generates a new git repository named ``rmsfkit`` (note that the author of the initial commit will match that of the user's global git configurations).
 Navigating into this directory, we find the following notable files and directories:
 
-#. LICENSE -- defaults to GLPv2
+#. LICENSE -- defaults to GLPv2+
 #. pyproject.toml -- pip dependencies
 #. MANIFEST.in -- Packaging information
 #. README.md -- Project description and typically landing page content rendered on GitHub
@@ -72,8 +72,8 @@ Using the cookiecutter checks off a couple of the requirements for a valid MDAKi
 * Code is installable as a standard package (optional feature)
 * Information on bug reporting, user discussions, and community guidelines is made available (optional feature)
 
-Inserting our code
-******************
+Adding our code to the newly created repository
+***********************************************
 
 Since we are recreating the RMSF analysis,  we are simply copy and pasting the
 analysis class into the ``rmsfkit.py`` file, where the documentation has been
@@ -624,7 +624,8 @@ Maintaining a kit
 #################
 
 There are a variety of reasons a kit may behave unexpectedly after being submitted to the registry.
-Appart from actively developing the kit, changes in kit dependencies, or even Python itself, can introduce (deprecate) new (old) functionality.
+Apart from actively developing the kit, changes in kit dependencies, or even Python itself, can introduce (deprecate) new (old) functionality.
 For this reason, the kits' continuous integration is rerun weekly to confirm the kits expected behavior.
 In the event that a kit no longer passes its tests, an issue in MDAnalysis/MDAKits is automatically raised while notifying the maintainers indicated in the `metadata.yaml` file.
-
+While the registry developers will be happy to help where possible, ultimately, the maintainers of the MDAKit are responsible for resolving such issues and ensuring that the tests pass.
+The issue will automatically close after the next CI run if the tests pass again.
