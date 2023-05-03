@@ -595,7 +595,7 @@ The contents of ``metadata.yaml`` for ``rmsfkit`` are:
 	  - git clone https://github.com/ianmkenney/rmsfkit.git
 	  - cd rmsfkit/
 	  - pip install .
-	python_requires: ">=3.8"
+	python_requires: ">=3.9"
 	mdanalysis_requires: ">=2.0.0"
 	run_tests:
 	  - pytest --pyargs rmsfkit.tests
