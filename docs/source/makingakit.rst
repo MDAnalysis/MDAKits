@@ -8,7 +8,7 @@ In order to be accepted, there are several requirements that must be addressed:
 
 #. Code in the package uses the MDAnalysis library
 #. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
-#. Code is versioned and provides in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
+#. Code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
 #. Code authors and maintainers are clearly designated
 #. Minimal documentation is provided
 #. Tests and continuous integration are present
@@ -76,7 +76,7 @@ Adding our code to the newly created repository
 ***********************************************
 
 Since we are recreating the RMSF analysis,  we are simply copy and pasting the
-analysis class into the ``rmsfkit.py`` file, where the documentation has been
+analysis class into the ``rmsfkit/rmsfkit.py`` file, where the documentation has been
 trimmed for the sake of brevity. Documentation is written in `reStructuredText <https://docutils.sourceforge.io/rst.html>`_
 syntax for building with Sphinx. The contents of the file should now resemble
 the following code block:
@@ -101,7 +101,7 @@ the following code block:
 	    ----
 	    No RMSD-superposition is performed; it is assumed that the user is
 	    providing a trajectory where the protein of interest has been structurally
-	    aligned to a reference structure. The protein also has be whole because
+	    aligned to a reference structure. The protein also has to be whole because
 	    periodic boundaries are not taken into account.
 	
 	    Run the analysis with :meth:`RMSF.run`, which stores the results in the
@@ -121,7 +121,7 @@ the following code block:
 	        ------
 	        ValueError
 	             raised if negative values are calculated, which indicates that a
-	             numerical overflow or underflow occured
+	             numerical overflow or underflow occurred
 	
 	        Notes
 	        -----
@@ -183,7 +183,7 @@ Filling in tests
 ****************
 
 Once again, we take directly from the MDAnalysis package. 
-Here we take the `RMSF testing class <https://github.com/MDAnalysis/mdanalysis/blob/develop/testsuite/MDAnalysisTests/analysis/test_rms.py>`_ and update the contents of ``test_rmsfkit.py`` to reflect the following code block:
+Here we take the `RMSF testing class <https://github.com/MDAnalysis/mdanalysis/blob/develop/testsuite/MDAnalysisTests/analysis/test_rms.py>`_ and update the contents of ``rmsfkit/tests/test_rmsfkit.py`` to reflect the following code block:
 
 .. code-block:: python
 
@@ -511,7 +511,7 @@ correct.
 .. image:: img/rmsftutorial/adding.png
 	:alt: Adding your repository to RTD
 
-Clicking next will begin the deployment. The immediately starts the build
+Clicking next will begin the deployment. This immediately starts the build
 process, which can be confirmed by clicking the "Builds" tab. Once the build is
 completed, you can view the deployed documentation, which is now public. This
 completes the documentation requirement for an MDAKit. Notice that the "docs"
@@ -577,22 +577,22 @@ The contents of ``metadata.yaml`` for ``rmsfkit`` are:
 
 	project_name: rmsfkit
 	authors:
-	  - https://github.com/ianmkenney/rmsfkit/blob/main/AUTHORS.md
+	  - https://github.com/yourusername/rmsfkit/blob/main/AUTHORS.md
 	maintainers:
-	  - ianmkenney
+	  - yourusername
 	description:
 	    An analysis module for calculating the root-mean-square fluctuation of atoms in molecular dynamics simulations.
 	keywords:
 	  - rms
 	  - rmsf
 	license: GPL-2.0-or-later
-	project_home: https://github.com/MDAnalysis/hole2-mdakit
+	project_home: https://github.com/yourusername/rmsfkit
 	documentation_home: https://rmsfkit.readthedocs.io/en/latest/
 	documentation_type: API
 
 	## Optional entries
 	src_install:
-	  - git clone https://github.com/ianmkenney/rmsfkit.git
+	  - git clone https://github.com/yourusername/rmsfkit.git
 	  - cd rmsfkit/
 	  - pip install .
 	python_requires: ">=3.9"
