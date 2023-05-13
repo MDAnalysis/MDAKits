@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Making an MDAKit &mdash; MDAKits Registry  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="_static/main.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Adding an MDAKit to the Registry" href="add.html" />
+    <link rel="prev" title="About MDAKits" href="about.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/mdanalysis-logo-200x150.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About MDAKits</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Making an MDAKit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-the-cookiecutter">Building from the cookiecutter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-our-code-to-the-newly-created-repository">Adding our code to the newly created repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filling-in-tests">Filling in tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#confirm-that-the-code-and-tests-work">Confirm that the code and tests work</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finishing-up-the-tests">Finishing up the tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#providing-documentation">Providing documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deploying-the-documentation">Deploying the documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#making-an-initial-release">Making an initial release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#submitting-the-kit-to-the-registry">Submitting the kit to the registry</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#maintaining-a-kit">Maintaining a kit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="add.html">Adding an MDAKit to the Registry</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MDAKits Registry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Making an MDAKit</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/makingakit.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="making-an-mdakit">
+<h1>Making an MDAKit<a class="headerlink" href="#making-an-mdakit" title="Permalink to this heading"></a></h1>
+<p>Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
+Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
+In order to be accepted, there are several requirements that must be addressed:</p>
+<ol class="arabic simple">
+<li><p>Code in the package uses the MDAnalysis library</p></li>
+<li><p>The code is open source and published under an <a class="reference external" href="https://opensource.org/licenses/">OSI approved license</a></p></li>
+<li><p>Code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)</p></li>
+<li><p>Code authors and maintainers are clearly designated</p></li>
+<li><p>Minimal documentation is provided</p></li>
+<li><p>Tests and continuous integration are present</p></li>
+</ol>
+<p>It is also highly encouraged that the MDAKit also satisfies:</p>
+<ol class="arabic simple">
+<li><p>Code is installable as a standard package</p></li>
+<li><p>Information on bug reporting, user discussions, and community guidelines is made available</p></li>
+</ol>
+<p>These requirements ensure that registered packages are FAIR-compliant and hold up to an ideal scientific standard.
+Without prior experience, some of the requirements listed above can be daunting.
+To aid in this process, we make use of the MDAKit cookiecutter in this example.</p>
+<section id="building-from-the-cookiecutter">
+<h2>Building from the cookiecutter<a class="headerlink" href="#building-from-the-cookiecutter" title="Permalink to this heading"></a></h2>
+<p>The MDAKits cookiecutter template (using the <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>) can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation.
+While its usage is outlined in detail in the <a class="reference external" href="https://cookiecutter-mdakit.readthedocs.io/en/latest/">MDAKit cookiecutter</a> documentation, here we provide a full walkthrough for creating an RMSF analysis kit, recreating the functionality of the <a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF">RMSF analysis class</a> in the core library.</p>
+<p>Starting from an environment with Python 3.9+ and the <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>, the MDAKit template is generated using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cookiecutter gh:MDAnalysis/cookiecutter-mdakit
+
+project_name [ProjectName]: rmsfkit
+repo_name [rmsfkit]:
+package_name [rmsfkit]:
+description [A short description of the project.]: A package to perform RMSF analysis on molecular dynamics data.
+github_username [Your personal GitHub username]: myusername
+github_host_account [GitHub account for hosting rmsfkit (e.g. myusername or an organization account). Press Enter to use myusername]:
+author_name [Your name (or your organization/company/team)]: Firstname Lastname
+author_email [Your email (or your organization/company/team)]: myemail@email-provider.com
+Select dependency_source:
+1 - Prefer conda-forge over the default anaconda channel with pip fallback
+2 - Prefer default anaconda channel with pip fallback
+3 - Dependencies from pip only (no conda)
+Choose from 1, 2, 3 [1]:
+Select include_ReadTheDocs:
+1 - y
+2 - n
+Choose from 1, 2 [1]:
+template_analysis_class [Class name to template (e.g. Rmsfkit ). Press Enter to skip including analysis templates]:
+</pre></div>
+</div>
+<p>This generates a new git repository named <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> (note that the author of the initial commit will match that of the user’s global git configurations).
+Navigating into this directory, we find the following notable files and directories:</p>
+<ol class="arabic simple">
+<li><p>LICENSE – defaults to GLPv2+</p></li>
+<li><p>pyproject.toml – pip dependencies</p></li>
+<li><p>MANIFEST.in – Packaging information</p></li>
+<li><p>README.md – Project description and typically landing page content rendered on GitHub</p></li>
+<li><p>docs/ – Sphinx documentation template, instructions and build environment documented within!</p></li>
+<li><p>rmsfkit/ – Python package source code template</p></li>
+<li><p>setup.py – Installation configuration file</p></li>
+</ol>
+<p>See <a class="reference external" href="https://cookiecutter-mdakit.readthedocs.io/en/latest/usage.html">the cookiecutter documentation</a> for information on additional files.
+Using the cookiecutter checks off a couple of the requirements for a valid MDAKit right from the start:</p>
+<ul class="simple">
+<li><p>Open source code is published under an OSI approved license [defaults to GPLv2]</p></li>
+<li><p>Code authors and maintainers are clearly designated (assuming that the maintainer and the author are the same person)</p></li>
+<li><p>Code is installable as a standard package (optional feature)</p></li>
+<li><p>Information on bug reporting, user discussions, and community guidelines is made available (optional feature)</p></li>
+</ul>
+<section id="adding-our-code-to-the-newly-created-repository">
+<h3>Adding our code to the newly created repository<a class="headerlink" href="#adding-our-code-to-the-newly-created-repository" title="Permalink to this heading"></a></h3>
+<p>Since we are recreating the RMSF analysis,  we are simply copy and pasting the
+analysis class into the <code class="docutils literal notranslate"><span class="pre">rmsfkit/rmsfkit.py</span></code> file, where the documentation has been
+trimmed for the sake of brevity. Documentation is written in <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>
+syntax for building with Sphinx. The contents of the file should now resemble
+the following code block:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">rmsfkit.py</span>
+<span class="sd">A package to perform RMSF analysis on molecular dynamics data.</span>
+
+<span class="sd">All code and documentation, both of which are trimmed for the sake of brevity,</span>
+<span class="sd">are taken from the MDAnalysis Python package. Used under GPLv2+.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">MDAnalysis.analysis.base</span> <span class="kn">import</span> <span class="n">AnalysisBase</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">class</span> <span class="nc">RMSF</span><span class="p">(</span><span class="n">AnalysisBase</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Calculate RMSF of given atoms across a trajectory.</span>
+
+<span class="sd">    Note</span>
+<span class="sd">    ----</span>
+<span class="sd">    No RMSD-superposition is performed; it is assumed that the user is</span>
+<span class="sd">    providing a trajectory where the protein of interest has been structurally</span>
+<span class="sd">    aligned to a reference structure. The protein also has to be whole because</span>
+<span class="sd">    periodic boundaries are not taken into account.</span>
+
+<span class="sd">    Run the analysis with :meth:`RMSF.run`, which stores the results in the</span>
+<span class="sd">    array :attr:`RMSF.results.rmsf`.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atomgroup</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        atomgroup : AtomGroup</span>
+<span class="sd">            Atoms for which RMSF is calculated</span>
+<span class="sd">        verbose : bool (optional)</span>
+<span class="sd">             Show detailed progress of the calculation if set to ``True``; the</span>
+<span class="sd">             default is ``False``.</span>
+
+<span class="sd">        Raises</span>
+<span class="sd">        ------</span>
+<span class="sd">        ValueError</span>
+<span class="sd">             raised if negative values are calculated, which indicates that a</span>
+<span class="sd">             numerical overflow or underflow occurred</span>
+
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The root mean square fluctuation of an atom :math:`i` is computed as the</span>
+<span class="sd">        time average</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">          \rho_i = \sqrt{\left\langle (\mathbf{x}_i - \langle\mathbf{x}_i\rangle)^2 \right\rangle}</span>
+
+<span class="sd">        No mass weighting is performed.</span>
+
+<span class="sd">        This method implements an algorithm for computing sums of squares while</span>
+<span class="sd">        avoiding overflows and underflows :cite:p:`Welford1962`.</span>
+
+<span class="sd">        References</span>
+<span class="sd">        ----------</span>
+<span class="sd">        .. bibliography::</span>
+<span class="sd">            :filter: False</span>
+
+<span class="sd">            Welford1962</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">RMSF</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">atomgroup</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">trajectory</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">atomgroup</span> <span class="o">=</span> <span class="n">atomgroup</span>
+
+    <span class="k">def</span> <span class="nf">_prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sumsquares</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">atomgroup</span><span class="o">.</span><span class="n">n_atoms</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mean</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sumsquares</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_single_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frame_index</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sumsquares</span> <span class="o">+=</span> <span class="p">(</span><span class="n">k</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mf">1.0</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">atomgroup</span><span class="o">.</span><span class="n">positions</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mean</span> <span class="o">=</span> <span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">atomgroup</span><span class="o">.</span><span class="n">positions</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_conclude</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_frame_index</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">rmsf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sumsquares</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">rmsf</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Some RMSF values negative; overflow &quot;</span> <span class="o">+</span>
+                             <span class="s2">&quot;or underflow occurred&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Removing the <code class="docutils literal notranslate"><span class="pre">canvas</span></code> function and introducing the <code class="docutils literal notranslate"><span class="pre">RMSF</span></code> class requires we edit the default <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file, or else importing will result in an error. Replace</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.rmsfkit</span> <span class="kn">import</span> <span class="n">canvas</span>
+</pre></div>
+</div>
+<p>with</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.rmsfkit</span> <span class="kn">import</span> <span class="n">RMSF</span>
+</pre></div>
+</div>
+<p>This satisfies the first MDAKit requirement (“code in the package uses MDAnalysis”).</p>
+</section>
+<section id="filling-in-tests">
+<h3>Filling in tests<a class="headerlink" href="#filling-in-tests" title="Permalink to this heading"></a></h3>
+<p>Once again, we take directly from the MDAnalysis package.
+Here we take the <a class="reference external" href="https://github.com/MDAnalysis/mdanalysis/blob/develop/testsuite/MDAnalysisTests/analysis/test_rms.py">RMSF testing class</a> and update the contents of <code class="docutils literal notranslate"><span class="pre">rmsfkit/tests/test_rmsfkit.py</span></code> to reflect the following code block:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Unit and regression test for the rmsfkit package.</span>
+
+<span class="sd">The TestRMSF class was taken from the MDAnalysis rms tests file and</span>
+<span class="sd">the relevant modules were switched.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Import package, test suite, and other packages as needed</span>
+<span class="kn">from</span> <span class="nn">MDAnalysisTests.datafiles</span> <span class="kn">import</span> <span class="n">GRO</span><span class="p">,</span> <span class="n">XTC</span><span class="p">,</span> <span class="n">rmsfArray</span>
+<span class="kn">import</span> <span class="nn">MDAnalysis</span> <span class="k">as</span> <span class="nn">mda</span>
+
+<span class="kn">from</span> <span class="nn">numpy.testing</span> <span class="kn">import</span> <span class="n">assert_equal</span><span class="p">,</span> <span class="n">assert_almost_equal</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">import</span> <span class="nn">rmsfkit</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">test_rmsfkit_imported</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sample test, will always pass so long as import statement worked&quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="s2">&quot;rmsfkit&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+
+
+<span class="k">class</span> <span class="nc">TestRMSF</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">universe</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">mda</span><span class="o">.</span><span class="n">Universe</span><span class="p">(</span><span class="n">GRO</span><span class="p">,</span> <span class="n">XTC</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_rmsf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">universe</span><span class="p">):</span>
+        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">&#39;name CA&#39;</span><span class="p">))</span>
+        <span class="n">rmsfs</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="n">test_rmsfs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">rmsfArray</span><span class="p">)</span>
+
+        <span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">rmsfs</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">rmsf</span><span class="p">,</span> <span class="n">test_rmsfs</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
+                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">&quot;error: rmsf profile should match test &quot;</span>
+                            <span class="s2">&quot;values&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_rmsf_single_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">universe</span><span class="p">):</span>
+        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">&#39;name CA&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+        <span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">rmsfs</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">rmsf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
+                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">&quot;error: rmsfs should all be zero&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_rmsf_identical_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">universe</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">):</span>
+
+        <span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">),</span> <span class="s1">&#39;rmsf.xtc&#39;</span><span class="p">)</span>
+
+        <span class="c1"># write a dummy trajectory of all the same frame</span>
+        <span class="k">with</span> <span class="n">mda</span><span class="o">.</span><span class="n">Writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">universe</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">n_atoms</span><span class="p">)</span> <span class="k">as</span> <span class="n">W</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">trajectory</span><span class="o">.</span><span class="n">n_frames</span><span class="p">):</span>
+                <span class="n">W</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">universe</span><span class="p">)</span>
+
+        <span class="n">universe</span> <span class="o">=</span> <span class="n">mda</span><span class="o">.</span><span class="n">Universe</span><span class="p">(</span><span class="n">GRO</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">&#39;name CA&#39;</span><span class="p">))</span>
+        <span class="n">rmsfs</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">rmsfs</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">rmsf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
+                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">&quot;error: rmsfs should all be 0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Since these tests use files included with the <code class="docutils literal notranslate"><span class="pre">MDAnalysisTests</span></code> package,
+we need to add it as a dependency in <code class="docutils literal notranslate"><span class="pre">devtools/conda-envs/test_env.yaml</span></code>.
+Additionally, we need to add this dependency to the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>
+file. Under the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> table, ensure that
+<code class="docutils literal notranslate"><span class="pre">MDAnalysisTests&gt;=2.0.0</span></code> is listed in <code class="docutils literal notranslate"><span class="pre">test</span></code>.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+<span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s">&quot;pytest&gt;=6.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;pytest-xdist&gt;=2.5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;pytest-cov&gt;=3.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;MDAnalysisTests&gt;=2.0.0&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>These tests also need to be reflected in the <code class="docutils literal notranslate"><span class="pre">extra_requires</span></code> dictionary in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extras_require</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;pytest&gt;=6.0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pytest-xdist&gt;=2.5&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pytest-cov&gt;=3.0&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;MDAnalysisTests&gt;=2.0.0&quot;</span>  <span class="c1"># add this</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sphinx_rtd_theme&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="confirm-that-the-code-and-tests-work">
+<h3>Confirm that the code and tests work<a class="headerlink" href="#confirm-that-the-code-and-tests-work" title="Permalink to this heading"></a></h3>
+<p>Up until this point we haven’t tested any of the code. Following the the
+instructions from the generated <code class="docutils literal notranslate"><span class="pre">README.md</span></code>, we can create a testing
+environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code> (recommended).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>rmsfkit
+$<span class="w"> </span>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>rmsfkit<span class="w"> </span>--file<span class="w"> </span>devtools/conda-envs/test_env.yaml
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</pre></div>
+</div>
+<p>This installs the package as well as the testing environment. We can run tests locally using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pytest<span class="w"> </span>rmsfkit/tests
+</pre></div>
+</div>
+<p>This should pass without errors, but with some potential warnings. Local
+tests passing is only half of the testing requirement for an MDAKit. To fully
+satisfy the MDAKit testing requirement, tests must also pass through continuous
+integration services. The cookiecutter generates the necessary GitHub workflow
+files and can be found in <code class="docutils literal notranslate"><span class="pre">.github/workflows/gh-ci.yaml</span></code>. Since our tests use
+the <code class="docutils literal notranslate"><span class="pre">MDAnalysisTests</span></code> package, we need to make one change to this file.</p>
+<p>Change the block</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install MDAnalysis version</span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MDAnalysis/install-mdanalysis@main</span>
+<span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.mdanalysis-version }}</span>
+<span class="w">        </span><span class="nt">install-tests</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">installer</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">mamba</span>
+<span class="w">        </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash  -l {0}</span>
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install MDAnalysis version</span>
+<span class="w">  </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MDAnalysis/install-mdanalysis@main</span>
+<span class="w">  </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.mdanalysis-version }}</span>
+<span class="w">        </span><span class="nt">install-tests</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># this needs to be true!</span>
+<span class="w">        </span><span class="nt">installer</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">mamba</span>
+<span class="w">        </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bash  -l {0}</span>
+</pre></div>
+</div>
+</section>
+<section id="finishing-up-the-tests">
+<h3>Finishing up the tests<a class="headerlink" href="#finishing-up-the-tests" title="Permalink to this heading"></a></h3>
+<p>Our code only exists locally, but will need to be uploaded to a GitHub to run
+the prebuilt continuous integration provided by the cookiecutter.  During the
+cookie generation process, the target GitHub repository was identified and
+inserted into the workflows configuration as well as the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file. Add
+this repository as a remote to your local git repository,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:myusername/rmsfkit
+</pre></div>
+</div>
+<p>substituting <code class="docutils literal notranslate"><span class="pre">myusername</span></code> for your GitHub username. Make sure that this repository exists on GitHub and is <em>empty</em>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Open the repository in GitHub and navigate to actions. Here you can see the status of the tests. If all was done correctly in the previous sections, these tests will pass!</p>
+<p>After this point, two more requirements are satisfied:</p>
+<ul class="simple">
+<li><p>Code is versioned and provides in an accessible version-controlled repository</p></li>
+<li><p>Tests and continuous integration are present</p></li>
+</ul>
+</section>
+<section id="providing-documentation">
+<h3>Providing documentation<a class="headerlink" href="#providing-documentation" title="Permalink to this heading"></a></h3>
+<p>The cookiecutter includes a <a class="reference external" href="https://readthedocs.org/">Read the Docs</a>
+configuration as well a premade documentation environment file that is used by
+Read the Docs and for building locally. First, we need to install the correct
+environment for building the documentation. In the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>rmsfkit<span class="w"> </span>-f<span class="w"> </span>requirements.yaml
+</pre></div>
+</div>
+<p>We can now build the documentation html files using the included <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>. Without looking at any of the documentation source files, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>There will be a few errors:</p>
+<ol class="arabic simple">
+<li><p>Documentation language (defaults to English)</p></li>
+<li><p>import failure for <code class="docutils literal notranslate"><span class="pre">rmsfkit.canvas</span></code> (since we removed this function)</p></li>
+<li><p>attribute error for <code class="docutils literal notranslate"><span class="pre">canvas</span></code> (same reason as above)</p></li>
+</ol>
+<p>Despite the errors, the documentation is generated in the <code class="docutils literal notranslate"><span class="pre">_build/html/</span></code>
+directory. Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and look around. Notice that the “API Documentation”
+page is blank. This is because within <code class="docutils literal notranslate"><span class="pre">source/api.rst</span></code>, the only contents are:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">API Documentation</span>
+<span class="gh">=================</span>
+
+<span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+   <span class="nc">:toctree:</span> autosummary
+
+   rmsfkit.canvas
+</pre></div>
+</div>
+<p>Instead, it should contain:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">API Documentation</span>
+<span class="gh">=================</span>
+
+<span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+   <span class="nc">:toctree:</span> autosummary
+
+   rmsfkit.RMSF
+</pre></div>
+</div>
+<p>After making the change, rerun <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> and refresh the page. There will
+now be a table entry for the RMSF class. Clicking this entry will open the
+documentation that was present in the docstrings! Other than the newly visible
+docstring contents, the rest of the documentation is completely empty. Let’s
+update the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file to include a short description of the package:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Welcome to rmsfkit&#39;s documentation!</span>
+<span class="gh">=========================================================</span>
+
+<span class="s">``rmsfkit``</span> is an example MDAKit that implements the functionality of the <span class="nv">`analysis.rms.RMSF`</span> class within the MDAnalysis package.
+This MDAKit does not serve as a replacement for this functionality and using this MDAKit for real work is discouraged.
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Contents:
+
+   getting_started
+   api
+
+
+<span class="gh">Indices and tables</span>
+<span class="gh">==================</span>
+
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`genindex`</span>
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`modindex`</span>
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`search`</span>
+</pre></div>
+</div>
+<p>Additionally, we can update <code class="docutils literal notranslate"><span class="pre">getting_started.rst</span></code> to let potential users know how to install the package.</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Getting Started</span>
+<span class="gh">===============</span>
+
+The <span class="s">``rmsfkit``</span> package is installable from source.
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">bash</span>
+
+    git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ianmkenney/rmsfkit.git
+    <span class="nb">cd</span><span class="w"> </span>rmsfkit/
+    pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p>Run the <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> command again and refresh the browser window to view the resulting changes.
+You’ll notice the RMSF class documentation has an unformatted citation (<code class="docutils literal notranslate"><span class="pre">:cite:p:`Welford1962`</span></code>).
+If your documentation need citations, you can easily include them using the bibtex format.
+We first create the bibtex file, <code class="docutils literal notranslate"><span class="pre">references.bib</span></code> in the <code class="docutils literal notranslate"><span class="pre">doc/source/</span></code> directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">Welford1962</span><span class="p">,</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span> <span class="n">B</span><span class="o">.</span> <span class="n">P</span><span class="o">.</span>   <span class="n">Welford</span><span class="p">},</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Note</span> <span class="n">on</span> <span class="n">a</span> <span class="n">Method</span> <span class="k">for</span> <span class="n">Calculating</span> <span class="n">Corrected</span> <span class="n">Sums</span> <span class="n">of</span> <span class="n">Squares</span> <span class="ow">and</span> <span class="n">Products</span><span class="p">},</span>
+    <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Technometrics</span><span class="p">},</span>
+    <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">},</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">},</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">419</span><span class="o">-</span><span class="mi">420</span><span class="p">},</span>
+    <span class="n">year</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">1962</span><span class="p">},</span>
+    <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Taylor</span> <span class="o">&amp;</span> <span class="n">Francis</span><span class="p">},</span>
+    <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1080</span><span class="o">/</span><span class="mf">00401706.1962.10490022</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, we need to add a new extension (<code class="docutils literal notranslate"><span class="pre">sphinxcontrib.bibtex</span></code>) as well as the name of the bibtex file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autosummary&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.extlinks&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinxcontrib.bibtex&#39;</span><span class="p">,</span>  <span class="c1"># add this line</span>
+<span class="p">]</span>
+
+<span class="n">bibtex_bibfiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;references.bib&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>In addition, we have to add this extension the install requirements in <code class="docutils literal notranslate"><span class="pre">docs/requirements.yaml</span></code>.
+Add <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">sphinxcontrib-bibtex</span></code> as an additional dependency here.</p>
+<p>Update your environment with</p>
+<p>before once again running <cite>make html</cite>.
+Refeshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.</p>
+<section id="deploying-the-documentation">
+<h4>Deploying the documentation<a class="headerlink" href="#deploying-the-documentation" title="Permalink to this heading"></a></h4>
+<p>Log into <a class="reference external" href="https://readthedocs.org">Read the Docs</a> and navigate to the
+dashboard. Click the “Import a Project” button and find the repository in the
+list. Click the “+” and confirm that the name, URL, and default branch are
+correct.</p>
+<img alt="Import a project into RTD" src="_images/import.png" />
+<img alt="Adding your repository to RTD" src="_images/adding.png" />
+<p>Clicking next will begin the deployment. This immediately starts the build
+process, which can be confirmed by clicking the “Builds” tab. Once the build is
+completed, you can view the deployed documentation, which is now public. This
+completes the documentation requirement for an MDAKit. Notice that the “docs”
+badge in the GitHub rendered <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is now green.</p>
+</section>
+</section>
+<section id="making-an-initial-release">
+<h3>Making an initial release<a class="headerlink" href="#making-an-initial-release" title="Permalink to this heading"></a></h3>
+<p>The MDAKit cookiecutter uses the <a class="reference external" href="https://github.com/python-versioneer/python-versioneer">versioneer utility</a> for version management.
+In brief, software versions are set through <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">git tags</a>.
+Since the kit is initiated without tags, the current version is set to <code class="docutils literal notranslate"><span class="pre">0.0.0</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">rmsfkit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rmsfkit</span><span class="o">.</span><span class="n">__version__</span>
+<span class="go">&#39;0+untagged.3.g3eed836&#39;</span>
+</pre></div>
+</div>
+<p>We can bump this to a <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> in preparation for an initial release on GitHub.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>tag<span class="w"> </span><span class="m">0</span>.1.0
+</pre></div>
+</div>
+<p>This should now be reflected in the interpreter (may require a package reinstall):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>rmsfkit
+&gt;&gt;&gt;<span class="w"> </span>rmsfkit.__version__
+<span class="s1">&#39;0.1.0&#39;</span>
+</pre></div>
+</div>
+<p>Tags are not pushed to remote repositories by default. To push the <cite>0.1.0</cite> tag, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>--tags
+</pre></div>
+</div>
+<p>Viewing the repository tags page on GitHub, you should now see a <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> tag, which can then be used to create a release by expanding its menu options.
+Enter a release name, such as <cite>v0.1.0</cite> and publish!</p>
+<img alt="Process for creating a release by making a tag" src="_images/creating_a_release.gif" />
+</section>
+<section id="submitting-the-kit-to-the-registry">
+<h3>Submitting the kit to the registry<a class="headerlink" href="#submitting-the-kit-to-the-registry" title="Permalink to this heading"></a></h3>
+<p>In order to submit your MDAKit to the registry, you will need to create a pull request on GitHub against the MDAnalysis/MDAKits repository.
+Do this by creating a fork of the MDAnalysis/MDAKits repository.
+Clone the fork to your machine, navigate into <code class="docutils literal notranslate"><span class="pre">MDAKits/mdakits/</span></code>, and make an empty directory with your MDAKit name:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:yourusername/MDAKits
+<span class="nb">cd</span><span class="w"> </span>MDAKits/mdakits
+mkdir<span class="w"> </span>rmsfkit/
+<span class="nb">cd</span><span class="w"> </span>rmsfkit
+</pre></div>
+</div>
+<p>Add the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> for your MDAKit in this directory.
+The contents of <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> for <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> are:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rmsfkit</span>
+<span class="nt">authors</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/yourusername/rmsfkit/blob/main/AUTHORS.md</span>
+<span class="nt">maintainers</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yourusername</span>
+<span class="nt">description</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">An analysis module for calculating the root-mean-square fluctuation of atoms in molecular dynamics simulations.</span>
+<span class="nt">keywords</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rms</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rmsf</span>
+<span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GPL-2.0-or-later</span>
+<span class="nt">project_home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/yourusername/rmsfkit</span>
+<span class="nt">documentation_home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://rmsfkit.readthedocs.io/en/latest/</span>
+<span class="nt">documentation_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API</span>
+
+<span class="c1">## Optional entries</span>
+<span class="nt">src_install</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/yourusername/rmsfkit.git</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd rmsfkit/</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install .</span>
+<span class="nt">python_requires</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&gt;=3.9&quot;</span>
+<span class="nt">mdanalysis_requires</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&gt;=2.0.0&quot;</span>
+<span class="nt">run_tests</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest --pyargs rmsfkit.tests</span>
+<span class="nt">development_status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Beta</span>
+</pre></div>
+</div>
+<p>Commit and push this to your fork:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>metadata.yaml
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Adding rmsfkit&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<p>Refresh the forked repository page in your browser.
+Under “Contribute”, open a pull request.
+Add a title with the name of the kit and add a quick description.
+Click “Create pull request” and wait for the tests to pass.
+Once this is done, you can add a comment along the lines of “&#64;MDAnalysis/mdakits-reviewers, ready for review”.
+The reviewers will get back to you with any change requests before merging it in as a kit.
+At this point there are no additional steps for registering your kit!</p>
+<img alt="Process for submitting a kit to the registry" src="_images/submitting.gif" />
+</section>
+</section>
+<section id="maintaining-a-kit">
+<h2>Maintaining a kit<a class="headerlink" href="#maintaining-a-kit" title="Permalink to this heading"></a></h2>
+<p>There are a variety of reasons a kit may behave unexpectedly after being submitted to the registry.
+Apart from actively developing the kit, changes in kit dependencies, or even Python itself, can introduce (deprecate) new (old) functionality.
+For this reason, the kits’ continuous integration is rerun weekly to confirm the kits expected behavior.
+In the event that a kit no longer passes its tests, an issue in MDAnalysis/MDAKits is automatically raised while notifying the maintainers indicated in the <cite>metadata.yaml</cite> file.
+While the registry developers will be happy to help where possible, ultimately, the maintainers of the MDAKit are responsible for resolving such issues and ensuring that the tests pass.
+The issue will automatically close after the next CI run if the tests pass again.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="about.html" class="btn btn-neutral float-left" title="About MDAKits" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="add.html" class="btn btn-neutral float-right" title="Adding an MDAKit to the Registry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2023, .</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+ 
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

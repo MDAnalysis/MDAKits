@@ -18,6 +18,7 @@ functionality of the `MDAnalysis library`_
 
    mdakits
    about
+   makingakit
    add
 
 
