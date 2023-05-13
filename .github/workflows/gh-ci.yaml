@@ -38,7 +38,7 @@ jobs:
           echo ${{ steps.files.outputs.all }}
           mdakit=$(python utils/get_affected_mdakits.py --json '${{ steps.files.outputs.all }}')
           echo ${mdakit}
-          echo "::set-output name=matrix::${mdakit}"
+          echo "matrix=${mdakit}" >> $GITHUB_OUTPUT
 
   mdakit-ci:
     needs: gen_matrix
