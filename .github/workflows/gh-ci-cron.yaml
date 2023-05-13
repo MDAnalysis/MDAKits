@@ -33,7 +33,7 @@ jobs:
       - id: get-mdakits
         run: |
           mdakit=$(python utils/get_dir_matrix.py)
-          echo "::set-output name=matrix::${mdakit}"
+          echo "matrix=${mdakit}" >> $GITHUB_OUTPUT
 
   mdakit-ci:
     needs: gen_matrix
