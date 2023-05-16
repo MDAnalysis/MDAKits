@@ -17,10 +17,17 @@ documentation_home: https://www.mdanalysis.org/hole2-mdakit/
 documentation_type: API
 
 ## Optional entries
+install:
+  - mamba install hole2 -c conda-forge
+  - pip install git+https://github.com/MDAnalysis/hole2-mdakit@main
 src_install:
   - git clone https://github.com/MDAnalysis/hole2-mdakit.git
-  - conda install conda-build
-  - conda build . && conda install --use-local mdakithole2
+  - mamba install hole2 -c conda-forge
+  - pip install hole2-mdakit
 python_requires: ">=3.8"
 mdanalysis_requires: ">=2.0.0"
+test_dependencies:
+  - pip install pytest pytest-xdist
+run_tests:
+  - pytest -n auto --pyargs mdahole2.tests
 development_status: Beta
