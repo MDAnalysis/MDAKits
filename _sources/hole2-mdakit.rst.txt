@@ -20,22 +20,28 @@ hole2-mdakit
 Installation instructions
 =========================
 
+The latest version of hole2-mdakit can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install hole2 -c conda-forge
+    pip install git+https://github.com/MDAnalysis/hole2-mdakit@main
 The source code of hole2-mdakit can be installed using the following:
 
 .. code-block:: bash
 
     git clone https://github.com/MDAnalysis/hole2-mdakit.git
-    conda install conda-build
-    conda build . && conda install --use-local mdakithole2
+    mamba install hole2 -c conda-forge
+    cd hole2-mdakit && pip install . && cd ..
 
 .. _`hole2-mdakit authors`:
    https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
 
-.. |hole2-mdakit_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+.. |hole2-mdakit_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: hole2-mdakit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
+.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: hole2-mdakit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
