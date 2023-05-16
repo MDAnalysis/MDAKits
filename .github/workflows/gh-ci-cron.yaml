@@ -175,12 +175,12 @@ jobs:
         run: |
           pip install requests setuptools packaging pyyaml pydantic PyGithub
 
-#      - id: combine-write-raise-issues
-#        name: combine-write-raise-issues
-#        run: |
-#          python utils/handle-status.py 
-#        env:
-#          GITHUB_TOKEN:  ${{ github.token }}
+      - id: combine-write-raise-issues
+        name: combine-write-raise-issues
+        run: |
+          python utils/handle-status.py 
+        env:
+          GITHUB_TOKEN:  ${{ github.token }}
 #
 #      - uses: stefanzweifel/git-auto-commit-action@v4
 #        with:
