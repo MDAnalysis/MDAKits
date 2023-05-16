@@ -173,7 +173,7 @@ jobs:
       - id: get-base-python-deps
         name: get-base-python-deps
         run: |
-          pip install requests setuptools packaging pyyaml pydantic PyGithub
+          pip install MDAnalysis requests setuptools packaging pyyaml pydantic PyGithub
 
       - id: combine-write-raise-issues
         name: combine-write-raise-issues
