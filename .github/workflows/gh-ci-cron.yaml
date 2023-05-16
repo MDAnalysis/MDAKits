@@ -1,5 +1,8 @@
 name: GH Actions Cron CI
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -172,18 +175,18 @@ jobs:
         run: |
           pip install requests setuptools packaging pyyaml pydantic PyGithub
 
-      - id: combine-write-raise-issues
-        name: combine-write-raise-issues
-        run: |
-          python utils/handle-status.py 
-        env:
-          GITHUB_TOKEN:  ${{ github.token }}
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: commit changes to status files
-          skip_dirty_check: false
-          skip_fetch: false
+#      - id: combine-write-raise-issues
+#        name: combine-write-raise-issues
+#        run: |
+#          python utils/handle-status.py 
+#        env:
+#          GITHUB_TOKEN:  ${{ github.token }}
+#
+#      - uses: stefanzweifel/git-auto-commit-action@v4
+#        with:
+#          commit_message: commit changes to status files
+#          skip_dirty_check: false
+#          skip_fetch: false
 
   deploy_docs:
     if: ${{ always() }}

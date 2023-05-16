@@ -172,10 +172,10 @@ class MDAKit:
         self.status = Status(path / "status.yaml")
 
     def gen_badges(self):
-        try:
-            badges = self._get_class_badges(self.metadata.import_name)
-        except:
-            badges = BadgesStatusDict()
+        #try:
+        badges = self._get_class_badges(self.metadata.import_name)
+        #except:
+        #    badges = BadgesStatusDict()
 
         try:
             badges.coverage = self._get_codecov_status(
