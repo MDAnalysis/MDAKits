@@ -35,11 +35,11 @@ The source code of mdacli can be installed using the following:
 .. _`mdacli authors`:
    https://github.com/MDAnalysis/mdacli/blob/main/docs/AUTHORS.rst
 
-.. |mdacli_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |mdacli_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: mdacli develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mdacli_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |mdacli_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdacli develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
