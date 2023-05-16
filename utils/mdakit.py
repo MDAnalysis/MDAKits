@@ -195,7 +195,7 @@ class MDAKit:
         # Get all the necessary MDAnalysis classes
         from MDAnalysis.analysis.base import AnalysisBase
         from MDAnalysis.coordinates.base import ProtoReader, WriterBase, ConverterBase
-        from MDAnalysis.topology.base import TopologyBase
+        from MDAnalysis.topology.base import TopologyReaderBase
         from MDAnalysis.transformations.base import TransformationBase
 
         def get_modules(mod):
