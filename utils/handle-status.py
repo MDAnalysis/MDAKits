@@ -108,10 +108,10 @@ def handle_mdakit(maindir: str, statusdir: str,
     mdakit.gen_badges()
 
     # raise issues
-    mdakit.raise_issues()
+    # mdakit.raise_issues()
 
     # write out the status
-    mdakit.status.write_status(mdakit.path)
+    # mdakit.status.write_status(mdakit.path)
 
 
 if __name__ == "__main__":
