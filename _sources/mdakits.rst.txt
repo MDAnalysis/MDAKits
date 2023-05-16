@@ -88,7 +88,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: hole2-mdakit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: hole2-mdakit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
