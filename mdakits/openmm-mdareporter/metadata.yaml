@@ -47,6 +47,8 @@ python_requires: ">=3.7"
 mdanalysis_requires: ">=2.0.0"
 openmm_requires: ">=7.7.0"
 run_tests:
-  - pytest --pyargs mdareporter.tests
+  - cd openmm-mdanalysis-reporter/tests
+  - pytest
 test_dependencies:
   - mamba install -c conda-forge openmm pytest
+  - git clone https://github.com/sef43/openmm-mdanalysis-reporter.git
