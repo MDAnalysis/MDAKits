@@ -1,0 +1,52 @@
+# Required entries
+## str: name of the project (the respository name)
+project_name: openmm-mdanalysis-reporter
+## List(str): a list of authors (or a link to the authors file)
+authors:
+  - https://github.com/sef43/openmm-mdanalysis-reporter/blob/main/AUTHORS.md
+## List(str): a list of maintainers
+maintainers:
+  - sef43
+## str: a free form description of the mdakit
+description:
+    MDAnalysis based reporters for OpenMM
+## List(str): a list of keywords which describe the mdakit
+keywords:
+  - OpenMM
+  - Reporters
+
+## str: the license the mdakit falls under
+license: MIT
+## str: the link to the project's code
+project_home: https://github.com/sef43/openmm-mdanalysis-reporter
+## str: the link to the project's documentation
+documentation_home: https://github.com/sef43/openmm-mdanalysis-reporter/blob/main/README.md
+## str: the type of documentation available [UserGuide, API, README]
+documentation_type: README
+
+# Optional entries
+## List(str): a list of commands to use when installing the latest
+## release of the code. Note: only one installation method can currently
+## be defined. We suggest using conda/mamba where possible.
+install:
+  - mamba install -c jaimergp/label/unsupported-cudatoolkit-shim -c conda-forge --strict-channel-priority openmm
+  - pip install openmm-mdanalysis-reporter
+## List(str): a list of commands to use when installing the mdakit from its
+## source code.
+src_install:
+  - mamba install -c jaimergp/label/unsupported-cudatoolkit-shim -c conda-forge --strict-channel-priority openmm
+  - git clone https://github.com/sef43/openmm-mdanalysis-reporter.git
+  - cd openmm-mdanalysis-reporter
+  - pip install .
+
+## str: the package name used to import the mdakit
+import_name: mdareporter 
+## str: a specification for the range of Python versions supported by this MDAKit
+python_requires: ">=3.9"
+## str: a specification for the range of MDAnalysis versions supported by this MDAKit
+mdanalysis_requires: ">=2.0.0"
+openmm_requires: ">=7.7.0"
+run_tests:
+  - pytest --pyargs mdareporter.tests  
+test_dependencies:
+  -  mamba install -c jaimergp/label/unsupported-cudatoolkit-shim -c conda-forge --strict-channel-priority openmm pytest
