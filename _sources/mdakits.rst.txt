@@ -28,10 +28,6 @@ Each of the MDAKits in the following table links to a page with more details abo
       - drug-design, cheminformatics, molecular-dynamics
       - Cédric Bouysset
       - |ProLIF_latest| |ProLIF_develop|
-    * - :ref:`openmm-mdanalysis-reporter`
-      - OpenMM, Reporters
-      - `openmm-mdanalysis-reporter authors`_
-      - |openmm-mdanalysis-reporter_latest| |openmm-mdanalysis-reporter_develop|
     * - :ref:`hole2-mdakit`
       - pores, ion channels, transporters, HOLE
       - `hole2-mdakit authors`_
@@ -44,6 +40,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - command line interface, molecular-dynamics
       - `mdacli authors`_
       - |mdacli_latest| |mdacli_develop|
+    * - :ref:`openmm-mdanalysis-reporter`
+      - OpenMM, Reporters
+      - `openmm-mdanalysis-reporter authors`_
+      - |openmm-mdanalysis-reporter_latest| |openmm-mdanalysis-reporter_develop|
 
 
 .. toctree::
@@ -53,10 +53,10 @@ Each of the MDAKits in the following table links to a page with more details abo
    propkatraj
    lipyds
    ProLIF
-   openmm-mdanalysis-reporter
    hole2-mdakit
    mdachecker
    mdacli
+   openmm-mdanalysis-reporter
 
 
 .. _`propkatraj authors`:
@@ -84,17 +84,6 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: ProLIF develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. _`openmm-mdanalysis-reporter authors`:
-   https://github.com/sef43/openmm-mdanalysis-reporter/blob/main/AUTHORS.md
-
-.. |openmm-mdanalysis-reporter_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: openmm-mdanalysis-reporter develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |openmm-mdanalysis-reporter_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
-   :alt: openmm-mdanalysis-reporter develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`hole2-mdakit authors`:
@@ -125,5 +114,16 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |mdacli_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdacli develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`openmm-mdanalysis-reporter authors`:
+   https://github.com/sef43/openmm-mdanalysis-reporter/blob/main/AUTHORS.md
+
+.. |openmm-mdanalysis-reporter_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: openmm-mdanalysis-reporter develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |openmm-mdanalysis-reporter_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: openmm-mdanalysis-reporter develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
