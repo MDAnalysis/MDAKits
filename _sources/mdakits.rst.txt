@@ -16,55 +16,63 @@ Each of the MDAKits in the following table links to a page with more details abo
       - Keywords
       - Authors
       - CI badges
-    * - :ref:`mdachecker`
-      - structure analysis, conformation checks
-      - IAlibay
-      - |mdachecker_latest| |mdachecker_develop|
-    * - :ref:`propkatraj`
-      - pKa, protein
-      - `propkatraj authors`_
-      - |propkatraj_latest| |propkatraj_develop|
-    * - :ref:`mdacli`
-      - command line interface, molecular-dynamics
-      - `mdacli authors`_
-      - |mdacli_latest| |mdacli_develop|
-    * - :ref:`ProLIF`
-      - drug-design, cheminformatics, molecular-dynamics
-      - Cédric Bouysset
-      - |ProLIF_latest| |ProLIF_develop|
-    * - :ref:`openmm-mdanalysis-reporter`
-      - OpenMM, Reporters
-      - `openmm-mdanalysis-reporter authors`_
-      - |openmm-mdanalysis-reporter_latest| |openmm-mdanalysis-reporter_develop|
     * - :ref:`lipyds`
       - lipids, membranes
       - lilyminium
       - |lipyds_latest| |lipyds_develop|
+    * - :ref:`ProLIF`
+      - drug-design, cheminformatics, molecular-dynamics
+      - Cédric Bouysset
+      - |ProLIF_latest| |ProLIF_develop|
+    * - :ref:`propkatraj`
+      - pKa, protein
+      - `propkatraj authors`_
+      - |propkatraj_latest| |propkatraj_develop|
     * - :ref:`hole2-mdakit`
       - pores, ion channels, transporters, HOLE
       - `hole2-mdakit authors`_
       - |hole2-mdakit_latest| |hole2-mdakit_develop|
+    * - :ref:`mdachecker`
+      - structure analysis, conformation checks
+      - IAlibay
+      - |mdachecker_latest| |mdachecker_develop|
+    * - :ref:`mdacli`
+      - command line interface, molecular-dynamics
+      - `mdacli authors`_
+      - |mdacli_latest| |mdacli_develop|
+    * - :ref:`openmm-mdanalysis-reporter`
+      - OpenMM, Reporters
+      - `openmm-mdanalysis-reporter authors`_
+      - |openmm-mdanalysis-reporter_latest| |openmm-mdanalysis-reporter_develop|
 
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   mdachecker
-   propkatraj
-   mdacli
-   ProLIF
-   openmm-mdanalysis-reporter
    lipyds
+   ProLIF
+   propkatraj
    hole2-mdakit
+   mdachecker
+   mdacli
+   openmm-mdanalysis-reporter
 
 
-.. |mdachecker_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: mdachecker develop CI status
+.. |lipyds_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mdachecker_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
-   :alt: mdachecker develop CI status
+.. |lipyds_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
+   :alt: lipyds develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |ProLIF_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: ProLIF develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: ProLIF develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`propkatraj authors`:
@@ -78,6 +86,25 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: propkatraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
+.. _`hole2-mdakit authors`:
+   https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
+
+.. |hole2-mdakit_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: hole2-mdakit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: hole2-mdakit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |mdachecker_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: mdachecker develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |mdachecker_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: mdachecker develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
 .. _`mdacli authors`:
    https://github.com/MDAnalysis/mdacli/blob/main/docs/AUTHORS.rst
 
@@ -89,14 +116,6 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: mdacli develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |ProLIF_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: ProLIF develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
-   :alt: ProLIF develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
 .. _`openmm-mdanalysis-reporter authors`:
    https://github.com/sef43/openmm-mdanalysis-reporter/blob/main/AUTHORS.md
 
@@ -106,24 +125,5 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |openmm-mdanalysis-reporter_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: openmm-mdanalysis-reporter develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |lipyds_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: lipyds develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |lipyds_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
-   :alt: lipyds develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. _`hole2-mdakit authors`:
-   https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
-
-.. |hole2-mdakit_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: hole2-mdakit develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
-   :alt: hole2-mdakit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
