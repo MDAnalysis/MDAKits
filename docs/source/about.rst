@@ -58,18 +58,18 @@ useful to a broader community.
    :alt: MDAKits, an ecosystem of downstream packages, may be more sustainable
 
 
-Read our whitepaper!
-====================
+Read our SciPy proceedings paper!
+=================================
 
 To learn more about MDAKits and our vision for more sustainable community
-developed molecular simulation tools, please see our `whitepaper`_.
+developed molecular simulation tools, please see our `SciPy proceedings paper`_.
 
 
 .. _`MDAnalysis library`:
    https://docs.mdanalysis.org
 
-.. _`whitepaper`:
-   https://github.com/MDAnalysis/MDAKits/blob/main/paper/whitepaper/MDAKits_whitepaper.pdf
+.. _`SciPy proceedings paper`:
+   https://conference.scipy.org/proceedings/scipy2023/ian_kenney.html
 
 .. _`listed here`:
    mdakits.html
