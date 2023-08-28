@@ -20,7 +20,7 @@ install:
   - conda install -c conda-forge prolif
 src_install:
   - pip install rdkit
-  - pip install git+https://github.com/chemosim-lab/ProLIF@master
+  - pip install "prolif[dev] @ git+https://github.com/chemosim-lab/ProLIF@master"
 python_requires: ">=3.8"
 mdanalysis_requires: ">=2.2.0"
 run_tests:
