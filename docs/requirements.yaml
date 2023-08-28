@@ -1,5 +1,7 @@
 name: MDAKitRegistry-docs
 channels:
+    - conda-forge
+    - defaults
 dependencies:
     # Base depends
     - python
