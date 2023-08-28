@@ -191,18 +191,13 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - name: setup_miniconda
-        uses: conda-incubator/setup-miniconda@v2
+      - name: setup_micromamba
         with:
-          python-version: 3.9
-          auto-update-conda: false
-          channel-priority: flexible
-          channels: conda-forge
-          add-pip-as-python-dependency: true
-          architecture: x64
-          use-mamba: true
-          miniforge-variant: Mambaforge
           environment-file: docs/requirements.yaml
+          environment_name: MDAKitRegistry-docs
+          create-args: >-
+            python=3.9
+            pip
       - name: build_docs
         run: |
           cd docs && sphinx-build -b html source build
