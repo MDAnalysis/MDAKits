@@ -192,6 +192,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: setup_micromamba
+        uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: docs/requirements.yaml
           environment_name: MDAKitRegistry-docs
