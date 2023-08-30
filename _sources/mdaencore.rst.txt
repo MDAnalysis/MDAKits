@@ -1,0 +1,47 @@
+.. _mdaencore:
+
+************************
+mdaencore
+************************
+
+| 🖋️ **Authors**: `mdaencore authors`_
+| 🏠 **Project home:** https://github.com/MDAnalysis/mdaencore/
+| 📖 **Documentation:** https://www.mdanalysis.org/mdaencore/
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** ensemble, similarity, covariance, PCA
+| 🚀 **Development status:** Mature
+| 📜 **Changelog:** https://github.com/MDAnalysis/mdaencore/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://doi.org/10.1371/journal.pcbi.1004415
+| 🧪 **Tests (latest):** |mdaencore_latest| 
+| 🧪 **Tests (develop):** |mdaencore_develop| 
+| **Description:**
+| *Quantitative ensemble similarity analysis for molecular data*
+
+
+
+Installation instructions
+=========================
+
+The latest version of mdaencore can be installed using the following:
+
+.. code-block:: bash
+
+    pip install mdaencore
+The source code of mdaencore can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/MDAnalysis/mdaencore.git
+
+.. _`mdaencore authors`:
+   https://github.com/MDAnalysis/mdaencore/blob/main/AUTHORS.md
+
+.. |mdaencore_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: mdaencore develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |mdaencore_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: mdaencore develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

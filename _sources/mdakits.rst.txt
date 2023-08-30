@@ -32,6 +32,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - lipids, membranes
       - lilyminium
       - |lipyds_latest| |lipyds_develop|
+    * - :ref:`mdaencore`
+      - ensemble, similarity, covariance, PCA
+      - `mdaencore authors`_
+      - |mdaencore_latest| |mdaencore_develop|
     * - :ref:`hole2-mdakit`
       - pores, ion channels, transporters, HOLE
       - `hole2-mdakit authors`_
@@ -54,6 +58,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    mdachecker
    ProLIF
    lipyds
+   mdaencore
    hole2-mdakit
    propkatraj
    mdacli
@@ -82,7 +87,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: ProLIF develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: ProLIF develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -92,6 +97,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |lipyds_develop| image:: https://img.shields.io/badge/develop-unavailable-inactive.svg
    :alt: lipyds develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`mdaencore authors`:
+   https://github.com/MDAnalysis/mdaencore/blob/main/AUTHORS.md
+
+.. |mdaencore_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: mdaencore develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |mdaencore_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: mdaencore develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`hole2-mdakit authors`:
