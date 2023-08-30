@@ -7,6 +7,7 @@ authors:
 ## List(str): a list of maintainers
 maintainers:
   - ianmkenney
+  - IAlibay
 ## str: a free form description of the mdakit
 description:
     Quantitative ensemble similarity analysis for molecular data
@@ -30,7 +31,7 @@ documentation_type: README + API
 ## release of the code. Note: only one installation method can currently
 ## be defined. We suggest using conda/mamba where possible.
 install:
-  - pip install git+https://github.com/MDAnalysis/mdaencore.git
+  - pip install mdaencore
 
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
