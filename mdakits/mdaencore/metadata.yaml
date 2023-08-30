@@ -1,0 +1,63 @@
+# Required entries
+## str: name of the project (the respository name)
+project_name: mdaencore
+## List(str): a list of authors (or a link to the authors file)
+authors:
+  - https://github.com/MDAnalysis/mdaencore/blob/main/AUTHORS.md
+## List(str): a list of maintainers
+maintainers:
+  - ianmkenney
+  - IAlibay
+## str: a free form description of the mdakit
+description:
+    Quantitative ensemble similarity analysis for molecular data
+## List(str): a list of keywords which describe the mdakit
+keywords:
+  - ensemble
+  - similarity
+  - covariance
+  - PCA
+## str: the license the mdakit falls under
+license: GPL-2.0-or-later
+## str: the link to the project's code
+project_home: https://github.com/MDAnalysis/mdaencore/
+## str: the link to the project's documentation
+documentation_home: https://www.mdanalysis.org/mdaencore/
+## str: the type of documentation available [UserGuide, API, README]
+documentation_type: README + API
+
+# Optional entries
+## List(str): a list of commands to use when installing the latest
+## release of the code. Note: only one installation method can currently
+## be defined. We suggest using conda/mamba where possible.
+install:
+  - pip install mdaencore
+
+## List(str): a list of commands to use when installing the mdakit from its
+## source code.
+src_install:
+  - pip install git+https://github.com/MDAnalysis/mdaencore.git
+## str: the package name used to import the mdakit
+import_name: mdaencore
+## str: a specification for the range of Python versions supported by this MDAKit
+python_requires: ">=3.9"
+## str: a specification for the range of MDAnalysis versions supported by this MDAKit
+mdanalysis_requires: ">=2.0.0"
+## List(str): a list of commands to use when attempting to run the MDAKit's tests
+run_tests:
+  - pytest --pyargs mdaencore.tests
+## List(str): a list of commands to use to install the necessary dependencies required
+## to run the MDAKit's tests
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+## str: the organisation name the MDAKit falls under
+project_org: MDAnalysis 
+## str: the development status of the MDAKit
+development_status: Mature
+## List(str) a list of publications to cite when using the MDAKit
+publications:
+  - https://doi.org/10.1371/journal.pcbi.1004415
+## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
+community_home:
+## str: a link to the MDAKit's changelog
+changelog: https://github.com/MDAnalysis/mdaencore/blob/main/CHANGELOG.md
