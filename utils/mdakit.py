@@ -453,7 +453,7 @@ class MDAKit:
                     )
             if self.metadata.src_install is not None:
                 installation_instructions += (
-                    f"The source code of {name} can be "
+                    f"\nThe source code of {name} can be "
                     "installed using the following:\n\n"
                     ".. code-block:: bash\n\n"
                 )
