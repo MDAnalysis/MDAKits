@@ -7,7 +7,7 @@ dependencies:
     - python
     - pip
 
-    - sphinx==5.3.0
+    - sphinx
     - mdanalysis-sphinx-theme
 
     - pyyaml
