@@ -19,3 +19,5 @@ dependencies:
     # Pip-only installs
     - pip:
       - PyGithub
+      - pip install git+https://github.com/MDAnalysis/mdanalysis-sphinx-theme.git@update-theme
+
