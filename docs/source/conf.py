@@ -198,11 +198,6 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
-rst_epilog = """
-.. |MDAKit_Registry_version| replace:: {0}
-""".format(version)
-
-
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
     'mdanalysis': ('https://docs.mdanalysis.org/stable/', None),
