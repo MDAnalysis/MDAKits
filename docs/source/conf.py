@@ -111,11 +111,11 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = [
-        'https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css',
+        'https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css',
 ]
 
 html_js_files = [
-    'https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js',
+    'https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js',
     'main.js',
 ]
 
