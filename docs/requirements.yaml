@@ -8,7 +8,6 @@ dependencies:
     - pip
 
     - sphinx
-    - mdanalysis-sphinx-theme
 
     - pyyaml
     - pydantic
