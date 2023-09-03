@@ -110,3 +110,5 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
 
         for entry in urls:
             f.write(entry)
+        # Terminate list table
+        f.write('\n')
