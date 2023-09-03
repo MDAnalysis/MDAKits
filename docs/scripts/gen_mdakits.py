@@ -71,7 +71,7 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
              "  2. Provide sufficient details to allow others to use and "
              "potentially participate in the development of the MDAKits\n"
              "  3. Provide information about the current state of the MDAKits "
-             "and how they interact with the latest versions of MDAnalysis\n"
+             "and how they interact with the latest versions of MDAnalysis\n\n"
              "Each of the MDAKits in the following table links to a page with "
              "more details about what the MDAKits do, how they can be "
              "installed and how to participate in their development.\n")
@@ -100,9 +100,6 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
         for kit in mdakits:
             kit.write_table_entry(f, urls, toctree)
             kit.write_mdakit_page()
-
-        # Terminate list table
-        f.write('\n')
 
         # write out the url data
         f.write('\n\n')
