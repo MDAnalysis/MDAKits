@@ -386,9 +386,9 @@ class MDAKit:
         urls = []
         authors = self.gen_authors(urls)
 
-        title = ("************************\n"
+        title = ("************************************************\n"
                  f"{name}\n"
-                 "************************\n\n")
+                 "************************************************\n\n")
 
         description = (f"| **Description:**\n"
                        f"| *{self.metadata.description}*\n")
