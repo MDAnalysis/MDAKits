@@ -101,6 +101,9 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
             kit.write_table_entry(f, urls, toctree)
             kit.write_mdakit_page()
 
+        # Terminate list table
+        f.write('\n')
+
         # write out the url data
         f.write('\n\n')
 
@@ -110,5 +113,3 @@ def generate_mdakit_index(target='.', excludedirs=["template",]):
 
         for entry in urls:
             f.write(entry)
-        # Terminate list table
-        f.write('\n')
