@@ -1,8 +1,8 @@
 .. _openmm-mdanalysis-reporter:
 
-************************
+************************************************
 openmm-mdanalysis-reporter
-************************
+************************************************
 
 | 🖋️ **Authors**: `openmm-mdanalysis-reporter authors`_
 | 🏠 **Project home:** https://github.com/sef43/openmm-mdanalysis-reporter
@@ -25,6 +25,7 @@ The latest version of openmm-mdanalysis-reporter can be installed using the foll
 
     mamba install -c jaimergp/label/unsupported-cudatoolkit-shim -c conda-forge --strict-channel-priority openmm
     pip install openmm-mdanalysis-reporter
+
 The source code of openmm-mdanalysis-reporter can be installed using the following:
 
 .. code-block:: bash

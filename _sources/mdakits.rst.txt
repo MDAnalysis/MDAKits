@@ -5,6 +5,7 @@ The MDAKit registry contains a list of all MDAKits which have been added to this
   1. Inform members of the community about existing MDAKits
   2. Provide sufficient details to allow others to use and potentially participate in the development of the MDAKits
   3. Provide information about the current state of the MDAKits and how they interact with the latest versions of MDAnalysis
+
 Each of the MDAKits in the following table links to a page with more details about what the MDAKits do, how they can be installed and how to participate in their development.
 
 .. list-table:: List of registered MDAKits

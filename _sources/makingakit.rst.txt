@@ -358,7 +358,7 @@ After this point, two more requirements are satisfied:
 Providing documentation
 ***********************
 
-The cookiecutter includes a `Read the Docs <https://readthedocs.org/>`_
+The cookiecutter includes a `Read the Docs <https://readthedocs.org/>`__
 configuration as well a premade documentation environment file that is used by
 Read the Docs and for building locally. First, we need to install the correct
 environment for building the documentation. In the ``docs/`` directory, run:
@@ -500,7 +500,7 @@ Refeshing the RMSF documentation will now show a properly formatted citation usi
 Deploying the documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Log into `Read the Docs <https://readthedocs.org>`_ and navigate to the
+Log into `Read the Docs <https://readthedocs.org>`__ and navigate to the
 dashboard. Click the "Import a Project" button and find the repository in the
 list. Click the "+" and confirm that the name, URL, and default branch are
 correct.

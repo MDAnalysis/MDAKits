@@ -1,8 +1,8 @@
 .. _mdachecker:
 
-************************
+************************************************
 mdachecker
-************************
+************************************************
 
 | 🖋️ **Authors**: IAlibay
 | 🏠 **Project home:** https://github.com/IAlibay/CheckStructure/
@@ -25,6 +25,7 @@ The latest version of mdachecker can be installed using the following:
 .. code-block:: bash
 
     pip install git+https://github.com/IAlibay/CheckStructure@main
+
 The source code of mdachecker can be installed using the following:
 
 .. code-block:: bash

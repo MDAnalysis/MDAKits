@@ -1,8 +1,8 @@
 .. _propkatraj:
 
-************************
+************************************************
 propkatraj
-************************
+************************************************
 
 | 🖋️ **Authors**: `propkatraj authors`_
 | 🏠 **Project home:** https://github.com/Becksteinlab/propkatraj/
@@ -29,6 +29,7 @@ The latest version of propkatraj can be installed using the following:
 .. code-block:: bash
 
     pip install propkatraj
+
 The source code of propkatraj can be installed using the following:
 
 .. code-block:: bash

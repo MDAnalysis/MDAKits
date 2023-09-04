@@ -1,8 +1,8 @@
 .. _mdaencore:
 
-************************
+************************************************
 mdaencore
-************************
+************************************************
 
 | 🖋️ **Authors**: `mdaencore authors`_
 | 🏠 **Project home:** https://github.com/MDAnalysis/mdaencore/
@@ -28,6 +28,7 @@ The latest version of mdaencore can be installed using the following:
 .. code-block:: bash
 
     pip install mdaencore
+
 The source code of mdaencore can be installed using the following:
 
 .. code-block:: bash

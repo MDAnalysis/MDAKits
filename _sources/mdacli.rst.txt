@@ -1,8 +1,8 @@
 .. _mdacli:
 
-************************
+************************************************
 mdacli
-************************
+************************************************
 
 | 🖋️ **Authors**: `mdacli authors`_
 | 🏠 **Project home:** https://github.com/MDAnalysis/mdacli
@@ -26,6 +26,7 @@ The latest version of mdacli can be installed using the following:
 .. code-block:: bash
 
     mamba install -c conda-forge mdacli
+
 The source code of mdacli can be installed using the following:
 
 .. code-block:: bash

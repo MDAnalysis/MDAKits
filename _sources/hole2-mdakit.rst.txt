@@ -1,8 +1,8 @@
 .. _hole2-mdakit:
 
-************************
+************************************************
 hole2-mdakit
-************************
+************************************************
 
 | 🖋️ **Authors**: `hole2-mdakit authors`_
 | 🏠 **Project home:** https://github.com/MDAnalysis/hole2-mdakit
@@ -26,6 +26,7 @@ The latest version of hole2-mdakit can be installed using the following:
 
     mamba install hole2 -c conda-forge
     pip install git+https://github.com/MDAnalysis/hole2-mdakit@main
+
 The source code of hole2-mdakit can be installed using the following:
 
 .. code-block:: bash

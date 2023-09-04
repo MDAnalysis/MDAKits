@@ -1,8 +1,8 @@
 .. _lipyds:
 
-************************
+************************************************
 lipyds
-************************
+************************************************
 
 | 🖋️ **Authors**: lilyminium
 | 🏠 **Project home:** https://github.com/lilyminium/lipyds
@@ -21,6 +21,7 @@ lipyds
 
 Installation instructions
 =========================
+
 
 The source code of lipyds can be installed using the following:
 
