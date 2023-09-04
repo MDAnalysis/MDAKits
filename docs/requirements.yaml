@@ -8,6 +8,7 @@ dependencies:
     - pip
 
     - sphinx
+    - mdanalysis-sphinx-theme
 
     - pyyaml
     - pydantic
@@ -18,5 +19,3 @@ dependencies:
     # Pip-only installs
     - pip:
       - PyGithub
-      - git+https://github.com/MDAnalysis/mdanalysis-sphinx-theme.git@update-theme
-
