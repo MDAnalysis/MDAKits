@@ -17,7 +17,7 @@ keywords:
 ## str: the license the mdakit falls under
 license: GPL-2.0-or-later
 ## str: the link to the project's code
-project_home: https://github.com/p-j-smith/mda-tui/
+project_home: https://github.com/p-j-smith/mda-tui
 ## str: the link to the project's documentation
 documentation_home: https://p-j-smith.github.io/mda-tui/
 ## str: the type of documentation available [UserGuide, API, README]
@@ -32,7 +32,7 @@ install:
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - pip install git+https://github.com/p-j-smith/mda-tui/@main
+  - pip install git+https://github.com/p-j-smith/mda-tui@main
 ## str: the package name used to import the mdakit
 import_name: mda_tui
 ## str: a specification for the range of Python versions supported by this MDAKit
