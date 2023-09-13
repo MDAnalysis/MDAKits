@@ -36,7 +36,7 @@ The source code of ProLIF can be installed using the following:
     pip install rdkit
     pip install "prolif[dev] @ git+https://github.com/chemosim-lab/ProLIF@master"
 
-.. |ProLIF_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |ProLIF_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: ProLIF develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

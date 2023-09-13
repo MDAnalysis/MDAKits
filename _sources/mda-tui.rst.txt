@@ -1,0 +1,46 @@
+.. _mda-tui:
+
+************************************************
+mda-tui
+************************************************
+
+| 🖋️ **Authors**: `mda-tui authors`_
+| 🏠 **Project home:** https://github.com/p-j-smith/mda-tui
+| 📖 **Documentation:** https://p-j-smith.github.io/mda-tui/
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** transformations, TUI
+| 🚀 **Development status:** Alpha
+| 📜 **Changelog:** https://github.com/p-j-smith/mda-tui/blob/main/CHANGELOG.md
+| 🧪 **Tests (latest):** |mda-tui_latest| 
+| 🧪 **Tests (develop):** |mda-tui_develop| 
+| **Description:**
+| *Trajectory transformations in your terminal*
+
+
+
+Installation instructions
+=========================
+
+The latest version of mda-tui can be installed using the following:
+
+.. code-block:: bash
+
+    pip install mda-tui
+
+The source code of mda-tui can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/p-j-smith/mda-tui@main
+
+.. _`mda-tui authors`:
+   https://github.com/p-j-smith/mda-tui/blob/main/AUTHORS.md
+
+.. |mda-tui_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: mda-tui develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |mda-tui_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: mda-tui develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
