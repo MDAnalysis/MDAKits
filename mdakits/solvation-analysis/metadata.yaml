@@ -33,7 +33,7 @@ documentation_type: UserGuide + API
 ## release of the code. Note: only one installation method can currently
 ## be defined. We suggest using conda/mamba where possible.
 install:
-  - conda install -c conda-forge solvation_analysis
+  - mamba install -c conda-forge solvation_analysis
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
@@ -46,11 +46,11 @@ python_requires: ">=3.9"
 mdanalysis_requires: ">=2.0.0"
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
 run_tests:
-  - pytest solvation_analysis/tests
+  - pytest -n auto --pyargs solvation_analysis.tests
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests
 test_dependencies:
-  - conda install pytest
+  - mamba install pytest
 ## str: the development status of the MDAKit
 development_status: Beta
 ## List(str) a list of publications to cite when using the MDAKit
