@@ -17,14 +17,15 @@ documentation_type: UserGuide + API
 
 ## Optional entries
 install:
-  - conda install -c conda-forge prolif
+  - mamba install -c conda-forge prolif
 src_install:
   - pip install rdkit
   - pip install "prolif[dev] @ git+https://github.com/chemosim-lab/ProLIF@master"
 python_requires: ">=3.8"
 mdanalysis_requires: ">=2.2.0"
 run_tests:
-  - pytest --pyargs prolif
+  - git clone latest
+  - pytest -v ./tests
 test_dependencies:
   - mamba install pytest
 project_org: chemosim-lab
