@@ -27,7 +27,7 @@ The latest version of ProLIF can be installed using the following:
 
 .. code-block:: bash
 
-    conda install -c conda-forge prolif
+    mamba install -c conda-forge prolif
 
 The source code of ProLIF can be installed using the following:
 
