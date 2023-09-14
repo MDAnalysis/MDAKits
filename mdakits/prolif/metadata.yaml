@@ -24,6 +24,7 @@ src_install:
 python_requires: ">=3.8"
 mdanalysis_requires: ">=2.2.0"
 run_tests:
+  - mamba install ipython py3Dmol "matplotlib>=3.5"
   - git clone latest
   - pytest -v ./tests
 test_dependencies:
