@@ -386,9 +386,9 @@ class MDAKit:
         urls = []
         authors = self.gen_authors(urls)
 
-        title = ("************************\n"
+        title = ("************************************************\n"
                  f"{name}\n"
-                 "************************\n\n")
+                 "************************************************\n\n")
 
         description = (f"| **Description:**\n"
                        f"| *{self.metadata.description}*\n")
@@ -453,7 +453,7 @@ class MDAKit:
                     )
             if self.metadata.src_install is not None:
                 installation_instructions += (
-                    f"The source code of {name} can be "
+                    f"\nThe source code of {name} can be "
                     "installed using the following:\n\n"
                     ".. code-block:: bash\n\n"
                 )

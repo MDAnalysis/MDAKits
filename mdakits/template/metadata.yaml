@@ -1,63 +1,92 @@
+# TEMPLATE MDAKit file
+# --------------------
+# 
+# Please replace ALL entries with appropriate content for YOUR MDAKit.
+# Below we use the placeholder GH_HOST_ACCOUNT for the GitHub account where
+# the source code repository is held, typically your username or the 
+# organization that you're part off.
+# MYPROJECT is the name of your project (the repository name and here
+# we assume that this is also the PyPi/conda package name) whereas 
+# MYPACKAGE is how you import it in python.
+#
+# See https://mdakits.mdanalysis.org/add.html for more information. 
+#
 # Required entries
 ## str: name of the project (the respository name)
-project_name: propkatraj
-## List(str): a list of authors (or a link to the authors file)
+project_name: MYPROJECT
+## List(str): a link to the authors file (preferred) or a list of authors 
 authors:
-  - https://github.com/Becksteinlab/propkatraj/blob/main/AUTHORS
+  - https://github.com/GH_HOST_ACCOUNT/MYPROJECT/blob/main/AUTHORS
 ## List(str): a list of maintainers
 maintainers:
-  - ianmkenney
-  - IAlibay
-  - orbeckst
+  - NAME1
+  - OPTIONAL_NAME2
+  - OPTIONAL_NAME3
 ## str: a free form description of the mdakit
 description:
-    pKa estimates for proteins using an ensemble approach
+    (REPLACE WITH A SHORT DESCRIPTION OF WHAT YOUR MDAKit DOES.) 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
-  - pKa
-  - protein
+  - KEYWORD1
+  - KEYWORD2
 ## str: the license the mdakit falls under
 license: GPL-2.0-or-later
 ## str: the link to the project's code
-project_home: https://github.com/Becksteinlab/propkatraj/
+project_home: https://github.com/GH_HOST_ACCOUNT/MYPROJECT/
 ## str: the link to the project's documentation
-documentation_home: https://becksteinlab.github.io/propkatraj/
+documentation_home: https://MYPROJECT.readthedocs.io
 ## str: the type of documentation available [UserGuide, API, README]
 documentation_type: UserGuide + API
 
 # Optional entries
 ## List(str): a list of commands to use when installing the latest
 ## release of the code. Note: only one installation method can currently
-## be defined. We suggest using conda/mamba where possible.
+## be defined. We suggest using mamba where possible (e.g.
+##   mamba -c conda-forge install MYPROJECT
+## for a conda package installation)
 install:
-  - pip install propkatraj
+  - pip install MYPROJECT
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - pip install git+https://github.com/Becksteinlab/propkatraj@main
+  - pip install git+https://github.com/GH_HOST_ACCOUNT/MYPROJECT@main
 ## str: the package name used to import the mdakit
-import_name: propkatraj
+import_name: MYPACKAGE
 ## str: a specification for the range of Python versions supported by this MDAKit
-python_requires: ">=3.8"
+python_requires: ">=3.9"
 ## str: a specification for the range of MDAnalysis versions supported by this MDAKit
 mdanalysis_requires: ">=2.0.0"
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
+## If you package your tests inside your package then you can typically use the 
+##     pytest --pyargs MYPACKAGE.tests
+## command as shown below. 
+## Otherwise you need to include commands to make the tests available. 
+## For example, if the tests are in the repository at the top level under `./tests`:
+## First use `git clone latest` to either clone the top commit for "develop" runs or check out
+## the latest tag for "latest release" checks. Then then run pytest:
+##    - git clone latest
+##    - pytest -v ./tests
+## Feel free to ask for advice on your pull request!
 run_tests:
-  - pytest --pyargs propkatraj.tests
+  - pytest --pyargs MYPACKAGE.tests
 ## List(str): a list of commands to use to install the necessary dependencies required
-## to run the MDAKit's tests
+## to run the MDAKit's tests.
+## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
+## make sure that it is appropriate for how you run tests.
 test_dependencies:
   - mamba install pytest MDAnalysisTests
 ## str: the organisation name the MDAKit falls under
-project_org: Becksteinlab 
+project_org: GH_HOST_ACCOUNT 
 ## str: the development status of the MDAKit
-development_status: Mature
+## See https://pypi.org/classifiers/ for development status classifiers.
+development_status: Productions/Stable
 ## List(str) a list of publications to cite when using the MDAKit
+## Links to scientific publications or stable URLs (typically of the form
+## https://doi.org/<DOI> or to a preprint server)
 publications:
-  - https://zenodo.org/record/7647010
-  - https://doi.org/10.1021/ct200133y
-  - https://doi.org/10.1085/jgp.201411219
+  - URL1
+  - URL2
 ## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
-community_home:
+community_home: URL
 ## str: a link to the MDAKit's changelog
-changelog:
+changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGES

@@ -96,29 +96,14 @@ pygments_style = 'default'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'mdanalysis_sphinx_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 
-color = {'orange': '#FF9200',
-         'gray': '#808080',
-         'white': '#FFFFFF',
-         'black': '#000000', }
 html_theme_options = {
-    'canonical_url': '',
-    'logo_only': True,
-    'display_version': True,
-    'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
-    'style_nav_header_background': 'white',  # '#e76900', # dark orange
-    # Toc options
-    'collapse_navigation': True,
-    'sticky_navigation': True,
-    'navigation_depth': 4,
-    'includehidden': True,
-    'titles_only': False,
+    'mda_official': True,
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -126,12 +111,11 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = [
-        'custom.css',
-        'https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css',
+    'https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css',
 ]
 
 html_js_files = [
-    'https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js',
+    'https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js',
     'main.js',
 ]
 
@@ -214,12 +198,7 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
-rst_epilog = """
-.. |MDAKit_Registry_version| replace:: {0}
-""".format(version)
-
-
 intersphinx_mapping = {
-    'https://docs.python.org/3/': None,
-    'https://docs.mdanalysis.org/stable/': None,
+    'python': ('https://docs.python.org/3/', None),
+    'mdanalysis': ('https://docs.mdanalysis.org/stable/', None),
 }

@@ -1,12 +1,14 @@
 name: MDAKitRegistry-docs
 channels:
+    - conda-forge
+    - defaults
 dependencies:
     # Base depends
     - python
     - pip
 
-    - sphinx==5.3.0
-    - sphinx_rtd_theme
+    - sphinx
+    - mdanalysis-sphinx-theme
 
     - pyyaml
     - pydantic
