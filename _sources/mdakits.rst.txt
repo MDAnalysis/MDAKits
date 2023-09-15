@@ -17,6 +17,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - Keywords
       - Authors
       - CI badges
+    * - :ref:`mda-tui`
+      - transformations, TUI
+      - `mda-tui authors`_
+      - |mda-tui_latest| |mda-tui_develop|
     * - :ref:`propkatraj`
       - pKa, protein
       - `propkatraj authors`_
@@ -59,6 +63,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :maxdepth: 1
    :hidden:
 
+   mda-tui
    propkatraj
    ProLIF
    hole2-mdakit
@@ -69,6 +74,17 @@ Each of the MDAKits in the following table links to a page with more details abo
    mda-tui
    openmm-mdanalysis-reporter
 
+
+.. _`mda-tui authors`:
+   https://github.com/p-j-smith/mda-tui/blob/main/AUTHORS.md
+
+.. |mda-tui_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: mda-tui develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |mda-tui_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: mda-tui develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`propkatraj authors`:
    https://github.com/Becksteinlab/propkatraj/blob/main/AUTHORS
