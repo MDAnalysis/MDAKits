@@ -32,10 +32,12 @@ documentation_type: UserGuide + API
 ## release of the code. Note: only one installation method can currently
 ## be defined. We suggest using conda/mamba where possible.
 install:
-  - mamba install -c psi4 mdsapt
+  - mamba install -c psi4/label/dev -c conda-forge mdsapt
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
+  # required dependencies from environment.yaml
+  - mamba install -c psi4 -c conda-forge -c defaults "psi4>=1.6.1,<1.7" click numpy openmm pandas pdbfixer pytest pydantic pytest-cov pyyaml rdkit
   - pip install git+https://github.com/calpolyccg/MDSAPT@master
 ## str: the package name used to import the mdakit
 import_name: mdsapt
