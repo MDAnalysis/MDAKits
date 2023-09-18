@@ -47,7 +47,8 @@ python_requires: ">=3.8"
 mdanalysis_requires: ">=2.0.0"
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
 run_tests:
-  - pytest --pyargs mdsapt.tests
+  - git clone latest
+  - pytest -v ./mdsapt/tests
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests
 test_dependencies:
