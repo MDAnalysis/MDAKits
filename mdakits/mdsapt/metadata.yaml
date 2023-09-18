@@ -19,7 +19,7 @@ keywords:
   - protein
   - quantum
 ## str: the license the mdakit falls under
-license: GPL-2.0-or-later
+license: GPL-3.0-or-later
 ## str: the link to the project's code
 project_home: https://github.com/calpolyccg/MDSAPT
 ## str: the link to the project's documentation
@@ -32,7 +32,7 @@ documentation_type: UserGuide + API
 ## release of the code. Note: only one installation method can currently
 ## be defined. We suggest using conda/mamba where possible.
 install:
-  - conda install -c psi4 mdsapt
+  - mamba install -c psi4 mdsapt
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
@@ -45,15 +45,15 @@ python_requires: ">=3.8"
 mdanalysis_requires: ">=2.0.0"
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
 run_tests:
-  - pytest --pyargs propkatraj.tests
+  - pytest --pyargs mdsapt.tests
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests
 test_dependencies:
-project_org: Becksteinlab 
+project_org: calpolyccg 
 ## str: the development status of the MDAKit
 development_status: Mature
 ## List(str) a list of publications to cite when using the MDAKit
 publications:
 community_home:
 ## str: a link to the MDAKit's changelog
-changelog:
+changelog: https://github.com/calpolyccg/MDSAPT/releases
