@@ -1,0 +1,58 @@
+# Required entries
+## str: name of the project (the respository name)
+project_name: solvation-analysis
+## List(str): a list of authors (or a link to the authors file)
+authors:
+  - orionarcher
+  - hmacdope
+  - laurlee
+  - IAlibay
+## List(str): a list of maintainers
+maintainers:
+  - orionarcher
+  - hmacdope
+## str: a free form description of the mdakit
+description:
+    A comprehensive tool for analyzing liquid solvation structure.
+## List(str): a list of keywords which describe the mdakit
+keywords:
+  - chemistry
+  - electrolytes
+  - solvation structure
+## str: the license the mdakit falls under
+license: GPL-2.0-or-later
+## str: the link to the project's code
+project_home: https://github.com/MDAnalysis/solvation-analysis
+## str: the link to the project's documentation
+documentation_home: https://solvation-analysis.readthedocs.io/en/latest/
+## str: the type of documentation available [UserGuide, API, README]
+documentation_type: UserGuide + API
+
+# Optional entries
+## List(str): a list of commands to use when installing the latest
+## release of the code. Note: only one installation method can currently
+## be defined. We suggest using conda/mamba where possible.
+install:
+  - mamba install -c conda-forge solvation_analysis
+## List(str): a list of commands to use when installing the mdakit from its
+## source code.
+src_install:
+  - pip install git+https://github.com/MDAnalysis/solvation-analysis@main
+## str: the package name used to import the mdakit
+import_name: solvation_analysis
+## str: a specification for the range of Python versions supported by this MDAKit
+python_requires: ">=3.9"
+## str: a specification for the range of MDAnalysis versions supported by this MDAKit
+mdanalysis_requires: ">=2.0.0"
+## List(str): a list of commands to use when attempting to run the MDAKit's tests
+run_tests:
+  - pytest -n auto --pyargs solvation_analysis.tests
+## List(str): a list of commands to use to install the necessary dependencies required
+## to run the MDAKit's tests
+test_dependencies:
+  - mamba install pytest pytest-xdist
+## str: the development status of the MDAKit
+development_status: Beta
+## List(str) a list of publications to cite when using the MDAKit
+publications:
+  - https://doi.org/10.21105/joss.05183
