@@ -45,6 +45,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - command line interface, molecular-dynamics
       - `mdacli authors`_
       - |mdacli_latest| |mdacli_develop|
+    * - :ref:`solvation-analysis`
+      - chemistry, electrolytes, solvation structure
+      - orionarcher,hmacdope,laurlee,IAlibay
+      - |solvation-analysis_latest| |solvation-analysis_develop|
     * - :ref:`lipyds`
       - lipids, membranes
       - lilyminium
@@ -66,6 +70,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    mdaencore
    mdachecker
    mdacli
+   solvation-analysis
    lipyds
    openmm-mdanalysis-reporter
 
@@ -139,6 +144,14 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |mdacli_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdacli develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |solvation-analysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: solvation-analysis develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |solvation-analysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: solvation-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. |lipyds_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
