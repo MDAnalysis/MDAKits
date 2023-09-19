@@ -33,7 +33,7 @@ documentation_type: UserGuide + API
 ## release of the code. Note: only one installation method can currently
 ## be defined. We suggest using conda/mamba where possible.
 install:
-  - mamba install -c conda-forge solvation_analysis "pandas<2"
+  - mamba install -c conda-forge solvation_analysis
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
