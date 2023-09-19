@@ -377,7 +377,7 @@ class MDAKit:
             urls.append(f".. _`{self.metadata.project_name} authors`:\n"
                         f"   {self.metadata.authors[0]}\n\n")
         else:
-            auths = ','.join(self.metadata.authors)
+            auths = ', '.join(self.metadata.authors)
 
         return auths
 
