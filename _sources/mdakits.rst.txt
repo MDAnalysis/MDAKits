@@ -47,7 +47,7 @@ Each of the MDAKits in the following table links to a page with more details abo
       - |mdacli_latest| |mdacli_develop|
     * - :ref:`solvation-analysis`
       - chemistry, electrolytes, solvation structure
-      - orionarcher,hmacdope,laurlee,IAlibay
+      - orionarcher, hmacdope, laurlee, IAlibay
       - |solvation-analysis_latest| |solvation-analysis_develop|
     * - :ref:`lipyds`
       - lipids, membranes

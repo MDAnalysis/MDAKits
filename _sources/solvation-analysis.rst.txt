@@ -4,7 +4,7 @@
 solvation-analysis
 ************************************************
 
-| 🖋️ **Authors**: orionarcher,hmacdope,laurlee,IAlibay
+| 🖋️ **Authors**: orionarcher, hmacdope, laurlee, IAlibay
 | 🏠 **Project home:** https://github.com/MDAnalysis/solvation-analysis
 | 📖 **Documentation:** https://solvation-analysis.readthedocs.io/en/latest/
 | ⚖️ **License:** GPL-2.0-or-later
