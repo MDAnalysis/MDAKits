@@ -63,7 +63,7 @@ mdanalysis_requires: ">=2.0.0"
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
 run_tests:
-  - pytest --pyargs MYPACKAGE.tests
+  - pytest --pyargs demokit.tests
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests.
 ## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
