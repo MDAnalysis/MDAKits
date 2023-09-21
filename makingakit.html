@@ -285,11 +285,7 @@ the following code block:</p>
                              <span class="s2">&quot;or underflow occurred&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Removing the <code class="docutils literal notranslate"><span class="pre">canvas</span></code> function and introducing the <code class="docutils literal notranslate"><span class="pre">RMSF</span></code> class requires we edit the default <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file, or else importing will result in an error. Replace</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.rmsfkit</span> <span class="kn">import</span> <span class="n">canvas</span>
-</pre></div>
-</div>
-<p>with</p>
+<p>To make our <code class="docutils literal notranslate"><span class="pre">RMSF</span></code> analysis class easier to access, we import it in <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. Add</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.rmsfkit</span> <span class="kn">import</span> <span class="n">RMSF</span>
 </pre></div>
 </div>
@@ -464,22 +460,17 @@ environment for building the documentation. In the <code class="docutils literal
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
 </pre></div>
 </div>
-<p>There will be a few errors:</p>
-<ol class="arabic simple">
-<li><p>Documentation language (defaults to English)</p></li>
-<li><p>import failure for <code class="docutils literal notranslate"><span class="pre">rmsfkit.canvas</span></code> (since we removed this function)</p></li>
-<li><p>attribute error for <code class="docutils literal notranslate"><span class="pre">canvas</span></code> (same reason as above)</p></li>
-</ol>
-<p>Despite the errors, the documentation is generated in the <code class="docutils literal notranslate"><span class="pre">_build/html/</span></code>
-directory. Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and look around. Notice that the “API Documentation”
-page is blank. This is because within <code class="docutils literal notranslate"><span class="pre">source/api.rst</span></code>, the only contents are:</p>
+<p>This will convert the reStructuredText files into HTML in the <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory.
+Open <code class="docutils literal notranslate"><span class="pre">index.html</span></code> and look around.</p>
+<p>Notice that the “API Documentation” does not contain all of the information found in the docstrings of our code.
+This is because within <code class="docutils literal notranslate"><span class="pre">source/api.rst</span></code>, the only contents are:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">API Documentation</span>
 <span class="gh">=================</span>
 
 <span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
    <span class="nc">:toctree:</span> autosummary
 
-   rmsfkit.canvas
+   rmsfkit
 </pre></div>
 </div>
 <p>Instead, it should contain:</p>
@@ -567,6 +558,9 @@ We first create the bibtex file, <code class="docutils literal notranslate"><spa
 <p>In addition, we have to add this extension the install requirements in <code class="docutils literal notranslate"><span class="pre">docs/requirements.yaml</span></code>.
 Add <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">sphinxcontrib-bibtex</span></code> as an additional dependency here.</p>
 <p>Update your environment with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>rmsfkit<span class="w"> </span>-f<span class="w"> </span>requirements.yaml
+</pre></div>
+</div>
 <p>before once again running <cite>make html</cite>.
 Refeshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.</p>
 <section id="deploying-the-documentation">
