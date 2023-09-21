@@ -165,13 +165,8 @@ the following code block:
 	            raise ValueError("Some RMSF values negative; overflow " +
 	                             "or underflow occurred")
 
-Removing the ``canvas`` function and introducing the ``RMSF`` class requires we edit the default ``__init__.py`` file, or else importing will result in an error. Replace
 
-.. code-block:: python
-
-	from .rmsfkit import canvas
-
-with
+To make our ``RMSF`` analysis class easier to access, we import it in ``__init__.py``. Add 
 
 .. code-block:: python
 
@@ -373,15 +368,11 @@ We can now build the documentation html files using the included ``Makefile``. W
 
 	make html
 
-There will be a few errors:
+This will convert the reStructuredText files into HTML in the ``_build`` directory.
+Open ``index.html`` and look around. 
 
-#. Documentation language (defaults to English)
-#. import failure for ``rmsfkit.canvas`` (since we removed this function)
-#. attribute error for ``canvas`` (same reason as above)
-
-Despite the errors, the documentation is generated in the ``_build/html/`` 
-directory. Open ``index.html`` and look around. Notice that the "API Documentation" 
-page is blank. This is because within ``source/api.rst``, the only contents are:
+Notice that the "API Documentation" does not contain all of the information found in the docstrings of our code.
+This is because within ``source/api.rst``, the only contents are:
 
 .. code-block:: rst
 
@@ -391,7 +382,7 @@ page is blank. This is because within ``source/api.rst``, the only contents are:
 	.. autosummary::
 	   :toctree: autosummary
 	
-	   rmsfkit.canvas
+	   rmsfkit
 
 Instead, it should contain:
 
@@ -490,7 +481,7 @@ Add ``- sphinxcontrib-bibtex`` as an additional dependency here.
 
 Update your environment with
 
-.. code-block::bash
+.. code-block:: bash
 
 	mamba env update --name rmsfkit -f requirements.yaml
 
