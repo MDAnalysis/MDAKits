@@ -6,7 +6,7 @@ Do you have an MDAKit? Consider adding it to the `MDAKit registry`_!
 
 
 .. note::   
-   The `MDAKit registry`_ is still in its infancy, we expect that the way in
+   The `MDAKit registry`_ is still in its initial stages. We expect that the way in
    which MDAKits are added, and the type of information required, may change
    over time. Please reach out via the `issue tracker`_ if you have any
    questions.
@@ -87,12 +87,12 @@ comments. Replace values with content appropriate for your MDAKit.
    username or the organization that you're part of.
 
 ``MYPROJECT``
-   The name of your project. This is name of your repository. In the template we
+   The name of your project. This is the name of your repository. In the template we
    also use it as the PyPi/conda package name.
    
 ``MYPACKAGE``
    The name of the Python package. It describes how you import it in Python
-   code.
+   code, i.e. it is used in ``import MYPACKAGE``.
 
 The file is in `YAML format`_ so please look at the latest
 specifications to learn more about how to write correct YAML
@@ -152,7 +152,7 @@ this can lead to incorrect YAML.
    ## be defined. We suggest using mamba where possible (e.g.
    ##   mamba -c conda-forge install MYPROJECT
    ## for a conda package installation).
-   ## Here we use the simple PyPi installation:
+   ## Here we use a simple PyPi installation:
    install:
      - pip install MYPROJECT
        
@@ -176,7 +176,7 @@ this can lead to incorrect YAML.
    ## command as shown below. 
    ## Otherwise you need to include commands to make the tests available. 
    ## For example, if the tests are in the repository at the top level under `./tests`:
-   ## First use `git clone latest` to either clone the top commit for "develop" runs or check out
+   ## First use `git clone latest` to either clone the top commit for "development code" checks or check out
    ## the latest tag for "latest release" checks. Then then run pytest:
    ##    - git clone latest
    ##    - pytest -v ./tests
@@ -209,7 +209,7 @@ this can lead to incorrect YAML.
    community_home: URL
    
    ## str: a link to the MDAKit's changelog
-   changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGES
+   changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGELOG.md
 
 
 .. _`issue tracker`:
