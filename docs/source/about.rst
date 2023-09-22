@@ -29,7 +29,7 @@ requirements**:
 
 It is also highly encouraged that the MDAKit also satisfies:
 
-#. Code is installable as a standard package
+#. The code is installable as a standard package
 #. Information on bug reporting, user discussions, and community guidelines is made available
 
 Registered MDAKits are then `listed here`_ with the intention of providing a centralised
