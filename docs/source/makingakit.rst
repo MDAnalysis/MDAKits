@@ -562,7 +562,8 @@ Clone the fork to your machine, navigate into ``MDAKits/mdakits/``, and make an 
 	mkdir rmsfkit/
 	cd rmsfkit
 
-Add the ``metadata.yaml`` for your MDAKit in this directory.
+Add the ``metadata.yaml`` for your MDAKit in this directory (see
+:ref:`specification` for details).     
 The contents of ``metadata.yaml`` for ``rmsfkit`` are:
 
 .. code-block:: yaml

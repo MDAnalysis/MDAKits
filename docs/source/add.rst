@@ -1,3 +1,5 @@
+.. _add-mdakit:
+
 ********************************
 Adding an MDAKit to the Registry
 ********************************
@@ -20,7 +22,7 @@ Process
 
 Add a MDAKit by following these steps:
 
-#. Create a fork the MDAKit repository https://github.com/MDAnalysis/mdakits.
+#. Create a fork of the MDAKit repository https://github.com/MDAnalysis/mdakits.
 #. Make a new branch (choose any name, but "add-my-awesome-mdakit" is a good
    one).
 #. Add a new folder under ``mdakits`` with the name of your MDAKit.
@@ -68,7 +70,8 @@ Add a MDAKit by following these steps:
       dependencies. In this case **please fix your code and make a new
       release of your code**.  
 
-      
+.. _specification:
+   
 Specification of the ``metadata.yaml`` file
 ===========================================
 
