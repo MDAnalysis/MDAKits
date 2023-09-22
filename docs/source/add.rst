@@ -165,7 +165,7 @@ comments. Replace values with content appropriate for your MDAKit.
    
    ## str: the development status of the MDAKit
    ## See https://pypi.org/classifiers/ for development status classifiers.
-   development_status: Productions/Stable
+   development_status: Production/Stable
    
    ## List(str) a list of publications to cite when using the MDAKit
    ## Links to scientific publications or stable URLs (typically of the form
