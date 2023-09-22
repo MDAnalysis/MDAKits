@@ -65,7 +65,7 @@ comments. Replace values with content appropriate for your MDAKit.
    different.
    
 ``MYPACKAGE``
-   The name of the Python package, it describes is how you import it in Python
+   The name of the Python package. It describes how you import it in Python
    code.
 
 
