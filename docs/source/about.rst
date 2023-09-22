@@ -1,6 +1,9 @@
+.. -*- coding: utf-8 -*- 
 *************
 About MDAKits
 *************
+
+.. _what-is-an-MDAKit:
 
 What is an MDAKit?
 ==================
@@ -11,16 +14,25 @@ scientific problems or in some form enhance the functionality of the MDAnalysis
 core library. An MDAKit can be written by anyone and hosted anywhere.
 
 At the discretion of their authors, MDAKits can be **registered** in this
-MDAKit registry. To do so, MDAKits have to meet a minimum set of requirements
-including; being open-source licensed, hosted in a version control system,
-have a clear designation of code authors/maintainers, have some kind of documentation
-on their use, and have a minimal set of tests in place.
+MDAKit registry. To do so, a MDAKit has to meet a **minimum set of
+requirements**:
+
+- uses MDAnalysis;
+- is open-source licensed;
+- is hosted in a version control system;
+- has a clear designation of code authors/maintainers;
+- has some kind of documentation on its use;
+- has a minimal set of tests in place.
 
 Registered MDAKits are then `listed here`_ with the intention of providing a centralised
 place where the community can find out more about them. Where possible, the MDAKits are
 also *continually tested* against the *latest* and *development* versions of MDAnalysis.
 This ensures that users and developers have an up-to-date view of the code health of an
 MDAKit.
+
+The specifications are written out in detail in :ref:`the MDAKits
+paper<mdakits-paper>`.
+
 
 Why?
 ====
@@ -57,12 +69,21 @@ useful to a broader community.
    :width: 600
    :alt: MDAKits, an ecosystem of downstream packages, may be more sustainable
 
+.. _mdakits-paper:	 
 
 Read our SciPy proceedings paper!
 =================================
 
 To learn more about MDAKits and our vision for more sustainable community
-developed molecular simulation tools, please see our `SciPy proceedings paper`_.
+developed molecular simulation tools, please see our `SciPy
+proceedings paper`_:
+
+   Irfan Alibay, Lily Wang, Fiona Naughton, Ian Kenney, Jonathan Barnoud,
+   Richard J Gowers, and Oliver Beckstein. *MDAKits: A framework for
+   FAIR-compliant molecular simulation analysis* . *In* Meghann Agarwal, Chris
+   Calloway, and Dillon Niederhut, editors, Proceedings of the 22nd Python in
+   Science Conference (SCIPY 2023), pages 76–84, Austin, TX, 2023. doi:
+   `10.25080/gerudo-f2bc6f59-00a`_.
 
 
 .. _`MDAnalysis library`:
@@ -76,3 +97,6 @@ developed molecular simulation tools, please see our `SciPy proceedings paper`_.
 
 .. _`FAIR`:
    https://doi.org/10.15497/RDA00068
+
+.. _`10.25080/gerudo-f2bc6f59-00a`:
+   https://doi.org/10.25080/gerudo-f2bc6f59-00a
