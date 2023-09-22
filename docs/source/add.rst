@@ -56,7 +56,7 @@ comments. Replace values with content appropriate for your MDAKit.
 
    
 ``GH_ACCOUNT``
-   The GitHub account where he source code repository is held, typically your
+   The GitHub account where the source code repository is held; typically your
    username or the organization that you're part of.
 
 ``MYPROJECT``
