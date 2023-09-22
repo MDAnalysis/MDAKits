@@ -171,6 +171,7 @@ entries**.
      - KEYWORD2
        
    ## str: the license the mdakit falls under
+   ## See https://spdx.org/licenses/ for valid license specifiers
    license: GPL-2.0-or-later
    
    ## str: the link to the project's code
