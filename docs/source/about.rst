@@ -22,7 +22,7 @@ requirements**:
 
 #. The code in the package uses the MDAnalysis library
 #. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
-#. Code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
+#. The code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
 #. Code authors and maintainers are clearly designated
 #. Minimal documentation is provided
 #. Tests and continuous integration are present
