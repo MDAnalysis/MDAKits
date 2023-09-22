@@ -24,8 +24,9 @@ requirements**:
 #. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
 #. The code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
 #. Code authors and maintainers are clearly designated
-#. Minimal documentation is provided
-#. Tests and continuous integration are present
+#. Minimal documentation is provided (what your code does, how to install it,
+   and how to use it)
+#. At least minimal regression tests and continuous integration are present
 
 It is also highly encouraged that the MDAKit also satisfies:
 

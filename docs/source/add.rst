@@ -20,23 +20,50 @@ Process
 
 Add a MDAKit by following these steps:
 
-1. Create a fork the MDAKit repository https://github.com/MDAnalysis/mdakits.
-2. Make a new branch (choose any name, but "add-my-awesome-mdakit" is a good
+#. Create a fork the MDAKit repository https://github.com/MDAnalysis/mdakits.
+#. Make a new branch (choose any name, but "add-my-awesome-mdakit" is a good
    one).
-3. Add a new folder under ``mdakits`` with the name of your MDAKit.
-4. Add a metadata YAML file with your MDAKit's details; copy the template from
+#. Add a new folder under ``mdakits`` with the name of your MDAKit.
+#. Add a metadata YAML file with your MDAKit's details; copy the template from
    `mdakits/template/metadata.yaml`_ and modify it. See the comments in the
    file and the :ref:`notes below<template>` for more explanations.
-5. Open a Pull Request (PR) against the *main* branch of the
-   `MDAnalysis/mdakits repository`_.
-6. Someone from the MDAnalysis team will *review* your Pull Request for
+#. Create a Pull Request (PR) against the *main* branch of the
+   `MDAnalysis/mdakits repository`_. Add a title with the name of the
+   kit and add a short description.
+
+   A number of tests should automatically start to run.
+#. Wait for the tests to pass (i.e., all results should be green and
+   pass).
+
+   * If there are problems at this stage (tests don't pass and you don't
+     know where to start fixing the problem), add a comment on your PR
+
+        @MDAnalysis/mdakits-reviewers please help with tests.
+
+     in order to notify the MDAnalysis team that you need assistance
+     with fixing your submission.
+   * If the tests passed, add a comment on your PR
+
+        @MDAnalysis/mdakits-reviewers, ready for review.
+
+#. Someone from the MDAnalysis team will *review* your Pull Request for
    fulfilling the :ref:`requirements for an MDAKit<requirements>` and for any
    technical issues. They may ask for modifications so please *check your PR
    regularly* or `enable GitHub notifications`_. Part of the registration
-   process is to engage in a conversation with the MDAnalysis team so please be
-   responsive.
-7. When your PR passes review, it will be merged and your MDAKit is registered.
+   process is to engage in a conversation with the MDAnalysis
+   team. The PR cannot be merged until all relevant questions have
+   been addressed.
+#. When your PR passes review, it will be merged and your MDAKit is registered.
+#. Remember: **You remain responsible for maintaining your code**. The
+   registry (and MDAnalysis) continuously test your code but the
+   MDAnalysis team cannot fix it for you.
 
+   .. Note:: 
+
+      The registry will alert you via GitHub issues when your tests
+      start failing with newer versions of MDAnalysis or other
+      dependencies. In this case **please fix your code and make a new
+      release of your code**.  
 
 
 .. _template:
@@ -61,14 +88,18 @@ comments. Replace values with content appropriate for your MDAKit.
 
 ``MYPROJECT``
    The name of your project. This is name of your repository. In the template we
-   assume that this is also the PyPi/conda package name but you can make them
-   different.
+   also use it as the PyPi/conda package name.
    
 ``MYPACKAGE``
    The name of the Python package. It describes how you import it in Python
    code.
 
-
+The file is in `YAML format`_ so please look at the latest
+specifications to learn more about how to write correct YAML
+files. Typically you should be able to get started by modifying the
+template. Note that YAML is a file format where indentation matters so
+make sure that your editor uses spaces and not TAB for indentation as
+this can lead to incorrect YAML.
    
 
 .. code-block:: yaml
@@ -141,7 +172,7 @@ comments. Replace values with content appropriate for your MDAKit.
    
    ## List(str): a list of commands to use when attempting to run the MDAKit's tests
    ## If you package your tests inside your package then you can typically use the 
-   ##     pytest --pyargs MYPACKAGE.tests
+   ##     pytest --pyargs MYPACKAGE
    ## command as shown below. 
    ## Otherwise you need to include commands to make the tests available. 
    ## For example, if the tests are in the repository at the top level under `./tests`:
@@ -151,7 +182,7 @@ comments. Replace values with content appropriate for your MDAKit.
    ##    - pytest -v ./tests
    ## Feel free to ask for advice on your pull request!
    run_tests:
-     - pytest --pyargs MYPACKAGE.tests
+     - pytest --pyargs MYPACKAGE
        
    ## List(str): a list of commands to use to install the necessary dependencies required
    ## to run the MDAKit's tests.
@@ -194,3 +225,5 @@ comments. Replace values with content appropriate for your MDAKit.
 
 .. _`mdakits/template/metadata.yaml`:
    https://github.com/MDAnalysis/MDAKits/blob/main/mdakits/template/metadata.yaml
+
+.. _YAML format: https://yaml.org/   
