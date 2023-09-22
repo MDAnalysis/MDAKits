@@ -1,4 +1,5 @@
-.. -*- coding: utf-8 -*- 
+.. -*- coding: utf-8 -*-
+
 *************
 About MDAKits
 *************
@@ -13,16 +14,23 @@ components from the `MDAnalysis library`_ with the aim of solving specific
 scientific problems or in some form enhance the functionality of the MDAnalysis
 core library. An MDAKit can be written by anyone and hosted anywhere.
 
+.. _requirements:
+
 At the discretion of their authors, MDAKits can be **registered** in this
 MDAKit registry. To do so, a MDAKit has to meet a **minimum set of
 requirements**:
 
-- uses MDAnalysis;
-- is open-source licensed;
-- is hosted in a version control system;
-- has a clear designation of code authors/maintainers;
-- has some kind of documentation on its use;
-- has a minimal set of tests in place.
+#. Code in the package uses the MDAnalysis library
+#. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
+#. Code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
+#. Code authors and maintainers are clearly designated
+#. Minimal documentation is provided
+#. Tests and continuous integration are present
+
+It is also highly encouraged that the MDAKit also satisfies:
+
+#. Code is installable as a standard package
+#. Information on bug reporting, user discussions, and community guidelines is made available
 
 Registered MDAKits are then `listed here`_ with the intention of providing a centralised
 place where the community can find out more about them. Where possible, the MDAKits are
