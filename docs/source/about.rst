@@ -20,7 +20,7 @@ At the discretion of their authors, MDAKits can be **registered** in this
 MDAKit registry. To do so, a MDAKit has to meet a **minimum set of
 requirements**:
 
-#. Code in the package uses the MDAnalysis library
+#. The code in the package uses the MDAnalysis library
 #. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
 #. Code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
 #. Code authors and maintainers are clearly designated
