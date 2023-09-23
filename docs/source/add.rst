@@ -32,7 +32,7 @@ Add a MDAKit by following these steps:
 #. Create a Pull Request (PR) from your branch against the *main*
    branch of the `MDAnalysis/mdakits repository`_. Add a title with
    the name of the kit (e.g. "register MyAwesomeTool") and add a short
-   description.
+   description of your MDAKit.
 
    A number of tests should automatically start to run.
 #. Wait for the tests to pass (i.e., all results should be green and
