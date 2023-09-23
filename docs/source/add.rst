@@ -66,7 +66,7 @@ Add a MDAKit by following these steps:
    .. Note:: 
 
       The registry will alert you via GitHub issues when your tests
-      start failing with newer versions of MDAnalysis or other
+      start failing with newer versions of your code, MDAnalysis, or other
       dependencies. In this case **please fix your code and make a new
       release of your code**.  
 
