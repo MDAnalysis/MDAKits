@@ -94,7 +94,7 @@ The file contains required and optional entries.
    For now, the :ref:`template file<template>` serves as the primary
    specification for the MDAKits registry ``metadata.yaml`` file.  The
    MDAKits registry specification will likely be updated in the future
-   and some of the optional entries may become required.
+   with new optional and required entries. The MDAKits team will assist developers with migrations should they become necessary.
 
 
       
