@@ -67,7 +67,7 @@ Add a MDAKit by following these steps:
 
       The registry will alert you via GitHub issues when your tests
       start failing with newer versions of your code, MDAnalysis, or other
-      dependencies. In this case **please fix your code and make a new
+      dependencies. In this case your MDAKit will be displayed as broken in the registry. **It is your responsibility to fix any relevant code in your package and (if necessary) make a new
       release of your code**.  
 
 .. _specification:
