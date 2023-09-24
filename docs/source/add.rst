@@ -60,7 +60,7 @@ Add a MDAKit by following these steps:
    cannot be merged until all relevant questions have been addressed.
 #. When your PR passes review, it will be merged and your MDAKit is registered.
 #. Remember: **You remain responsible for maintaining your code**. The
-   registry (and MDAnalysis) continuously test your code but the
+   registry will continuously test your code but the
    MDAnalysis team cannot fix it for you.
 
    .. Note:: 
