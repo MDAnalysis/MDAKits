@@ -86,7 +86,7 @@ The file contains required and optional entries.
 **Optional entries**
    Any variable in the *Optional entries* section **may** be left
    empty or be left out. However, it is recommended to provide as much
-   information as possible.
+   information as possible. Some aspects of the registry checks may not work if these details are missing.
 
 
 .. Note::    
