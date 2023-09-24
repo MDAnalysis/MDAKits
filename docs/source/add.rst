@@ -25,7 +25,7 @@ Add a MDAKit by following these steps:
 #. Create a fork of the MDAKit repository https://github.com/MDAnalysis/mdakits.
 #. Make a new branch (choose any name, but "add-my-awesome-mdakit" is a good
    one).
-#. Add a new folder under ``mdakits`` with the name of your MDAKit.
+#. Add a new folder under ``mdakits`` with the name of your MDAKit. Please note that this *must* match the name provided under the `project_name` entry of the ``metadata.yaml`` file.
 #. Add a metadata YAML file with your MDAKit's details; copy the template from
    `mdakits/template/metadata.yaml`_ and modify it. See the comments in the
    file and the :ref:`notes below<template>` for more explanations.
