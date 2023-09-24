@@ -122,21 +122,35 @@
   <section id="about-mdakits">
 <h1>About MDAKits<a class="headerlink" href="#about-mdakits" title="Permalink to this heading"></a></h1>
 <section id="what-is-an-mdakit">
-<h2>What is an MDAKit?<a class="headerlink" href="#what-is-an-mdakit" title="Permalink to this heading"></a></h2>
+<span id="id1"></span><h2>What is an MDAKit?<a class="headerlink" href="#what-is-an-mdakit" title="Permalink to this heading"></a></h2>
 <p>MDAnalysis Toolkits (MDAKits) are standalone packages containing code using
 components from the <a class="reference external" href="https://docs.mdanalysis.org">MDAnalysis library</a> with the aim of solving specific
 scientific problems or in some form enhance the functionality of the MDAnalysis
 core library. An MDAKit can be written by anyone and hosted anywhere.</p>
-<p>At the discretion of their authors, MDAKits can be <strong>registered</strong> in this
-MDAKit registry. To do so, MDAKits have to meet a minimum set of requirements
-including; being open-source licensed, hosted in a version control system,
-have a clear designation of code authors/maintainers, have some kind of documentation
-on their use, and have a minimal set of tests in place.</p>
+<p id="requirements">At the discretion of their authors, MDAKits can be <strong>registered</strong> in this
+MDAKit registry. To do so, a MDAKit has to meet a <strong>minimum set of
+requirements</strong>:</p>
+<ol class="arabic simple">
+<li><p>The code in the package uses the MDAnalysis library</p></li>
+<li><p>The code is open source and published under an <a class="reference external" href="https://opensource.org/licenses/">OSI approved license</a></p></li>
+<li><p>The code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)</p></li>
+<li><p>Code authors and maintainers are clearly designated</p></li>
+<li><p>Minimal documentation is provided (what your code does, how to install it,
+and how to use it)</p></li>
+<li><p>At least minimal regression tests and continuous integration are present</p></li>
+</ol>
+<p>It is also highly encouraged that the MDAKit also satisfies:</p>
+<ol class="arabic simple">
+<li><p>The code is installable as a standard package</p></li>
+<li><p>Information on bug reporting, user discussions, and community guidelines is made available</p></li>
+</ol>
 <p>Registered MDAKits are then <a class="reference external" href="mdakits.html">listed here</a> with the intention of providing a centralised
 place where the community can find out more about them. Where possible, the MDAKits are
 also <em>continually tested</em> against the <em>latest</em> and <em>development</em> versions of MDAnalysis.
 This ensures that users and developers have an up-to-date view of the code health of an
 MDAKit.</p>
+<p>The specifications are written out in detail in <a class="reference internal" href="#mdakits-paper"><span class="std std-ref">the MDAKits
+paper</span></a>.</p>
 </section>
 <section id="why">
 <h2>Why?<a class="headerlink" href="#why" title="Permalink to this heading"></a></h2>
@@ -156,9 +170,18 @@ useful to a broader community.</p>
 <a class="reference internal image-reference" href="_images/MDAcats_MDAKits.png"><img alt="MDAKits, an ecosystem of downstream packages, may be more sustainable" src="_images/MDAcats_MDAKits.png" style="width: 600px;" /></a>
 </section>
 <section id="read-our-scipy-proceedings-paper">
-<h2>Read our SciPy proceedings paper!<a class="headerlink" href="#read-our-scipy-proceedings-paper" title="Permalink to this heading"></a></h2>
+<span id="mdakits-paper"></span><h2>Read our SciPy proceedings paper!<a class="headerlink" href="#read-our-scipy-proceedings-paper" title="Permalink to this heading"></a></h2>
 <p>To learn more about MDAKits and our vision for more sustainable community
-developed molecular simulation tools, please see our <a class="reference external" href="https://conference.scipy.org/proceedings/scipy2023/ian_kenney.html">SciPy proceedings paper</a>.</p>
+developed molecular simulation tools, please see our <a class="reference external" href="https://conference.scipy.org/proceedings/scipy2023/ian_kenney.html">SciPy
+proceedings paper</a>:</p>
+<blockquote>
+<div><p>Irfan Alibay, Lily Wang, Fiona Naughton, Ian Kenney, Jonathan Barnoud,
+Richard J Gowers, and Oliver Beckstein. <em>MDAKits: A framework for
+FAIR-compliant molecular simulation analysis</em> . <em>In</em> Meghann Agarwal, Chris
+Calloway, and Dillon Niederhut, editors, Proceedings of the 22nd Python in
+Science Conference (SCIPY 2023), pages 76–84, Austin, TX, 2023. doi:
+<a class="reference external" href="https://doi.org/10.25080/gerudo-f2bc6f59-00a">10.25080/gerudo-f2bc6f59-00a</a>.</p>
+</div></blockquote>
 </section>
 </section>
 

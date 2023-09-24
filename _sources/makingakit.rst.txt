@@ -4,14 +4,15 @@ Making an MDAKit
 
 Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
 Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
-In order to be accepted, there are several requirements that must be addressed:
+In order to be accepted, there are several :ref:`requirements<requirements>` that must be addressed:
 
 #. Code in the package uses the MDAnalysis library
 #. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
 #. Code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)
 #. Code authors and maintainers are clearly designated
-#. Minimal documentation is provided
-#. Tests and continuous integration are present
+#. Minimal documentation is provided (what your code does, how to install it,
+   and how to use it)
+#. At least minimal regression tests and continuous integration are present
 
 It is also highly encouraged that the MDAKit also satisfies:
 
@@ -561,7 +562,8 @@ Clone the fork to your machine, navigate into ``MDAKits/mdakits/``, and make an 
 	mkdir rmsfkit/
 	cd rmsfkit
 
-Add the ``metadata.yaml`` for your MDAKit in this directory.
+Add the ``metadata.yaml`` for your MDAKit in this directory (see
+:ref:`specification` for details).     
 The contents of ``metadata.yaml`` for ``rmsfkit`` are:
 
 .. code-block:: yaml

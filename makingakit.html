@@ -134,14 +134,15 @@
 <h1>Making an MDAKit<a class="headerlink" href="#making-an-mdakit" title="Permalink to this heading"></a></h1>
 <p>Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
 Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
-In order to be accepted, there are several requirements that must be addressed:</p>
+In order to be accepted, there are several <a class="reference internal" href="about.html#requirements"><span class="std std-ref">requirements</span></a> that must be addressed:</p>
 <ol class="arabic simple">
 <li><p>Code in the package uses the MDAnalysis library</p></li>
 <li><p>The code is open source and published under an <a class="reference external" href="https://opensource.org/licenses/">OSI approved license</a></p></li>
 <li><p>Code is versioned and provided in an accessible version-controlled repository (GitHub, GitLab, Bitbucket, etc.)</p></li>
 <li><p>Code authors and maintainers are clearly designated</p></li>
-<li><p>Minimal documentation is provided</p></li>
-<li><p>Tests and continuous integration are present</p></li>
+<li><p>Minimal documentation is provided (what your code does, how to install it,
+and how to use it)</p></li>
+<li><p>At least minimal regression tests and continuous integration are present</p></li>
 </ol>
 <p>It is also highly encouraged that the MDAKit also satisfies:</p>
 <ol class="arabic simple">
@@ -619,7 +620,8 @@ mkdir<span class="w"> </span>rmsfkit/
 <span class="nb">cd</span><span class="w"> </span>rmsfkit
 </pre></div>
 </div>
-<p>Add the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> for your MDAKit in this directory.
+<p>Add the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> for your MDAKit in this directory (see
+<a class="reference internal" href="add.html#specification"><span class="std std-ref">Specification of the metadata.yaml file</span></a> for details).
 The contents of <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> for <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> are:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rmsfkit</span>
 <span class="nt">authors</span><span class="p">:</span>
