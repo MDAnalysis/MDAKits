@@ -24,5 +24,5 @@ src_install:
 python_requires: ">=3.9"
 mdanalysis_requires: ">=2.5.0"
 run_tests:
-  - pytest --pyargs tests
+  - pytest tests
 development_status: Beta
