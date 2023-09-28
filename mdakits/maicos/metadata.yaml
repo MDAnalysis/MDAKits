@@ -24,5 +24,7 @@ python_requires: ">=3.9"
 mdanalysis_requires: ">=2.5.0"
 run_tests:
   - git clone latest
-  - pytest -v ./tests
+  - tox -e py-tests
+test_dependencies:
+  - tox
 development_status: Beta
