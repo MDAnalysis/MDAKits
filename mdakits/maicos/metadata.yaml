@@ -1,0 +1,28 @@
+project_name: maicos
+authors:
+  - https://gitlab.com/maicos-devel/maicos/-/blob/main/AUTHORS.rst
+maintainers:
+  - schlaicha
+  - PicoCentauri
+  - hejamu
+description:
+    Analyse molecular dynamics simulations of interfacial and confined systems.
+keywords:
+  - Molecular Dynamics
+  - Confined Systems
+license: GPL-3.0-or-later
+project_home: https://gitlab.com/maicos-devel/maicos
+documentation_home: https://maicos.readthedocs.io/en/latest/
+documentation_type: UserGuide + API
+
+## Optional entries
+install:
+  - pip install maicos
+  - mamba install -c conda-forge maicos
+src_install:
+  - pip install git+https://gitlab.com/maicos-devel/maicos.git
+python_requires: ">=3.9"
+mdanalysis_requires: ">=2.5.0"
+run_tests:
+  - pytest --pyargs tests
+development_status: Beta
