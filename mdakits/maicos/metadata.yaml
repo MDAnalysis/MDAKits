@@ -26,5 +26,5 @@ run_tests:
   - git clone latest
   - tox -e py-tests
 test_dependencies:
-  - tox
+  - pip install tox
 development_status: Beta
