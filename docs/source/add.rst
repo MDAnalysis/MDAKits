@@ -156,7 +156,7 @@ entries**.
      - https://github.com/GH_HOST_ACCOUNT/MYPROJECT/blob/main/AUTHORS
        
    ## List(str): a list of maintainers
-   ## Please note these _must_ GitHub handles
+   ## Please note these _must_ be GitHub handles
    ## The maintainers will be tagged in issues if their MDAKit is failing.
    maintainers:
      - NAME1
