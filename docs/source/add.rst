@@ -156,6 +156,8 @@ entries**.
      - https://github.com/GH_HOST_ACCOUNT/MYPROJECT/blob/main/AUTHORS
        
    ## List(str): a list of maintainers
+   ## Please note these _must_ be GitHub handles
+   ## The maintainers will be tagged in issues if their MDAKit is failing.
    maintainers:
      - NAME1
      - OPTIONAL_NAME2
@@ -175,6 +177,7 @@ entries**.
    license: GPL-2.0-or-later
    
    ## str: the link to the project's code
+   ## Please note that this is not limited to GitHub! Can be Gitlab, etc..
    project_home: https://github.com/GH_HOST_ACCOUNT/MYPROJECT/
    
    ## str: the link to the project's documentation
