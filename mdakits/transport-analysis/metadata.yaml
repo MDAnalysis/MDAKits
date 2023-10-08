@@ -18,7 +18,7 @@ documentation_type: UserGuide + API
 
 # Optional entries
 install:
-  - pip install git+https://github.com/MDAnalysis/transport-analysis@main
+  - pip install transport-analysis
 src_install:
   - pip install git+https://github.com/MDAnalysis/transport-analysis@main
 import_name: transport_analysis
