@@ -1,0 +1,46 @@
+.. _transport-analysis:
+
+************************************************
+transport-analysis
+************************************************
+
+| 🖋️ **Authors**: `transport-analysis authors`_
+| 🏠 **Project home:** https://github.com/MDAnalysis/transport-analysis
+| 📖 **Documentation:** https://transport-analysis.readthedocs.io
+| ⚖️ **License:** GPL-2.0
+| 🔑 **Keywords:** transport properties, molecular dynamics
+| 🚀 **Development status:** Alpha
+| 📜 **Changelog:** https://github.com/MDAnalysis/transport-analysis/blob/main/CHANGELOG.md
+| 🧪 **Tests (latest):** |transport-analysis_latest| 
+| 🧪 **Tests (develop):** |transport-analysis_develop| 
+| **Description:**
+| *A Python package to compute and analyze transport properties from molecular simulations.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of transport-analysis can be installed using the following:
+
+.. code-block:: bash
+
+    pip install transport-analysis
+
+The source code of transport-analysis can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/MDAnalysis/transport-analysis@main
+
+.. _`transport-analysis authors`:
+   https://github.com/MDAnalysis/transport-analysis/blob/main/AUTHORS.md
+
+.. |transport-analysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: transport-analysis develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |transport-analysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: transport-analysis develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

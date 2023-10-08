@@ -25,6 +25,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - pKa, protein
       - `propkatraj authors`_
       - |propkatraj_latest| |propkatraj_develop|
+    * - :ref:`transport-analysis`
+      - transport properties, molecular dynamics
+      - `transport-analysis authors`_
+      - |transport-analysis_latest| |transport-analysis_develop|
     * - :ref:`maicos`
       - Molecular Dynamics, Confined Systems
       - `maicos authors`_
@@ -69,6 +73,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 
    mdaencore
    propkatraj
+   transport-analysis
    maicos
    mda-tui
    mdachecker
@@ -100,6 +105,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |propkatraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: propkatraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`transport-analysis authors`:
+   https://github.com/MDAnalysis/transport-analysis/blob/main/AUTHORS.md
+
+.. |transport-analysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: transport-analysis develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |transport-analysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: transport-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`maicos authors`:
