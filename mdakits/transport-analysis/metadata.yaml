@@ -1,0 +1,34 @@
+## Required entries
+project_name: transport-analysis
+authors:
+  - https://github.com/MDAnalysis/transport-analysis/blob/main/AUTHORS.md
+maintainers:
+  - xhgchen
+  - hmacdope
+  - orionarcher
+description:
+    A Python package to compute and analyze transport properties from molecular simulations.
+keywords:
+  - transport properties
+  - molecular dynamics
+license: GPL-2.0
+project_home: https://github.com/MDAnalysis/transport-analysis
+documentation_home: https://transport-analysis.readthedocs.io
+documentation_type: UserGuide + API
+
+# Optional entries
+install:
+  - pip install git+https://github.com/MDAnalysis/transport-analysis@main
+src_install:
+  - pip install git+https://github.com/MDAnalysis/transport-analysis@main
+import_name: transport_analysis
+python_requires: ">=3.9"
+mdanalysis_requires: ">=2.0.0"
+run_tests:
+  - pytest --pyargs transport_analysis.tests
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+project_org: MDAnalysis
+development_status: Alpha
+community_home: https://github.com/MDAnalysis/transport-analysis/discussions
+changelog: https://github.com/MDAnalysis/transport-analysis/blob/main/CHANGELOG.md
