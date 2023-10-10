@@ -3,7 +3,7 @@ Making an MDAKit
 ****************
 
 Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
-For a video walkthrough of this tutorial, watch `our recorded tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg>` on YouTube.
+For a video walkthrough of this tutorial, watch `our recorded :ref:`tutorial<https://www.youtube.com/watch?v=viCPUHkgSxg>` on YouTube.
 
 Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
 In order to be accepted, there are several :ref:`requirements<requirements>` that must be addressed:
