@@ -5,6 +5,7 @@ authors:
 
 maintainers:
   - ianmkenney
+  - IAlibay
 
 description:
     Analysis of water dynamics in molecular dynamics trajectories and water interactions with other molecules.
