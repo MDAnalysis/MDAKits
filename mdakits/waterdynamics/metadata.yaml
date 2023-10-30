@@ -4,8 +4,9 @@ authors:
   - https://github.com/MDAnalysis/waterdynamics/blob/main/AUTHORS.md
 
 maintainers:
-  - ianmkenney
   - IAlibay
+  - ianmkenney
+  - lilyminium
 
 description:
     Analysis of water dynamics in molecular dynamics trajectories and water interactions with other molecules.
