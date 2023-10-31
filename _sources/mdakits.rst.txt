@@ -17,6 +17,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - Keywords
       - Authors
       - CI badges
+    * - :ref:`PathSimAnalysis`
+      - similarity, paths, metrics
+      - `PathSimAnalysis authors`_
+      - |PathSimAnalysis_latest| |PathSimAnalysis_develop|
     * - :ref:`mdaencore`
       - ensemble, similarity, covariance, PCA
       - `mdaencore authors`_
@@ -71,6 +75,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :maxdepth: 1
    :hidden:
 
+   PathSimAnalysis
    mdaencore
    mdacli
    hole2-mdakit
@@ -84,6 +89,17 @@ Each of the MDAKits in the following table links to a page with more details abo
    maicos
    solvation-analysis
 
+
+.. _`PathSimAnalysis authors`:
+   https://github.com/MDAnalysis/PathSimAnalysis/blob/main/AUTHORS.md
+
+.. |PathSimAnalysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: PathSimAnalysis develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |PathSimAnalysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: PathSimAnalysis develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`mdaencore authors`:
    https://github.com/MDAnalysis/mdaencore/blob/main/AUTHORS.md

@@ -20,7 +20,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mdaencore &mdash; MDAKits Registry  documentation</title>
+  <title>PathSimAnalysis &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/site.css" type="text/css" />
       <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" type="text/css" />
@@ -40,8 +40,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="mdacli" href="mdacli.html" />
-    <link rel="prev" title="PathSimAnalysis" href="PathSimAnalysis.html" /> 
+    <link rel="next" title="mdaencore" href="mdaencore.html" />
+    <link rel="prev" title="Registry of MDAnalysis Toolkits (MDAKits)" href="mdakits.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -84,11 +84,11 @@
         <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="PathSimAnalysis.html">PathSimAnalysis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">mdaencore</a><ul>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PathSimAnalysis</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="mdaencore.html">mdaencore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdacli.html">mdacli</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hole2-mdakit.html">hole2-mdakit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lipyds.html">lipyds</a></li>
@@ -123,9 +123,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">mdaencore</li>
+      <li class="breadcrumb-item active">PathSimAnalysis</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/mdaencore.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/PathSimAnalysis.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -133,33 +133,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mdaencore">
-<span id="id1"></span><h1>mdaencore<a class="headerlink" href="#mdaencore" title="Link to this heading"></a></h1>
+  <section id="pathsimanalysis">
+<span id="id1"></span><h1>PathSimAnalysis<a class="headerlink" href="#pathsimanalysis" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/MDAnalysis/mdaencore/blob/main/AUTHORS.md">mdaencore authors</a></div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/MDAnalysis/mdaencore/">https://github.com/MDAnalysis/mdaencore/</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://www.mdanalysis.org/mdaencore/">https://www.mdanalysis.org/mdaencore/</a></div>
+<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/MDAnalysis/PathSimAnalysis/blob/main/AUTHORS.md">PathSimAnalysis authors</a></div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/MDAnalysis/PathSimAnalysis/">https://github.com/MDAnalysis/PathSimAnalysis/</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://mdanalysis.org/PathSimAnalysis">https://mdanalysis.org/PathSimAnalysis</a></div>
 <div class="line">⚖️ <strong>License:</strong> GPL-2.0-or-later</div>
-<div class="line">🔑 <strong>Keywords:</strong> ensemble, similarity, covariance, PCA</div>
-<div class="line">🚀 <strong>Development status:</strong> Mature</div>
-<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/MDAnalysis/mdaencore/blob/main/CHANGELOG.md">https://github.com/MDAnalysis/mdaencore/blob/main/CHANGELOG.md</a></div>
+<div class="line">🔑 <strong>Keywords:</strong> similarity, paths, metrics</div>
+<div class="line">🚀 <strong>Development status:</strong> Production/Stable</div>
+<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/MDAnalysis/PathSimAnalysis/blob/main/CHANGELOG.md">https://github.com/MDAnalysis/PathSimAnalysis/blob/main/CHANGELOG.md</a></div>
 <div class="line">📑 <strong>Publications:</strong></div>
 <div class="line-block">
-<div class="line">* <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1004415">https://doi.org/10.1371/journal.pcbi.1004415</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1004568">https://doi.org/10.1371/journal.pcbi.1004568</a></div>
 </div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="mdaencore develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="mdaencore develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="PathSimAnalysis develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="PathSimAnalysis develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>Quantitative ensemble similarity analysis for molecular data</em></div>
+<div class="line"><em>An MDAKit that calculates the geometric similarity of molecular dynamics trajectories using path metrics such as the Hausdorff or Fréchet distances.</em></div>
 </div>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The latest version of mdaencore can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>mdaencore
+<p>The latest version of PathSimAnalysis can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pathsimanalysis
 </pre></div>
 </div>
-<p>The source code of mdaencore can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MDAnalysis/mdaencore.git
+<p>The source code of PathSimAnalysis can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MDAnalysis/PathSimAnalysis@main
 </pre></div>
 </div>
 </section>
@@ -169,8 +169,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="PathSimAnalysis.html" class="btn btn-neutral float-left" title="PathSimAnalysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="mdacli.html" class="btn btn-neutral float-right" title="mdacli" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mdakits.html" class="btn btn-neutral float-left" title="Registry of MDAnalysis Toolkits (MDAKits)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mdaencore.html" class="btn btn-neutral float-right" title="mdaencore" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
