@@ -1,0 +1,46 @@
+.. _waterdynamics:
+
+************************************************
+waterdynamics
+************************************************
+
+| 🖋️ **Authors**: `waterdynamics authors`_
+| 🏠 **Project home:** https://github.com/MDAnalysis/waterdynamics/
+| 📖 **Documentation:** https://mdanalysis.org/waterdynamics
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** water, hydrogenbonds, MSD
+| 🚀 **Development status:** Production/Stable
+| 📜 **Changelog:** https://github.com/MDAnalysis/waterdynamics/blob/main/CHANGELOG.md
+| 🧪 **Tests (latest):** |waterdynamics_latest| 
+| 🧪 **Tests (develop):** |waterdynamics_develop| 
+| **Description:**
+| *Analysis of water dynamics in molecular dynamics trajectories and water interactions with other molecules.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of waterdynamics can be installed using the following:
+
+.. code-block:: bash
+
+    pip install waterdynamics
+
+The source code of waterdynamics can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/MDAnalysis/waterdynamics@main
+
+.. _`waterdynamics authors`:
+   https://github.com/MDAnalysis/waterdynamics/blob/main/AUTHORS.md
+
+.. |waterdynamics_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: waterdynamics develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |waterdynamics_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: waterdynamics develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

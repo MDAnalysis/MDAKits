@@ -69,6 +69,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - chemistry, electrolytes, solvation structure
       - orionarcher, hmacdope, laurlee, IAlibay
       - |solvation-analysis_latest| |solvation-analysis_develop|
+    * - :ref:`waterdynamics`
+      - water, hydrogenbonds, MSD
+      - `waterdynamics authors`_
+      - |waterdynamics_latest| |waterdynamics_develop|
 
 
 .. toctree::
@@ -88,6 +92,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    openmm-mdanalysis-reporter
    maicos
    solvation-analysis
+   waterdynamics
 
 
 .. _`PathSimAnalysis authors`:
@@ -219,5 +224,16 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |solvation-analysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: solvation-analysis develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`waterdynamics authors`:
+   https://github.com/MDAnalysis/waterdynamics/blob/main/AUTHORS.md
+
+.. |waterdynamics_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: waterdynamics develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |waterdynamics_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: waterdynamics develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
