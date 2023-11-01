@@ -615,6 +615,44 @@ At this point there are no additional steps for registering your kit!
 .. image:: img/rmsftutorial/submitting.gif
 	:alt: Process for submitting a kit to the registry
 
+
+Building from an existing project
+#################################
+
+Registering an existing package as an MDAKit is a straightforward process.
+Since the structure of an MDAKit is not as strict as the code found in the MDAnalysis core library, chances are very little restructuring is needed for registration.
+The primary concern is ensuring that the core MDAKit requirements are met, as listed at the top of this document.
+
+Licensing
+*********
+
+One of the more pressing requirements for kit registration is clearly identifying the license that is applied to your code.
+This is typically included in a LICENSE file at the top level of your repository.
+`Without a license <https://choosealicense.com/no-permission/>`_, the only assumption a user can make about your code is that they are not in a position to use your code.
+Your license needs to be compatible with the GPLv2+ license currently used by MDAnalysis.
+Take time to consider how you would like to license your project.
+
+Hosting code in a version controlled repository
+***********************************************
+
+Since the MDAKits registry makes heavy use of the GitHub actions infrastructure, registration of a kit requires that all code maintainers also have a GitHub account for communication purposes.
+For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on GitHub is recommended, although other services such as BitBucket, GitLab, or self hosting is possible.
+
+Documentation
+*************
+
+Basic documentation is required for MDAKit registration.
+The detail and depth of the documentation is ultimately up to you, but we require at a minimum that you provide README-style documentation explaining what the code is supposed to do, how to install it, and the basics of its use.
+Though this is the minimum, we highly recommend that you consider generating your documentation with dedicated tools such as Sphinx, which allows you to generate static documentation using ReStructuredText formatted plain-text directly from your code.
+This makes it easier for your documentation to change alongside code changes.
+
+Testing
+*******
+
+We also require that minimal regression tests are present.
+These tests are not just useful for when you make changes to your code, but also when using your code with newer versions of MDAnalysis/Python.
+These tests are to signify to users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
+
 Maintaining a kit
 #################
 
