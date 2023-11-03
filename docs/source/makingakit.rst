@@ -3,7 +3,7 @@ Making an MDAKit
 ****************
 
 Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
-For a video walkthrough of this tutorial, watch `our recorded :ref:`tutorial<https://www.youtube.com/watch?v=viCPUHkgSxg>` on YouTube.
+For a video walk-through of this tutorial, watch `our recorded :ref:`tutorial<https://www.youtube.com/watch?v=viCPUHkgSxg>` on YouTube.
 
 Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
 In order to be accepted, there are several :ref:`requirements<requirements>` that must be addressed:
@@ -29,7 +29,7 @@ Building from the cookiecutter
 ##############################
 
 The MDAKits cookiecutter template (using the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_) can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation. 
-While its usage is outlined in detail in the `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_ documentation, here we provide a full walkthrough for creating an RMSF analysis kit, recreating the functionality of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ in the core library.
+While its usage is outlined in detail in the `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_ documentation, here we provide a full walk-through for creating an RMSF analysis kit, recreating the functionality of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ in the core library.
 
 Starting from an environment with Python 3.9+ and the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_, the MDAKit template is generated using
 
@@ -550,9 +550,50 @@ Enter a release name, such as `v0.1.0` and publish!
 .. image:: img/rmsftutorial/creating_a_release.gif
 	:alt: Process for creating a release by making a tag
 
-Submitting the kit to the registry
-**********************************
+Building from an existing project
+#################################
 
+Registering an existing package as an MDAKit is a straightforward process.
+Since the structure of an MDAKit is not as strict as the code found in the MDAnalysis core library, chances are very little restructuring is needed for registration.
+The primary concern is ensuring that the core MDAKit requirements are met, as listed at the top of this document.
+
+Licensing
+*********
+
+One of the more pressing requirements for kit registration is clearly identifying the license that is applied to your code.
+This is typically included in a LICENSE file at the top level of your repository.
+`Without a license <https://choosealicense.com/no-permission/>`_, the only assumption a user can make about your code is that they are not in a position to use your code.
+Your license needs to be compatible with the GPLv2+ license currently used by MDAnalysis.
+Take time to consider how you would like to license your project.
+
+Hosting code in a version controlled repository
+***********************************************
+
+Since the MDAKits registry makes heavy use of the GitHub actions infrastructure, registration of a kit requires that all code maintainers also have a GitHub account for communication purposes.
+For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on `GitHub <https://github.com>`_ is recommended, although other services such as `BitBucket <https://bitbucket.org/>`_, `GitLab <https://gitlab.com>`_, or self hosting is possible.
+
+Documentation
+*************
+
+Basic documentation is required for MDAKit registration.
+The detail and depth of the documentation is ultimately up to you, but we require at a minimum that you provide README-style documentation explaining what the code is supposed to do, how to install it, and the basics of its use.
+Although this is the minimum, we highly recommend that you consider generating your documentation with dedicated tools such as `Sphinx <https://www.sphinx-doc.org/en/master/>`_, which allows you to generate static documentation using `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_ formatted plain-text directly from your code.
+This makes it easier for your documentation to change alongside code changes.
+
+Testing
+*******
+
+We also require that minimal regression tests are present.
+These tests are not just useful for when you make changes to your code, but also when using your code with newer versions of MDAnalysis/Python.
+These tests are to signify to the users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
+Basic tests can be written with a variety of packages, such as the `unittest package <https://docs.python.org/3/library/unittest.html#module-unittest>`_ or the `pytest package <https://docs.pytest.org/en/7.4.x/>`_.
+Futher improvements to your testing proceedure may include automatically running the tests on pushing to your remote repositories (see `GitHub Actions <https://github.com/features/actions>`_).
+
+Registering an MDAKit
+#####################
+
+The MDAKit registration is the same regardless of the creation process for the kit.
+For simplicity, the follow examples will reference the ``rmsfkit`` MDAKit created in the cookiecutter section.
 In order to submit your MDAKit to the registry, you will need to create a pull request on GitHub against the MDAnalysis/MDAKits repository.
 Do this by creating a fork of the MDAnalysis/MDAKits repository.
 Clone the fork to your machine, navigate into ``MDAKits/mdakits/``, and make an empty directory with your MDAKit name:
@@ -614,44 +655,6 @@ At this point there are no additional steps for registering your kit!
 
 .. image:: img/rmsftutorial/submitting.gif
 	:alt: Process for submitting a kit to the registry
-
-
-Building from an existing project
-#################################
-
-Registering an existing package as an MDAKit is a straightforward process.
-Since the structure of an MDAKit is not as strict as the code found in the MDAnalysis core library, chances are very little restructuring is needed for registration.
-The primary concern is ensuring that the core MDAKit requirements are met, as listed at the top of this document.
-
-Licensing
-*********
-
-One of the more pressing requirements for kit registration is clearly identifying the license that is applied to your code.
-This is typically included in a LICENSE file at the top level of your repository.
-`Without a license <https://choosealicense.com/no-permission/>`_, the only assumption a user can make about your code is that they are not in a position to use your code.
-Your license needs to be compatible with the GPLv2+ license currently used by MDAnalysis.
-Take time to consider how you would like to license your project.
-
-Hosting code in a version controlled repository
-***********************************************
-
-Since the MDAKits registry makes heavy use of the GitHub actions infrastructure, registration of a kit requires that all code maintainers also have a GitHub account for communication purposes.
-For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on GitHub is recommended, although other services such as BitBucket, GitLab, or self hosting is possible.
-
-Documentation
-*************
-
-Basic documentation is required for MDAKit registration.
-The detail and depth of the documentation is ultimately up to you, but we require at a minimum that you provide README-style documentation explaining what the code is supposed to do, how to install it, and the basics of its use.
-Though this is the minimum, we highly recommend that you consider generating your documentation with dedicated tools such as Sphinx, which allows you to generate static documentation using ReStructuredText formatted plain-text directly from your code.
-This makes it easier for your documentation to change alongside code changes.
-
-Testing
-*******
-
-We also require that minimal regression tests are present.
-These tests are not just useful for when you make changes to your code, but also when using your code with newer versions of MDAnalysis/Python.
-These tests are to signify to users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
 
 Maintaining a kit
 #################
