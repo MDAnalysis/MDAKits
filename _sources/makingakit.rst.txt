@@ -14,7 +14,7 @@ In order to be accepted, there are several :ref:`requirements<requirements>` tha
 #. Code authors and maintainers are clearly designated
 #. Minimal documentation is provided (what your code does, how to install it,
    and how to use it)
-#. At least minimal regression tests and continuous integration are present
+#. At least minimal regression tests are present; continuous integration is encouraged
 
 It is also highly encouraged that the MDAKit also satisfies:
 
