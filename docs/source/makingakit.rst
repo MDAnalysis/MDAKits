@@ -589,6 +589,27 @@ These tests are to signify to the users of your packages that the code performs 
 Basic tests can be written with a variety of packages, such as the `unittest package <https://docs.python.org/3/library/unittest.html#module-unittest>`_ or the `pytest package <https://docs.pytest.org/en/7.4.x/>`_.
 Futher improvements to your testing proceedure may include automatically running the tests on pushing to your remote repositories (see `GitHub Actions <https://github.com/features/actions>`_).
 
+When submitting an MDAKit to the registry, you can include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the "Registering a Kit" section below).
+Assuming that your tests are in a ``test/`` directory at the top level of your repository, you could define your test commands as:
+
+.. code-block:: yaml
+
+	run_tests:
+	  - git clone https://github.com/MYGITHUB/MYPACKAGE --depth=1
+	  - cd MYPACKAGE
+	  - pytest -v tests/
+
+This makes a shallow clone of your repository, navigates into that clone, and runs the tests using the ``pytest`` command.
+
+Dependencies that are only required for testing are indicated in the ``test_dependencies`` object.
+Suppose your package uses ``pytest`` and used the `MDAnalysisTests <https://github.com/MDAnalysis/mdanalysis/wiki/UnitTests>`_ for sample data.
+This is reflected in your MDAKit metadata with
+
+.. code-block:: yaml
+
+	test_dependencies:
+	  - mamba install pytest MDAnalysis
+
 Registering an MDAKit
 #####################
 
