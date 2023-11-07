@@ -3,7 +3,7 @@ Making an MDAKit
 ****************
 
 Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
-For a video walk-through of this tutorial, watch `our recorded :ref:`tutorial<https://www.youtube.com/watch?v=viCPUHkgSxg>` on YouTube.
+For a video walk-through of this tutorial, watch `our recorded tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg>`_ on YouTube.
 
 Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
 In order to be accepted, there are several :ref:`requirements<requirements>` that must be addressed:
@@ -589,7 +589,7 @@ These tests are to signify to the users of your packages that the code performs 
 Basic tests can be written with a variety of packages, such as the `unittest package <https://docs.python.org/3/library/unittest.html#module-unittest>`_ or the `pytest package <https://docs.pytest.org/en/7.4.x/>`_.
 Futher improvements to your testing proceedure may include automatically running the tests on pushing to your remote repositories (see `GitHub Actions <https://github.com/features/actions>`_).
 
-When submitting an MDAKit to the registry, you can include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the "Registering a Kit" section below).
+When submitting an MDAKit to the registry, you can include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the `registration <registration>`_ section below).
 Assuming that your tests are in a ``test/`` directory at the top level of your repository, you could define your test commands as:
 
 .. code-block:: yaml
@@ -609,6 +609,8 @@ This is reflected in your MDAKit metadata with
 
 	test_dependencies:
 	  - mamba install pytest MDAnalysis
+
+.. _registration:
 
 Registering an MDAKit
 #####################
