@@ -80,7 +80,7 @@ Adding our code to the newly created repository
 
 Since we are recreating the RMSF analysis,  we are simply copy and pasting the
 analysis class into the ``rmsfkit/rmsfkit.py`` file, where the documentation has been
-trimmed for the sake of brevity. Documentation is written in `reStructuredText <https://docutils.sourceforge.io/rst.html>`_
+trimmed for the sake of brevity. Documentation is written in `reStructuredText <https://docutils.sourceforge.io/rst.html>`__
 syntax for building with Sphinx. The contents of the file should now resemble
 the following code block:
 
@@ -589,7 +589,7 @@ These tests are to signify to the users of your packages that the code performs 
 Basic tests can be written with a variety of packages, such as the `unittest package <https://docs.python.org/3/library/unittest.html#module-unittest>`_ or the `pytest package <https://docs.pytest.org/en/7.4.x/>`_.
 Futher improvements to your testing proceedure may include automatically running the tests on pushing to your remote repositories (see `GitHub Actions <https://github.com/features/actions>`_).
 
-When submitting an MDAKit to the registry, you can include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the `registration <registration>`_ section below).
+When submitting an MDAKit to the registry, you can include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the `registration <registration>`__ section below).
 Assuming that your tests are in a ``test/`` directory at the top level of your repository, you could define your test commands as:
 
 .. code-block:: yaml
