@@ -80,7 +80,7 @@ Adding our code to the newly created repository
 
 Since we are recreating the RMSF analysis,  we are simply copy and pasting the
 analysis class into the ``rmsfkit/rmsfkit.py`` file, where the documentation has been
-trimmed for the sake of brevity. Documentation is written in `reStructuredText <https://docutils.sourceforge.io/rst.html>`__
+trimmed for the sake of brevity. Documentation is written in `reStructuredText syntax <https://docutils.sourceforge.io/rst.html>`_
 syntax for building with Sphinx. The contents of the file should now resemble
 the following code block:
 
@@ -356,7 +356,7 @@ After this point, two more requirements are satisfied:
 Providing documentation
 ***********************
 
-The cookiecutter includes a `Read the Docs <https://readthedocs.org/>`__
+The cookiecutter includes a `Read the Docs <read the docs_>`_
 configuration as well a premade documentation environment file that is used by
 Read the Docs and for building locally. First, we need to install the correct
 environment for building the documentation. In the ``docs/`` directory, run:
@@ -365,7 +365,7 @@ environment for building the documentation. In the ``docs/`` directory, run:
 
 	mamba env update --name rmsfkit -f requirements.yaml
 
-We can now build the documentation html files using the included ``Makefile``. Without looking at any of the documentation source files, run:
+We can now build the documentation HTML files using the included ``Makefile``. Without looking at any of the documentation source files, run:
 
 .. code-block:: bash
 
@@ -489,12 +489,12 @@ Update your environment with
 	mamba env update --name rmsfkit -f requirements.yaml
 
 before once again running `make html`.
-Refeshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.
+Refreshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.
 
 Deploying the documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Log into `Read the Docs <https://readthedocs.org>`__ and navigate to the
+Log into `Read the Docs <read the docs_>`_ and navigate to the
 dashboard. Click the "Import a Project" button and find the repository in the
 list. Click the "+" and confirm that the name, URL, and default branch are
 correct.
@@ -555,7 +555,7 @@ Building from an existing project
 
 Registering an existing package as an MDAKit is a straightforward process.
 Since the structure of an MDAKit is not as strict as the code found in the MDAnalysis core library, chances are very little restructuring is needed for registration.
-The primary concern is ensuring that the core MDAKit requirements are met, as listed at the top of this document.
+The primary concern is ensuring that the core MDAKit :ref:`requirements<requirements>` are met, as listed at the top of this document.
 
 Licensing
 *********
@@ -570,7 +570,7 @@ Hosting code in a version controlled repository
 ***********************************************
 
 Since the MDAKits registry makes heavy use of the GitHub actions infrastructure, registration of a kit requires that all code maintainers also have a GitHub account for communication purposes.
-For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on `GitHub <https://github.com>`_ is recommended, although other services such as `BitBucket <https://bitbucket.org/>`_, `GitLab <https://gitlab.com>`_, or self hosting is possible.
+For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on `GitHub <https://github.com>`_ is recommended, although other services such as `Bitbucket <https://bitbucket.org/>`_, `GitLab <https://gitlab.com>`_, or self hosting is possible.
 
 Documentation
 *************
@@ -580,6 +580,8 @@ The detail and depth of the documentation is ultimately up to you, but we requir
 Although this is the minimum, we highly recommend that you consider generating your documentation with dedicated tools such as `Sphinx <https://www.sphinx-doc.org/en/master/>`_, which allows you to generate static documentation using `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_ formatted plain-text directly from your code.
 This makes it easier for your documentation to change alongside code changes.
 
+Using a documentation hosting service such as `Read the Docs <https://readthedocs.org>`_ or `GitHub Pages <https://pages.github.com/>`_ makes public access to your generated documentation automatic.
+
 Testing
 *******
 
@@ -587,9 +589,9 @@ We also require that minimal regression tests are present.
 These tests are not just useful for when you make changes to your code, but also when using your code with newer versions of MDAnalysis/Python.
 These tests are to signify to the users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
 Basic tests can be written with a variety of packages, such as the `unittest package <https://docs.python.org/3/library/unittest.html#module-unittest>`_ or the `pytest package <https://docs.pytest.org/en/7.4.x/>`_.
-Futher improvements to your testing proceedure may include automatically running the tests on pushing to your remote repositories (see `GitHub Actions <https://github.com/features/actions>`_).
+Further improvements to your testing procedure may include automatically running the tests on pushing to your remote repositories (see `GitHub Actions <https://github.com/features/actions>`_).
 
-When submitting an MDAKit to the registry, you can include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the `registration <registration>`__ section below).
+When submitting an MDAKit to the registry, you can include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the `registration <registration_>`_ section below).
 Assuming that your tests are in a ``test/`` directory at the top level of your repository, you could define your test commands as:
 
 .. code-block:: yaml
@@ -688,3 +690,5 @@ For this reason, the kits' continuous integration is rerun weekly to confirm the
 In the event that a kit no longer passes its tests, an issue in MDAnalysis/MDAKits is automatically raised while notifying the maintainers indicated in the `metadata.yaml` file.
 While the registry developers will be happy to help where possible, ultimately, the maintainers of the MDAKit are responsible for resolving such issues and ensuring that the tests pass.
 The issue will automatically close after the next CI run if the tests pass again.
+
+.. _read the docs: https://readthedocs.org
