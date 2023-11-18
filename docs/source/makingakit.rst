@@ -564,13 +564,15 @@ One of the more pressing requirements for kit registration is clearly identifyin
 This is typically included in a LICENSE file at the top level of your repository.
 `Without a license <https://choosealicense.com/no-permission/>`_, the only assumption a user can make about your code is that they are not in a position to use your code.
 Your license needs to be compatible with the GPLv2+ license currently used by MDAnalysis.
-Take time to consider how you would like to license your project.
+Take time to consider how you would like to `license your project <https://choosealicense.com/>`_.
 
 Hosting code in a version controlled repository
 ***********************************************
 
 Since the MDAKits registry makes heavy use of the GitHub actions infrastructure, registration of a kit requires that all code maintainers also have a GitHub account for communication purposes.
 For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on `GitHub <https://github.com>`_ is recommended, although other services such as `Bitbucket <https://bitbucket.org/>`_, `GitLab <https://gitlab.com>`_, or self hosting is possible.
+With publicly accessible code, users are not required to get go through intermediate packaging services such as the Python Package Index or conda-forge, although having your code available through these services is highly encouraged.
+After registration, users can find the installation instructions for the source code on your MDAKit page, which is specified in the ``src_install`` field in the ``metadata.yaml`` file (see :ref:`specification`).
 
 Documentation
 *************
@@ -589,9 +591,10 @@ We also require that minimal regression tests are present.
 These tests are not just useful for when you make changes to your code, but also when using your code with newer versions of MDAnalysis/Python.
 These tests are to signify to the users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
 Basic tests can be written with a variety of packages, such as the `unittest package <https://docs.python.org/3/library/unittest.html#module-unittest>`_ or the `pytest package <https://docs.pytest.org/en/7.4.x/>`_.
-Further improvements to your testing procedure may include automatically running the tests on pushing to your remote repositories (see `GitHub Actions <https://github.com/features/actions>`_).
+Further improvements to your testing procedure may include automatically running the tests on pushing to your remote repositories, often referred to as continuous integration (CI).
+CI can be set up using repository pipeline tools, such as `GitHub Actions <https://github.com/features/actions>`_.
 
-When submitting an MDAKit to the registry, you can include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the `registration <registration_>`_ section below).
+When submitting an MDAKit to the registry, include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the `registration <registration_>`_ section below).
 Assuming that your tests are in a ``test/`` directory at the top level of your repository, you could define your test commands as:
 
 .. code-block:: yaml
