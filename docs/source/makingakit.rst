@@ -6,7 +6,7 @@ Here, we outline the process of creating an MDAKit that fulfills all of the requ
 For a video walk-through of this tutorial, watch `our recorded tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg>`_ on YouTube.
 
 Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
-In order to be accepted, there are several :ref:`requirements<requirements>` that must be addressed:
+In order to be accepted, there are several :ref:`requirements <requirements>` that must be addressed:
 
 #. Code in the package uses the MDAnalysis library
 #. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
@@ -563,15 +563,16 @@ Licensing
 One of the more pressing requirements for kit registration is clearly identifying the license that is applied to your code.
 This is typically included in a LICENSE file at the top level of your repository.
 `Without a license <https://choosealicense.com/no-permission/>`_, the only assumption a user can make about your code is that they are not in a position to use your code.
-Your license needs to be compatible with the GPLv2+ license currently used by MDAnalysis.
+Your license needs to be compatible with the GPLv2+ license currently used by MDAnalysis, in addition to the licenses of any other packages your mdakit depends on.
 Take time to consider how you would like to `license your project <https://choosealicense.com/>`_.
+Take time to consider how you would like to license your project. Further information on open source licensing can be found from sources such as: `choose a license <https://choosealicense.com/>`_, `tl;dr Legal <https://tldrlegal.com/>`_, the `Open Source Initiative <https://opensource.org/osd>`_, and the `Software Sustainability Insitute <https://www.software.ac.uk/resources/guides/choosing-open-source-licence>`_.
 
 Hosting code in a version controlled repository
 ***********************************************
 
 Since the MDAKits registry makes heavy use of the GitHub actions infrastructure, registration of a kit requires that all code maintainers also have a GitHub account for communication purposes.
 For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on `GitHub <https://github.com>`_ is recommended, although other services such as `Bitbucket <https://bitbucket.org/>`_, `GitLab <https://gitlab.com>`_, or self hosting is possible.
-With publicly accessible code, users are not required to get go through intermediate packaging services such as the Python Package Index or conda-forge, although having your code available through these services is highly encouraged.
+The registry does not require that your code be available through packaging repositories such as the Python Package Index or conda-forge, although having your code available through these services is highly encouraged.
 After registration, users can find the installation instructions for the source code on your MDAKit page, which is specified in the ``src_install`` field in the ``metadata.yaml`` file (see :ref:`specification`).
 
 Documentation
@@ -600,14 +601,15 @@ Assuming that your tests are in a ``test/`` directory at the top level of your r
 .. code-block:: yaml
 
 	run_tests:
-	  - git clone https://github.com/MYGITHUB/MYPACKAGE --depth=1
-	  - cd MYPACKAGE
+	  - git clone latest
 	  - pytest -v tests/
 
-This makes a shallow clone of your repository, navigates into that clone, and runs the tests using the ``pytest`` command.
+This makes a clone of your repository based on your latest `release tag on GitHub <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>`_ and navigates into the repository root. Note that this is not a true :program:`git` command, but is instead specific to the MDAKits registry workflow and depends on the ``project_home`` field in the ``metadata.yaml`` file (see :ref:`specification`).
+The :program:`pytest` command then runs the tests found inside the ``tests/`` directory.
+If your tests are elsewhere, change this path appropriately.
 
 Dependencies that are only required for testing are indicated in the ``test_dependencies`` object.
-Suppose your package uses ``pytest`` and used the `MDAnalysisTests <https://github.com/MDAnalysis/mdanalysis/wiki/UnitTests>`_ for sample data.
+Suppose your package uses :program:`pytest` and used the `MDAnalysisTests <https://github.com/MDAnalysis/mdanalysis/wiki/UnitTests>`_ for sample data.
 This is reflected in your MDAKit metadata with
 
 .. code-block:: yaml
