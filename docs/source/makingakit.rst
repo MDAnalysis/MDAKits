@@ -589,8 +589,8 @@ Testing
 *******
 
 We also require that minimal regression tests are present.
-These tests are not just useful for when you make changes to your code, but also when using your code with newer versions of MDAnalysis/Python.
-These tests are to signify to the users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
+These tests are not just useful for when you make changes to your code, but also when any package dependencies (e.g. MDAnalysis, NumPy, and Python) change.
+Additionally, tests inform the users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
 Basic tests can be written with a variety of packages, such as the `unittest package <https://docs.python.org/3/library/unittest.html#module-unittest>`_ or the `pytest package <https://docs.pytest.org/en/7.4.x/>`_.
 Further improvements to your testing procedure may include automatically running the tests on pushing to your remote repositories, often referred to as continuous integration (CI).
 CI can be set up using repository pipeline tools, such as `GitHub Actions <https://github.com/features/actions>`_.
