@@ -15,15 +15,17 @@
 </head>
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Making an MDAKit &mdash; MDAKits Registry  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/site.css" type="text/css" />
-      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/site.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -96,9 +98,16 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#making-an-initial-release">Making an initial release</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#submitting-the-kit-to-the-registry">Submitting the kit to the registry</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#building-from-an-existing-project">Building from an existing project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#licensing">Licensing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hosting-code-in-a-version-controlled-repository">Hosting code in a version controlled repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#registering-an-mdakit">Registering an MDAKit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#maintaining-a-kit">Maintaining a kit</a></li>
 </ul>
 </li>
@@ -133,7 +142,7 @@
   <section id="making-an-mdakit">
 <h1>Making an MDAKit<a class="headerlink" href="#making-an-mdakit" title="Link to this heading"></a></h1>
 <p>Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
-For a video walkthrough of this tutorial, watch <cite>our recorded :ref:`tutorial&lt;https://www.youtube.com/watch?v=viCPUHkgSxg&gt;</cite> on YouTube.</p>
+For a video walk-through of this tutorial, watch <a class="reference external" href="https://www.youtube.com/watch?v=viCPUHkgSxg">our recorded tutorial</a> on YouTube.</p>
 <p>Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
 In order to be accepted, there are several <a class="reference internal" href="about.html#requirements"><span class="std std-ref">requirements</span></a> that must be addressed:</p>
 <ol class="arabic simple">
@@ -156,7 +165,7 @@ To aid in this process, we make use of the MDAKit cookiecutter in this example.<
 <section id="building-from-the-cookiecutter">
 <h2>Building from the cookiecutter<a class="headerlink" href="#building-from-the-cookiecutter" title="Link to this heading"></a></h2>
 <p>The MDAKits cookiecutter template (using the <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>) can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation.
-While its usage is outlined in detail in the <a class="reference external" href="https://cookiecutter-mdakit.readthedocs.io/en/latest/">MDAKit cookiecutter</a> documentation, here we provide a full walkthrough for creating an RMSF analysis kit, recreating the functionality of the <a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF">RMSF analysis class</a> in the core library.</p>
+While its usage is outlined in detail in the <a class="reference external" href="https://cookiecutter-mdakit.readthedocs.io/en/latest/">MDAKit cookiecutter</a> documentation, here we provide a full walk-through for creating an RMSF analysis kit, recreating the functionality of the <a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF">RMSF analysis class</a> in the core library.</p>
 <p>Starting from an environment with Python 3.9+ and the <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>, the MDAKit template is generated using</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cookiecutter gh:MDAnalysis/cookiecutter-mdakit
 
@@ -203,7 +212,7 @@ Using the cookiecutter checks off a couple of the requirements for a valid MDAKi
 <h3>Adding our code to the newly created repository<a class="headerlink" href="#adding-our-code-to-the-newly-created-repository" title="Link to this heading"></a></h3>
 <p>Since we are recreating the RMSF analysis,  we are simply copy and pasting the
 analysis class into the <code class="docutils literal notranslate"><span class="pre">rmsfkit/rmsfkit.py</span></code> file, where the documentation has been
-trimmed for the sake of brevity. Documentation is written in <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText</a>
+trimmed for the sake of brevity. Documentation is written in <a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText syntax</a>
 syntax for building with Sphinx. The contents of the file should now resemble
 the following code block:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
@@ -453,14 +462,14 @@ this repository as a remote to your local git repository,</p>
 </section>
 <section id="providing-documentation">
 <h3>Providing documentation<a class="headerlink" href="#providing-documentation" title="Link to this heading"></a></h3>
-<p>The cookiecutter includes a <a class="reference external" href="https://readthedocs.org/">Read the Docs</a>
+<p>The cookiecutter includes a <a class="reference external" href="https://readthedocs.org">Read the Docs</a>
 configuration as well a premade documentation environment file that is used by
 Read the Docs and for building locally. First, we need to install the correct
 environment for building the documentation. In the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> directory, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>rmsfkit<span class="w"> </span>-f<span class="w"> </span>requirements.yaml
 </pre></div>
 </div>
-<p>We can now build the documentation html files using the included <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>. Without looking at any of the documentation source files, run:</p>
+<p>We can now build the documentation HTML files using the included <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>. Without looking at any of the documentation source files, run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
 </pre></div>
 </div>
@@ -566,7 +575,7 @@ Add <code class="docutils literal notranslate"><span class="pre">-</span> <span 
 </pre></div>
 </div>
 <p>before once again running <cite>make html</cite>.
-Refeshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.</p>
+Refreshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.</p>
 <section id="deploying-the-documentation">
 <h4>Deploying the documentation<a class="headerlink" href="#deploying-the-documentation" title="Link to this heading"></a></h4>
 <p>Log into <a class="reference external" href="https://readthedocs.org">Read the Docs</a> and navigate to the
@@ -610,9 +619,68 @@ Since the kit is initiated without tags, the current version is set to <code cla
 Enter a release name, such as <cite>v0.1.0</cite> and publish!</p>
 <img alt="Process for creating a release by making a tag" src="_images/creating_a_release.gif" />
 </section>
-<section id="submitting-the-kit-to-the-registry">
-<h3>Submitting the kit to the registry<a class="headerlink" href="#submitting-the-kit-to-the-registry" title="Link to this heading"></a></h3>
-<p>In order to submit your MDAKit to the registry, you will need to create a pull request on GitHub against the MDAnalysis/MDAKits repository.
+</section>
+<section id="building-from-an-existing-project">
+<h2>Building from an existing project<a class="headerlink" href="#building-from-an-existing-project" title="Link to this heading"></a></h2>
+<p>Registering an existing package as an MDAKit is a straightforward process.
+Since the structure of an MDAKit is not as strict as the code found in the MDAnalysis core library, chances are very little restructuring is needed for registration.
+The primary concern is ensuring that the core MDAKit <a class="reference internal" href="about.html#requirements"><span class="std std-ref">requirements</span></a> are met, as listed at the top of this document.</p>
+<section id="licensing">
+<h3>Licensing<a class="headerlink" href="#licensing" title="Link to this heading"></a></h3>
+<p>One of the more pressing requirements for kit registration is clearly identifying the license that is applied to your code.
+This is typically included in a LICENSE file at the top level of your repository.
+<a class="reference external" href="https://choosealicense.com/no-permission/">Without a license</a>, the only assumption a user can make about your code is that they are not in a position to use your code.
+Your license needs to be compatible with the GPLv2+ license currently used by MDAnalysis, in addition to the licenses of any other packages your mdakit depends on.
+Take time to consider how you would like to <a class="reference external" href="https://choosealicense.com/">license your project</a>.
+Take time to consider how you would like to license your project. Further information on open source licensing can be found from sources such as: <a class="reference external" href="https://choosealicense.com/">choose a license</a>, <a class="reference external" href="https://tldrlegal.com/">tl;dr Legal</a>, the <a class="reference external" href="https://opensource.org/osd">Open Source Initiative</a>, and the <a class="reference external" href="https://www.software.ac.uk/resources/guides/choosing-open-source-licence">Software Sustainability Insitute</a>.</p>
+</section>
+<section id="hosting-code-in-a-version-controlled-repository">
+<h3>Hosting code in a version controlled repository<a class="headerlink" href="#hosting-code-in-a-version-controlled-repository" title="Link to this heading"></a></h3>
+<p>Since the MDAKits registry makes heavy use of the GitHub actions infrastructure, registration of a kit requires that all code maintainers also have a GitHub account for communication purposes.
+For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on <a class="reference external" href="https://github.com">GitHub</a> is recommended, although other services such as <a class="reference external" href="https://bitbucket.org/">Bitbucket</a>, <a class="reference external" href="https://gitlab.com">GitLab</a>, or self hosting is possible.
+The registry does not require that your code be available through packaging repositories such as the Python Package Index or conda-forge, although having your code available through these services is highly encouraged.
+After registration, users can find the installation instructions for the source code on your MDAKit page, which is specified in the <code class="docutils literal notranslate"><span class="pre">src_install</span></code> field in the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file (see <a class="reference internal" href="add.html#specification"><span class="std std-ref">Specification of the metadata.yaml file</span></a>).</p>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h3>
+<p>Basic documentation is required for MDAKit registration.
+The detail and depth of the documentation is ultimately up to you, but we require at a minimum that you provide README-style documentation explaining what the code is supposed to do, how to install it, and the basics of its use.
+Although this is the minimum, we highly recommend that you consider generating your documentation with dedicated tools such as <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a>, which allows you to generate static documentation using <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a> formatted plain-text directly from your code.
+This makes it easier for your documentation to change alongside code changes.</p>
+<p>Using a documentation hosting service such as <a class="reference external" href="https://readthedocs.org">Read the Docs</a> or <a class="reference external" href="https://pages.github.com/">GitHub Pages</a> makes public access to your generated documentation automatic.</p>
+</section>
+<section id="testing">
+<h3>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h3>
+<p>We also require that minimal regression tests are present.
+These tests are not just useful for when you make changes to your code, but also when any package dependencies (e.g. MDAnalysis, NumPy, and Python) change.
+Additionally, tests inform the users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
+Basic tests can be written with a variety of packages, such as the <a class="reference external" href="https://docs.pytest.org/en/7.4.x/">pytest package</a> (the default choice for MDAnalysis organization projects) or the <a class="reference external" href="https://docs.python.org/3/library/unittest.html#module-unittest">unittest package</a>.
+Further improvements to your testing procedure may include automatically running the tests on pushing to your remote repositories, often referred to as continuous integration (CI).
+CI can be set up using repository pipeline tools, such as <a class="reference external" href="https://github.com/features/actions">GitHub Actions</a>.</p>
+<p>When submitting an MDAKit to the registry, include the instructions for running the tests in the required <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file (see a full example in the <a class="reference internal" href="#registration">registration</a> section below).
+Assuming that your tests are in a <code class="docutils literal notranslate"><span class="pre">test/</span></code> directory at the top level of your repository, you could define your test commands as:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">run_tests</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone latest</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pytest -v tests/</span>
+</pre></div>
+</div>
+<p>This makes a clone of your repository based on your latest <a class="reference external" href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository">release tag on GitHub</a> and navigates into the repository root. Note that this is not a true <strong class="program">git</strong> command, but is instead specific to the MDAKits registry workflow and depends on the <code class="docutils literal notranslate"><span class="pre">project_home</span></code> field in the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file (see <a class="reference internal" href="add.html#specification"><span class="std std-ref">Specification of the metadata.yaml file</span></a>).
+The <strong class="program">pytest</strong> command then runs the tests found inside the <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory.
+If your tests are elsewhere, change this path appropriately.</p>
+<p>Dependencies that are only required for testing are indicated in the <code class="docutils literal notranslate"><span class="pre">test_dependencies</span></code> object.
+Suppose your package uses <strong class="program">pytest</strong> and used the <a class="reference external" href="https://github.com/MDAnalysis/mdanalysis/wiki/UnitTests">MDAnalysisTests</a> for sample data.
+This is reflected in your MDAKit metadata with</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_dependencies</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mamba install pytest MDAnalysis</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="registering-an-mdakit">
+<span id="registration"></span><h2>Registering an MDAKit<a class="headerlink" href="#registering-an-mdakit" title="Link to this heading"></a></h2>
+<p>The MDAKit registration is the same regardless of the creation process for the kit.
+For simplicity, the follow examples will reference the <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> MDAKit created in the cookiecutter section.
+In order to submit your MDAKit to the registry, you will need to create a pull request on GitHub against the MDAnalysis/MDAKits repository.
 Do this by creating a fork of the MDAnalysis/MDAKits repository.
 Clone the fork to your machine, navigate into <code class="docutils literal notranslate"><span class="pre">MDAKits/mdakits/</span></code>, and make an empty directory with your MDAKit name:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:yourusername/MDAKits
@@ -665,7 +733,6 @@ Once this is done, you can add a comment along the lines of “&#64;MDAnalysis/m
 The reviewers will get back to you with any change requests before merging it in as a kit.
 At this point there are no additional steps for registering your kit!</p>
 <img alt="Process for submitting a kit to the registry" src="_images/submitting.gif" />
-</section>
 </section>
 <section id="maintaining-a-kit">
 <h2>Maintaining a kit<a class="headerlink" href="#maintaining-a-kit" title="Link to this heading"></a></h2>

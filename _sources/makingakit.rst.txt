@@ -3,10 +3,10 @@ Making an MDAKit
 ****************
 
 Here, we outline the process of creating an MDAKit that fulfills all of the requirements for acceptance into the MDAKit registry.
-For a video walkthrough of this tutorial, watch `our recorded :ref:`tutorial<https://www.youtube.com/watch?v=viCPUHkgSxg>` on YouTube.
+For a video walk-through of this tutorial, watch `our recorded tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg>`_ on YouTube.
 
 Unlike the code in the core MDAnalysis library, the structure of an MDAKit is much less restrictive.
-In order to be accepted, there are several :ref:`requirements<requirements>` that must be addressed:
+In order to be accepted, there are several :ref:`requirements <requirements>` that must be addressed:
 
 #. Code in the package uses the MDAnalysis library
 #. The code is open source and published under an `OSI approved license <https://opensource.org/licenses/>`_
@@ -29,7 +29,7 @@ Building from the cookiecutter
 ##############################
 
 The MDAKits cookiecutter template (using the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_) can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation. 
-While its usage is outlined in detail in the `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_ documentation, here we provide a full walkthrough for creating an RMSF analysis kit, recreating the functionality of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ in the core library.
+While its usage is outlined in detail in the `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_ documentation, here we provide a full walk-through for creating an RMSF analysis kit, recreating the functionality of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ in the core library.
 
 Starting from an environment with Python 3.9+ and the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_, the MDAKit template is generated using
 
@@ -80,7 +80,7 @@ Adding our code to the newly created repository
 
 Since we are recreating the RMSF analysis,  we are simply copy and pasting the
 analysis class into the ``rmsfkit/rmsfkit.py`` file, where the documentation has been
-trimmed for the sake of brevity. Documentation is written in `reStructuredText <https://docutils.sourceforge.io/rst.html>`_
+trimmed for the sake of brevity. Documentation is written in `reStructuredText syntax <https://docutils.sourceforge.io/rst.html>`_
 syntax for building with Sphinx. The contents of the file should now resemble
 the following code block:
 
@@ -356,7 +356,7 @@ After this point, two more requirements are satisfied:
 Providing documentation
 ***********************
 
-The cookiecutter includes a `Read the Docs <https://readthedocs.org/>`__
+The cookiecutter includes a `Read the Docs <read the docs_>`_
 configuration as well a premade documentation environment file that is used by
 Read the Docs and for building locally. First, we need to install the correct
 environment for building the documentation. In the ``docs/`` directory, run:
@@ -365,7 +365,7 @@ environment for building the documentation. In the ``docs/`` directory, run:
 
 	mamba env update --name rmsfkit -f requirements.yaml
 
-We can now build the documentation html files using the included ``Makefile``. Without looking at any of the documentation source files, run:
+We can now build the documentation HTML files using the included ``Makefile``. Without looking at any of the documentation source files, run:
 
 .. code-block:: bash
 
@@ -489,12 +489,12 @@ Update your environment with
 	mamba env update --name rmsfkit -f requirements.yaml
 
 before once again running `make html`.
-Refeshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.
+Refreshing the RMSF documentation will now show a properly formatted citation using the information in the bibtex file.
 
 Deploying the documentation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Log into `Read the Docs <https://readthedocs.org>`__ and navigate to the
+Log into `Read the Docs <read the docs_>`_ and navigate to the
 dashboard. Click the "Import a Project" button and find the repository in the
 list. Click the "+" and confirm that the name, URL, and default branch are
 correct.
@@ -550,9 +550,80 @@ Enter a release name, such as `v0.1.0` and publish!
 .. image:: img/rmsftutorial/creating_a_release.gif
 	:alt: Process for creating a release by making a tag
 
-Submitting the kit to the registry
-**********************************
+Building from an existing project
+#################################
 
+Registering an existing package as an MDAKit is a straightforward process.
+Since the structure of an MDAKit is not as strict as the code found in the MDAnalysis core library, chances are very little restructuring is needed for registration.
+The primary concern is ensuring that the core MDAKit :ref:`requirements<requirements>` are met, as listed at the top of this document.
+
+Licensing
+*********
+
+One of the more pressing requirements for kit registration is clearly identifying the license that is applied to your code.
+This is typically included in a LICENSE file at the top level of your repository.
+`Without a license <https://choosealicense.com/no-permission/>`_, the only assumption a user can make about your code is that they are not in a position to use your code.
+Your license needs to be compatible with the GPLv2+ license currently used by MDAnalysis, in addition to the licenses of any other packages your mdakit depends on.
+Take time to consider how you would like to `license your project <https://choosealicense.com/>`_.
+Take time to consider how you would like to license your project. Further information on open source licensing can be found from sources such as: `choose a license <https://choosealicense.com/>`_, `tl;dr Legal <https://tldrlegal.com/>`_, the `Open Source Initiative <https://opensource.org/osd>`_, and the `Software Sustainability Insitute <https://www.software.ac.uk/resources/guides/choosing-open-source-licence>`_.
+
+Hosting code in a version controlled repository
+***********************************************
+
+Since the MDAKits registry makes heavy use of the GitHub actions infrastructure, registration of a kit requires that all code maintainers also have a GitHub account for communication purposes.
+For this reason, if your code is not already hosted in an accessible version controlled repository, hosting on `GitHub <https://github.com>`_ is recommended, although other services such as `Bitbucket <https://bitbucket.org/>`_, `GitLab <https://gitlab.com>`_, or self hosting is possible.
+The registry does not require that your code be available through packaging repositories such as the Python Package Index or conda-forge, although having your code available through these services is highly encouraged.
+After registration, users can find the installation instructions for the source code on your MDAKit page, which is specified in the ``src_install`` field in the ``metadata.yaml`` file (see :ref:`specification`).
+
+Documentation
+*************
+
+Basic documentation is required for MDAKit registration.
+The detail and depth of the documentation is ultimately up to you, but we require at a minimum that you provide README-style documentation explaining what the code is supposed to do, how to install it, and the basics of its use.
+Although this is the minimum, we highly recommend that you consider generating your documentation with dedicated tools such as `Sphinx <https://www.sphinx-doc.org/en/master/>`_, which allows you to generate static documentation using `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_ formatted plain-text directly from your code.
+This makes it easier for your documentation to change alongside code changes.
+
+Using a documentation hosting service such as `Read the Docs <https://readthedocs.org>`_ or `GitHub Pages <https://pages.github.com/>`_ makes public access to your generated documentation automatic.
+
+Testing
+*******
+
+We also require that minimal regression tests are present.
+These tests are not just useful for when you make changes to your code, but also when any package dependencies (e.g. MDAnalysis, NumPy, and Python) change.
+Additionally, tests inform the users of your packages that the code performs at least the way you say it should and give them confidence that it can be used.
+Basic tests can be written with a variety of packages, such as the `pytest package <https://docs.pytest.org/en/7.4.x/>`_ (the default choice for MDAnalysis organization projects) or the `unittest package <https://docs.python.org/3/library/unittest.html#module-unittest>`_.
+Further improvements to your testing procedure may include automatically running the tests on pushing to your remote repositories, often referred to as continuous integration (CI).
+CI can be set up using repository pipeline tools, such as `GitHub Actions <https://github.com/features/actions>`_.
+
+When submitting an MDAKit to the registry, include the instructions for running the tests in the required ``metadata.yaml`` file (see a full example in the `registration <registration_>`_ section below).
+Assuming that your tests are in a ``test/`` directory at the top level of your repository, you could define your test commands as:
+
+.. code-block:: yaml
+
+	run_tests:
+	  - git clone latest
+	  - pytest -v tests/
+
+This makes a clone of your repository based on your latest `release tag on GitHub <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>`_ and navigates into the repository root. Note that this is not a true :program:`git` command, but is instead specific to the MDAKits registry workflow and depends on the ``project_home`` field in the ``metadata.yaml`` file (see :ref:`specification`).
+The :program:`pytest` command then runs the tests found inside the ``tests/`` directory.
+If your tests are elsewhere, change this path appropriately.
+
+Dependencies that are only required for testing are indicated in the ``test_dependencies`` object.
+Suppose your package uses :program:`pytest` and used the `MDAnalysisTests <https://github.com/MDAnalysis/mdanalysis/wiki/UnitTests>`_ for sample data.
+This is reflected in your MDAKit metadata with
+
+.. code-block:: yaml
+
+	test_dependencies:
+	  - mamba install pytest MDAnalysis
+
+.. _registration:
+
+Registering an MDAKit
+#####################
+
+The MDAKit registration is the same regardless of the creation process for the kit.
+For simplicity, the follow examples will reference the ``rmsfkit`` MDAKit created in the cookiecutter section.
 In order to submit your MDAKit to the registry, you will need to create a pull request on GitHub against the MDAnalysis/MDAKits repository.
 Do this by creating a fork of the MDAnalysis/MDAKits repository.
 Clone the fork to your machine, navigate into ``MDAKits/mdakits/``, and make an empty directory with your MDAKit name:
@@ -624,3 +695,5 @@ For this reason, the kits' continuous integration is rerun weekly to confirm the
 In the event that a kit no longer passes its tests, an issue in MDAnalysis/MDAKits is automatically raised while notifying the maintainers indicated in the `metadata.yaml` file.
 While the registry developers will be happy to help where possible, ultimately, the maintainers of the MDAKit are responsible for resolving such issues and ensuring that the tests pass.
 The issue will automatically close after the next CI run if the tests pass again.
+
+.. _read the docs: https://readthedocs.org

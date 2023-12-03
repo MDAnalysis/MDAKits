@@ -15,15 +15,17 @@
 </head>
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adding an MDAKit to the Registry &mdash; MDAKits Registry  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/site.css" type="text/css" />
-      <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/site.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -244,7 +246,7 @@ ones as needed.</p>
 one contains all <strong>required entries</strong>, the second one all <strong>optional
 entries</strong>.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># TEMPLATE MDAKit file</span>
-<span class="c1"># ====================</span>
+<span class="c1"># --------------------</span>
 <span class="c1">#</span>
 <span class="c1">#------------------------------------------------------------</span>
 <span class="c1"># Required entries</span>
@@ -252,7 +254,7 @@ entries</strong>.</p>
 <span class="c1">## str: name of the project (the respository name)</span>
 <span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MYPROJECT</span>
 
-<span class="c1">## List(str): a link to the authors file (preferred) or a list of authors</span>
+<span class="c1">## List(str): a link to the authors file (preferred) or a list of authors </span>
 <span class="nt">authors</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/GH_HOST_ACCOUNT/MYPROJECT/blob/main/AUTHORS</span>
 
@@ -289,7 +291,7 @@ entries</strong>.</p>
 
 <span class="c1">#------------------------------------------------------------</span>
 <span class="c1"># Optional entries</span>
-<span class="c1">#------------------------------------------------------------</span>
+<span class="c1">#------------------------------------------------------------   </span>
 <span class="c1">## List(str): a list of commands to use when installing the latest</span>
 <span class="c1">## release of the code. Note: only one installation method can currently</span>
 <span class="c1">## be defined. We suggest using mamba where possible (e.g.</span>
@@ -314,10 +316,10 @@ entries</strong>.</p>
 <span class="nt">mdanalysis_requires</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&gt;=2.0.0&quot;</span>
 
 <span class="c1">## List(str): a list of commands to use when attempting to run the MDAKit&#39;s tests</span>
-<span class="c1">## If you package your tests inside your package then you can typically use the</span>
+<span class="c1">## If you package your tests inside your package then you can typically use the </span>
 <span class="c1">##     pytest --pyargs MYPACKAGE</span>
-<span class="c1">## command as shown below.</span>
-<span class="c1">## Otherwise you need to include commands to make the tests available.</span>
+<span class="c1">## command as shown below. </span>
+<span class="c1">## Otherwise you need to include commands to make the tests available. </span>
 <span class="c1">## For example, if the tests are in the repository at the top level under `./tests`:</span>
 <span class="c1">## First use `git clone latest` to either clone the top commit for &quot;development code&quot; checks or check out</span>
 <span class="c1">## the latest tag for &quot;latest release&quot; checks. Then then run pytest:</span>
