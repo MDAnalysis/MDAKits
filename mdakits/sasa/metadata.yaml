@@ -7,7 +7,7 @@ maintainers:
   - pegerto
 
 description:
-    This MDAKit allows for the computation of Solvent Accessible Surface Area (SASA) through MDAnalysis, leveraging the essential role of FreeSASA in performing the calculation..
+    This MDAKit allows for the computation of Solvent Accessible Surface Area (SASA) through MDAnalysis, leveraging the essential role of FreeSASA in performing the calculation.
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
