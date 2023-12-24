@@ -1,0 +1,52 @@
+project_name: mdakit_sasa
+
+authors:
+  - https://github.com/pegerto/mdakit_sasa/blob/main/AUTHORS.md
+
+maintainers:
+  - pegerto
+
+description:
+    This MDAKit allows for the computation of Solvent Accessible Surface Area (SASA) through MDAnalysis, leveraging the essential role of FreeSASA in performing the calculation.
+
+## List(str): a list of keywords which describe the mdakit
+keywords:
+  - SASA
+  - FreeSASA
+  - ShrakeRupley
+  - LeeRichards
+
+license: GPL-2.0-or-later
+project_home: https://github.com/pegerto/mdakit_sasa/
+documentation_home: https://mdakit-sasa.readthedocs.io/
+
+documentation_type: UserGuide + API
+
+#------------------------------------------------------------
+# Optional entries
+#------------------------------------------------------------   
+install:
+  - pip install mdakit-sasa
+
+src_install:
+  - pip install git+https://github.com/pegerto/mdakit_sasa@main
+
+import_name: mdakit_sasa
+
+python_requires: ">=3.9"
+mdanalysis_requires: ">=2.0.0"
+run_tests:
+  - pytest --pyargs mdakit_sasa
+
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+
+project_org: pegerto
+development_status: Production/Stable
+
+publications:
+  - https://zenodo.org/doi/10.5281/zenodo.10182425
+  - https://f1000research.com/articles/5-189/v1
+
+community_home: https://github.com/pegerto/mdakit_sasa/
+changelog: https://github.com/pegerto/mdakit_sasa/blob/main/CHANGELOG.md
