@@ -1,6 +1,5 @@
 project_name: mdakit_sasa
 
-## List(str): a link to the authors file (preferred) or a list of authors 
 authors:
   - https://github.com/pegerto/mdakit_sasa/blob/main/AUTHORS.md
 
@@ -8,7 +7,7 @@ maintainers:
   - pegerto
 
 description:
-    This MDAKit allows enables the calculation of Solvant Accessible Surface Area ( SASA) with MDAnalysis.
+    This MDAKit allows for the computation of Solvent Accessible Surface Area (SASA) through MDAnalysis, leveraging the essential role of FreeSASA in performing the calculation..
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
@@ -45,9 +44,9 @@ test_dependencies:
 project_org: pegerto
 development_status: Production/Stable
 
-
 publications:
   - https://zenodo.org/doi/10.5281/zenodo.10182425
+  - https://f1000research.com/articles/5-189/v1
 
 community_home: https://github.com/pegerto/mdakit_sasa/
 changelog: https://github.com/pegerto/mdakit_sasa/blob/main/CHANGELOG.md
