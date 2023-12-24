@@ -12,8 +12,8 @@ description:
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
-  - Sasa
-  - FreeSasa
+  - SASA
+  - FreeSASA
   - ShrakeRupley
   - LeeRichards
 
