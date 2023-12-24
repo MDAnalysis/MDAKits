@@ -15,39 +15,40 @@
 # Required entries
 #------------------------------------------------------------
 ## str: name of the project (the respository name)
-project_name: MYPROJECT
+project_name: membrane-curvature
 
 ## List(str): a link to the authors file (preferred) or a list of authors 
 authors:
-  - https://github.com/GH_HOST_ACCOUNT/MYPROJECT/blob/main/AUTHORS
+  - Estefania Barreto-Ojeda
 
 ## List(str): a list of maintainers
 ## Please note these _must_ be GitHub handles
 ## The maintainers will be tagged in issues if their MDAKit is failing.
 maintainers:
-  - NAME1
-  - OPTIONAL_NAME2
-  - OPTIONAL_NAME3
+  - ojeda-e
+  - IAlibay
 
 ## str: a free form description of the mdakit
 description:
-    (REPLACE WITH A SHORT DESCRIPTION OF WHAT YOUR MDAKit DOES.)
+    Tool to calculate the Gaussian and mean curvature of membranes from
+    Molecular Dynamics simulations.
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
-  - KEYWORD1
-  - KEYWORD2
+  - membranes
+  - curvature
+  - molecular dynamics
 
 ## str: the license the mdakit falls under
 ## See https://spdx.org/licenses/ for valid license specifiers
-license: GPL-2.0-or-later
+license: GPL-3.0
 
 ## str: the link to the project's code
 ## Please note that this is not limited to GitHub! Can be Gitlab, etc..
-project_home: https://github.com/GH_HOST_ACCOUNT/MYPROJECT/
+project_home: https://github.com/MDAnalysis/membrane-curvature
 
 ## str: the link to the project's documentation
-documentation_home: https://MYPROJECT.readthedocs.io
+documentation_home: https://membrane-curvature.readthedocs.io
 
 ## str: the type of documentation available [UserGuide, API, README]
 documentation_type: UserGuide + API
@@ -62,15 +63,15 @@ documentation_type: UserGuide + API
 ## for a conda package installation).
 ## Here we use a simple PyPi installation:
 install:
-  - pip install MYPROJECT
+  - pip install membrane-curvature
 
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - pip install git+https://github.com/GH_HOST_ACCOUNT/MYPROJECT@main
+  - pip install git+https://github.com/MDAnalysis/membrane-curvature@main
 
 ## str: the package name used to import the mdakit
-import_name: MYPACKAGE
+import_name: membrane_curvature
 
 ## str: a specification for the range of Python versions supported by this MDAKit
 python_requires: ">=3.9"
@@ -90,7 +91,7 @@ mdanalysis_requires: ">=2.0.0"
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
 run_tests:
-  - pytest --pyargs MYPACKAGE
+  - pytest --pyargs membrane_curvature
 
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests.
@@ -100,7 +101,7 @@ test_dependencies:
   - mamba install pytest MDAnalysisTests
 
 ## str: the organisation name the MDAKit falls under
-project_org: GH_HOST_ACCOUNT
+project_org: MDAnalysis
 
 ## str: the development status of the MDAKit
 ## See https://pypi.org/classifiers/ for development status classifiers.
@@ -110,11 +111,7 @@ development_status: Production/Stable
 ## Links to scientific publications or stable URLs (typically of the form
 ## https://doi.org/<DOI> or to a preprint server)
 publications:
-  - URL1
-  - URL2
-
-## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
-community_home: URL
+  - https://zenodo.org/records/5553452
 
 ## str: a link to the MDAKit's changelog
-changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGELOG.md
+changelog: https://github.com/MDAnalysis/membrane-curvature/blob/main/CHANGELOG.rst
