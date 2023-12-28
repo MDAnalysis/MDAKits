@@ -6,6 +6,7 @@ on:
   schedule:
     # once a week at midnight on Sunday
     - cron: "0 3 * * 0"
+  workflow_dispatch:
 
 concurrency:
   # Commits to develop/master will cancel each other, but PRs will only cancel
