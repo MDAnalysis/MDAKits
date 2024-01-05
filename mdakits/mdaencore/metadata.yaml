@@ -6,7 +6,7 @@ authors:
   - https://github.com/MDAnalysis/mdaencore/blob/main/AUTHORS.md
 ## List(str): a list of maintainers
 maintainers:
-  - ianmkenney
+  - MDAnalysis/encore
   - IAlibay
 ## str: a free form description of the mdakit
 description:

@@ -3,7 +3,7 @@ project_name: hole2-mdakit
 authors:
   - https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
 maintainers:
-  - ianmkenney
+  - lilyminium
 description:
     A Python interface for the HOLE suite tools to analyze an ion channel pore or transporter pathway as a function of time or arbitrary order parameters.
 keywords:
