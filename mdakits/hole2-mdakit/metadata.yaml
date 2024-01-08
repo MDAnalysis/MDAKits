@@ -24,7 +24,7 @@ src_install:
   - git clone https://github.com/MDAnalysis/hole2-mdakit.git
   - mamba install hole2 -c conda-forge
   - cd hole2-mdakit && pip install . && cd ..
-python_requires: ">=3.8"
+python_requires: ">=3.9"
 mdanalysis_requires: ">=2.0.0"
 test_dependencies:
   - pip install pytest pytest-xdist
