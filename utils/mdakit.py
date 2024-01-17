@@ -336,8 +336,8 @@ class MDAKit:
         status = getattr(self.status.data, run_type)
 
         if ((self.metadata.run_tests is None) or
-            (run_type == 'develop' and self.metadata.install is None) or
-            (run_type == 'latest' and self.metadata.src_install is None)):
+            (run_type == 'develop' and self.metadata.src_install is None) or
+            (run_type == 'latest' and self.metadata.install is None)):
             return self._get_custom_badge(run_type, "unavailable", "inactive")
         elif status.numfails > 1:
             return self._get_custom_badge(run_type, "failed", "red")
