@@ -57,19 +57,19 @@ On the PR
 - **CHECK**: Are the automatic checks all passing?       
                                       
   - You many need to manually start the checks if the contributor is new to the organisation
-  - If the Kits’ tests use `tox`, these need to be manually checked (follow the *Details* link),
+  - If the Kits’ tests use ``tox``, these need to be manually checked (follow the *Details* link),
     as they may incorrectly appear to pass.
 
   If checks are failing, you may need to help the contributor identify and fix the issue. A failure may 
-  be due to improper set up of `metadata.yaml` (see :ref:`below <metadatafile>`), or a local failure on
+  be due to improper set up of ``metadata.yaml`` (see :ref:`below <metadatafile>`), or a local failure on
   the MDAKit’s end. Follow the *Details* of the failed check to find out more. 
                                       
   Some other possible points of failure:
                                       
   - If the failure has a “The head commit for this pull_request event is not ahead of the base 
     commit” error, tell the contributor to update the branch used in the PR so it is up-to-date
-    with *main* (e.g. using `git rebase`)
-  - A failure on installing dependencies may be due the entires in the Kit’s `pyproject.toml` not
+    with *main* (e.g. using ``git rebase``)
+  - A failure on installing dependencies may be due the entires in the Kit’s ``pyproject.toml`` not
     being properly defined
 
 
@@ -82,7 +82,7 @@ On the PR
 
 - **CHECK**: Is the metadata file named correctly and in the right location?
                                       
-  The correct format is: `mdakits/<project_name>/metadata.yaml` (see `project_name`, below)
+  The correct format is: ``mdakits/<project_name>/metadata.yaml`` (see ``project_name``, below)
 
 
 At the MDAKit’s Project Home
@@ -121,20 +121,20 @@ or a *list of strings* (which may be only one item long):
 Entries *required* for registration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                       
-`project_name`: the name of the Kit
+``project_name``: the name of the Kit
                                       
-- **CHECK**: This is a *string* and must match the name of the directory the `metadata.yaml` file is placed in.
+- **CHECK**: This is a *string* and must match the name of the directory the ``metadata.yaml`` file is placed in.
 - **RECOMMEND**: It is suggested that this name also matches the host repository name.
 
 
-`authors`: the ‘creators’ of the Kit
+``authors``: the ‘creators’ of the Kit
                                       
 - **CHECK**: This is a *list of strings*; either a list of names, or single entry with a link to an
   AUTHORS file at the project’s home.
 - **RECOMMEND**: An AUTHORS file is preferred (as this will be easier to update).
 
 
-`maintainers`: the individuals responsible for the Kit going forward; they will be pinged if the MDAKit 
+``maintainers``: the individuals responsible for the Kit going forward; they will be pinged if the MDAKit 
 is failing
                                       
 - **CHECK**: This is a *list of strings*. Each entry must be a github handle.
@@ -143,34 +143,34 @@ is failing
   included.
 
 
-`description`: a free form description of the Kit
+``description``: a free form description of the Kit
 
 - **CHECK**: This is a *string*. Give the Kit a quick look - is the description reasonable?
 - **RECOMMEND**: Suggest anything you think would be useful to add to the Kit’s description. There’s no 
   upper limit on length, but ideally ~1-3 sentences should be sufficient.
 
 
-`keywords`: keywords that describe the Kit
+``keywords``: keywords that describe the Kit
 
 - **CHECK**: This is a *list of strings*. 
 - **RECOMMEND**: Make any suggestions for things you think would be useful to add. See what
   keywords current MDAKits use for examples (note that keywords are case-insensitive when searching). 
 
 
-`licence`: the licence that the Kit falls under
+``licence``: the licence that the Kit falls under
 
 - **CHECK**: This is a *string*, which must be the SPDX ID of an 
   `OSI approved licence <https://opensource.org/licenses/>`_. It should match the licence identified 
   on the project’s home, e.g. in a LICENCE file.
 
 
-`project_home`: a link to the Kit’s code
+``project_home``: a link to the Kit’s code
 
 - **CHECK**: This is a *string* and points to a reasonable location on a version-controlled repository
   e.g. GitHub, GitLab, BitBucket, etc.
 
 
-`documentation_home`: a link to the Kit’s documentation
+``documentation_home``: a link to the Kit’s documentation
 
 - **CHECK**: This is a *string* and points somewhere sensible, which could be a single file (e.g. a 
   README), or a website. Minimal documentation is a requirement for an MDAKit: does the linked 
@@ -179,7 +179,7 @@ is failing
   contributor to expand and improve their documentation in the future.
 
 
-`documentation_type`: the type (i.e. “level of detail”) of documentation
+``documentation_type``: the type (i.e. “level of detail”) of documentation
 
 - **CHECK**: This is a *string* - e.g. 'README' (a basic overview), 'API' (description of the code) or
   'UserGuide' (more thorough description and explanation of usage); or a combination ('API + UserGuide').
@@ -195,24 +195,24 @@ These metadata entries are *optional*. Encourage the submitter to include them, 
 the PR over them. Many of these are tested by the automatic CI, so do not need to be checked manually once
 CI is passing.
 
-`install`: a list of commands to install the latest release of the Kit. This is a *list of strings* (*AUTOMATIC CHECK*).
+``install``: a list of commands to install the latest release of the Kit. This is a *list of strings* (*AUTOMATIC CHECK*).
 
 - **RECOMMEND**: If the installation uses e.g. github or is otherwise complicated (many steps involved),
   encourage the contributor to make a release on conda-forge or PyPI. 
 
 
-`src_install`: a list of commands to install the Kit from the source code. This is a *list of strings*
+``src_install``: a list of commands to install the Kit from the source code. This is a *list of strings*
 (*AUTOMATIC CHECK*).
 
 
-`import_name`: the package name, used to import the Kit in Python. This is a *string* (*AUTOMATIC CHECK*).
+``import_name``: the package name, used to import the Kit in Python. This is a *string* (*AUTOMATIC CHECK*).
 
 
-`python_requires`: range specifications for the versions of Python this Kit supports, e.g. “>=3.9”. This
+``python_requires``: range specifications for the versions of Python this Kit supports, e.g. “>=3.9”. This
 is a *string* (*AUTOMATIC CHECK*).
 
 
-`mdanalysis_requires`: range specifications for the versions of MDAnalysis this Kit supports, e.g.
+``mdanalysis_requires``: range specifications for the versions of MDAnalysis this Kit supports, e.g.
 “>=2.0.0”. This is a *string* (*AUTOMATIC CHECK*).
                                       
 - **CHECK**: The automatic checks will test the upper bound provided, but not the lower bound. If 
@@ -222,7 +222,7 @@ is a *string* (*AUTOMATIC CHECK*).
   old version is given, enquire why, and recommend updating the Kit to work with a current version. 
 
 
-`run_tests`: a list of commands to run the Kit’s tests. This is a *list of strings* (*AUTOMATIC CHECK*).
+``run_tests``: a list of commands to run the Kit’s tests. This is a *list of strings* (*AUTOMATIC CHECK*).
 
 - *note*: while (minimal) tests are one of the requirements of an MDAKit, providing instructions on how to run
   tests in the metadata file is currently optional, in order to allow greater flexibility in
@@ -232,29 +232,29 @@ is a *string* (*AUTOMATIC CHECK*).
   to continue improving their tests in the future.
                                       
 
-`test_dependencies`: a list of commands for installing any dependencies required by the MDAKit’s tests.
+``test_dependencies``: a list of commands for installing any dependencies required by the MDAKit’s tests.
 This is a *list of strings* (*AUTOMATIC CHECK*).
 
 
-`project_org`: the account under which the code is found - this may be an individual user account, or an
+``project_org``: the account under which the code is found - this may be an individual user account, or an
 organisation like MDAnalysis. This is a *string*.
 
 
-`development_status`: the development status of the MDAKit.
+``development_status``: the development status of the MDAKit.
 
 - **CHECK**: This is a *string* and should match one of the `PyPI classifiers`_. 
 - **RECOMMEND**: If you don’t think the provided status matches the actual state of the Kit’s code, you 
   can query this - but don’t let it be a blocker.
 
 
-`publications`: list of publications to be cited when using this MDAKit.
+``publications``: list of publications to be cited when using this MDAKit.
 
 - **CHECK**: This is a *list of strings*, and should include any relevant publications for the Kit 
   itself as well as key upstream publications (e.g. if the Kit heavily relies on another package with an
   associated publication).
 
 
-`changelog`: a link to the MDAKit’s changelog.
+``changelog``: a link to the MDAKit’s changelog.
 
 - **CHECK**: This is a *string*. If included, check it points to a sensible place (e.g. a CHANGELOG 
   file).
