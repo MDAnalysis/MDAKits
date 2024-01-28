@@ -20,7 +20,8 @@ functionality of the `MDAnalysis library`_
    about
    makingakit
    add
-
+   troubleshooting
+   
 
 Acknowledgements
 ================

@@ -29,7 +29,7 @@ jobs:
 
       - id: files
         name: get changed filed
-        uses: jitterbit/get-changed-files@v1
+        uses: masesgroup/retrieve-changed-files@v3
         with:
           format: 'json'
       - id: get-changed-mdakits
