@@ -42,7 +42,7 @@ Several checks will run automatically:
                                       
 - *gen_matrix* generates a list of all MDAKits updated by the PR (usually, this will be a single Kit)
 - *mdakit-ci* will install the MDAKit and run its own tests (as detailed in
-  the `metadata.yaml` file) with the latest and/or develop versions of MDAnalysis
+  the ``metadata.yaml`` file) with the latest and/or develop versions of MDAnalysis
 - *readthedocs* will create a version of the MDAKit Registry website with the prospective kit added
                                       
 Once the kit has passed both these automatic checks **and** the manual checks below, you can approve the
