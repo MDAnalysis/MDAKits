@@ -14,7 +14,7 @@ functionality of the `MDAnalysis library`_.
 Follow the links below to begin exploring the available MDAKits, or view
 additional resources about MDAKits and how to write and/or add your own.
 
-**Take me to the :doc:`MDAKit Registry<mdakits>`!**
+**Take me to the** :doc:`MDAKit Registry<mdakits>`!
 
 
 .. toctree::
