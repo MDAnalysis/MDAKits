@@ -14,8 +14,8 @@ functionality of the `MDAnalysis library`_.
 Follow the links below to begin exploring the available MDAKits, or view
 additional resources about MDAKits and how to write and/or add your own.
 
-Take me to the `MDAKit Registry`_!
-==================================
+**Take me to the :doc:`MDAKit Registry<mdakits>`!**
+
 
 .. toctree::
    :maxdepth: 1
@@ -41,8 +41,6 @@ Acknowledgements
 The development of this repository is supported by a grant from the Chan Zuckerberg
 Initiative under an EOSS4 award.
 
-
-.. _`MDAKit registry`: https://mdakits.mdanalysis.org/mdakits.html
 
 .. _`MDAnalysis library`:
    https://docs.mdanalysis.org
