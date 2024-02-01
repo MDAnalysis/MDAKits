@@ -1,9 +1,10 @@
+.. _reviewers-guide:
 *******************
 Guide for reviewers
 *******************
 
 The MDAKit registration process aims to present a *low barrier of entry* for contributors to make their
-code available to the broader community via the `MDAKit registry`_. 
+code available to the broader community via the :doc:`MDAKit Registry<mdakits>`.
 However, there is still a minimal set of :ref:`requirements <requirements>` that must be met, and the
 MDAKit must pass a review before it is officially included in the Registry.
 
@@ -23,7 +24,7 @@ registration process and:
 You can also see the :ref:`guide for submitters here<add-mdakit>`.
 
 .. note::   
-    The `MDAKit registry`_ is still evolving. This guide will be updated as changes to the registration 
+    The :doc:`MDAKit Registry<mdakits>` is still evolving. This guide will be updated as changes to the registration 
     process are made.
 
 Who can be a reviewer?
@@ -34,7 +35,7 @@ you’d like to be involved with reviewing MDAKit submissions.
 How does registration work?
 ===========================
 A prospective MDAKit contributor will register their Kit by creating a Pull Request (PR) to the MDAKit
-github repository, consisting of a single `metadata.yaml` file (or one per Kit, if multiple Kits are
+github repository, consisting of a single ``metadata.yaml`` file (or one per Kit, if multiple Kits are
 being added/modified). Details on what is included in the metadata file, and what to look for as a 
 reviewer, are provided :ref:`below <metadatafile>`.
 
@@ -92,7 +93,7 @@ to see if it looks sensible. Much of the information provided in the metadata fi
 available here (e.g. a LICENCE file containing licence information, installation instructions, etc). 
 Check these details match the metadata information.
 
-| 
+
 .. _metadatafile:
 Inside the metadata file
 ************************
@@ -259,8 +260,6 @@ organisation like MDAnalysis. This is a *string*.
 - **CHECK**: This is a *string*. If included, check it points to a sensible place (e.g. a CHANGELOG 
   file).
 
-
-.. _`MDAKit registry`: https://mdakits.mdanalysis.org/mdakits.html
 
 .. _YAML format: https://yaml.org/
 
