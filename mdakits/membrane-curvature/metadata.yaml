@@ -19,7 +19,7 @@ project_name: membrane-curvature
 
 ## List(str): a link to the authors file (preferred) or a list of authors 
 authors:
-  - Estefania Barreto-Ojeda
+  - https://github.com/MDAnalysis/membrane-curvature/blob/main/AUTHORS
 
 ## List(str): a list of maintainers
 ## Please note these _must_ be GitHub handles
