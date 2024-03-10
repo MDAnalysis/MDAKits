@@ -29,6 +29,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - pores, ion channels, transporters, HOLE
       - `hole2-mdakit authors`_
       - |hole2-mdakit_latest| |hole2-mdakit_develop|
+    * - :ref:`membrane-curvature`
+      - membranes, curvature, molecular dynamics
+      - `membrane-curvature authors`_
+      - |membrane-curvature_latest| |membrane-curvature_develop|
     * - :ref:`waterdynamics`
       - water, hydrogenbonds, MSD
       - `waterdynamics authors`_
@@ -86,6 +90,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    mdakit-sasa
    solvation-analysis
    hole2-mdakit
+   membrane-curvature
    waterdynamics
    lipyds
    mdachecker
@@ -128,6 +133,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: hole2-mdakit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`membrane-curvature authors`:
+   https://github.com/MDAnalysis/membrane-curvature/blob/main/AUTHORS
+
+.. |membrane-curvature_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: membrane-curvature develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: membrane-curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`waterdynamics authors`:

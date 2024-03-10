@@ -1,0 +1,48 @@
+.. _membrane-curvature:
+
+************************************************
+membrane-curvature
+************************************************
+
+| 🖋️ **Authors**: `membrane-curvature authors`_
+| 🏠 **Project home:** https://github.com/MDAnalysis/membrane-curvature
+| 📖 **Documentation:** https://membrane-curvature.readthedocs.io
+| ⚖️ **License:** GPL-3.0
+| 🔑 **Keywords:** membranes, curvature, molecular dynamics
+| 🚀 **Development status:** Production/Stable
+| 📜 **Changelog:** https://github.com/MDAnalysis/membrane-curvature/blob/main/CHANGELOG.rst
+| 📑 **Publications:**
+|    * https://zenodo.org/records/5553452
+| 🧪 **Tests (latest):** |membrane-curvature_latest| 
+| 🧪 **Tests (develop):** |membrane-curvature_develop| 
+| **Description:**
+| *Tool to calculate the Gaussian and mean curvature of membranes from Molecular Dynamics simulations.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of membrane-curvature can be installed using the following:
+
+.. code-block:: bash
+
+    pip install membrane-curvature
+
+The source code of membrane-curvature can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/MDAnalysis/membrane-curvature@main
+
+.. _`membrane-curvature authors`:
+   https://github.com/MDAnalysis/membrane-curvature/blob/main/AUTHORS
+
+.. |membrane-curvature_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: membrane-curvature develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: membrane-curvature develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
