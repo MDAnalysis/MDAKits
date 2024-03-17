@@ -1,7 +1,7 @@
 ## Required entries
-project_name: hole2-mdakit
+project_name: mdahole2
 authors:
-  - https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
+  - https://github.com/MDAnalysis/mdahole2/blob/main/AUTHORS.md
 maintainers:
   - lilyminium
 description:
@@ -12,18 +12,18 @@ keywords:
   - transporters
   - HOLE
 license: GPL-3.0
-project_home: https://github.com/MDAnalysis/hole2-mdakit
-documentation_home: https://www.mdanalysis.org/hole2-mdakit/
+project_home: https://github.com/MDAnalysis/mdahole2
+documentation_home: https://www.mdanalysis.org/mdahole2/
 documentation_type: API
 
 ## Optional entries
 install:
   - mamba install hole2 -c conda-forge
-  - pip install git+https://github.com/MDAnalysis/hole2-mdakit@main
+  - pip install git+https://github.com/MDAnalysis/mdahole2@main
 src_install:
-  - git clone https://github.com/MDAnalysis/hole2-mdakit.git
+  - git clone https://github.com/MDAnalysis/mdahole2.git
   - mamba install hole2 -c conda-forge
-  - cd hole2-mdakit && pip install . && cd ..
+  - cd mdahole2 && pip install . && cd ..
 python_requires: ">=3.9"
 mdanalysis_requires: ">=2.0.0"
 test_dependencies:
