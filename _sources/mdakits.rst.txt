@@ -21,6 +21,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - Molecular Dynamics, Confined Systems
       - `maicos authors`_
       - |maicos_latest| |maicos_develop|
+    * - :ref:`mdahole2`
+      - pores, ion channels, transporters, HOLE
+      - `mdahole2 authors`_
+      - |mdahole2_latest| |mdahole2_develop|
     * - :ref:`mdachecker`
       - structure analysis, conformation checks
       - IAlibay
@@ -41,10 +45,6 @@ Each of the MDAKits in the following table links to a page with more details abo
       - OpenMM, Reporters
       - `openmm-mdanalysis-reporter authors`_
       - |openmm-mdanalysis-reporter_latest| |openmm-mdanalysis-reporter_develop|
-    * - :ref:`hole2-mdakit`
-      - pores, ion channels, transporters, HOLE
-      - `hole2-mdakit authors`_
-      - |hole2-mdakit_latest| |hole2-mdakit_develop|
     * - :ref:`waterdynamics`
       - water, hydrogenbonds, MSD
       - `waterdynamics authors`_
@@ -88,12 +88,12 @@ Each of the MDAKits in the following table links to a page with more details abo
    :hidden:
 
    maicos
+   mdahole2
    mdachecker
    ProLIF
    PathSimAnalysis
    propkatraj
    openmm-mdanalysis-reporter
-   hole2-mdakit
    waterdynamics
    lipyds
    solvation-analysis
@@ -114,6 +114,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |maicos_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: maicos develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`mdahole2 authors`:
+   https://github.com/MDAnalysis/mdahole2/blob/main/AUTHORS.md
+
+.. |mdahole2_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: mdahole2 develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |mdahole2_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: mdahole2 develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. |mdachecker_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
@@ -163,17 +174,6 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |openmm-mdanalysis-reporter_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: openmm-mdanalysis-reporter develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. _`hole2-mdakit authors`:
-   https://github.com/MDAnalysis/hole2-mdakit/blob/main/AUTHORS.md
-
-.. |hole2-mdakit_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
-   :alt: hole2-mdakit develop CI status
-   :target: https://github.com/MDAnalysis/MDAKits/actions
-
-.. |hole2-mdakit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
-   :alt: hole2-mdakit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`waterdynamics authors`:
