@@ -30,7 +30,8 @@ You can also see the :ref:`guide for submitters here<add-mdakit>`.
 Who can be a reviewer?
 ======================
 We love for members of the community to get involved at all parts of the MDAKit process! Contact us if
-you’d like to be involved with reviewing MDAKit submissions.
+you’d like to be involved with reviewing MDAKit submissions. Make a post in on the `MDAKit Discussions`_
+and tag *@MDAnalysis/mdakits-reviewers*.
 
 How does registration work?
 ===========================
@@ -262,5 +263,7 @@ organisation like MDAnalysis. This is a *string*.
 
 
 .. _YAML format: https://yaml.org/
+
+.. _MDAKit Discussions: https://github.com/MDAnalysis/mdanalysis/discussions/categories/mdakit-discussions 
 
 .. _PyPI classifiers: https://pypi.org/classifiers/
