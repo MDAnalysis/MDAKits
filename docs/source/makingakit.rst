@@ -65,7 +65,6 @@ Navigating into this directory, we find the following notable files and director
 #. README.md -- Project description and typically landing page content rendered on GitHub
 #. docs/ -- Sphinx documentation template, instructions and build environment documented within!
 #. rmsfkit/ -- Python package source code template
-#. setup.py -- Installation configuration file
 
 See `the cookiecutter documentation <https://cookiecutter-mdakit.readthedocs.io/en/latest/usage.html>`_ for information on additional files. 
 Using the cookiecutter checks off a couple of the requirements for a valid MDAKit right from the start:
@@ -259,23 +258,6 @@ file. Under the ``[project.optional-dependencies]`` table, ensure that
 	    "pytest-cov>=3.0",
 	    "MDAnalysisTests>=2.0.0",
 	]
-
-These tests also need to be reflected in the ``extra_requires`` dictionary in ``setup.py``:
-
-.. code-block:: python
-
-	extras_require={
-	        "test": [
-	            "pytest>=6.0",
-	            "pytest-xdist>=2.5",
-	            "pytest-cov>=3.0",
-	            "MDAnalysisTests>=2.0.0"  # add this
-	        ],
-	        "doc": [
-	            "sphinx",
-	            "sphinx_rtd_theme",
-	        ]
-	}
 
 Confirm that the code and tests work
 ************************************
