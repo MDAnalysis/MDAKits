@@ -260,22 +260,6 @@ file. Under the ``[project.optional-dependencies]`` table, ensure that
 	    "MDAnalysisTests>=2.0.0",
 	]
 
-These tests also need to be reflected in the ``extra_requires`` dictionary in ``setup.py``:
-
-.. code-block:: python
-
-	extras_require={
-	        "test": [
-	            "pytest>=6.0",
-	            "pytest-xdist>=2.5",
-	            "pytest-cov>=3.0",
-	            "MDAnalysisTests>=2.0.0"  # add this
-	        ],
-	        "doc": [
-	            "sphinx",
-	            "sphinx_rtd_theme",
-	        ]
-	}
 
 Confirm that the code and tests work
 ************************************
@@ -288,6 +272,7 @@ environment using ``conda`` or ``mamba`` (recommended).
 
 	$ mamba create -n rmsfkit
 	$ mamba env update --name rmsfkit --file devtools/conda-envs/test_env.yaml
+        $ mamba activate rmsfkit
 	$ pip install -e .
 
 This installs the package as well as the testing environment. We can run tests locally using:
