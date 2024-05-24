@@ -259,6 +259,8 @@ file. Under the ``[project.optional-dependencies]`` table, ensure that
 	    "MDAnalysisTests>=2.0.0",
 	]
 
+
+
 Confirm that the code and tests work
 ************************************
 
@@ -270,6 +272,7 @@ environment using ``conda`` or ``mamba`` (recommended).
 
 	$ mamba create -n rmsfkit
 	$ mamba env update --name rmsfkit --file devtools/conda-envs/test_env.yaml
+        $ mamba activate rmsfkit
 	$ pip install -e .
 
 This installs the package as well as the testing environment. We can run tests locally using:
