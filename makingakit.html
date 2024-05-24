@@ -383,21 +383,6 @@ file. Under the <code class="docutils literal notranslate"><span class="pre">[pr
 <span class="p">]</span>
 </pre></div>
 </div>
-<p>These tests also need to be reflected in the <code class="docutils literal notranslate"><span class="pre">extra_requires</span></code> dictionary in <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">extras_require</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;test&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;pytest&gt;=6.0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;pytest-xdist&gt;=2.5&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;pytest-cov&gt;=3.0&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;MDAnalysisTests&gt;=2.0.0&quot;</span>  <span class="c1"># add this</span>
-        <span class="p">],</span>
-        <span class="s2">&quot;doc&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;sphinx_rtd_theme&quot;</span><span class="p">,</span>
-        <span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
 </section>
 <section id="confirm-that-the-code-and-tests-work">
 <h3>Confirm that the code and tests work<a class="headerlink" href="#confirm-that-the-code-and-tests-work" title="Link to this heading"></a></h3>
@@ -406,6 +391,7 @@ instructions from the generated <code class="docutils literal notranslate"><span
 environment using <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code> (recommended).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mamba<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>rmsfkit
 $<span class="w"> </span>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>rmsfkit<span class="w"> </span>--file<span class="w"> </span>devtools/conda-envs/test_env.yaml
+$<span class="w"> </span>mamba<span class="w"> </span>activate<span class="w"> </span>rmsfkit
 $<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
