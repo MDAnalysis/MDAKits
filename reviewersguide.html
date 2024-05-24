@@ -1,0 +1,416 @@
+
+
+
+  
+    
+  
+
+
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="_static/logo/mda_favicon.ico">
+</head>
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guide for reviewers &mdash; MDAKits Registry  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/site.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+        <script src="_static/main.js?v=71e46913"></script>
+        <script src="_static/js/versions.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Troubleshooting" href="troubleshooting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="index.html">
+  
+    <img src="_static/mdanalysis-logo-200x150.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">MDAKit Registry</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About MDAKits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="makingakit.html">Making an MDAKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add.html">Adding an MDAKit to the Registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide for reviewers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#who-can-be-a-reviewer">Who can be a reviewer?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-does-registration-work">How does registration work?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-to-look-for-as-a-reviewer">What to look for as a reviewer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#on-the-pr">On the PR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#at-the-mdakits-project-home">At the MDAKit’s Project Home</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inside-the-metadata-file">Inside the metadata file</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#entries-required-for-registration">Entries <em>required</em> for registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optional-entries"><em>Optional</em> entries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MDAKits Registry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Guide for reviewers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/reviewersguide.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="guide-for-reviewers">
+<span id="reviewers-guide"></span><h1>Guide for reviewers<a class="headerlink" href="#guide-for-reviewers" title="Link to this heading"></a></h1>
+<p>The MDAKit registration process aims to present a <em>low barrier of entry</em> for contributors to make their
+code available to the broader community via the <a class="reference internal" href="mdakits.html"><span class="doc">MDAKit Registry</span></a>.
+However, there is still a minimal set of <a class="reference internal" href="about.html#requirements"><span class="std std-ref">requirements</span></a> that must be met, and the
+MDAKit must pass a review before it is officially included in the Registry.</p>
+<p>A manual review also allows for more experienced reviewers to offer best-practice suggestions and
+improvements to newer contributors. As such, your <strong>aims as a reviewer</strong> are to:</p>
+<ol class="arabic simple">
+<li><p>Ensure the MDAKit can be <em>merged</em> (all necessary details <em>present</em> and <em>correct</em>), and</p></li>
+<li><p>Encourage <em>best practices</em> and <em>future work</em>.</p></li>
+</ol>
+<p>This page provides a guide for reviewing an MDAKit submission, including a brief overview of the
+registration process and:</p>
+<ul class="simple">
+<li><p>what <strong>AUTOMATIC</strong> checks are performed,</p></li>
+<li><p>what to <strong>CHECK</strong> manually (things that must be present before the kit can be registered), and</p></li>
+<li><p>things to <strong>RECOMMEND</strong> (suggestions for improving the provided metadata, but that are not required).</p></li>
+</ul>
+<p>You can also see the <a class="reference internal" href="add.html#add-mdakit"><span class="std std-ref">guide for submitters here</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="mdakits.html"><span class="doc">MDAKit Registry</span></a> is still evolving. This guide will be updated as changes to the registration
+process are made.</p>
+</div>
+<section id="who-can-be-a-reviewer">
+<h2>Who can be a reviewer?<a class="headerlink" href="#who-can-be-a-reviewer" title="Link to this heading"></a></h2>
+<p>We love for members of the community to get involved at all parts of the MDAKit process! Contact us if
+you’d like to be involved with reviewing MDAKit submissions. Make a post in on the <a class="reference external" href="https://github.com/MDAnalysis/mdanalysis/discussions/categories/mdakit-discussions">MDAKit Discussions</a>
+and tag <em>&#64;MDAnalysis/mdakits-reviewers</em>.</p>
+</section>
+<section id="how-does-registration-work">
+<h2>How does registration work?<a class="headerlink" href="#how-does-registration-work" title="Link to this heading"></a></h2>
+<p>A prospective MDAKit contributor will register their Kit by creating a Pull Request (PR) to the MDAKit
+github repository, consisting of a single <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file (or one per Kit, if multiple Kits are
+being added/modified). Details on what is included in the metadata file, and what to look for as a
+reviewer, are provided <a class="reference internal" href="#metadatafile"><span class="std std-ref">below</span></a>.</p>
+<p>Several checks will run automatically:</p>
+<ul class="simple">
+<li><p><em>gen_matrix</em> generates a list of all MDAKits updated by the PR (usually, this will be a single Kit)</p></li>
+<li><p><em>mdakit-ci</em> will install the MDAKit and run its own tests (as detailed in
+the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file) with the latest and/or develop versions of MDAnalysis</p></li>
+<li><p><em>readthedocs</em> will create a version of the MDAKit Registry website with the prospective kit added</p></li>
+</ul>
+<p>Once the kit has passed both these automatic checks <strong>and</strong> the manual checks below, you can approve the
+PR - after merging, the Kit will officially be part of the MDAKit Registry!</p>
+</section>
+<section id="what-to-look-for-as-a-reviewer">
+<h2>What to look for as a reviewer<a class="headerlink" href="#what-to-look-for-as-a-reviewer" title="Link to this heading"></a></h2>
+<section id="on-the-pr">
+<h3>On the PR<a class="headerlink" href="#on-the-pr" title="Link to this heading"></a></h3>
+<ul>
+<li><p><strong>CHECK</strong>: Are the automatic checks all passing?</p>
+<ul class="simple">
+<li><p>You many need to manually start the checks if the contributor is new to the organisation</p></li>
+<li><p>If the Kits’ tests use <code class="docutils literal notranslate"><span class="pre">tox</span></code>, these need to be manually checked (follow the <em>Details</em> link),
+as they may incorrectly appear to pass.</p></li>
+</ul>
+<p>If checks are failing, you may need to help the contributor identify and fix the issue. A failure may
+be due to improper set up of <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> (see <a class="reference internal" href="#metadatafile"><span class="std std-ref">below</span></a>), or a local failure on
+the MDAKit’s end. Follow the <em>Details</em> of the failed check to find out more.</p>
+<p>Some other possible points of failure:</p>
+<ul class="simple">
+<li><p>If the failure has a “The head commit for this pull_request event is not ahead of the base
+commit” error, tell the contributor to update the branch used in the PR so it is up-to-date
+with <em>main</em> (e.g. using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">rebase</span></code>)</p></li>
+<li><p>A failure on installing dependencies may be due the entires in the Kit’s <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> not
+being properly defined</p></li>
+</ul>
+</li>
+<li><p><strong>CHECK</strong>: Did the docs build correctly?</p>
+<p>View the page generated by <em>readthedocs</em> (by clicking <em>Details</em> next to the check) and find the
+MDAKit’s entry on the Registry page. Check the expected information and badges are present on both the
+main list and the Kit’s individual page.</p>
+</li>
+<li><p><strong>CHECK</strong>: Is the metadata file named correctly and in the right location?</p>
+<p>The correct format is: <code class="docutils literal notranslate"><span class="pre">mdakits/&lt;project_name&gt;/metadata.yaml</span></code> (see <code class="docutils literal notranslate"><span class="pre">project_name</span></code>, below)</p>
+</li>
+</ul>
+</section>
+<section id="at-the-mdakits-project-home">
+<h3>At the MDAKit’s Project Home<a class="headerlink" href="#at-the-mdakits-project-home" title="Link to this heading"></a></h3>
+<p>Follow the link to the project’s home provided in the metadata file and have a quick look at the MDAKit
+to see if it looks sensible. Much of the information provided in the metadata file should also be
+available here (e.g. a LICENCE file containing licence information, installation instructions, etc).
+Check these details match the metadata information.</p>
+</section>
+<section id="inside-the-metadata-file">
+<span id="metadatafile"></span><h3>Inside the metadata file<a class="headerlink" href="#inside-the-metadata-file" title="Link to this heading"></a></h3>
+<p>The metadata file is in <a class="reference external" href="https://yaml.org/">YAML format</a>. Each entry is described briefly below; see also the
+<a class="reference internal" href="add.html#template"><span class="std std-ref">template metadata file</span></a> for more details and a demonstration of the
+proper formatting. In short, current metadata entries take the form of either a <em>string</em>, e.g.:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">project_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MDAKitForCats</span>
+<span class="nt">description</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">A hypothetical and nonsensical MDAKit designed</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">to be used by cats.</span>
+</pre></div>
+</div>
+<p>or a <em>list of strings</em> (which may be only one item long):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">instructions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">obtain boxed MDAKit</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">remove MDAKit contents</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sit in empty box</span>
+</pre></div>
+</div>
+<section id="entries-required-for-registration">
+<h4>Entries <em>required</em> for registration<a class="headerlink" href="#entries-required-for-registration" title="Link to this heading"></a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">project_name</span></code>: the name of the Kit</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>string</em> and must match the name of the directory the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code> file is placed in.</p></li>
+<li><p><strong>RECOMMEND</strong>: It is suggested that this name also matches the host repository name.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">authors</span></code>: the ‘creators’ of the Kit</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>list of strings</em>; either a list of names, or single entry with a link to an
+AUTHORS file at the project’s home.</p></li>
+<li><p><strong>RECOMMEND</strong>: An AUTHORS file is preferred (as this will be easier to update).</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">maintainers</span></code>: the individuals responsible for the Kit going forward; they will be pinged if the MDAKit
+is failing</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>list of strings</em>. Each entry must be a github handle.</p></li>
+<li><p><strong>RECOMMEND</strong>: It’s expected the submitter will appear on this list. If the list contains individuals
+not obviously associated with the submission/project, ping them to check their agreement to be
+included.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">description</span></code>: a free form description of the Kit</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>string</em>. Give the Kit a quick look - is the description reasonable?</p></li>
+<li><p><strong>RECOMMEND</strong>: Suggest anything you think would be useful to add to the Kit’s description. There’s no
+upper limit on length, but ideally ~1-3 sentences should be sufficient.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">keywords</span></code>: keywords that describe the Kit</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>list of strings</em>.</p></li>
+<li><p><strong>RECOMMEND</strong>: Make any suggestions for things you think would be useful to add. See what
+keywords current MDAKits use for examples (note that keywords are case-insensitive when searching).</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">licence</span></code>: the licence that the Kit falls under</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>string</em>, which must be the SPDX ID of an
+<a class="reference external" href="https://opensource.org/licenses/">OSI approved licence</a>. It should match the licence identified
+on the project’s home, e.g. in a LICENCE file.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">project_home</span></code>: a link to the Kit’s code</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>string</em> and points to a reasonable location on a version-controlled repository
+e.g. GitHub, GitLab, BitBucket, etc.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">documentation_home</span></code>: a link to the Kit’s documentation</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>string</em> and points somewhere sensible, which could be a single file (e.g. a
+README), or a website. Minimal documentation is a requirement for an MDAKit: does the linked
+documentation detail what the code does, how to install it, and the basic usage?</p></li>
+<li><p><strong>RECOMMEND</strong>: While only basic documentation is required for registration, you can encourage the
+contributor to expand and improve their documentation in the future.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">documentation_type</span></code>: the type (i.e. “level of detail”) of documentation</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>string</em> - e.g. ‘README’ (a basic overview), ‘API’ (description of the code) or
+‘UserGuide’ (more thorough description and explanation of usage); or a combination (‘API + UserGuide’).</p></li>
+<li><p><strong>RECOMMEND</strong>: It is not strictly enforced for the “type” to match the current appearance of a Kit’s
+docs. If you judge that it does not, see if the submitter intends to continue working on these (and
+encourage them to do so!)</p></li>
+</ul>
+</section>
+<section id="optional-entries">
+<h4><em>Optional</em> entries<a class="headerlink" href="#optional-entries" title="Link to this heading"></a></h4>
+<p>These metadata entries are <em>optional</em>. Encourage the submitter to include them, but don’t block merging
+the PR over them. Many of these are tested by the automatic CI, so do not need to be checked manually once
+CI is passing.</p>
+<p><code class="docutils literal notranslate"><span class="pre">install</span></code>: a list of commands to install the latest release of the Kit. This is a <em>list of strings</em> (<em>AUTOMATIC CHECK</em>).</p>
+<ul class="simple">
+<li><p><strong>RECOMMEND</strong>: If the installation uses e.g. github or is otherwise complicated (many steps involved),
+encourage the contributor to make a release on conda-forge or PyPI.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">src_install</span></code>: a list of commands to install the Kit from the source code. This is a <em>list of strings</em>
+(<em>AUTOMATIC CHECK</em>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">import_name</span></code>: the package name, used to import the Kit in Python. This is a <em>string</em> (<em>AUTOMATIC CHECK</em>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">python_requires</span></code>: range specifications for the versions of Python this Kit supports, e.g. “&gt;=3.9”. This
+is a <em>string</em> (<em>AUTOMATIC CHECK</em>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">mdanalysis_requires</span></code>: range specifications for the versions of MDAnalysis this Kit supports, e.g.
+“&gt;=2.0.0”. This is a <em>string</em> (<em>AUTOMATIC CHECK</em>).</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: The automatic checks will test the upper bound provided, but not the lower bound. If
+provided, see if the lower bound seems reasonable - e.g. a newly-written Kit is likely to not actually
+work with early versions of MDAnalysis.</p></li>
+<li><p><strong>RECOMMEND</strong>: Ideally, the Kit works with the current version of MDAnalysis - if an upper bound to an
+old version is given, enquire why, and recommend updating the Kit to work with a current version.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">run_tests</span></code>: a list of commands to run the Kit’s tests. This is a <em>list of strings</em> (<em>AUTOMATIC CHECK</em>).</p>
+<ul class="simple">
+<li><p><em>note</em>: while (minimal) tests are one of the requirements of an MDAKit, providing instructions on how to run
+tests in the metadata file is currently optional, in order to allow greater flexibility in
+what format tests take and so lower the entry barrier for new contributors. However, it is <em>highly
+recommended</em> here to provide this metadata.</p></li>
+<li><p><strong>RECOMMEND</strong>: While a MDAKit may be registered with only minimal tests, encourage the contributor
+to continue improving their tests in the future.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">test_dependencies</span></code>: a list of commands for installing any dependencies required by the MDAKit’s tests.
+This is a <em>list of strings</em> (<em>AUTOMATIC CHECK</em>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">project_org</span></code>: the account under which the code is found - this may be an individual user account, or an
+organisation like MDAnalysis. This is a <em>string</em>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">development_status</span></code>: the development status of the MDAKit.</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>string</em> and should match one of the <a class="reference external" href="https://pypi.org/classifiers/">PyPI classifiers</a>.</p></li>
+<li><p><strong>RECOMMEND</strong>: If you don’t think the provided status matches the actual state of the Kit’s code, you
+can query this - but don’t let it be a blocker.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">publications</span></code>: list of publications to be cited when using this MDAKit.</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>list of strings</em>, and should include any relevant publications for the Kit
+itself as well as key upstream publications (e.g. if the Kit heavily relies on another package with an
+associated publication).</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">changelog</span></code>: a link to the MDAKit’s changelog.</p>
+<ul class="simple">
+<li><p><strong>CHECK</strong>: This is a <em>string</em>. If included, check it points to a sensible place (e.g. a CHANGELOG
+file).</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2024, .</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
