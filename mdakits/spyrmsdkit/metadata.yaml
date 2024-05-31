@@ -25,8 +25,8 @@ documentation_home: https://spyrmsd.readthedocs.io
 
 documentation_type: API
 
-install:
-  - pip install spyrmsdkit
+#install:
+#  - pip install spyrmsdkit
 
 src_install:
   - pip install git+https://github.com/RMeli/spyrmsdkit@main
