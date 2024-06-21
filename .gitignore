@@ -132,3 +132,5 @@ dmypy.json
 
 # workflow storage
 json-statuses/
+
+.DS_Store
