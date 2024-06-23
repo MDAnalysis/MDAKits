@@ -243,7 +243,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: ProLIF develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: ProLIF develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
