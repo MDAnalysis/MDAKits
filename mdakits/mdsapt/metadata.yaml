@@ -9,6 +9,7 @@ authors:
 ## List(str): a list of maintainers
 maintainers:
   - Alia Lescoulie
+  - Astrid Yu
   - Ashley Ringer McDonald
 ## str: a free form description of the mdakit
 description:
@@ -32,13 +33,13 @@ documentation_type: UserGuide + API
 ## release of the code. Note: only one installation method can currently
 ## be defined. We suggest using conda/mamba where possible.
 install:
-  - mamba install -c psi4/label/dev -c conda-forge mdsapt
+  - mamba install -c conda-forge mdsapt
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
   # required dependencies from environment.yaml
-  - mamba install -c psi4 -c conda-forge -c defaults "psi4>=1.6.1,<1.7" click numpy openmm pandas pdbfixer pytest pydantic pytest-cov pyyaml rdkit
-  - pip install git+https://github.com/calpolyccg/MDSAPT@master
+  mamba install -c conda-forge psi4 >= 1.9.1, mdanalysis >=2.7.0, rdkit >=2023.09.5, openmm >=8.1.1, pdbfixer >=1.9, numpy, click, pandas, pyarrow, pyyaml
+  pip install git+https://github.com/calpolyccg/MDSAPT@master
 ## str: the package name used to import the mdakit
 import_name: mdsapt
 ## str: a specification for the range of Python versions supported by this MDAKit
@@ -51,8 +52,8 @@ run_tests:
   - pytest -v ./mdsapt/tests
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests
-test_dependencies:
-project_org: calpolyccg 
+test_dependencies: pytest pytest-cov
+project_org: Cal Poly Computational Chemistry Group
 ## str: the development status of the MDAKit
 development_status: Mature
 ## List(str) a list of publications to cite when using the MDAKit
