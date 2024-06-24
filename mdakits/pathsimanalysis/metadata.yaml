@@ -1,0 +1,44 @@
+project_name: PathSimAnalysis
+
+authors:
+  - https://github.com/MDAnalysis/PathSimAnalysis/blob/main/AUTHORS.md
+
+maintainers:
+  - orbeckst
+
+description:
+    An MDAKit that calculates the geometric similarity of molecular dynamics trajectories using path metrics such as the Hausdorff or Fréchet distances.
+
+keywords:
+  - similarity
+  - paths
+  - metrics
+
+license: GPL-2.0-or-later
+project_home: https://github.com/MDAnalysis/PathSimAnalysis/
+documentation_home: https://mdanalysis.org/PathSimAnalysis
+documentation_type: API
+
+install:
+  - pip install pathsimanalysis
+
+src_install:
+  - pip install git+https://github.com/MDAnalysis/PathSimAnalysis@main
+
+import_name: pathsimanalysis
+python_requires: ">=3.9"
+mdanalysis_requires: ">=2.0.0"
+
+run_tests:
+  - pytest --pyargs pathsimanalysis
+
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+
+project_org: MDAnalysis
+development_status: Production/Stable
+
+publications:
+  - https://doi.org/10.1371/journal.pcbi.1004568
+
+changelog: https://github.com/MDAnalysis/PathSimAnalysis/blob/main/CHANGELOG.md

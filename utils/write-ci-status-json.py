@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
     status_dict = get_statuses(env_statuses)
 
-    outfile = f"{args.mdakit.lower()}-{args.tag}-statuses.json"
+    outfile = f"{args.mdakit}-{args.tag}-statuses.json"
 
     with open(outfile, 'w') as f:
         json.dump(status_dict, f)

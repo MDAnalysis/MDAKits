@@ -1,0 +1,40 @@
+project_name: waterdynamics
+
+authors:
+  - https://github.com/MDAnalysis/waterdynamics/blob/main/AUTHORS.md
+
+maintainers:
+  - fiona-naughton
+
+description:
+    Analysis of water dynamics in molecular dynamics trajectories and water interactions with other molecules.
+
+keywords:
+  - water
+  - hydrogenbonds
+  - MSD
+
+license: GPL-2.0-or-later
+project_home: https://github.com/MDAnalysis/waterdynamics/
+documentation_home: https://mdanalysis.org/waterdynamics
+documentation_type: API
+
+install:
+  - pip install waterdynamics
+
+src_install:
+  - pip install git+https://github.com/MDAnalysis/waterdynamics@main
+
+import_name: waterdynamics
+python_requires: ">=3.9"
+mdanalysis_requires: ">=2.0.0"
+
+run_tests:
+  - pytest --pyargs waterdynamics
+
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+
+project_org: MDAnalysis
+development_status: Production/Stable
+changelog: https://github.com/MDAnalysis/waterdynamics/blob/main/CHANGELOG.md

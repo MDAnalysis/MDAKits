@@ -6,6 +6,7 @@ on:
   schedule:
     # once a week at midnight on Sunday
     - cron: "0 3 * * 0"
+  workflow_dispatch:
 
 concurrency:
   # Commits to develop/master will cancel each other, but PRs will only cancel
@@ -23,20 +24,36 @@ jobs:
     outputs:
       matrix: ${{ steps.get-mdakits.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - id: get-python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: "3.12"
 
       - id: get-mdakits
         run: |
           mdakit=$(python utils/get_dir_matrix.py)
-          echo "::set-output name=matrix::${mdakit}"
+          echo "matrix=${mdakit}" >> $GITHUB_OUTPUT
+
+  env_config:
+    runs-on: ubuntu-latest
+    outputs:
+      python-stable: ${{ steps.get-compatible-python.outputs.stable-python }}
+      python-min: ${{ steps.get-compatible-python.outputs.oldest-pythons }}
+
+    steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - id: get-compatible-python
+        uses: MDAnalysis/mdanalysis-compatible-python@main
+        with:
+          release: "develop"
 
   mdakit-ci:
-    needs: gen_matrix
+    needs: [gen_matrix, env_config]
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
@@ -44,13 +61,7 @@ jobs:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
         jobstep: ['latest', 'develop']
     steps:
-      - uses: actions/checkout@v3
-
-      - id: prev-python-ver
-        name: prev-python-ver
-        uses: MDAnalysis/get-latest-python-version@main
-        with:
-          last-n-minor-release: 1
+      - uses: actions/checkout@v4
 
       - id: get-base-python-deps
         name: get-base-python-deps
@@ -59,10 +70,11 @@ jobs:
 
       - id: check-set-python-bounds
         name: check-set-python-bounds
-        continue-on-error: true
+        continue-on-error: false
         run: |
-          basepy=${{steps.prev-python-ver.outputs.python-version}}
-          pyver=$(python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${basepy})
+          maxpy=${{needs.env_config.outputs.python-stable}}
+          minpy=${{needs.env_config.outputs.python-min}}
+          pyver=$(python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${maxpy} --minpyver ${minpy})
           echo "PYVER=${pyver}" >> $GITHUB_ENV
           
       - id: install-conda-env
@@ -141,7 +153,7 @@ jobs:
 
       - id: upload-artifacts
         name: upload-artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cron-statuses-${{ matrix.mdakit }}-${{ matrix.jobstep }}
           path: ${{ matrix.mdakit }}-${{ matrix.jobstep }}-statuses.json
@@ -158,9 +170,9 @@ jobs:
       packages: none
       issues: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           path: json-statuses/
 
@@ -190,19 +202,15 @@ jobs:
     needs: process_results
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - name: setup_miniconda
-        uses: conda-incubator/setup-miniconda@v2
+      - uses: actions/checkout@v4
+      - name: setup_micromamba
+        uses: mamba-org/setup-micromamba@v1
         with:
-          python-version: 3.9
-          auto-update-conda: true
-          channel-priority: flexible
-          channels: conda-forge
-          add-pip-as-python-dependency: true
-          architecture: x64
-          use-mamba: true
-          miniforge-variant: Mambaforge
           environment-file: docs/requirements.yaml
+          environment-name: MDAKitRegistry-docs
+          create-args: >-
+            python=3.9
+            pip
       - name: build_docs
         run: |
           cd docs && sphinx-build -b html source build

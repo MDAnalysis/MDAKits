@@ -336,8 +336,8 @@ class MDAKit:
         status = getattr(self.status.data, run_type)
 
         if ((self.metadata.run_tests is None) or
-            (run_type == 'develop' and self.metadata.install is None) or
-            (run_type == 'latest' and self.metadata.src_install is None)):
+            (run_type == 'develop' and self.metadata.src_install is None) or
+            (run_type == 'latest' and self.metadata.install is None)):
             return self._get_custom_badge(run_type, "unavailable", "inactive")
         elif status.numfails > 1:
             return self._get_custom_badge(run_type, "failed", "red")
@@ -377,7 +377,7 @@ class MDAKit:
             urls.append(f".. _`{self.metadata.project_name} authors`:\n"
                         f"   {self.metadata.authors[0]}\n\n")
         else:
-            auths = ','.join(self.metadata.authors)
+            auths = ', '.join(self.metadata.authors)
 
         return auths
 
@@ -386,9 +386,9 @@ class MDAKit:
         urls = []
         authors = self.gen_authors(urls)
 
-        title = ("************************\n"
+        title = ("************************************************\n"
                  f"{name}\n"
-                 "************************\n\n")
+                 "************************************************\n\n")
 
         description = (f"| **Description:**\n"
                        f"| *{self.metadata.description}*\n")
@@ -453,7 +453,7 @@ class MDAKit:
                     )
             if self.metadata.src_install is not None:
                 installation_instructions += (
-                    f"The source code of {name} can be "
+                    f"\nThe source code of {name} can be "
                     "installed using the following:\n\n"
                     ".. code-block:: bash\n\n"
                 )
