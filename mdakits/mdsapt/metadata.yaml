@@ -38,8 +38,8 @@ install:
 ## source code.
 src_install:
   # required dependencies from environment.yaml
-  mamba install -c conda-forge psi4 >= 1.9.1, mdanalysis >=2.7.0, rdkit >=2023.09.5, openmm >=8.1.1, pdbfixer >=1.9, numpy, click, pandas, pyarrow, pyyaml
-  pip install git+https://github.com/calpolyccg/MDSAPT@master
+  - mamba install -c conda-forge psi4 >= 1.9.1, mdanalysis >=2.7.0, rdkit >=2023.09.5, openmm >=8.1.1, pdbfixer >=1.9, numpy, click, pandas, pyarrow, pyyaml
+  - pip install git+https://github.com/calpolyccg/MDSAPT@master
 ## str: the package name used to import the mdakit
 import_name: mdsapt
 ## str: a specification for the range of Python versions supported by this MDAKit
