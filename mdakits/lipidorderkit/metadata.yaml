@@ -92,7 +92,7 @@ mdanalysis_requires: ">=2.0.0"
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
 run_tests:
-  - pytest --pyargs lipidorderkit
+  - pytest --pyargs lipidorder
 
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests.
