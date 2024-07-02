@@ -53,7 +53,7 @@ run_tests:
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests
 test_dependencies: 
-  - mamba install pytest, pytest-cov
+  - mamba install pytest pytest-cov
 project_org: Cal Poly Computational Chemistry Group
 ## str: the development status of the MDAKit
 development_status: Mature
