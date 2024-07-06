@@ -30,7 +30,7 @@ maintainers:
 
 ## str: a free form description of the mdakit
 description:
-    This MDAKit allow for the calculation of lipid order parameters for all atom molecualr dynamics simulations.
+    This MDAKit allow for the calculation of lipid order parameters for all atom molecular dynamics simulations.
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
