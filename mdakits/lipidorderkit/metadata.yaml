@@ -72,7 +72,7 @@ src_install:
   - pip install git+https://github.com/ricard1997/lipidorderkit@main
 
 ## str: the package name used to import the mdakit
-import_name: from lipidorder import lipid_order
+import_name: lipidorder
 
 ## str: a specification for the range of Python versions supported by this MDAKit
 python_requires: ">=3.10"
