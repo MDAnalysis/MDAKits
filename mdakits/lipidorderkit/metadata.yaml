@@ -69,7 +69,8 @@ install:
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - pip install git+https://github.com/ricard1997/lipidorderkit@main
+  - git clone https://github.com/ricard1997/lipidorderkit.git
+  - cd lipidorderkit && pip install . && cd ..
 
 ## str: the package name used to import the mdakit
 import_name: lipidorder
