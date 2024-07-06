@@ -116,7 +116,7 @@ publications:
 
 
 ## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
-community_home: URL
+community_home:
 
 ## str: a link to the MDAKit's changelog
 changelog: https://github.com/ricard1997/lipidorderkit/blob/main/CHANGELOG.md
