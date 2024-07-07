@@ -21,6 +21,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - membranes, curvature, molecular dynamics
       - `membrane-curvature authors`_
       - |membrane-curvature_latest| |membrane-curvature_develop|
+    * - :ref:`spyrmsdkit`
+      - spyrmsd, RMSD, symmetry-corrected RMSD, drug discovery
+      - `spyrmsdkit authors`_
+      - |spyrmsdkit_latest| |spyrmsdkit_develop|
     * - :ref:`maicos`
       - Molecular Dynamics, Confined Systems
       - `maicos authors`_
@@ -88,6 +92,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :hidden:
 
    membrane-curvature
+   spyrmsdkit
    maicos
    mdaencore
    PathSimAnalysis
@@ -114,6 +119,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: membrane-curvature develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`spyrmsdkit authors`:
+   https://github.com/RMeli/spyrmsdkit/blob/main/AUTHORS.md
+
+.. |spyrmsdkit_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+   :alt: spyrmsdkit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |spyrmsdkit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: spyrmsdkit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`maicos authors`:
