@@ -119,7 +119,8 @@ html_js_files = [
     'main.js',
 ]
 
-html_logo = "_static/logos/mdanalysis-logo-200x150.png"
+html_logo = "_static/logos/mdakits-logo-1563x1563.png"
+html_favicon = "_static/logos/mdakits-logo.ico"
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
