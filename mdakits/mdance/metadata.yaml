@@ -6,7 +6,7 @@ project_name: MDANCE
 
 ## List(str): a link to the authors file (preferred) or a list of authors 
 authors:
-  - Lexin Chen https://github.com/GH_HOST_ACCOUNT/MYPROJECT/blob/main/AUTHORS
+  - https://github.com/mqcomplab/MDANCE/blob/main/AUTHORS.md
 
 ## List(str): a list of maintainers
 ## Please note these _must_ be GitHub handles
@@ -16,13 +16,14 @@ maintainers:
 
 ## str: a free form description of the mdakit
 description:
-    flexible n-ary clustering package for Molecular Dynamics and other datasets.
+    flexible n-ary clustering package for Molecular Dynamics trajectories.
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
   - clustering
+  - machine-learning
+  - algorithms
   - molecular-dynamics
-  - post-processing
   - protein-refinement
 
 ## str: the license the mdakit falls under
@@ -34,10 +35,10 @@ license: MIT
 project_home: https://github.com/mqcomplab/MDANCE
 
 ## str: the link to the project's documentation
-documentation_home: https://github.com/mqcomplab/MDANCE
+documentation_home: https://mdance.readthedocs.io/en/latest/
 
 ## str: the type of documentation available [UserGuide, API, README]
-documentation_type: README
+documentation_type: UserGuide + API
 
 #------------------------------------------------------------
 # Optional entries
@@ -49,7 +50,7 @@ documentation_type: README
 ## for a conda package installation).
 ## Here we use a simple PyPi installation:
 install:
-  - pip install MYPROJECT
+  - pip install mdance
 
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
@@ -57,7 +58,7 @@ src_install:
   - pip install git+https://github.com/mqcomplab/MDANCE@main
 
 ## str: the package name used to import the mdakit
-import_name: MYPACKAGE
+import_name: mdance
 
 ## str: a specification for the range of Python versions supported by this MDAKit
 python_requires: ">=3.9"
@@ -76,15 +77,15 @@ mdanalysis_requires: ">=2.0.0"
 ##    - git clone latest
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
-run_tests:
-  - pytest --pyargs MYPACKAGE
+#run_tests:
+#  - pytest --pyargs MYPACKAGE
 
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests.
 ## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
 ## make sure that it is appropriate for how you run tests.
-test_dependencies:
-  - mamba install pytest MDAnalysisTests
+#test_dependencies:
+#  - mamba install pytest MDAnalysisTests
 
 ## str: the organisation name the MDAKit falls under
 project_org: mqcomplab
@@ -97,11 +98,11 @@ development_status: Production/Stable
 ## Links to scientific publications or stable URLs (typically of the form
 ## https://doi.org/<DOI> or to a preprint server)
 publications:
-  - URL1
-  - URL2
+  - https://doi.org/10.1021/acs.jctc.4c00308
+  - https://doi.org/10.1021/acs.jctc.4c00362 # If user used PRIME
 
 ## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
-community_home: URL
+community_home: https://github.com/mqcomplab/MDANCE/issues
 
 ## str: a link to the MDAKit's changelog
-changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGELOG.md
+#changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGELOG.md
