@@ -35,7 +35,7 @@ license: MIT
 project_home: https://github.com/mqcomplab/MDANCE
 
 ## str: the link to the project's documentation
-documentation_home: https://mdance.readthedocs.io/en/latest/
+documentation_home: https://mdance.readthedocs.io
 
 ## str: the type of documentation available [UserGuide, API, README]
 documentation_type: UserGuide + API
