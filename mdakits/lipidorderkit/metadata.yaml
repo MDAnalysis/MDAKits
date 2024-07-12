@@ -31,7 +31,7 @@ project_home: https://github.com/ricard1997/lipidorderkit/
 documentation_home: https://lipidorderdocs.readthedocs.io/en/latest/
 
 
-documentation_type: UserGuide + API
+documentation_type: API
 
 
 install:
