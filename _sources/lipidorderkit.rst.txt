@@ -1,0 +1,49 @@
+.. _lipidorderkit:
+
+************************************************
+lipidorderkit
+************************************************
+
+| 🖋️ **Authors**: `lipidorderkit authors`_
+| 🏠 **Project home:** https://github.com/ricard1997/lipidorderkit/
+| 📖 **Documentation:** https://lipidorderdocs.readthedocs.io/en/latest/
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** Lipids, Lipids order parameters, SCD, Lipid metrics, Lipid study
+| 🚀 **Development status:** Production/Stable
+| 📜 **Changelog:** https://github.com/ricard1997/lipidorderkit/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://doi.org/10.3389/fchem.2022.1088058
+| 🧪 **Tests (latest):** |lipidorderkit_latest| 
+| 🧪 **Tests (develop):** |lipidorderkit_develop| 
+| **Description:**
+| *This MDAKit allow for the calculation of lipid order parameters for all atom molecular dynamics simulations.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of lipidorderkit can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/ricard1997/lipidorderkit@main
+
+The source code of lipidorderkit can be installed using the following:
+
+.. code-block:: bash
+
+    git clone https://github.com/ricard1997/lipidorderkit.git
+    cd lipidorderkit && pip install . && cd ..
+
+.. _`lipidorderkit authors`:
+   https://github.com/ricard1997/lipidorderkit/blob/main/AUTHORS.md
+
+.. |lipidorderkit_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: lipidorderkit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |lipidorderkit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: lipidorderkit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

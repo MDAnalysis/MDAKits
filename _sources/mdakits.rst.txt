@@ -29,6 +29,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - pKa, protein
       - `propkatraj authors`_
       - |propkatraj_latest| |propkatraj_develop|
+    * - :ref:`lipidorderkit`
+      - Lipids, Lipids order parameters, SCD, Lipid metrics, Lipid study
+      - `lipidorderkit authors`_
+      - |lipidorderkit_latest| |lipidorderkit_develop|
     * - :ref:`openmm-mdanalysis-reporter`
       - OpenMM, Reporters
       - `openmm-mdanalysis-reporter authors`_
@@ -94,6 +98,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    spyrmsdkit
    transport-analysis
    propkatraj
+   lipidorderkit
    openmm-mdanalysis-reporter
    mdakit-sasa
    mdahole2
@@ -141,6 +146,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |propkatraj_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: propkatraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`lipidorderkit authors`:
+   https://github.com/ricard1997/lipidorderkit/blob/main/AUTHORS.md
+
+.. |lipidorderkit_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: lipidorderkit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |lipidorderkit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: lipidorderkit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`openmm-mdanalysis-reporter authors`:
