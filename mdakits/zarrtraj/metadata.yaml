@@ -53,7 +53,7 @@ documentation_type: UserGuide + API
 ## for a conda package installation).
 ## Here we use a simple PyPi installation:
 install:
-  - mamba -c conda-forge install zarrtraj
+  - mamba install -c conda-forge zarrtraj
 
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
