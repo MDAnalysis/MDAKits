@@ -91,7 +91,7 @@ run_tests:
 ## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
 ## make sure that it is appropriate for how you run tests.
 test_dependencies:
-  - mamba env create -f devtools/conda-envs/test_env.yaml
+  - mamba env create -f https://raw.githubusercontent.com/Becksteinlab/zarrtraj/main/devtools/conda-envs/test_env.yaml
 
 ## str: the organisation name the MDAKit falls under
 project_org: Becksteinlab
