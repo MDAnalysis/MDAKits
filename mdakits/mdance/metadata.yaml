@@ -78,7 +78,7 @@ mdanalysis_requires: ">=2.0.0"
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
 #run_tests:
-#  - pytest --pyargs MYPACKAGE
+  - pytest ./tests
 
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests.
@@ -102,7 +102,7 @@ publications:
   - https://doi.org/10.1021/acs.jctc.4c00362 # If user used PRIME
 
 ## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
-community_home: https://github.com/mqcomplab/MDANCE/issues
+community_home: https://github.com/mqcomplab/MDANCE/discussions
 
 ## str: a link to the MDAKit's changelog
 #changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGELOG.md
