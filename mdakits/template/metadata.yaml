@@ -19,7 +19,7 @@ project_name: MYPROJECT
 
 ## List(str): a link to the authors file (preferred) or a list of authors 
 authors:
-  - https://github.com/GH_HOST_ACCOUNT/MYPROJECT/blob/main/AUTHORS
+  - https://github.com/GH_HOST_ACCOUNT/MYPROJECT/blob/main/AUTHORS.md
 
 ## List(str): a list of maintainers
 ## Please note these _must_ be GitHub handles
@@ -73,7 +73,7 @@ src_install:
 import_name: MYPACKAGE
 
 ## str: a specification for the range of Python versions supported by this MDAKit
-python_requires: ">=3.9"
+python_requires: ">=3.10"
 
 ## str: a specification for the range of MDAnalysis versions supported by this MDAKit
 mdanalysis_requires: ">=2.0.0"
