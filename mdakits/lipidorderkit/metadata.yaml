@@ -1,0 +1,76 @@
+project_name: lipidorderkit
+
+
+authors:
+  - https://github.com/ricard1997/lipidorderkit/blob/main/AUTHORS.md
+
+
+maintainers:
+  - ricard1997
+
+
+
+description:
+    This MDAKit allow for the calculation of lipid order parameters for all atom molecular dynamics simulations.
+
+
+keywords:
+  - Lipids
+  - Lipids order parameters
+  - SCD
+  - Lipid metrics
+  - Lipid study
+
+
+license: GPL-2.0-or-later
+
+
+project_home: https://github.com/ricard1997/lipidorderkit/
+
+
+documentation_home: https://lipidorderdocs.readthedocs.io/en/latest/
+
+
+documentation_type: API
+
+
+install:
+  - pip install git+https://github.com/ricard1997/lipidorderkit@main
+
+
+src_install:
+  - git clone https://github.com/ricard1997/lipidorderkit.git
+  - cd lipidorderkit && pip install . && cd ..
+
+import_name: lipidorder
+
+
+python_requires: ">=3.10"
+
+
+mdanalysis_requires: ">=2.0.0"
+
+
+run_tests:
+  - pytest --pyargs lipidorder
+
+
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+
+
+project_org: ricard1997
+
+
+development_status: Production/Stable
+
+
+publications:
+  - https://doi.org/10.3389/fchem.2022.1088058
+
+
+
+community_home:
+
+
+changelog: https://github.com/ricard1997/lipidorderkit/blob/main/CHANGELOG.md
