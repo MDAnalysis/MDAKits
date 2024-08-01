@@ -77,7 +77,8 @@ mdanalysis_requires: ">=2.0.0"
 ##    - git clone latest
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
-#run_tests:
+run_tests:
+  - git clone latest
   - pytest ./tests
 
 ## List(str): a list of commands to use to install the necessary dependencies required
