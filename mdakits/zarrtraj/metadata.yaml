@@ -70,7 +70,7 @@ import_name: zarrtraj
 python_requires: ">=3.10"
 
 ## str: a specification for the range of MDAnalysis versions supported by this MDAKit
-mdanalysis_requires: ">=2.7.0"
+mdanalysis_requires: ">=2.1.0"
 
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
 ## If you package your tests inside your package then you can typically use the 
@@ -98,7 +98,7 @@ project_org: Becksteinlab
 
 ## str: the development status of the MDAKit
 ## See https://pypi.org/classifiers/ for development status classifiers.
-development_status: Beta
+development_status: "Development Status :: 4 - Beta"
 
 ## List(str) a list of publications to cite when using the MDAKit
 ## Links to scientific publications or stable URLs (typically of the form
