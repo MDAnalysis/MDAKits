@@ -8,11 +8,11 @@ authors:
 ## Please note these _must_ be GitHub handles
 ## The maintainers will be tagged in issues if their MDAKit is failing.
 maintainers:
-  - Marcello Sega
+  - Marcello-Sega
 
 ## str: a free form description of the mdakit
 description:
-    (Provides several methods for the detection of fluid interfaces and analysis of their properties)
+    Provides several methods for the detection of fluid interfaces and analysis of their properties.
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
@@ -70,9 +70,10 @@ mdanalysis_requires: ">=2.0.0"
 ##    - git clone latest
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
+
 run_tests:
   - git clone latest
-  - pip install "mdtraj" "codecov==2.1.13" "pytest-cov==5.0.0" "cython>=0.24.1"  "scipy>=1.6.0" "gsd<=3.2.1" "PyWavelets>=0.5.2" "scikit-image>=0.14.2" "sphinx>=1.4.3" "matplotlib" "dask>=1.1.1"
+  #- pip install "mdtraj" "codecov==2.1.13" "pytest-cov==5.0.0" "cython>=0.24.1"  "scipy>=1.6.0" "gsd<=3.2.1" "PyWavelets>=0.5.2" "scikit-image>=0.14.2" "sphinx>=1.4.3" "matplotlib" "dask>=1.1.1"
   - pytest pytim/*py pytim/observables/*py pytim/datafiles/*py --doctest-modules
 
 ## List(str): a list of commands to use to install the necessary dependencies required
@@ -87,7 +88,7 @@ project_org: Marcello-Sega
 
 ## str: the development status of the MDAKit
 ## See https://pypi.org/classifiers/ for development status classifiers.
-development_status: Production/Stable
+Development Status :: 5 - Production/Stable
 
 ## List(str) a list of publications to cite when using the MDAKit
 ## Links to scientific publications or stable URLs (typically of the form
