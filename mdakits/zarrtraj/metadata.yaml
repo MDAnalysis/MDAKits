@@ -17,8 +17,7 @@ maintainers:
 
 ## str: a free form description of the mdakit
 description:
-    Zarrtraj is a kit that provides the ability to read and write H5MD trajectory data using zarr. 
-    Its primary use case is for streaming trajectory data from cloud services.
+    Zarrtraj is a kit that provides the ability to stream & analyze H5MD trajectories from cloud storage.
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
