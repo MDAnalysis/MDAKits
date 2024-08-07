@@ -79,8 +79,8 @@ run_tests:
 ## to run the MDAKit's tests.
 ## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
 ## make sure that it is appropriate for how you run tests.
-#test_dependencies:
-#  - pip install mdtraj "pytest==8.1.1" "codecov==2.1.13" "pytest-cov==5.0.0" 
+test_dependencies:
+  - pip install "mdtraj" "cython>=0.24.1" "PyWavelets>=0.5.2" "scikit-image>=0.14.2"
 
 ## str: the organisation name the MDAKit falls under
 project_org: Marcello-Sega
