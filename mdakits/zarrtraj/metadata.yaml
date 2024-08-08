@@ -26,7 +26,7 @@ keywords:
   - zarr
   - h5md
   - hdf5
-  - AWS S3
+  - AWS S3 Buckets
   - Google Cloud Buckets
   - Azure Blob Storage
   - Azure Data Lake
