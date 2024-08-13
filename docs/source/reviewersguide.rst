@@ -190,6 +190,24 @@ is failing
   encourage them to do so!)
 
 
+``src_install``: a list of commands to install the Kit from the source code. This is a *list of strings*
+(*AUTOMATIC CHECK*).
+
+
+``run_tests``: a list of commands to run the Kit’s tests. This is a *list of strings* (*AUTOMATIC CHECK*).
+
+- *note*: while (minimal) tests are one of the requirements of an MDAKit, we recognize that there might
+  be testing frameworks that we do not support yet. In those cases please exercise flexibility when
+  reviewing.
+- **RECOMMEND**: While a MDAKit may be registered with only minimal tests, encourage the contributor
+  to continue improving their tests in the future.
+
+
+``test_dependencies``: a list of commands for installing any dependencies required by the MDAKit’s tests.
+This is a *list of strings* (*AUTOMATIC CHECK*).
+
+
+
 *Optional* entries 
 ~~~~~~~~~~~~~~~~~~
 
@@ -201,10 +219,6 @@ CI is passing.
 
 - **RECOMMEND**: If the installation uses e.g. github or is otherwise complicated (many steps involved),
   encourage the contributor to make a release on conda-forge or PyPI. 
-
-
-``src_install``: a list of commands to install the Kit from the source code. This is a *list of strings*
-(*AUTOMATIC CHECK*).
 
 
 ``import_name``: the package name, used to import the Kit in Python. This is a *string* (*AUTOMATIC CHECK*).
@@ -222,20 +236,6 @@ is a *string* (*AUTOMATIC CHECK*).
   work with early versions of MDAnalysis.
 - **RECOMMEND**: Ideally, the Kit works with the current version of MDAnalysis - if an upper bound to an
   old version is given, enquire why, and recommend updating the Kit to work with a current version. 
-
-
-``run_tests``: a list of commands to run the Kit’s tests. This is a *list of strings* (*AUTOMATIC CHECK*).
-
-- *note*: while (minimal) tests are one of the requirements of an MDAKit, providing instructions on how to run
-  tests in the metadata file is currently optional, in order to allow greater flexibility in
-  what format tests take and so lower the entry barrier for new contributors. However, it is *highly
-  recommended* here to provide this metadata.
-- **RECOMMEND**: While a MDAKit may be registered with only minimal tests, encourage the contributor 
-  to continue improving their tests in the future.
-                                      
-
-``test_dependencies``: a list of commands for installing any dependencies required by the MDAKit’s tests.
-This is a *list of strings* (*AUTOMATIC CHECK*).
 
 
 ``project_org``: the account under which the code is found - this may be an individual user account, or an

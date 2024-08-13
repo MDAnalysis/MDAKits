@@ -27,11 +27,12 @@ requirements**:
 #. Minimal documentation is provided (what your code does, how to install it,
    and how to use it)
 #. At least minimal regression tests are present; continuous integration is encouraged
+#. The code is installable as a standard package
 
 It is also highly encouraged that the MDAKit also satisfies:
 
-#. The code is installable as a standard package
 #. Information on bug reporting, user discussions, and community guidelines is made available
+#. The code is made available on a package distribution platform (e.g. PyPi or conda-forge).
 
 Registered MDAKits are then `listed here`_ with the intention of providing a centralised
 place where the community can find out more about them. Where possible, the MDAKits are
