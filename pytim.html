@@ -20,7 +20,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lipyds &mdash; MDAKits Registry  documentation</title>
+  <title>pytim &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -43,8 +43,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="solvation-analysis" href="solvation-analysis.html" />
-    <link rel="prev" title="propkatraj" href="propkatraj.html" /> 
+    <link rel="next" title="mda-tui" href="mda-tui.html" />
+    <link rel="prev" title="mdahole2" href="mdahole2.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -99,15 +99,15 @@
 <li class="toctree-l2"><a class="reference internal" href="maicos.html">maicos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MDANCE.html">MDANCE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdahole2.html">mdahole2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pytim.html">pytim</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pytim</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="mda-tui.html">mda-tui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transport-analysis.html">transport-analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ProLIF.html">ProLIF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="propkatraj.html">propkatraj</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">lipyds</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="lipyds.html">lipyds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solvation-analysis.html">solvation-analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdaencore.html">mdaencore</a></li>
 </ul>
@@ -138,9 +138,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">lipyds</li>
+      <li class="breadcrumb-item active">pytim</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/lipyds.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/pytim.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -148,31 +148,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lipyds">
-<span id="id1"></span><h1>lipyds<a class="headerlink" href="#lipyds" title="Link to this heading"></a></h1>
+  <section id="pytim">
+<span id="id1"></span><h1>pytim<a class="headerlink" href="#pytim" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: lilyminium</div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/lilyminium/lipyds">https://github.com/lilyminium/lipyds</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://lipyds.readthedocs.io/en/latest/">https://lipyds.readthedocs.io/en/latest/</a></div>
-<div class="line">⚖️ <strong>License:</strong> LGPL-3.0</div>
-<div class="line">🔑 <strong>Keywords:</strong> lipids, membranes</div>
-<div class="line">🚀 <strong>Development status:</strong> Beta</div>
+<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/Marcello-Sega/pytim/blob/master/AUTHORS.md">pytim authors</a></div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/Marcello-Sega/pytim">https://github.com/Marcello-Sega/pytim</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://marcello-sega.github.io/pytim">https://marcello-sega.github.io/pytim</a></div>
+<div class="line">⚖️ <strong>License:</strong> GPL-3.0-or-later</div>
+<div class="line">🔑 <strong>Keywords:</strong> Surface analysis, Intrinsic properties</div>
 <div class="line">📑 <strong>Publications:</strong></div>
 <div class="line-block">
-<div class="line">* <a class="reference external" href="https://doi.org/10.1016/j.bbadva.2021.100010">https://doi.org/10.1016/j.bbadva.2021.100010</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1002/jcc.25384">https://doi.org/10.1002/jcc.25384</a></div>
+<div class="line">* <a class="reference external" href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/jcc.25384">https://onlinelibrary.wiley.com/doi/epdf/10.1002/jcc.25384</a></div>
 </div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="lipyds develop CI status" src="https://img.shields.io/badge/latest-unavailable-inactive.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="lipyds develop CI status" src="https://img.shields.io/badge/develop-failed-red.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="pytim develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="pytim develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>A toolkit for leaflet-based membrane analysis.</em></div>
+<div class="line"><em>Provides several methods for the detection of fluid interfaces and analysis of their properties.</em></div>
 </div>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The source code of lipyds can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pyvista<span class="w"> </span>cython<span class="w"> </span>matplotlib<span class="w"> </span>nptyping<span class="w"> </span><span class="s2">&quot;numpy&gt;=1.20.0&quot;</span><span class="w"> </span>pandas<span class="w"> </span><span class="s2">&quot;scikit-learn&gt;=0.21.0&quot;</span><span class="w"> </span>scipy
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lilyminium/lipyds.git
-<span class="nb">cd</span><span class="w"> </span>lipyds
-python<span class="w"> </span>setup.py<span class="w"> </span>install
+<p>The latest version of pytim can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pytim
+</pre></div>
+</div>
+<p>The source code of pytim can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Marcello-Sega/pytim@master
 </pre></div>
 </div>
 </section>
@@ -182,8 +183,8 @@ python<span class="w"> </span>setup.py<span class="w"> </span>install
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="propkatraj.html" class="btn btn-neutral float-left" title="propkatraj" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="solvation-analysis.html" class="btn btn-neutral float-right" title="solvation-analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mdahole2.html" class="btn btn-neutral float-left" title="mdahole2" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mda-tui.html" class="btn btn-neutral float-right" title="mda-tui" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

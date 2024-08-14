@@ -1,0 +1,47 @@
+.. _pytim:
+
+************************************************
+pytim
+************************************************
+
+| 🖋️ **Authors**: `pytim authors`_
+| 🏠 **Project home:** https://github.com/Marcello-Sega/pytim
+| 📖 **Documentation:** https://marcello-sega.github.io/pytim
+| ⚖️ **License:** GPL-3.0-or-later
+| 🔑 **Keywords:** Surface analysis, Intrinsic properties
+| 📑 **Publications:**
+|    * https://doi.org/10.1002/jcc.25384
+|    * https://onlinelibrary.wiley.com/doi/epdf/10.1002/jcc.25384
+| 🧪 **Tests (latest):** |pytim_latest| 
+| 🧪 **Tests (develop):** |pytim_develop| 
+| **Description:**
+| *Provides several methods for the detection of fluid interfaces and analysis of their properties.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of pytim can be installed using the following:
+
+.. code-block:: bash
+
+    pip install pytim
+
+The source code of pytim can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/Marcello-Sega/pytim@master
+
+.. _`pytim authors`:
+   https://github.com/Marcello-Sega/pytim/blob/master/AUTHORS.md
+
+.. |pytim_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: pytim develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |pytim_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: pytim develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

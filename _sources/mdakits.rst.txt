@@ -65,6 +65,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - pores, ion channels, transporters, HOLE
       - `mdahole2 authors`_
       - |mdahole2_latest| |mdahole2_develop|
+    * - :ref:`pytim`
+      - Surface analysis, Intrinsic properties
+      - `pytim authors`_
+      - |pytim_latest| |pytim_develop|
     * - :ref:`mda-tui`
       - transformations, TUI
       - `mda-tui authors`_
@@ -111,6 +115,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    maicos
    MDANCE
    mdahole2
+   pytim
    mda-tui
    transport-analysis
    ProLIF
@@ -247,6 +252,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |mdahole2_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdahole2 develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`pytim authors`:
+   https://github.com/Marcello-Sega/pytim/blob/master/AUTHORS.md
+
+.. |pytim_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: pytim develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |pytim_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: pytim develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`mda-tui authors`:
