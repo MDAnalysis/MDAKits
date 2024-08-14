@@ -1,0 +1,51 @@
+.. _zarrtraj:
+
+************************************************
+zarrtraj
+************************************************
+
+| 🖋️ **Authors**: `zarrtraj authors`_
+| 🏠 **Project home:** https://github.com/Becksteinlab/zarrtraj
+| 📖 **Documentation:** https://zarrtraj.readthedocs.io/en/latest/?badge=latest
+| ⚖️ **License:** GPL-3.0-or-later
+| 🔑 **Keywords:** streaming, trajectory, zarr, h5md, hdf5, AWS S3 Buckets, Google Cloud Buckets, Azure Blob Storage, Azure Data Lake
+| 🚀 **Development status:** Development Status :: 4 - Beta
+| 📜 **Changelog:** https://github.com/Becksteinlab/zarrtraj/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://doi.org/10.25080/Majora-629e541a-00e
+|    * https://doi.org/10.1002/jcc.21787
+|    * https://doi.org/10.1016/j.cpc.2014.01.018
+|    * https://doi.org/10.25080/majora-1b6fd038-005
+| 🧪 **Tests (latest):** |zarrtraj_latest| 
+| 🧪 **Tests (develop):** |zarrtraj_develop| 
+| **Description:**
+| *Zarrtraj is a kit that provides the ability to stream & analyze H5MD trajectories from cloud storage.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of zarrtraj can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install -c conda-forge zarrtraj
+
+The source code of zarrtraj can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/Becksteinlab/zarrtraj@main
+
+.. _`zarrtraj authors`:
+   https://github.com/Becksteinlab/zarrtraj/blob/main/AUTHORS.md
+
+.. |zarrtraj_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: zarrtraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |zarrtraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: zarrtraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
