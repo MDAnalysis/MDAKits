@@ -52,18 +52,6 @@ documentation_home: https://MYPROJECT.readthedocs.io
 ## str: the type of documentation available [UserGuide, API, README]
 documentation_type: UserGuide + API
 
-#------------------------------------------------------------
-# Optional entries
-#------------------------------------------------------------   
-## List(str): a list of commands to use when installing the latest
-## release of the code. Note: only one installation method can currently
-## be defined. We suggest using mamba where possible (e.g.
-##   mamba -c conda-forge install MYPROJECT
-## for a conda package installation).
-## Here we use a simple PyPi installation:
-install:
-  - pip install MYPROJECT
-
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
@@ -101,6 +89,18 @@ test_dependencies:
 
 ## str: the organisation name the MDAKit falls under
 project_org: GH_HOST_ACCOUNT
+
+#------------------------------------------------------------
+# Optional entries
+#------------------------------------------------------------   
+## List(str): a list of commands to use when installing the latest
+## release of the code. Note: only one installation method can currently
+## be defined. We suggest using mamba where possible (e.g.
+##   mamba -c conda-forge install MYPROJECT
+## for a conda package installation).
+## Here we use a simple PyPi installation:
+install:
+  - pip install MYPROJECT
 
 ## str: the development status of the MDAKit
 ## See https://pypi.org/classifiers/ for development status classifiers.

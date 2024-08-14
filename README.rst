@@ -37,19 +37,6 @@ this repository and adding a new `metadata`_ file within it's own
 respective directory under `mdakits`.
 
 
-Workflow
-========
-
-Shown below is the MDAKit framework workflow.
-
-
-.. image:: https://github.com/MDAnalysis/MDAKits/blob/main/assets/MDAKitFramework.png
-   :alt: The MDAKit Framework
-   :align: center
-
-
-For more details see the `MDAKit Whitepaper`_.
-
 License
 =======
 
