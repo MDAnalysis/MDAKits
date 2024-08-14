@@ -159,11 +159,12 @@ In order to be accepted, there are several <a class="reference internal" href="a
 <li><p>Minimal documentation is provided (what your code does, how to install it,
 and how to use it)</p></li>
 <li><p>At least minimal regression tests are present; continuous integration is encouraged</p></li>
+<li><p>The source code is installable as a standard package</p></li>
 </ol>
 <p>It is also highly encouraged that the MDAKit also satisfies:</p>
 <ol class="arabic simple">
-<li><p>Code is installable as a standard package</p></li>
 <li><p>Information on bug reporting, user discussions, and community guidelines is made available</p></li>
+<li><p>The code is made available on a package distribution platform (e.g. PyPi or conda-forge).</p></li>
 </ol>
 <p>These requirements ensure that registered packages are FAIR-compliant and hold up to an ideal scientific standard.
 Without prior experience, some of the requirements listed above can be daunting.
@@ -172,7 +173,7 @@ To aid in this process, we make use of the MDAKit cookiecutter in this example.<
 <h2>Building from the cookiecutter<a class="headerlink" href="#building-from-the-cookiecutter" title="Link to this heading"></a></h2>
 <p>The MDAKits cookiecutter template (using the <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>) can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation.
 While its usage is outlined in detail in the <a class="reference external" href="https://cookiecutter-mdakit.readthedocs.io/en/latest/">MDAKit cookiecutter</a> documentation, here we provide a full walk-through for creating an RMSF analysis kit, recreating the functionality of the <a class="reference external" href="https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF">RMSF analysis class</a> in the core library.</p>
-<p>Starting from an environment with Python 3.9+ and the <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>, the MDAKit template is generated using</p>
+<p>Starting from an environment with Python 3.10+ and the <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>, the MDAKit template is generated using</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cookiecutter gh:MDAnalysis/cookiecutter-mdakit
 
 project_name [ProjectName]: rmsfkit
@@ -697,12 +698,12 @@ The contents of <code class="docutils literal notranslate"><span class="pre">met
 <span class="nt">project_home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/yourusername/rmsfkit</span>
 <span class="nt">documentation_home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://rmsfkit.readthedocs.io/en/latest/</span>
 <span class="nt">documentation_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API</span>
-
-<span class="c1">## Optional entries</span>
 <span class="nt">src_install</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/yourusername/rmsfkit.git</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd rmsfkit/</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install .</span>
+
+<span class="c1">## Optional entries</span>
 <span class="nt">python_requires</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&gt;=3.9&quot;</span>
 <span class="nt">mdanalysis_requires</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&gt;=2.0.0&quot;</span>
 <span class="nt">run_tests</span><span class="p">:</span>

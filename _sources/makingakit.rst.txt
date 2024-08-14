@@ -15,11 +15,12 @@ In order to be accepted, there are several :ref:`requirements <requirements>` th
 #. Minimal documentation is provided (what your code does, how to install it,
    and how to use it)
 #. At least minimal regression tests are present; continuous integration is encouraged
+#. The source code is installable as a standard package
 
 It is also highly encouraged that the MDAKit also satisfies:
 
-#. Code is installable as a standard package
 #. Information on bug reporting, user discussions, and community guidelines is made available
+#. The code is made available on a package distribution platform (e.g. PyPi or conda-forge).
 
 These requirements ensure that registered packages are FAIR-compliant and hold up to an ideal scientific standard.
 Without prior experience, some of the requirements listed above can be daunting.
@@ -31,7 +32,7 @@ Building from the cookiecutter
 The MDAKits cookiecutter template (using the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_) can be used to rapidly develop a FAIR-compliant MDAKit by generating placeholder code for documentation, testing, and installation. 
 While its usage is outlined in detail in the `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io/en/latest/>`_ documentation, here we provide a full walk-through for creating an RMSF analysis kit, recreating the functionality of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ in the core library.
 
-Starting from an environment with Python 3.9+ and the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_, the MDAKit template is generated using
+Starting from an environment with Python 3.10+ and the `Cookiecutter tool <https://cookiecutter.readthedocs.io/en/stable/>`_, the MDAKit template is generated using
 
 .. code-block::
 
@@ -639,13 +640,13 @@ The contents of ``metadata.yaml`` for ``rmsfkit`` are:
 	license: GPL-2.0-or-later
 	project_home: https://github.com/yourusername/rmsfkit
 	documentation_home: https://rmsfkit.readthedocs.io/en/latest/
-	documentation_type: API
+        documentation_type: API
+        src_install:
+          - git clone https://github.com/yourusername/rmsfkit.git
+          - cd rmsfkit/
+          - pip install .
 
 	## Optional entries
-	src_install:
-	  - git clone https://github.com/yourusername/rmsfkit.git
-	  - cd rmsfkit/
-	  - pip install .
 	python_requires: ">=3.9"
 	mdanalysis_requires: ">=2.0.0"
 	run_tests:

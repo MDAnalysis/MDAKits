@@ -296,18 +296,6 @@ entries</strong>.</p>
 <span class="c1">## str: the type of documentation available [UserGuide, API, README]</span>
 <span class="nt">documentation_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">UserGuide + API</span>
 
-<span class="c1">#------------------------------------------------------------</span>
-<span class="c1"># Optional entries</span>
-<span class="c1">#------------------------------------------------------------   </span>
-<span class="c1">## List(str): a list of commands to use when installing the latest</span>
-<span class="c1">## release of the code. Note: only one installation method can currently</span>
-<span class="c1">## be defined. We suggest using mamba where possible (e.g.</span>
-<span class="c1">##   mamba -c conda-forge install MYPROJECT</span>
-<span class="c1">## for a conda package installation).</span>
-<span class="c1">## Here we use a simple PyPi installation:</span>
-<span class="nt">install</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install MYPROJECT</span>
-
 <span class="c1">## List(str): a list of commands to use when installing the mdakit from its</span>
 <span class="c1">## source code.</span>
 <span class="nt">src_install</span><span class="p">:</span>
@@ -345,6 +333,18 @@ entries</strong>.</p>
 
 <span class="c1">## str: the organisation name the MDAKit falls under</span>
 <span class="nt">project_org</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GH_HOST_ACCOUNT</span>
+
+<span class="c1">#------------------------------------------------------------</span>
+<span class="c1"># Optional entries</span>
+<span class="c1">#------------------------------------------------------------   </span>
+<span class="c1">## List(str): a list of commands to use when installing the latest</span>
+<span class="c1">## release of the code. Note: only one installation method can currently</span>
+<span class="c1">## be defined. We suggest using mamba where possible (e.g.</span>
+<span class="c1">##   mamba -c conda-forge install MYPROJECT</span>
+<span class="c1">## for a conda package installation).</span>
+<span class="c1">## Here we use a simple PyPi installation:</span>
+<span class="nt">install</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install MYPROJECT</span>
 
 <span class="c1">## str: the development status of the MDAKit</span>
 <span class="c1">## See https://pypi.org/classifiers/ for development status classifiers.</span>

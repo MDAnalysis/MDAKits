@@ -300,6 +300,18 @@ contributor to expand and improve their documentation in the future.</p></li>
 docs. If you judge that it does not, see if the submitter intends to continue working on these (and
 encourage them to do so!)</p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">src_install</span></code>: a list of commands to install the Kit from the source code. This is a <em>list of strings</em>
+(<em>AUTOMATIC CHECK</em>).</p>
+<p><code class="docutils literal notranslate"><span class="pre">run_tests</span></code>: a list of commands to run the Kit’s tests. This is a <em>list of strings</em> (<em>AUTOMATIC CHECK</em>).</p>
+<ul class="simple">
+<li><p><em>note</em>: while (minimal) tests are one of the requirements of an MDAKit, we recognize that there might
+be testing frameworks that we do not support yet. In those cases please exercise flexibility when
+reviewing.</p></li>
+<li><p><strong>RECOMMEND</strong>: While a MDAKit may be registered with only minimal tests, encourage the contributor
+to continue improving their tests in the future.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">test_dependencies</span></code>: a list of commands for installing any dependencies required by the MDAKit’s tests.
+This is a <em>list of strings</em> (<em>AUTOMATIC CHECK</em>).</p>
 </section>
 <section id="optional-entries">
 <h4><em>Optional</em> entries<a class="headerlink" href="#optional-entries" title="Link to this heading"></a></h4>
@@ -311,8 +323,6 @@ CI is passing.</p>
 <li><p><strong>RECOMMEND</strong>: If the installation uses e.g. github or is otherwise complicated (many steps involved),
 encourage the contributor to make a release on conda-forge or PyPI.</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">src_install</span></code>: a list of commands to install the Kit from the source code. This is a <em>list of strings</em>
-(<em>AUTOMATIC CHECK</em>).</p>
 <p><code class="docutils literal notranslate"><span class="pre">import_name</span></code>: the package name, used to import the Kit in Python. This is a <em>string</em> (<em>AUTOMATIC CHECK</em>).</p>
 <p><code class="docutils literal notranslate"><span class="pre">python_requires</span></code>: range specifications for the versions of Python this Kit supports, e.g. “&gt;=3.9”. This
 is a <em>string</em> (<em>AUTOMATIC CHECK</em>).</p>
@@ -325,17 +335,6 @@ work with early versions of MDAnalysis.</p></li>
 <li><p><strong>RECOMMEND</strong>: Ideally, the Kit works with the current version of MDAnalysis - if an upper bound to an
 old version is given, enquire why, and recommend updating the Kit to work with a current version.</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">run_tests</span></code>: a list of commands to run the Kit’s tests. This is a <em>list of strings</em> (<em>AUTOMATIC CHECK</em>).</p>
-<ul class="simple">
-<li><p><em>note</em>: while (minimal) tests are one of the requirements of an MDAKit, providing instructions on how to run
-tests in the metadata file is currently optional, in order to allow greater flexibility in
-what format tests take and so lower the entry barrier for new contributors. However, it is <em>highly
-recommended</em> here to provide this metadata.</p></li>
-<li><p><strong>RECOMMEND</strong>: While a MDAKit may be registered with only minimal tests, encourage the contributor
-to continue improving their tests in the future.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">test_dependencies</span></code>: a list of commands for installing any dependencies required by the MDAKit’s tests.
-This is a <em>list of strings</em> (<em>AUTOMATIC CHECK</em>).</p>
 <p><code class="docutils literal notranslate"><span class="pre">project_org</span></code>: the account under which the code is found - this may be an individual user account, or an
 organisation like MDAnalysis. This is a <em>string</em>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">development_status</span></code>: the development status of the MDAKit.</p>
