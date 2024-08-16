@@ -65,6 +65,14 @@ python_requires: ">=3.9"
 ## str: a specification for the range of MDAnalysis versions supported by this MDAKit
 mdanalysis_requires: ">=2.0.0"
 
+## List(str): a list of commands to use when attempting to run the MDAKit's tests
+run_tests:
+  - git clone latest
+  - pytest mdonatello/
+
 ## str: the development status of the MDAKit
 ## See https://pypi.org/classifiers/ for development status classifiers.
 development_status: "Development Status :: 3 - Alpha"
+
+## str: a link to the MDAKit's changelog
+#changelog: https://github.com/talagayev/MDonatello/blob/main/CHANGELOG.md
