@@ -45,12 +45,6 @@ documentation_type: UserGuide + API + README
 #------------------------------------------------------------
 # Optional entries
 #------------------------------------------------------------   
-## List(str): a list of commands to use when installing the latest
-## release of the code. Note: only one installation method can currently
-## be defined. We suggest using mamba where possible (e.g.
-##   mamba -c conda-forge install MYPROJECT
-## for a conda package installation).
-## Here we use a simple PyPi installation:
 install:
   - mamba install -c conda-forge openmmdl
 
@@ -65,6 +59,7 @@ mdanalysis_requires: ">=2.3.0"
 
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
 run_tests:
+  - git clone latest
   - pytest openmmdl/
 
 ## str: the development status of the MDAKit
