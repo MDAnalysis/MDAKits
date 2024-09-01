@@ -36,7 +36,7 @@ The source code of transport-analysis can be installed using the following:
 .. _`transport-analysis authors`:
    https://github.com/MDAnalysis/transport-analysis/blob/main/AUTHORS.md
 
-.. |transport-analysis_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |transport-analysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: transport-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

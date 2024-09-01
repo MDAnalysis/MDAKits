@@ -295,7 +295,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`transport-analysis authors`:
    https://github.com/MDAnalysis/transport-analysis/blob/main/AUTHORS.md
 
-.. |transport-analysis_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |transport-analysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: transport-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
