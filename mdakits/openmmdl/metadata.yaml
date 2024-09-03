@@ -49,6 +49,11 @@ documentation_type: UserGuide + API + README
 install:
   - mamba install -c conda-forge openmmdl
 
+## List(str): a list of commands to use when installing the mdakit from its
+## source code.
+src_install:
+  - pip install git+https://github.com/wolberlab/OpenMMDL
+
 ## str: the package name used to import the mdakit
 import_name: openmmdl
 
