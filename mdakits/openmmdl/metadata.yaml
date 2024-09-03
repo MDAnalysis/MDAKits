@@ -52,6 +52,7 @@ install:
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
+  - mamba install -c conda-forge openmmdl
   - pip install git+https://github.com/wolberlab/OpenMMDL
 
 ## str: the package name used to import the mdakit
