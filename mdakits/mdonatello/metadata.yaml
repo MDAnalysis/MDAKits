@@ -14,7 +14,7 @@ maintainers:
 
 ## str: a free form description of the mdakit
 description:
-    2D small molecule visualization for MDAnalysis
+    2D small molecule visualization for MDAnalysis with jupyter notebook
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
