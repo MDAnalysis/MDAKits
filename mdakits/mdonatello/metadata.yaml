@@ -75,4 +75,4 @@ run_tests:
 development_status: "Development Status :: 3 - Alpha"
 
 ## str: a link to the MDAKit's changelog
-#changelog: https://github.com/talagayev/MDonatello/blob/main/CHANGELOG.md
+changelog: https://github.com/talagayev/MDonatello/blob/main/CHANGELOG.md
