@@ -1,95 +1,77 @@
-# TEMPLATE MDAKit file
+# DomHMM - Detect, Analyze, Understand
 # --------------------
-# 
-# Please replace ALL entries with appropriate content for YOUR MDAKit.
-# Below we use the placeholder GH_HOST_ACCOUNT for the GitHub account where
-# the source code repository is held, typically your username or the 
-# organization that you're part off.
-# MYPROJECT is the name of your project (the repository name and here
-# we assume that this is also the PyPi/conda package name) whereas 
-# MYPACKAGE is how you import it in python.
+# TL;DR: DomHMM provides an automated workflow to identify liquid-ordered (Lo) domains from Molecular Dynamics simulations of bio-membranes. :-)
 #
-# See https://mdakits.mdanalysis.org/add.html for more information. 
+# Nano- and microdomains in lipid membranes are of great interest for understanding biological processes such as small molecule binding and signal transduction.
+# Molecular Dynamics (MD) present a powerful tool for studying membranes with various lipid compositions at different levels of resolution.
+# However, detecting these domains can be challenging, as most workflows are described in papers without available or maintained implementations.
+# The MDAKit "DomHMM" faciliates the analysis of domains in your simulation trajectories by providing an automated workflow for the detection of lateral heterogeneities (i.e., liquid-ordered domains).
+# It is a versatile tool to handle different use case scenarios, such as simulations of asymmetric membranes or membranes including small proteins. It utilizes therefore unsupervised machine learning algorithms,
+# including Gaussian Mixture Models and Gaussian-based Hidden Markov Models, to detect ordered lipids based on their structural properties. Identified lipids are then clustered into domains using spatial autocorrelation analysis.
+# More details about the method can be found here: https://doi.org/10.1016/bs.mie.2024.03.006.
 #
 #------------------------------------------------------------
 # Required entries
 #------------------------------------------------------------
-## str: name of the project (the respository name)
+## Name of the repository
 project_name: domhmm
 
-## List(str): a link to the authors file (preferred) or a list of authors 
+## List of DomHMM's authors 
 authors:
   - https://github.com/BioMemPhys-FAU/domhmm/blob/main/AUTHORS.md
 
-## List(str): a list of maintainers
-## Please note these _must_ be GitHub handles
-## The maintainers will be tagged in issues if their MDAKit is failing.
+## List of DomHMM's maintainers
 maintainers:
   - m-a-r-i-u-s
   - yusuferentunc
   - biomemphys
 
-## str: a free form description of the mdakit
+## What is DomHMM
 description:
-    DomHMM provides an automated workflow to identify liquid-ordered (Lo) domains from Molecular Dynamics simulations of bio-membranes.
+    TL;DR: DomHMM provides an automated workflow to identify liquid-ordered (Lo) domains from Molecular Dynamics simulations of bio-membranes. :-)
+    
+    Nano- and microdomains in lipid membranes are of great interest for understanding biological processes such as small molecule binding and signal transduction.
+    Molecular Dynamics (MD) present a powerful tool for studying membranes with various lipid compositions at different levels of resolution.
+    However, detecting these domains can be challenging, as most workflows are described in papers without available or maintained implementations.
+    The MDAKit DomHMM faciliates the analysis of domains in your simulation trajectories by providing an automated workflow for the detection of lateral heterogeneities (i.e., liquid-ordered domains).
+    It is a versatile tool to handle different use case scenarios, such as simulations of asymmetric membranes or membranes including small proteins. It utilizes therefore unsupervised machine learning algorithms,
+    including Gaussian Mixture Models and Gaussian-based Hidden Markov Models, to detect ordered lipids based on their structural properties. Identified lipids are then clustered into domains using spatial autocorrelation analysis.
 
-## List(str): a list of keywords which describe the mdakit
+## Keywords that relate to DomHMM
 keywords:
   - membranes
   - molecular dynamics
   - nanodomains
   - microdomains
+  - machine learning
 
-## str: the license the mdakit falls under
-## See https://spdx.org/licenses/ for valid license specifiers
 license: GPL-2.0-or-later
 
-## str: the link to the project's code
-## Please note that this is not limited to GitHub! Can be Gitlab, etc..
+## You can find DomHMM on our GitHub repository:
 project_home: https://github.com/BioMemPhys-FAU/domhmm
 
-## str: the link to the project's documentation
+## You can find the documentation of DomHMM here:
 documentation_home: https://domhmm.readthedocs.io
 
-## str: the type of documentation available [UserGuide, API, README]
 documentation_type: UserGuide + API
 
-## List(str): a list of commands to use when installing the mdakit from its
-## source code.
 src_install:
   - pip install git+https://github.com/BioMemPhys-FAU/domhmm@main
 
-## str: the package name used to import the mdakit
 import_name: domhmm
 
-## str: a specification for the range of Python versions supported by this MDAKit
 python_requires: ">=3.9"
 
-## str: a specification for the range of MDAnalysis versions supported by this MDAKit
 mdanalysis_requires: ">=2.0.0"
 
-## List(str): a list of commands to use when attempting to run the MDAKit's tests
-## If you package your tests inside your package then you can typically use the 
-##     pytest --pyargs MYPACKAGE
-## command as shown below. 
-## Otherwise you need to include commands to make the tests available. 
-## For example, if the tests are in the repository at the top level under `./tests`:
-## First use `git clone latest` to either clone the top commit for "development code" checks or check out
-## the latest tag for "latest release" checks. Then then run pytest:
-##    - git clone latest
-##    - pytest -v ./tests
-## Feel free to ask for advice on your pull request!
+## The repositiory of DomHMM includes some unit tests to ensure that the package runs as intended. Please note that we are using pytest to run the tests.
 run_tests:
   - pytest --pyargs domhmm
-
-## List(str): a list of commands to use to install the necessary dependencies required
-## to run the MDAKit's tests.
-## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
-## make sure that it is appropriate for how you run tests.
+  
 test_dependencies:
   - mamba install pytest
 
-## str: the organisation name the MDAKit falls under
+## Computational Biology - Department Biologie - Friedrich-Alexander-Universität Erlangen-Nürnberg
 project_org: BioMemPhys-FAU
 
 #------------------------------------------------------------
@@ -101,21 +83,16 @@ project_org: BioMemPhys-FAU
 ##   mamba -c conda-forge install MYPROJECT
 ## for a conda package installation).
 ## Here we use a simple PyPi installation:
+# More to come!
 #install:
 #  - pip install MYPROJECT
 
-## str: the development status of the MDAKit
-## See https://pypi.org/classifiers/ for development status classifiers.
 development_status: Production/Stable
 
-## List(str) a list of publications to cite when using the MDAKit
-## Links to scientific publications or stable URLs (typically of the form
-## https://doi.org/<DOI> or to a preprint server)
 publications:
   - https://doi.org/10.1016/bs.mie.2024.03.006
 
-## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
+# We welcome your feedback on the code or any other aspects of the project. :-)
 community_home: https://github.com/BioMemPhys-FAU/domhmm/discussions/
 
-## str: a link to the MDAKit's changelog
 changelog: https://github.com/BioMemPhys-FAU/domhmm/blob/main/CHANGELOG.md
