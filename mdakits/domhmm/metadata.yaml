@@ -27,9 +27,8 @@ maintainers:
   - biomemphys
 
 ## What is DomHMM
-description:
+description: >
     TL;DR: DomHMM provides an automated workflow to identify liquid-ordered (Lo) domains from Molecular Dynamics simulations of bio-membranes. :-)
-    
     Nano- and microdomains in lipid membranes are of great interest for understanding biological processes such as small molecule binding and signal transduction.
     Molecular Dynamics (MD) present a powerful tool for studying membranes with various lipid compositions at different levels of resolution.
     However, detecting these domains can be challenging, as most workflows are described in papers without available or maintained implementations.
