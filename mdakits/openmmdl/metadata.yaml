@@ -54,7 +54,7 @@ install:
 src_install:
   - git clone https://github.com/wolberlab/OpenMMDL.git
   - cd OpenMMDL
-  - conda install --file environment.yml 
+  - conda env update -f environment.yml 
   - pip install .
 
 ## str: the package name used to import the mdakit
