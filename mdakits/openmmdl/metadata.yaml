@@ -56,6 +56,7 @@ src_install:
   - cd OpenMMDL
   - conda env update -f environment.yml 
   - pip install . && cd ..
+  - mv OpenMMDL/ OpenMMDL_env/
 
 ## str: the package name used to import the mdakit
 import_name: openmmdl
@@ -68,7 +69,7 @@ mdanalysis_requires: ">=2.3.0"
 
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
 run_tests:
-  - [ ! -d "OpenMMDL" ] && git clone https://github.com/wolberlab/OpenMMDL.git
+  - git clone latest
   - pytest OpenMMDL/
 
 ## str: the development status of the MDAKit
