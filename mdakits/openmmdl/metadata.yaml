@@ -68,11 +68,10 @@ mdanalysis_requires: ">=2.3.0"
 
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
 run_tests:
-  - |
-    if [ ! -d "OpenMMDL" ]; then
-      git clone https://github.com/wolberlab/OpenMMDL.git
-    fi
-    pytest openmmdl/
+  - if [ ! -d "OpenMMDL" ]; then
+  -   git clone https://github.com/wolberlab/OpenMMDL.git
+  - fi
+  - pytest OpenMMDL/
 
 ## str: the development status of the MDAKit
 ## See https://pypi.org/classifiers/ for development status classifiers.
