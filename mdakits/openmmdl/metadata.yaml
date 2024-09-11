@@ -52,10 +52,14 @@ install:
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - conda install -c conda-forge pip mdtraj rdkit mdtraj plip
-  - git clone https://github.com/wolberlab/OpenMMDL.git
-  - cd OpenMMDL
-  - pip install . && cd ..
+  - | 
+    conda install -c conda-forge 
+    pip 
+    mdtraj 
+    rdkit 
+    mdtraj 
+    plip 
+  - pip install https://github.com/wolberlab/OpenMMDL.git
 
 ## str: the package name used to import the mdakit
 import_name: openmmdl
