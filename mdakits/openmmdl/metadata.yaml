@@ -52,12 +52,11 @@ install:
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
+  - conda install -c conda-forge \
+    'setuptools>=61.0' \
   - git clone https://github.com/wolberlab/OpenMMDL.git
   - cd OpenMMDL
-  - conda env update -f environment.yml 
-  - conda activate openmmdl
   - pip install . && cd ..
-  - mv OpenMMDL/ OpenMMDL_env/
 
 ## str: the package name used to import the mdakit
 import_name: openmmdl
