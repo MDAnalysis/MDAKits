@@ -72,7 +72,7 @@ run_tests:
     if [ ! -d "OpenMMDL" ]; then
       git clone https://github.com/wolberlab/OpenMMDL.git
     fi
-    pytest OpenMMDL/
+  -  pytest OpenMMDL/
 
 ## str: the development status of the MDAKit
 ## See https://pypi.org/classifiers/ for development status classifiers.
