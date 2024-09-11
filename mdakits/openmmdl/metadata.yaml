@@ -54,12 +54,28 @@ install:
 src_install:
   - | 
     conda install -c conda-forge 
-    pip 
+    pip
+    pytest>=6.1.2
+    pytest-runner
+    numpy
+    plip
+    requests>=2.28.1
     mdtraj 
-    rdkit 
-    mdtraj 
-    plip 
-  - pip install https://github.com/wolberlab/OpenMMDL.git
+    rdkit>=2022.03.5
+    pdbfixer
+    openff-toolkit
+    openmmforcefields
+    cudatoolkit>=11.7.0
+    cuda-python>=11.7.1
+    mdanalysis>=2.3.0
+    pytest-shutil>=1.7.0
+    flask>=2.2.2
+    cairosvg
+    nglview
+    numba>=0.59.1
+    jupyter
+     
+  - pip install git+https://github.com/wolberlab/OpenMMDL
 
 ## str: the package name used to import the mdakit
 import_name: openmmdl
