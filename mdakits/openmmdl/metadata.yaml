@@ -55,6 +55,7 @@ src_install:
   - git clone https://github.com/wolberlab/OpenMMDL.git
   - cd OpenMMDL
   - conda env update -f environment.yml 
+  - conda activate openmmdl
   - pip install . && cd ..
   - mv OpenMMDL/ OpenMMDL_env/
 
