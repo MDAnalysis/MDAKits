@@ -53,7 +53,7 @@ install:
 ## source code.
 src_install:
   - conda install -c conda-forge \
-    'setuptools>=61.0' \
+    'mdtraj' \
   - git clone https://github.com/wolberlab/OpenMMDL.git
   - cd OpenMMDL
   - pip install . && cd ..
