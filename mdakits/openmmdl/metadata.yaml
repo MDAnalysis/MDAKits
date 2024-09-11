@@ -68,7 +68,6 @@ mdanalysis_requires: ">=2.3.0"
 
 ## List(str): a list of commands to use when attempting to run the MDAKit's tests
 run_tests:
-  - git clone latest
   - pytest openmmdl/
 
 ## str: the development status of the MDAKit
