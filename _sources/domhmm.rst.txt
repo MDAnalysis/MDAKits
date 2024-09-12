@@ -1,0 +1,44 @@
+.. _domhmm:
+
+************************************************
+domhmm
+************************************************
+
+| 🖋️ **Authors**: `domhmm authors`_
+| 🏠 **Project home:** https://github.com/BioMemPhys-FAU/domhmm
+| 📖 **Documentation:** https://domhmm.readthedocs.io
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** membranes, molecular dynamics, nanodomains, microdomains, machine learning
+| 🚀 **Development status:** Production/Stable
+| 📜 **Changelog:** https://github.com/BioMemPhys-FAU/domhmm/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://doi.org/10.1016/bs.mie.2024.03.006
+| 🧪 **Tests (latest):** |domhmm_latest| 
+| 🧪 **Tests (develop):** |domhmm_develop| 
+| **Description:**
+| *TL;DR: DomHMM provides an automated workflow to identify liquid-ordered (Lo) domains from Molecular Dynamics simulations of bio-membranes. :-) Nano- and microdomains in lipid membranes are of great interest for understanding biological processes such as small molecule binding and signal transduction. Molecular Dynamics (MD) present a powerful tool for studying membranes with various lipid compositions at different levels of resolution. However, detecting these domains can be challenging, as most workflows are described in papers without available or maintained implementations. The MDAKit DomHMM faciliates the analysis of domains in your simulation trajectories by providing an automated workflow for the detection of lateral heterogeneities (i.e., liquid-ordered domains). It is a versatile tool to handle different use case scenarios, such as simulations of asymmetric membranes or membranes including small proteins. It utilizes therefore unsupervised machine learning algorithms, including Gaussian Mixture Models and Gaussian-based Hidden Markov Models, to detect ordered lipids based on their structural properties. Identified lipids are then clustered into domains using spatial autocorrelation analysis.
+*
+
+
+
+Installation instructions
+=========================
+
+
+The source code of domhmm can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/BioMemPhys-FAU/domhmm@main
+
+.. _`domhmm authors`:
+   https://github.com/BioMemPhys-FAU/domhmm/blob/main/AUTHORS.md
+
+.. |domhmm_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+   :alt: domhmm develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |domhmm_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: domhmm develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

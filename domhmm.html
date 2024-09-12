@@ -20,7 +20,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mdakit-sasa &mdash; MDAKits Registry  documentation</title>
+  <title>domhmm &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -43,8 +43,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="lipidorderkit" href="lipidorderkit.html" />
-    <link rel="prev" title="transport-analysis" href="transport-analysis.html" /> 
+    <link rel="next" title="PathSimAnalysis" href="PathSimAnalysis.html" />
+    <link rel="prev" title="lipidorderkit" href="lipidorderkit.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -97,12 +97,12 @@
 <li class="toctree-l2"><a class="reference internal" href="MDANCE.html">MDANCE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ProLIF.html">ProLIF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transport-analysis.html">transport-analysis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">mdakit-sasa</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mdakit-sasa.html">mdakit-sasa</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lipidorderkit.html">lipidorderkit</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">domhmm</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="lipidorderkit.html">lipidorderkit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="domhmm.html">domhmm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PathSimAnalysis.html">PathSimAnalysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdachecker.html">mdachecker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spyrmsdkit.html">spyrmsdkit</a></li>
@@ -140,9 +140,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">mdakit-sasa</li>
+      <li class="breadcrumb-item active">domhmm</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/mdakit-sasa.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/domhmm.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -150,34 +150,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mdakit-sasa">
-<span id="id1"></span><h1>mdakit-sasa<a class="headerlink" href="#mdakit-sasa" title="Link to this heading"></a></h1>
+  <section id="domhmm">
+<span id="id1"></span><h1>domhmm<a class="headerlink" href="#domhmm" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/pegerto/mdakit_sasa/blob/main/AUTHORS.md">mdakit-sasa authors</a></div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/pegerto/mdakit_sasa/">https://github.com/pegerto/mdakit_sasa/</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://mdakit-sasa.readthedocs.io/">https://mdakit-sasa.readthedocs.io/</a></div>
+<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/BioMemPhys-FAU/domhmm/blob/main/AUTHORS.md">domhmm authors</a></div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/BioMemPhys-FAU/domhmm">https://github.com/BioMemPhys-FAU/domhmm</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://domhmm.readthedocs.io">https://domhmm.readthedocs.io</a></div>
 <div class="line">⚖️ <strong>License:</strong> GPL-2.0-or-later</div>
-<div class="line">🔑 <strong>Keywords:</strong> SASA, FreeSASA, ShrakeRupley, LeeRichards</div>
+<div class="line">🔑 <strong>Keywords:</strong> membranes, molecular dynamics, nanodomains, microdomains, machine learning</div>
 <div class="line">🚀 <strong>Development status:</strong> Production/Stable</div>
-<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/pegerto/mdakit_sasa/blob/main/CHANGELOG.md">https://github.com/pegerto/mdakit_sasa/blob/main/CHANGELOG.md</a></div>
+<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/BioMemPhys-FAU/domhmm/blob/main/CHANGELOG.md">https://github.com/BioMemPhys-FAU/domhmm/blob/main/CHANGELOG.md</a></div>
 <div class="line">📑 <strong>Publications:</strong></div>
 <div class="line-block">
-<div class="line">* <a class="reference external" href="https://zenodo.org/doi/10.5281/zenodo.10182425">https://zenodo.org/doi/10.5281/zenodo.10182425</a></div>
-<div class="line">* <a class="reference external" href="https://f1000research.com/articles/5-189/v1">https://f1000research.com/articles/5-189/v1</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1016/bs.mie.2024.03.006">https://doi.org/10.1016/bs.mie.2024.03.006</a></div>
 </div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="mdakit-sasa develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="mdakit-sasa develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="domhmm develop CI status" src="https://img.shields.io/badge/latest-unavailable-inactive.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="domhmm develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>This MDAKit allows for the computation of Solvent Accessible Surface Area (SASA) through MDAnalysis, leveraging the essential role of FreeSASA in performing the calculation.</em></div>
+<div class="line"><a href="#id2"><span class="problematic" id="id3">*</span></a>TL;DR: DomHMM provides an automated workflow to identify liquid-ordered (Lo) domains from Molecular Dynamics simulations of bio-membranes. :-) Nano- and microdomains in lipid membranes are of great interest for understanding biological processes such as small molecule binding and signal transduction. Molecular Dynamics (MD) present a powerful tool for studying membranes with various lipid compositions at different levels of resolution. However, detecting these domains can be challenging, as most workflows are described in papers without available or maintained implementations. The MDAKit DomHMM faciliates the analysis of domains in your simulation trajectories by providing an automated workflow for the detection of lateral heterogeneities (i.e., liquid-ordered domains). It is a versatile tool to handle different use case scenarios, such as simulations of asymmetric membranes or membranes including small proteins. It utilizes therefore unsupervised machine learning algorithms, including Gaussian Mixture Models and Gaussian-based Hidden Markov Models, to detect ordered lipids based on their structural properties. Identified lipids are then clustered into domains using spatial autocorrelation analysis.</div>
 </div>
+<ul class="simple">
+<li></li>
+</ul>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The latest version of mdakit-sasa can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>mdakit-sasa
-</pre></div>
-</div>
-<p>The source code of mdakit-sasa can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/pegerto/mdakit_sasa@main
+<p>The source code of domhmm can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/BioMemPhys-FAU/domhmm@main
 </pre></div>
 </div>
 </section>
@@ -187,8 +185,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="transport-analysis.html" class="btn btn-neutral float-left" title="transport-analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="lipidorderkit.html" class="btn btn-neutral float-right" title="lipidorderkit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lipidorderkit.html" class="btn btn-neutral float-left" title="lipidorderkit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PathSimAnalysis.html" class="btn btn-neutral float-right" title="PathSimAnalysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

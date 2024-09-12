@@ -65,6 +65,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - Lipids, Lipids order parameters, SCD, Lipid metrics, Lipid study
       - `lipidorderkit authors`_
       - |lipidorderkit_latest| |lipidorderkit_develop|
+    * - :ref:`domhmm`
+      - membranes, molecular dynamics, nanodomains, microdomains, machine learning
+      - `domhmm authors`_
+      - |domhmm_latest| |domhmm_develop|
     * - :ref:`PathSimAnalysis`
       - similarity, paths, metrics
       - `PathSimAnalysis authors`_
@@ -119,6 +123,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    transport-analysis
    mdakit-sasa
    lipidorderkit
+   domhmm
    PathSimAnalysis
    mdachecker
    spyrmsdkit
@@ -144,11 +149,11 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`mda-tui authors`:
    https://github.com/p-j-smith/mda-tui/blob/main/AUTHORS.md
 
-.. |mda-tui_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |mda-tui_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: mda-tui develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mda-tui_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |mda-tui_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: mda-tui develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -254,6 +259,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |lipidorderkit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: lipidorderkit develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`domhmm authors`:
+   https://github.com/BioMemPhys-FAU/domhmm/blob/main/AUTHORS.md
+
+.. |domhmm_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+   :alt: domhmm develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |domhmm_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: domhmm develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`PathSimAnalysis authors`:
