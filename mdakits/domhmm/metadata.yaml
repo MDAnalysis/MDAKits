@@ -1,0 +1,98 @@
+# DomHMM - Detect, Analyze, Understand
+# --------------------
+# TL;DR: DomHMM provides an automated workflow to identify liquid-ordered (Lo) domains from Molecular Dynamics simulations of bio-membranes. :-)
+#
+# Nano- and microdomains in lipid membranes are of great interest for understanding biological processes such as small molecule binding and signal transduction.
+# Molecular Dynamics (MD) present a powerful tool for studying membranes with various lipid compositions at different levels of resolution.
+# However, detecting these domains can be challenging, as most workflows are described in papers without available or maintained implementations.
+# The MDAKit "DomHMM" faciliates the analysis of domains in your simulation trajectories by providing an automated workflow for the detection of lateral heterogeneities (i.e., liquid-ordered domains).
+# It is a versatile tool to handle different use case scenarios, such as simulations of asymmetric membranes or membranes including small proteins. It utilizes therefore unsupervised machine learning algorithms,
+# including Gaussian Mixture Models and Gaussian-based Hidden Markov Models, to detect ordered lipids based on their structural properties. Identified lipids are then clustered into domains using spatial autocorrelation analysis.
+# More details about the method can be found here: https://doi.org/10.1016/bs.mie.2024.03.006.
+#
+#------------------------------------------------------------
+# Required entries
+#------------------------------------------------------------
+## Name of the repository
+project_name: domhmm
+
+## List of DomHMM's authors 
+authors:
+  - https://github.com/BioMemPhys-FAU/domhmm/blob/main/AUTHORS.md
+
+## List of DomHMM's maintainers
+maintainers:
+  - m-a-r-i-u-s
+  - yusuferentunc
+  - biomemphys
+
+## What is DomHMM
+description: >
+    TL;DR: DomHMM provides an automated workflow to identify liquid-ordered (Lo) domains from Molecular Dynamics simulations of bio-membranes. :-)
+    Nano- and microdomains in lipid membranes are of great interest for understanding biological processes such as small molecule binding and signal transduction.
+    Molecular Dynamics (MD) present a powerful tool for studying membranes with various lipid compositions at different levels of resolution.
+    However, detecting these domains can be challenging, as most workflows are described in papers without available or maintained implementations.
+    The MDAKit DomHMM faciliates the analysis of domains in your simulation trajectories by providing an automated workflow for the detection of lateral heterogeneities (i.e., liquid-ordered domains).
+    It is a versatile tool to handle different use case scenarios, such as simulations of asymmetric membranes or membranes including small proteins. It utilizes therefore unsupervised machine learning algorithms,
+    including Gaussian Mixture Models and Gaussian-based Hidden Markov Models, to detect ordered lipids based on their structural properties. Identified lipids are then clustered into domains using spatial autocorrelation analysis.
+
+## Keywords that relate to DomHMM
+keywords:
+  - membranes
+  - molecular dynamics
+  - nanodomains
+  - microdomains
+  - machine learning
+
+license: GPL-2.0-or-later
+
+## You can find DomHMM on our GitHub repository:
+project_home: https://github.com/BioMemPhys-FAU/domhmm
+
+## You can find the documentation of DomHMM here:
+documentation_home: https://domhmm.readthedocs.io
+
+documentation_type: UserGuide + API
+
+src_install:
+  - pip install git+https://github.com/BioMemPhys-FAU/domhmm@main
+
+import_name: domhmm
+
+python_requires: ">=3.9"
+
+mdanalysis_requires: ">=2.0.0"
+
+## The repositiory of DomHMM includes some unit tests to ensure that the package runs as intended. Please note that we are using pytest to run the tests.
+run_tests:
+  - pytest --pyargs domhmm
+  
+test_dependencies:
+  - mamba install pytest
+
+## Computational Biology - Department Biologie - Friedrich-Alexander-Universität Erlangen-Nürnberg
+project_org: BioMemPhys-FAU
+
+#------------------------------------------------------------
+# Optional entries
+#------------------------------------------------------------   
+## List(str): a list of commands to use when installing the latest
+## release of the code. Note: only one installation method can currently
+## be defined. We suggest using mamba where possible (e.g.
+##   mamba -c conda-forge install MYPROJECT
+## for a conda package installation).
+## Here we use a simple PyPi installation:
+# More to come!
+# install:
+# - git clone latest
+# - pip install .
+
+development_status: Production/Stable
+
+publications:
+  - https://doi.org/10.1016/bs.mie.2024.03.006
+
+# We welcome your feedback on the code or any other aspects of the project. :-)
+community_home: https://github.com/BioMemPhys-FAU/domhmm/discussions/
+
+changelog: https://github.com/BioMemPhys-FAU/domhmm/blob/main/CHANGELOG.md
