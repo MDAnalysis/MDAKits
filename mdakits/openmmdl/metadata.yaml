@@ -98,4 +98,4 @@ run_tests:
 development_status: "Development Status :: 4 - Beta"
 
 ## str: a link to the MDAKit's changelog
-#changelog: https://github.com/wolberlab/OpenMMDL/blob/main/CHANGELOG.md
+changelog: https://github.com/wolberlab/OpenMMDL/blob/main/CHANGELOG.md
