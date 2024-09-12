@@ -20,7 +20,7 @@ documentation_home: https://mdanalysis.org/PathSimAnalysis
 documentation_type: API
 
 install:
-  - pip install pathsimanalysis
+  - mamba install -c conda-forge pathsimanalysis
 
 src_install:
   - pip install git+https://github.com/MDAnalysis/PathSimAnalysis@main
