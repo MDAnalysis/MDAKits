@@ -53,7 +53,7 @@ install:
 ## source code.
 src_install:
   - | 
-    conda install -c conda-forge 
+    mamba install -c conda-forge 
     pip
     setuptools>=61.0
     versioningit~=2.0
