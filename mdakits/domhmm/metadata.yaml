@@ -83,9 +83,9 @@ project_org: BioMemPhys-FAU
 ## for a conda package installation).
 ## Here we use a simple PyPi installation:
 # More to come!
-install:
- - git clone latest
- - pip install .
+# install:
+# - git clone latest
+# - pip install .
 
 development_status: Production/Stable
 
