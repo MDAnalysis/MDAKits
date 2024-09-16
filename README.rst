@@ -11,7 +11,7 @@ Contents
 This repository contains the source code for the `MDAKits registry`_.
 
 The registry hosts a list of MDAKits which it then both documents and
-continually validate. For more details about the MDAKit registry, please see
+continually validates. For more details about the MDAKit registry, please see
 the `MDAKit paper`_ in the section *The MDAKit registry*.
 
 For detailed documentation and tutorials about MDAKits see the MDAKits site
