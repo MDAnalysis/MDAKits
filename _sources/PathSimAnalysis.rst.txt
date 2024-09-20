@@ -27,7 +27,7 @@ The latest version of PathSimAnalysis can be installed using the following:
 
 .. code-block:: bash
 
-    pip install pathsimanalysis
+    mamba install -c conda-forge pathsimanalysis
 
 The source code of PathSimAnalysis can be installed using the following:
 
