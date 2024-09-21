@@ -53,16 +53,12 @@ install:
 ## source code.
 src_install:
   - | 
-    mamba install -c conda-forge 
+    mamba install -c conda-forge
     pip
-    setuptools>=61.0
-    versioningit~=2.0
-    pytest>=6.1.2
-    pytest-runner
     numpy
     plip
     requests>=2.28.1
-    mdtraj 
+    mdtraj
     rdkit>=2022.03.5
     pdbfixer
     openff-toolkit
@@ -70,14 +66,15 @@ src_install:
     cudatoolkit>=11.7.0
     cuda-python>=11.7.1
     mdanalysis>=2.3.0
-    pytest-shutil>=1.7.0
     flask>=2.2.2
     cairosvg
     nglview
     numba>=0.59.1
     jupyter
-     
   - pip install git+https://github.com/wolberlab/OpenMMDL
+
+test_dependencies:
+  - mamba install pytest>=6.1.2 pytest-runner pytest-shutil>=1.7.0
 
 ## str: the package name used to import the mdakit
 import_name: openmmdl
