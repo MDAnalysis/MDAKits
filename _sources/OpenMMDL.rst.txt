@@ -1,0 +1,65 @@
+.. _OpenMMDL:
+
+************************************************
+OpenMMDL
+************************************************
+
+| 🖋️ **Authors**: `OpenMMDL authors`_
+| 🏠 **Project home:** https://github.com/wolberlab/OpenMMDL
+| 📖 **Documentation:** http://openmmdl.readthedocs.io/
+| ⚖️ **License:** MIT
+| 🔑 **Keywords:** MD simulations, Protein-ligand analysis, flask-based webserver, visualization, openmm, rdkit, nglview
+| 🚀 **Development status:** Development Status :: 4 - Beta
+| 📜 **Changelog:** https://github.com/wolberlab/OpenMMDL/blob/main/CHANGELOG.md
+| 🧪 **Tests (latest):** |OpenMMDL_latest| 
+| 🧪 **Tests (develop):** |OpenMMDL_develop| 
+| **Description:**
+| *Interface to OpenMM for easy setup of molecular dynamic simulations of protein-ligand complexes and the analysis thereof*
+
+
+
+Installation instructions
+=========================
+
+The latest version of OpenMMDL can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install -c conda-forge openmmdl
+
+The source code of OpenMMDL can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install -c conda-forge
+pip
+numpy
+plip
+requests>=2.28.1
+mdtraj
+rdkit>=2022.03.5
+pdbfixer
+openff-toolkit
+openmmforcefields
+cudatoolkit>=11.7.0
+cuda-python>=11.7.1
+mdanalysis>=2.3.0
+flask>=2.2.2
+cairosvg
+nglview
+numba>=0.59.1
+jupyter
+
+    pip install git+https://github.com/wolberlab/OpenMMDL
+
+.. _`OpenMMDL authors`:
+   https://github.com/wolberlab/OpenMMDL/blob/main/AUTHORS.md
+
+.. |OpenMMDL_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: OpenMMDL develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |OpenMMDL_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: OpenMMDL develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

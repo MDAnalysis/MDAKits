@@ -65,6 +65,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - SASA, FreeSASA, ShrakeRupley, LeeRichards
       - `mdakit-sasa authors`_
       - |mdakit-sasa_latest| |mdakit-sasa_develop|
+    * - :ref:`OpenMMDL`
+      - MD simulations, Protein-ligand analysis, flask-based webserver, visualization, openmm, rdkit, nglview
+      - `OpenMMDL authors`_
+      - |OpenMMDL_latest| |OpenMMDL_develop|
     * - :ref:`domhmm`
       - membranes, molecular dynamics, nanodomains, microdomains, machine learning
       - `domhmm authors`_
@@ -123,6 +127,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    spyrmsdkit
    maicos
    mdakit-sasa
+   OpenMMDL
    domhmm
    MDANCE
    lipidorderkit
@@ -265,6 +270,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |mdakit-sasa_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdakit-sasa develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`OpenMMDL authors`:
+   https://github.com/wolberlab/OpenMMDL/blob/main/AUTHORS.md
+
+.. |OpenMMDL_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: OpenMMDL develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |OpenMMDL_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: OpenMMDL develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`domhmm authors`:
