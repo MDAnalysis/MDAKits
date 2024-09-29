@@ -7,14 +7,15 @@ to ensure that registered packages are FAIR-compliant and hold up to
 an ideal scientific standard.
 
 
-**Building a Kit from the cookiecutter**
+Building a Kit using the cookiecutter
+-------------------------------------
 
-Without prior experience, some of the MDAKit registry requirements
+Without prior experience, some of the MDAKit Registry requirements
 can be daunting. The `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io/>`_
 can be used to aid rapid development of a FAIR-compliant MDAKit
 by generating placeholder code for documentation, testing and 
-installation. In this section, we provide a walk-through for the
-creation of an MDAKit using the cookiecutter.
+installation. A guided example of creating an MDAKit, from cookiecutter
+to registration, is provided below.
 
 .. toctree::
    :maxdepth: 2
@@ -22,16 +23,22 @@ creation of an MDAKit using the cookiecutter.
    making-a-kit/from-cookiecutter
 
 
-**Building from an existing project**
+Building without the cookiecutter/from an existing project
+----------------------------------------------------------
 
 If you have an existing package you wish to register as an MDAKit,
-(or if you wish to develop one yourself without using the cookiecutter),
-chances are very little restructuring is needed for registration.
-The primary concern is ensuring that the core MDAKit requirements 
-are met - check the links below for things to consider.
+or if you wish to develop a Kit without use of the cookiecutter, that's
+also OK! For existing code, chances are very little restructuring is 
+required before registration - just make sure you meet the core 
+:ref:`requirements <requirements>` for registration. 
+
+You may still find the above links helpful, along with the additional
+information below.
 
 .. toctree::
    :maxdepth: 1
 
-   making-a-kit/licensing
+   making-a-kit/license
    making-a-kit/hosting
+   making-a-kit/testing
+   making-a-kit/documentation
