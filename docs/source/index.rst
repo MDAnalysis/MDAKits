@@ -24,12 +24,19 @@ additional resources about MDAKits and how to write and/or add your own.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Resources
+   :caption: Resources for MDAKit Authors
+
+   makingakit
+   addingakit
+   maintainingakit
+   troubleshooting
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Other Resources
 
    about
-   makingakit
-   add
-   troubleshooting
    reviewersguide
    
 
