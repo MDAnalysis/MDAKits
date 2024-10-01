@@ -1,23 +1,23 @@
-***************************************************
-Part 2: Adding code to the newly created repository
-***************************************************
+*******************
+Part 2: Adding code
+*******************
 
 *For a video demonstration of this section,* 
-`click here  <https://www.youtube.com/watch?v=viCPUHkgSxg&t=48s>`_.
+`click here <https://www.youtube.com/watch?v=viCPUHkgSxg&t=48s>`_.
 
 Now that we have a shell for our MDAKit, we can begin to add our code
 to the ``rmsfkit/`` directory.
 
-In this example, we are recreating the exist MDAnalysis RMSD analysis,
-so we will simply copy and paste the analysis class into 
-``rmsfkit/rmsfkit.py``.The in-code documentation (which has been trimmed 
-here for brevity) is written in 
-`reStructuredText syntax <https://docutils.sourceforge.io/rst.html>`_
-syntax for building with Sphinx later. 
+#. In this example, we are recreating the existing MDAnalysis RMSF analysis,
+   so we will simply copy and paste this analysis class into a new file
+   ``rmsfkit/rmsfkit.py``.The in-code documentation (which has been trimmed 
+   here for brevity) is written in 
+   `reStructuredText syntax <https://docutils.sourceforge.io/rst.html>`_
+   for building with Sphinx later. 
 
-The contents of the file should now resemble the following code block:
+   The contents of the file should now resemble the following code block:
 
-.. code-block:: python
+   .. code-block:: python
 
 	"""
 	rmsfkit.py
@@ -101,18 +101,19 @@ The contents of the file should now resemble the following code block:
 	            raise ValueError("Some RMSF values negative; overflow " +
 	                             "or underflow occurred")
 
+#. Finally, to make our ``RMSF`` analysis class easier to access, we 
+   import it in ``__init__.py`` by adding:
 
-Finally, to make our ``RMSF`` analysis class easier to access, we 
-import it in ``__init__.py`` by adding:
-
-.. code-block:: python
+   .. code-block:: python
 
 	from .rmsfkit import RMSF
 
 
-**Progress: MDAKit requirements**
+Progress: MDAKit requirements
+-----------------------------
 
-#. **✓ Uses MDAnalysis**
+#. **✓ Uses MDAnalysis** - the added code uses the MDAnalysis
+   ``AnalysisBase`` class and runs on MDAnalysis ``AtomGroup`` objects!
 #. **✓ Open source + OSI license**
 #. *Versioned + on a version-controlled repository*
 #. **✓ Designated authors and maintainers**

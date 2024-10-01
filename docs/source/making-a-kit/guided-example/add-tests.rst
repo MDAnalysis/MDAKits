@@ -6,12 +6,14 @@ Part 3: Adding tests
 `click here  <https://www.youtube.com/watch?v=viCPUHkgSxg&t=72s>`_.
 
 The cookiecutter set up the framework for tests in ``rmsfkit/tests``, 
-but we need to add the tests themselves to ``test_rmsfkit.py``.
-Once again, we take directly from the MDAnalysis package. 
-Here we take the `RMSF testing class <https://github.com/MDAnalysis/mdanalysis/blob/develop/testsuite/MDAnalysisTests/analysis/test_rms.py>`_ 
-and update the contents of ``rmsfkit/tests/test_rmsfkit.py`` as follows:
+but we now need to add the tests themselves, and make sure that they run.
 
-.. code-block:: python
+#. Once again, we take directly from the MDAnalysis package. 
+   We take the 
+   `RMSF testing class <https://github.com/MDAnalysis/mdanalysis/blob/develop/testsuite/MDAnalysisTests/analysis/test_rms.py>`_ 
+   and update the contents of ``rmsfkit/tests/test_rmsfkit.py`` as follows:
+
+   .. code-block:: python
 
 	"""
 	Unit and regression test for the rmsfkit package.
@@ -73,83 +75,93 @@ and update the contents of ``rmsfkit/tests/test_rmsfkit.py`` as follows:
 	                            err_msg="error: rmsfs should all be 0")
 
 
-Adding a test dependency
-------------------------
+#. **Adding a test dependency:** Since these tests use files included 
+   with the ``MDAnalysisTests`` package, we need to add this as a 
+   dependency. We do this in two configuration files:
 
-Since these tests use files included with the ``MDAnalysisTests`` package,
-we need to add this as a dependency. We do this in two configuration
-files:
-- In ``devtools/conda-envs/test_env.yaml``.
-- In ``pyproject.toml``: Under the ``[project.optional-dependencies]``
-  table, ensure that ``MDAnalysisTests>=2.0.0`` is listed in ``test``.
+   - In ``devtools/conda-envs/test_env.yaml``, in the ``dependencies:`` section:
 
-  .. code-block:: toml
+     .. code-block:: yaml
+     
+        dependencies:
+        # Base depends
+        - python
+        - pip
+
+        # MDAnalysis
+        - MDAnalysis
+
+        # Testing
+        - pytest
+        - pytest-cov
+        - pytest-xdist
+        - codecov
+        - MDAnalysisTests # <-- add this! 
+
+   - In ``pyproject.toml``, under ``[project.optional-dependencies]``:
+
+     .. code-block:: toml
 
 	[project.optional-dependencies]
 	test = [
 	    "pytest>=6.0",
 	    "pytest-xdist>=2.5",
 	    "pytest-cov>=3.0",
-	    "MDAnalysisTests>=2.0.0",
+	    "MDAnalysisTests>=2.0.0", # <-- add this!
 	]
 
 
-Running the tests
-#################
+**Running the tests**
 
-Following the instructions from the generated ``README.md``, we can 
-create a testing environment using ``mamba`` (preferred) or ``conda``:
+#. Following the instructions from the generated ``README.md``, we can 
+   create a testing environment using ``mamba`` (preferred) or ``conda``:
 
-.. code-block:: bash
+   .. code-block:: bash
 
-	$ mamba create -n rmsfkit
-	$ mamba env update --name rmsfkit --file devtools/conda-envs/test_env.yaml
+        $ mamba create -n rmsfkit
+        $ mamba env update --name rmsfkit --file devtools/conda-envs/test_env.yaml
         $ mamba activate rmsfkit
 
-And then install the package:
 
-.. code-block:: bash
-	$ pip install -e .
+#. Then install the package:
 
-We can now run tests locally using:
+   .. code-block:: bash
 
-.. code-block:: bash
+        $ pip install -e .
+
+
+#. We can now run tests locally using:
+
+   .. code-block:: bash
 
 	$ pytest rmsfkit/tests
 
-This should pass without errors, though with some potential warnings. 
+   This should pass without errors, though with some potential warnings. 
+
+We only need to perform Step 1-2 once. Thereafter, tests can be run at 
+any point with ``pytest rmsfkit/tests`` (though you may need to reactivate 
+the environment, ``mamba activate rmsfkit``).
 
 
-Preparing for CI
-################
+**Preparing for CI**
 
 Local tests passing is only half of testing. Ideally, tests shouls also 
-pass through continuous integration services. The cookiecutter generates
-the necessary GitHub workflow files ``.github/workslows/gh-ci.yaml`` 
+pass through **continuous integration services**. The cookiecutter generates
+the necessary GitHub workflow files ``.github/workflows/gh-ci.yaml`` 
 to do this on GitHub.
 
-Since our tests use the ``MDAnalysisTests`` package, we again need to make 
-a change to this file. Change the block:
+#. Since our tests use the ``MDAnalysisTests`` package, we again need to make 
+   a change to this file. In the ``Install MDAnalysis version`` job
+   of ``.github/workflows/gh-ci.yaml`` we change the ``install-tests`` 
+   flag to ``true`` - it should now look as follows:
 
-.. code-block:: yaml
-
-	- name: Install MDAnalysis version
-	  uses: MDAnalysis/install-mdanalysis@main
-	  with:
-		version: ${{ matrix.mdanalysis-version }}
-		install-tests: false
-		installer:  mamba 
-		shell: bash  -l {0} 
-
-to 
-
-.. code-block:: yaml
+  .. code-block:: yaml
 
 	- name: Install MDAnalysis version
 	  uses: MDAnalysis/install-mdanalysis@main
 	  with:
 		version: ${{ matrix.mdanalysis-version }}
-		install-tests: true  # this needs to be true! 
+		install-tests: true  # <-- this needs to be true! 
 		installer:  mamba 
 		shell: bash  -l {0} 
 
@@ -158,7 +170,8 @@ GitHub repository to run the pre-built continuous integration provided
 by the cookiecutter. 
 
 
-**Progress: MDAKit requirements**
+Progress: MDAKit requirements
+#############################
 
 #. **✓ Uses MDAnalysis**
 #. **✓ Open source + OSI license**
