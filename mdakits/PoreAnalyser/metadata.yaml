@@ -1,0 +1,71 @@
+project_name: PoreAnalyser
+
+authors:
+  - David Seiferth
+
+maintainers:
+  - DSeiferth
+  - philbiggin
+
+description:
+    PoreAnalyser is a Python library for analysing (ion channel) pore profiles. We introduce an algorithm that employs 
+    ellipsoidal probe particles, enabling a more comprehensive characterization of pore asymmetries. A constriction is 
+    more asymmetric for a larger difference between the smaller and larger radius of the ellipsoidal probe particle.
+    Furthermore, we make use of the more accurate characterization of channel pores to refine a physical conductance 
+    model to obtain a heuristic estimate for single-channel conductance.
+
+keywords:
+  - channels
+  - conductance
+  - pore
+
+## See https://spdx.org/licenses/ for valid license specifiers
+license: LGPL-2.1-only
+
+project_home: https://github.com/DSeiferth/PoreAnalyser
+
+documentation_home: https://porefinding.readthedocs.io/en/latest/?badge=latest
+
+## str: the type of documentation available [UserGuide, API, README]
+documentation_type: UserGuide + API + README
+
+## List(str): a list of commands to use when installing the mdakit from its
+## source code.
+src_install:
+  - pip install git+https://github.com/DSeiferth/PoreAnalyser@main
+
+import_name: PoreAnalyser
+
+python_requires: ">=3.9"
+
+mdanalysis_requires: ">=2.0.0"
+
+run_tests:
+#  - pytest --pyargs MYPACKAGE
+  - git clone latest
+  - cd PoreAnalyser # tests are in PoreAnalyser/tests/
+  - python -m unittest discover 
+
+## List(str): a list of commands to use to install the necessary dependencies required
+## to run the MDAKit's tests.
+## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
+## make sure that it is appropriate for how you run tests.
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+
+## str: the organisation name the MDAKit falls under
+project_org: DSeiferth
+
+#------------------------------------------------------------
+# Optional entries
+#------------------------------------------------------------   
+install:
+  - pip install PoreAnalyser
+
+## str: the development status of the MDAKit
+## See https://pypi.org/classifiers/ for development status classifiers.
+#development_status: Production/Stable
+
+publications:
+  - https://doi.org/10.1016/j.bpj.2024.07.010
+
