@@ -1,0 +1,78 @@
+# Required entries
+## str: name of the project (the respository name)
+project_name: MDonatello
+
+## List(str): a link to the authors file (preferred) or a list of authors 
+authors:
+  - https://github.com/talagayev/MDonatello/blob/main/AUTHORS.md
+
+## List(str): a list of maintainers
+## Please note these _must_ be GitHub handles
+## The maintainers will be tagged in issues if their MDAKit is failing.
+maintainers:
+  - talagayev
+
+## str: a free form description of the mdakit
+description:
+    2D small molecule visualization for MDAnalysis with jupyter notebook
+
+## List(str): a list of keywords which describe the mdakit
+keywords:
+  - 2D
+  - visualization
+  - jupyter notebook
+  - ipywidgets
+  - rdkit
+  - display
+
+## str: the license the mdakit falls under
+## See https://spdx.org/licenses/ for valid license specifiers
+license: GPL-2.0-or-later
+
+## str: the link to the project's code
+## Please note that this is not limited to GitHub! Can be Gitlab, etc..
+project_home: https://github.com/talagayev/MDonatello
+
+## str: the link to the project's documentation
+documentation_home: https://mdonatello.readthedocs.io/
+
+## str: the type of documentation available [UserGuide, API, README]
+documentation_type: UserGuide + API
+
+#------------------------------------------------------------
+# Optional entries
+#------------------------------------------------------------   
+## List(str): a list of commands to use when installing the latest
+## release of the code. Note: only one installation method can currently
+## be defined. We suggest using mamba where possible (e.g.
+##   mamba -c conda-forge install MYPROJECT
+## for a conda package installation).
+## Here we use a simple PyPi installation:
+install:
+  - mamba install -c conda-forge mdonatello
+
+## List(str): a list of commands to use when installing the mdakit from its
+## source code.
+src_install:
+  - pip install git+https://github.com/talagayev/MDonatello
+
+## str: the package name used to import the mdakit
+import_name: mdonatello
+
+## str: a specification for the range of Python versions supported by this MDAKit
+python_requires: ">=3.9"
+
+## str: a specification for the range of MDAnalysis versions supported by this MDAKit
+mdanalysis_requires: ">=2.0.0"
+
+## List(str): a list of commands to use when attempting to run the MDAKit's tests
+run_tests:
+  - git clone latest
+  - pytest mdonatello/
+
+## str: the development status of the MDAKit
+## See https://pypi.org/classifiers/ for development status classifiers.
+development_status: "Development Status :: 3 - Alpha"
+
+## str: a link to the MDAKit's changelog
+changelog: https://github.com/talagayev/MDonatello/blob/main/CHANGELOG.md
