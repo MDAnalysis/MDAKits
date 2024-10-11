@@ -5,17 +5,17 @@ Part 2: Adding code
 *For a video demonstration of this section,* 
 `click here <https://www.youtube.com/watch?v=viCPUHkgSxg&t=48s>`_.
 
-Now that we have a shell for our MDAKit, we can begin to add our code
-to the ``rmsfkit/`` directory.
+The cookiecutter created a ``<package_name>/`` directory where the MDAKit's 
+code can live - now it's time to start adding that code!
 
-#. In this example, we are recreating the existing MDAnalysis RMSF analysis,
-   so we will simply copy and paste this analysis class into a new file
-   ``rmsfkit/rmsfkit.py``.The in-code documentation (which has been trimmed 
+#. In this example, we are recreating the existing MDAnalysis RMSF analysis, so
+   we will simply copy and paste this analysis class into a new file,
+   ``rmsfkit/rmsfkit.py``. The in-code documentation (which has been trimmed 
    here for brevity) is written in 
-   `reStructuredText syntax <https://docutils.sourceforge.io/rst.html>`_
-   for building with Sphinx later. 
+   `reStructuredText syntax <https://docutils.sourceforge.io/rst.html>`_ for 
+   building with Sphinx later. 
 
-   The contents of the file should now resemble the following code block:
+   The contents of the file now resemble the following code block:
 
    .. code-block:: python
 
@@ -101,8 +101,8 @@ to the ``rmsfkit/`` directory.
 	            raise ValueError("Some RMSF values negative; overflow " +
 	                             "or underflow occurred")
 
-#. Finally, to make our ``RMSF`` analysis class easier to access, we 
-   import it in ``__init__.py`` by adding:
+#. We have now added the ``RMSF`` analysis class to our package. Finally, to 
+   make this class easier to access, we import it in ``__init__.py`` by adding:
 
    .. code-block:: python
 
@@ -112,8 +112,8 @@ to the ``rmsfkit/`` directory.
 Progress: MDAKit requirements
 -----------------------------
 
-#. **✓ Uses MDAnalysis** - the added code uses the MDAnalysis
-   ``AnalysisBase`` class and runs on MDAnalysis ``AtomGroup`` objects!
+#. **✓ Uses MDAnalysis** - the added code uses the MDAnalysis ``AnalysisBase``
+   class, and takes MDAnalysis ``AtomGroup`` objects as inputs.
 #. **✓ Open source + OSI license**
 #. *Versioned + on a version-controlled repository*
 #. **✓ Designated authors and maintainers**
