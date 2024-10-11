@@ -20,7 +20,7 @@ for a 'registerable' kit. In brief:
 
 #. Uses MDAnalysis
 #. Open source + OSI license
-#. Versioned + on version-controlled repository
+#. Versioned + on a version-controlled repository
 #. Designated authors and maintainers
 #. (At least) minimal documentation
 #. (At least) minimal regression tests
@@ -30,7 +30,7 @@ for a 'registerable' kit. In brief:
 
 
 Below are the steps we'll go through to create our MDAKit. We'll check
-back in after each part to see how we're proressing through these
+back in after each part to see how we're progressing through these
 requirements!
 
 .. toctree::

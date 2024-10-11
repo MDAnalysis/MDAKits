@@ -23,12 +23,12 @@ to registration, is provided below.
    making-a-kit/from-cookiecutter
 
 
-Building without the cookiecutter/from an existing project
-----------------------------------------------------------
+Building without the cookiecutter (or from an existing project)
+---------------------------------------------------------------
 
 If you have an existing package you wish to register as an MDAKit,
 or if you wish to develop a Kit without use of the cookiecutter, that's
-also OK! For existing code, chances are very little restructuring is 
+also okay! For existing code, chances are very little restructuring is 
 required before registration - just make sure you meet the core 
 :ref:`requirements <requirements>` for registration. 
 
