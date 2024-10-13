@@ -90,7 +90,7 @@ run_tests:
 ## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
 ## make sure that it is appropriate for how you run tests.
 test_dependencies:
-  - mamba env update --file https://raw.githubusercontent.com/Becksteinlab/zarrtraj/main/devtools/conda-envs/test_env.yaml --name test
+  - mamba install "moto[server]>=5.0.3"
 
 ## str: the organisation name the MDAKit falls under
 project_org: Becksteinlab
