@@ -32,7 +32,7 @@ The source code of mdachecker can be installed using the following:
 
     pip install git+https://github.com/IAlibay/CheckStructure@main
 
-.. |mdachecker_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |mdachecker_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: mdachecker develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

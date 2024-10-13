@@ -35,7 +35,7 @@ The source code of maicos can be installed using the following:
 .. _`maicos authors`:
    https://gitlab.com/maicos-devel/maicos/-/blob/main/AUTHORS.rst
 
-.. |maicos_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |maicos_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: maicos develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
