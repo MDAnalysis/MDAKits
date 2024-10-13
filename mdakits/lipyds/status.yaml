@@ -7,16 +7,16 @@ badges:
   transformation: false
   writer: false
 develop:
-  install_mdakit: true
+  install_mdakit: false
   install_mdanalysis: true
   install_python: true
   install_test_deps: true
-  numfails: 60
+  numfails: 61
   run_tests: false
 latest:
   install_mdakit: true
-  install_mdanalysis: true
+  install_mdanalysis: false
   install_python: true
   install_test_deps: true
-  numfails: 0
+  numfails: 1
   run_tests: true
