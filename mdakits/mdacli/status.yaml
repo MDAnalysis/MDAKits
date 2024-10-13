@@ -14,9 +14,9 @@ develop:
   numfails: 0
   run_tests: true
 latest:
-  install_mdakit: false
-  install_mdanalysis: false
+  install_mdakit: true
+  install_mdanalysis: true
   install_python: true
   install_test_deps: true
-  numfails: 2
+  numfails: 0
   run_tests: true
