@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       python-stable: ${{ steps.get-compatible-python.outputs.stable-python }}
-      python-min: ${{ steps.get-compatible-python.outputs.oldest-pythons }}
+      python-min: ${{ steps.get-compatible-python.outputs.oldest-python }}
     steps:
       - uses: actions/setup-python@v4
         with:
