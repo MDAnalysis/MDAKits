@@ -261,9 +261,11 @@ class MDAKit:
 
         while (current_version.to_version() >= min_version.to_version()):
             for spec in pin_specifiers:
+                # Fetch the pin version string and convert it for comparison
+                pin_ver = version.TargetVersion.from_str(spec.version)
                 compatible_version = version._operators[spec.operator](
-                        current_version.to_string(),
-                        spec.version,
+                        current_version.to_version(),
+                        pin_ver.to_version(),
                 )
 
             if compatible_version:
