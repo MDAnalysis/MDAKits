@@ -206,6 +206,8 @@ is failing
 ``test_dependencies``: a list of commands for installing any dependencies required by the MDAKit’s tests.
 This is a *list of strings* (*AUTOMATIC CHECK*).
 
+- *note* : care should be taken to to override the underlying ``mamba`` environment. For example, this should _not_ attempt to do a ``mamba env update`` call as it will overwrite the base mamba environment and one ends up with a conda environment without the base mdakit dependencies.  
+
 
 
 *Optional* entries 
