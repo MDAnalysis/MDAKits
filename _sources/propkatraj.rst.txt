@@ -39,7 +39,7 @@ The source code of propkatraj can be installed using the following:
 .. _`propkatraj authors`:
    https://github.com/Becksteinlab/propkatraj/blob/main/AUTHORS
 
-.. |propkatraj_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |propkatraj_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: propkatraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

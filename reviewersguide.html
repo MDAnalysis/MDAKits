@@ -312,6 +312,9 @@ to continue improving their tests in the future.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">test_dependencies</span></code>: a list of commands for installing any dependencies required by the MDAKit’s tests.
 This is a <em>list of strings</em> (<em>AUTOMATIC CHECK</em>).</p>
+<ul class="simple">
+<li><p><em>note</em> : care should be taken to to override the underlying <code class="docutils literal notranslate"><span class="pre">mamba</span></code> environment. For example, this should _not_ attempt to do a <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">env</span> <span class="pre">update</span></code> call as it will overwrite the base mamba environment and one ends up with a conda environment without the base mdakit dependencies.</p></li>
+</ul>
 </section>
 <section id="optional-entries">
 <h4><em>Optional</em> entries<a class="headerlink" href="#optional-entries" title="Link to this heading"></a></h4>
