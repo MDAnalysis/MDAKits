@@ -88,7 +88,7 @@ jobs:
           add-pip-as-python-dependency: true
           architecture: x64
           use-mamba: true
-          miniforge-variant: Mambaforge
+          miniforge-version: latest
           channels: conda-forge, defaults
           channel-priority: flexible
           auto-update-conda: true
