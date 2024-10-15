@@ -82,7 +82,7 @@ jobs:
           
       - id: install-conda-env
         name: install-conda-env
-        uses: conda-incubator/setup-miniconda@v2
+        uses: conda-incubator/setup-miniconda@v3
         with:
           python-version: ${{ env.PYVER }}
           add-pip-as-python-dependency: true
