@@ -20,7 +20,7 @@ keywords:
   - pore
 
 ## See https://spdx.org/licenses/ for valid license specifiers
-license: LGPL-2.1-only
+license: LGPL-2.1-or-later
 
 project_home: https://github.com/DSeiferth/PoreAnalyser
 
