@@ -41,7 +41,6 @@ python_requires: ">=3.9"
 mdanalysis_requires: ">=2.0.0"
 
 run_tests:
-#  - pytest --pyargs MYPACKAGE
   - git clone latest
   - cd PoreAnalyser # tests are in PoreAnalyser/tests/
   - python -m unittest discover 
