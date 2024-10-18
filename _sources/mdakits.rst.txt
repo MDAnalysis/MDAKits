@@ -33,6 +33,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - clustering, machine-learning, algorithms, molecular-dynamics, protein-refinement
       - `MDANCE authors`_
       - |MDANCE_latest| |MDANCE_develop|
+    * - :ref:`MDonatello`
+      - 2D, visualization, jupyter notebook, ipywidgets, rdkit, display
+      - `MDonatello authors`_
+      - |MDonatello_latest| |MDonatello_develop|
     * - :ref:`mdaencore`
       - ensemble, similarity, covariance, PCA
       - `mdaencore authors`_
@@ -119,6 +123,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    waterdynamics
    transport-analysis
    MDANCE
+   MDonatello
    mdaencore
    membrane-curvature
    maicos
@@ -182,6 +187,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |MDANCE_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: MDANCE develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`MDonatello authors`:
+   https://github.com/talagayev/MDonatello/blob/main/AUTHORS.md
+
+.. |MDonatello_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: MDonatello develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |MDonatello_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: MDonatello develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`mdaencore authors`:

@@ -1,0 +1,46 @@
+.. _MDonatello:
+
+************************************************
+MDonatello
+************************************************
+
+| 🖋️ **Authors**: `MDonatello authors`_
+| 🏠 **Project home:** https://github.com/talagayev/MDonatello
+| 📖 **Documentation:** https://mdonatello.readthedocs.io/
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** 2D, visualization, jupyter notebook, ipywidgets, rdkit, display
+| 🚀 **Development status:** Development Status :: 3 - Alpha
+| 📜 **Changelog:** https://github.com/talagayev/MDonatello/blob/main/CHANGELOG.md
+| 🧪 **Tests (latest):** |MDonatello_latest| 
+| 🧪 **Tests (develop):** |MDonatello_develop| 
+| **Description:**
+| *2D small molecule visualization for MDAnalysis with jupyter notebook*
+
+
+
+Installation instructions
+=========================
+
+The latest version of MDonatello can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install -c conda-forge mdonatello
+
+The source code of MDonatello can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/talagayev/MDonatello
+
+.. _`MDonatello authors`:
+   https://github.com/talagayev/MDonatello/blob/main/AUTHORS.md
+
+.. |MDonatello_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: MDonatello develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |MDonatello_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: MDonatello develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
