@@ -20,7 +20,7 @@ repositories such as the Python Package Index (`PyPi <https://pypi.org/>`_) or
 through these services is highly encouraged. 
 
 However, your code **does** need to be installable from source. You'll specify 
-the commands for this in the ``scr_install`` field of your ``metadata.yaml`` 
+the commands for this in the ``src_install`` field of your ``metadata.yaml`` 
 file (see the :ref:`metadata.yaml documentation <specification>`). This will 
 then be made available to users on your MDAKit's page on the
 :ref:`Registry <mdakits>`.
