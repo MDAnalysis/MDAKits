@@ -2,8 +2,8 @@
 Part 2: Adding code
 *******************
 
-*For a video demonstration of this section,* 
-`click here <https://www.youtube.com/watch?v=viCPUHkgSxg&t=48s>`_.
+*See our* `YouTube tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg&t=48s>`_
+*for a video demonstration of this section.*
 
 The cookiecutter created a ``<package_name>/`` directory where the MDAKit's 
 code can live - now it's time to start adding that code!

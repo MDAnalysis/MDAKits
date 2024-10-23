@@ -2,8 +2,8 @@
 Part 6: Making an initial release
 *********************************
 
-*For a video demonstration of this section,* 
-`click here  <https://www.youtube.com/watch?v=viCPUHkgSxg&t=247s>`_.
+*See our* `YouTube tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg&t=247s>`_
+*for a video demonstration of this section.*
 
 While using git does satisfy the requirement that our MDAKit code be versioned,
 it is a good idea to make numbered releases with (human-understandable) version

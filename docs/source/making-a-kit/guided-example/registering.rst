@@ -4,8 +4,8 @@
 Part 7: Registering an MDAKit
 *****************************
 
-*For a video demonstration of this section,* 
-`click here  <https://www.youtube.com/watch?v=viCPUHkgSxg&t=287s>`_.
+*See our* `YouTube tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg&t=287s>`_
+*for a video demonstration of this section.*
 
 The MDAKit registration is the same regardless of how the Kit was created.
 When registering your own Kit, be sure to also read the general information in 

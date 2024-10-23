@@ -2,8 +2,8 @@
 Part 4: Pushing to GitHub
 *************************
 
-*For a video demonstration of this section,* 
-`click here  <https://www.youtube.com/watch?v=viCPUHkgSxg&t=114s>`_.
+*See our* `YouTube tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg&t=114s>`_
+*for a video demonstration of this section.*
 
 Putting the MDAKit on GitHub will fulfill the requirement that the Kit be hosted
 on a version-controlled repository, and finalise the continuous integration set

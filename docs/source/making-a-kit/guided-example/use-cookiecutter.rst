@@ -2,8 +2,8 @@
 Part 1: Using the MDAKit cookicutter
 ************************************
 
-*For a video demonstration of this section,* 
-`click here <https://www.youtube.com/watch?v=viCPUHkgSxg&t=38s>`_.
+*See our* `YouTube tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg&t=38s>`_
+*for a video demonstration of this section.*
 
 The **MDAKits cookiecutter** (a `Cookiecutter tool`_) can be used to rapidly 
 develop a FAIR-compliant MDAKit by generating placeholder code for 

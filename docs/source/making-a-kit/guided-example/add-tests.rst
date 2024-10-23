@@ -2,8 +2,8 @@
 Part 3: Adding tests
 ********************
 
-*For a video demonstration of this section,* 
-`click here  <https://www.youtube.com/watch?v=viCPUHkgSxg&t=72s>`_.
+*See our* `YouTube tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg&t=72s>`_
+*for a video demonstration of this section.*
 
 The cookiecutter set up the framework for tests in ``<package_name>/tests``. 
 Here we demonstrate the process for adding tests, running them locally, and

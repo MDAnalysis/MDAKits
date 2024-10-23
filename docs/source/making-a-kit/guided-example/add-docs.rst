@@ -2,8 +2,8 @@
 Part 5: Providing documentation
 *******************************
 
-*For a video demonstration of this section,* 
-`click here  <https://www.youtube.com/watch?v=viCPUHkgSxg&t=153s>`_.
+*See our* `YouTube tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg&t=153s>`_
+*for a video demonstration of this section.*
 
 When registering an MDAKit, you'll be asked to identify which of the following
 (or combination thereof) best describes your documentation (*note that these are
