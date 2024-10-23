@@ -4,8 +4,10 @@ Step-by-step registration process
 
 This page lists the step-by-step process for registering an MDAKit.
 
-*For an example, see* :ref:`example-registration` *from the guided 
-MDAKit cookiecutter example.*
+.. SeeAlso::
+    For an example, see :ref:`example-registration` from the guided 
+    MDAKit cookiecutter example.
+
 
 #. Create a fork of the MDAKit repository, 
    https://github.com/MDAnalysis/mdakits.

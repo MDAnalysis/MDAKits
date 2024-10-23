@@ -9,8 +9,8 @@ While using git does satisfy the requirement that our MDAKit code be versioned,
 it is a good idea to make numbered releases with (human-understandable) version
 numbers to easily track your code as changes and improvements are made.
 
-The MDAKit cookiecutter uses the 
-`versioneer utility <https://github.com/python-versioneer/python-versioneer>`_ 
+The MDAKit cookiecutter uses 
+`versioningit <https://versioningit.readthedocs.io/en/stable/index.html>`_
 for version management. In brief, software versions are set through 
 `git tags <https://git-scm.com/book/en/v2/Git-Basics-Tagging>`_.
 
@@ -24,7 +24,11 @@ for version management. In brief, software versions are set through
 
 	>>> import rmsfkit  
 	>>> rmsfkit.__version__  
-	'0+untagged.3.g3eed836'
+	'0.0.0+3.g0b64a6c'
+
+   *Note: As commits are added, the version is updated with the commit hash. The
+   exact output here differs between the YouTube tutorial and video embedded 
+   above, and from what you will see.*
 
    Bump this to a ``0.1.0`` in preparation for an initial release on GitHub 
    using a `git tag`:
