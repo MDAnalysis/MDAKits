@@ -56,6 +56,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',
     'sphinx.ext.extlinks',
+    'sphinxcontrib.youtube',
 ]
 
 autosummary_generate = True

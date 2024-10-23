@@ -7,7 +7,11 @@ Guided Example: Building an RMSF analysis Kit
 In this section, we provide a guided example for creating an MDAKit
 using the `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io>`_.
 A `video walk-through <https://www.youtube.com/watch?v=viCPUHkgSxg>`_ 
-of this tutorial is available on YouTube.
+of this tutorial is available on YouTube:
+
+.. youtube:: viCPUHkgSxg
+   :align: center
+
 
 We will create a kit for RMSF analysis, replicating the functionality 
 of the `RMSF analysis class <https://docs.mdanalysis.org/stable/documentation_pages/analysis/rms.html#MDAnalysis.analysis.rms.RMSF>`_ 
