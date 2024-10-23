@@ -24,6 +24,13 @@ additional resources about MDAKits and how to write and/or add your own.
 
 .. toctree::
    :maxdepth: 1
+   :caption: About
+
+   about
+
+
+.. toctree::
+   :maxdepth: 1
    :caption: Resources for MDAKit Authors
 
    makingakit
@@ -36,7 +43,6 @@ additional resources about MDAKits and how to write and/or add your own.
    :maxdepth: 1
    :caption: Other Resources
 
-   about
    reviewersguide
    
 
