@@ -11,8 +11,11 @@ Welcome to the MDAKit registry!
 Showcased here are a list of community generated packages which extend the
 functionality of the `MDAnalysis library`_.
 
-Follow the links below to begin exploring the available MDAKits, or view
-additional resources about MDAKits and how to write and/or add your own.
+For more information about MDAKits and the motivation behind them, please see 
+the :ref:`about-mdakits` page. 
+
+To begin exploring the :ref:`available MDAKits <mdakits>`, or view additional 
+resources on MDAKits and how to write and/or add your own, follow the links below!
 
 
 .. toctree::
