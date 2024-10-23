@@ -7,7 +7,7 @@ Maintaining an MDAKit
 .. note::   
    This section is still under construction. If you have topics you would
    like to see covered here, please get in touch via 
-   `MDAnalysis Github Discussion`_.
+   `MDAnalysis Github Discussions`_.
 
 There are a variety of reasons a kit may behave unexpectedly after being 
 submitted to the registry. Apart from actively developing the kit, changes in 
