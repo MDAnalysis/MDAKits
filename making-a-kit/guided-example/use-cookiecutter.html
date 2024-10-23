@@ -1,0 +1,302 @@
+
+
+
+  
+
+
+
+  
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../../../../_static/mdakits-logo.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 1: Using the MDAKit cookicutter &mdash; MDAKits Registry  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/site.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  
+    <link rel="shortcut icon" href="../../_static/mdakits-logo.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="../../_static/main.js?v=71e46913"></script>
+      <script src="../../_static/js/versions.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 2: Adding code" href="add-code.html" />
+    <link rel="prev" title="Guided Example: Building an RMSF analysis Kit" href="../from-cookiecutter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../../index.html">
+  
+    <img src="../../_static/mdakits-logo-1563x1563.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">MDAKit Registry</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About MDAKits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources for MDAKit Authors</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../makingakit.html">Making an MDAKit</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../makingakit.html#building-a-kit-using-the-cookiecutter">Building a Kit using the cookiecutter</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../from-cookiecutter.html">Guided Example: Building an RMSF analysis Kit</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Part 1: Using the MDAKit cookicutter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-code.html">Part 2: Adding code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-tests.html">Part 3: Adding tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="to-github.html">Part 4: Pushing to GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-docs.html">Part 5: Providing documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="make-release.html">Part 6: Making an initial release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="registering.html">Part 7: Registering an MDAKit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../makingakit.html#building-without-the-cookiecutter-or-from-an-existing-project">Building without the cookiecutter (or from an existing project)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../addingakit.html">Adding an MDAKit to the Registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../maintainingakit.html">Maintaining an MDAKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reviewersguide.html">Guide for reviewers</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MDAKits Registry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../makingakit.html">Making an MDAKit</a></li>
+          <li class="breadcrumb-item"><a href="../from-cookiecutter.html">Guided Example: Building an RMSF analysis Kit</a></li>
+      <li class="breadcrumb-item active">Part 1: Using the MDAKit cookicutter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/making-a-kit/guided-example/use-cookiecutter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="part-1-using-the-mdakit-cookicutter">
+<h1>Part 1: Using the MDAKit cookicutter<a class="headerlink" href="#part-1-using-the-mdakit-cookicutter" title="Link to this heading"></a></h1>
+<p><em>See our</em> <a class="reference external" href="https://www.youtube.com/watch?v=viCPUHkgSxg&amp;t=38s">YouTube tutorial</a>
+<em>for a video demonstration of this section.</em></p>
+<p>The <strong>MDAKits cookiecutter</strong> (a <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>) can be used to rapidly
+develop a FAIR-compliant MDAKit by generating placeholder code for
+documentation, testing and installation.</p>
+<p>More information on its usage is can be found in the
+<a class="reference external" href="https://cookiecutter-mdakit.readthedocs.io/en/latest/">MDAKit cookiecutter documentation</a>, but in short using the cookiecutter
+involved running a command line prompt and then responding to a series of
+subsequent prompts. Below, we demonstrate this process for creating an
+<code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> project.</p>
+<ol class="arabic">
+<li><p><strong>Initial requirements</strong>: to use the Cookiecutter, you will need a GitHub
+account, and an environment with Python 3.10+ and the <a class="reference external" href="https://cookiecutter.readthedocs.io/en/stable/">Cookiecutter tool</a>
+installed.</p></li>
+<li><p>The following command and responses will create a template for an
+<code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> project. Note that some prompts have been left blank, accepting
+the default response.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>cookiecutter<span class="w"> </span>gh:MDAnalysis/cookiecutter-mdakit
+
+project_name<span class="w"> </span><span class="o">(</span>ProjectName<span class="o">)</span>:<span class="w"> </span>rmsfkit
+repo_name<span class="w"> </span><span class="o">(</span>rmsfkit<span class="o">)</span>:
+package_name<span class="w"> </span><span class="o">(</span>rmsfkit<span class="o">)</span>:
+description<span class="w"> </span><span class="o">(</span>A<span class="w"> </span>short<span class="w"> </span>description<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>project.<span class="o">)</span>:<span class="w"> </span>A<span class="w"> </span>package<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>RMSF<span class="w"> </span>analysis<span class="w"> </span>on<span class="w"> </span>molecular<span class="w"> </span>dynamics<span class="w"> </span>data.
+github_username<span class="w"> </span><span class="o">(</span>Your<span class="w"> </span>personal<span class="w"> </span>GitHub<span class="w"> </span>username<span class="o">)</span>:<span class="w"> </span>myusername
+github_host_account<span class="w"> </span><span class="o">(</span>GitHub<span class="w"> </span>account<span class="w"> </span><span class="k">for</span><span class="w"> </span>hosting<span class="w"> </span>rmsfkit<span class="w"> </span><span class="o">(</span>e.g.<span class="w"> </span>myusername<span class="w"> </span>or<span class="w"> </span>an<span class="w"> </span>organization<span class="w"> </span>account<span class="o">)</span>.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>myusername<span class="o">)</span>:
+author_name<span class="w"> </span><span class="o">(</span>Your<span class="w"> </span>name<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>your<span class="w"> </span>organization/company/team<span class="o">))</span>:<span class="w"> </span>Firstname<span class="w"> </span>Lastname
+author_email<span class="w"> </span><span class="o">(</span>Your<span class="w"> </span>email<span class="w"> </span><span class="o">(</span>or<span class="w"> </span>your<span class="w"> </span>organization/company/team<span class="o">))</span>:<span class="w"> </span>myemail@email-provider.com
+Select<span class="w"> </span>dependency_source:
+<span class="m">1</span><span class="w"> </span>-<span class="w"> </span>Prefer<span class="w"> </span>conda-forge<span class="w"> </span>over<span class="w"> </span>the<span class="w"> </span>default<span class="w"> </span>anaconda<span class="w"> </span>channel<span class="w"> </span>with<span class="w"> </span>pip<span class="w"> </span>fallback
+<span class="m">2</span><span class="w"> </span>-<span class="w"> </span>Prefer<span class="w"> </span>default<span class="w"> </span>anaconda<span class="w"> </span>channel<span class="w"> </span>with<span class="w"> </span>pip<span class="w"> </span>fallback
+<span class="m">3</span><span class="w"> </span>-<span class="w"> </span>Dependencies<span class="w"> </span>from<span class="w"> </span>pip<span class="w"> </span>only<span class="w"> </span><span class="o">(</span>no<span class="w"> </span>conda<span class="o">)</span>
+Choose<span class="w"> </span>from<span class="w"> </span><span class="o">[</span><span class="m">1</span>/2/3<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>:
+Select<span class="w"> </span>include_ReadTheDocs:
+<span class="m">1</span><span class="w"> </span>-<span class="w"> </span>y
+<span class="m">2</span><span class="w"> </span>-<span class="w"> </span>n
+Choose<span class="w"> </span>from<span class="w"> </span><span class="o">[</span><span class="m">1</span>/2<span class="o">]</span><span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>:
+template_analysis_class<span class="w"> </span><span class="o">(</span>Class<span class="w"> </span>name<span class="w"> </span>to<span class="w"> </span>template<span class="w"> </span><span class="o">(</span>e.g.<span class="w"> </span>Rmsfkit<span class="w"> </span><span class="o">)</span>.<span class="w"> </span>Press<span class="w"> </span>Enter<span class="w"> </span>to<span class="w"> </span>skip<span class="w"> </span>including<span class="w"> </span>analysis<span class="w"> </span>templates<span class="o">)</span>:
+</pre></div>
+</div>
+<p>Details on these options can be found on the MDAKit cookiecutter
+documentation <a class="reference external" href="cookiecutteroptions">here</a>. For <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code>, we
+have opted to <em>‘include ReadTheDocs’</em> (so that we can use it to host our
+documentation later), and <em>‘not create a template Analysis class’</em> for our
+code (since we will be copying the existing MDAnalysis RMSF code).</p>
+</li>
+</ol>
+<p>A new git repository named <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> has been generated. Navigating into this
+directory, we find a number of files and subdirectories. The <a class="reference external" href="cookiecutterusage">cookiecutter
+documentation</a> provides more information on these, but some
+to take note of now:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> – a text file containing the license information (GLPv2+ by
+default).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code> – a template text file for listing code authors as each new
+contribution is made. Auto-populated with your name as the initial project
+creator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">README.md</span></code> – a text file containing the project description and other
+useful information. This will be the landing page content rendered on GitHub.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> – a configuration file with information for packaging (and
+other tools).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rmsfkit/</span></code> – folder containing template files for a python package. This is
+where the source code (and tests) will live.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> and <code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code> – text files containing sample
+community guidelines and autogenerated instructions for reporting issues,
+contributing, etc (once the code is on GitHub).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/</span></code> – folder containing documentation templates and configuration files
+for building the documentation.</p></li>
+</ul>
+<p>We’ll address some further files as they become relevant.</p>
+<section id="progress-mdakit-requirements">
+<h2>Progress: MDAKit requirements<a class="headerlink" href="#progress-mdakit-requirements" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><em>Uses MDAnalysis</em></p></li>
+<li><p><strong>✓ Open source + OSI license</strong> – the default GPLv2 license falls under
+OSI. If you wish to choose another license, you can replace the default
+<code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file with another; see <a class="reference internal" href="../license.html#licensing"><span class="std std-ref">Licensing</span></a> for more information.</p></li>
+<li><p><em>Versioned + on a version-controlled repository</em> – the cookiecutter has set
+up versioning with git; in a later step, we’ll add it to GitHub to complete
+this requirement.</p></li>
+<li><p><strong>✓ Designated authors and maintainers</strong> – in the autogenerated
+<code class="docutils literal notranslate"><span class="pre">AUTHORS.md</span></code> file, assuming that the maintained and author are the same
+person. Future authors will also be added here.</p></li>
+<li><p><em>(At least) minimal documentation</em> – the autogenerated <code class="docutils literal notranslate"><span class="pre">README.md</span></code> does
+contain the Kit description, which is a start. We will be adding more formal
+documentation in a later step.</p></li>
+<li><p><em>(At least) minimal regression tests</em></p></li>
+<li><p><strong>✓ Installable as a standard package</strong> – the configuration file
+<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> and the file structure set up in <code class="docutils literal notranslate"><span class="pre">rmsfkit/</span></code> will allow
+this.</p></li>
+<li><p><strong>✓ (Recommended) community information available</strong> – provided with
+<code class="docutils literal notranslate"><span class="pre">CODE_OF_CONDUCT.md</span></code> and <code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code>. Adjust these files to suit
+your needs.</p></li>
+<li><p><em>(Recommended) on a package distribution platform</em></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../from-cookiecutter.html" class="btn btn-neutral float-left" title="Guided Example: Building an RMSF analysis Kit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="add-code.html" class="btn btn-neutral float-right" title="Part 2: Adding code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2024, .</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,5 +1,7 @@
 .. -*- coding: utf-8 -*-
 
+.. _about-mdakits:
+
 *************
 About MDAKits
 *************
@@ -27,7 +29,7 @@ requirements**:
 #. Minimal documentation is provided (what your code does, how to install it,
    and how to use it)
 #. At least minimal regression tests are present; continuous integration is encouraged
-#. The code is installable as a standard package
+#. The source code is installable as a standard package
 
 It is also highly encouraged that the MDAKit also satisfies:
 

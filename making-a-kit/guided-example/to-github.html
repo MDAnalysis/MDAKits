@@ -1,0 +1,249 @@
+
+
+
+  
+
+
+
+  
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../../../../_static/mdakits-logo.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 4: Pushing to GitHub &mdash; MDAKits Registry  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/site.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  
+    <link rel="shortcut icon" href="../../_static/mdakits-logo.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="../../_static/main.js?v=71e46913"></script>
+      <script src="../../_static/js/versions.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 5: Providing documentation" href="add-docs.html" />
+    <link rel="prev" title="Part 3: Adding tests" href="add-tests.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../../index.html">
+  
+    <img src="../../_static/mdakits-logo-1563x1563.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">MDAKit Registry</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About MDAKits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources for MDAKit Authors</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../makingakit.html">Making an MDAKit</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../makingakit.html#building-a-kit-using-the-cookiecutter">Building a Kit using the cookiecutter</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../from-cookiecutter.html">Guided Example: Building an RMSF analysis Kit</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="use-cookiecutter.html">Part 1: Using the MDAKit cookicutter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-code.html">Part 2: Adding code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-tests.html">Part 3: Adding tests</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Part 4: Pushing to GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-docs.html">Part 5: Providing documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="make-release.html">Part 6: Making an initial release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="registering.html">Part 7: Registering an MDAKit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../makingakit.html#building-without-the-cookiecutter-or-from-an-existing-project">Building without the cookiecutter (or from an existing project)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../addingakit.html">Adding an MDAKit to the Registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../maintainingakit.html">Maintaining an MDAKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reviewersguide.html">Guide for reviewers</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MDAKits Registry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../makingakit.html">Making an MDAKit</a></li>
+          <li class="breadcrumb-item"><a href="../from-cookiecutter.html">Guided Example: Building an RMSF analysis Kit</a></li>
+      <li class="breadcrumb-item active">Part 4: Pushing to GitHub</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/making-a-kit/guided-example/to-github.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="part-4-pushing-to-github">
+<h1>Part 4: Pushing to GitHub<a class="headerlink" href="#part-4-pushing-to-github" title="Link to this heading"></a></h1>
+<p><em>See our</em> <a class="reference external" href="https://www.youtube.com/watch?v=viCPUHkgSxg&amp;t=114s">YouTube tutorial</a>
+<em>for a video demonstration of this section.</em></p>
+<p>Putting the MDAKit on GitHub will fulfill the requirement that the Kit be hosted
+on a version-controlled repository, and finalise the continuous integration set
+up in the previous step.</p>
+<p>During the cookiecutter generation process, the target GitHub repository
+<code class="docutils literal notranslate"><span class="pre">&lt;repo_name&gt;</span></code> was identified, and inserted into the workflows configuration as
+well as into the <code class="docutils literal notranslate"><span class="pre">README.md</span></code> file.</p>
+<ol class="arabic">
+<li><p>Add this repository as a remote to the local git repository, e.g.:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:myusername/rmsfkit
+</pre></div>
+</div>
+<p>(substituting <code class="docutils literal notranslate"><span class="pre">myusername</span></code> for your GitHub username). Make sure that this
+repository exists on GitHub and is <em>empty</em>.</p>
+</li>
+<li><p>Then, push the local code to GitHub:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> repository on GitHub will now be up-to-date the local repository
+you have been working on. Navigate to <em>Actions</em> on GitHub to see the status of
+the tests. If all was done correctly in the previous sections, these will all
+pass!</p>
+<section id="progress-mdakit-requirements">
+<h2>Progress: MDAKit requirements<a class="headerlink" href="#progress-mdakit-requirements" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>✓ Uses MDAnalysis</strong></p></li>
+<li><p><strong>✓ Open source + OSI license</strong></p></li>
+<li><p><strong>✓ Versioned + on a version-controlled repository</strong> – our code is
+now on GitHub.</p></li>
+<li><p><strong>✓ Designated authors and maintainers</strong></p></li>
+<li><p><em>(At least) minimal documentation</em></p></li>
+<li><p><strong>✓ (At least) minimal regression tests</strong> – CI should be up and
+running, and the tests added in the last step all passing.</p></li>
+<li><p><strong>✓ Installable as a standard package</strong></p></li>
+<li><p><strong>✓ (Recommended) community information available</strong></p></li>
+<li><p><em>(Recommended) on a package distribution platform</em></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="add-tests.html" class="btn btn-neutral float-left" title="Part 3: Adding tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="add-docs.html" class="btn btn-neutral float-right" title="Part 5: Providing documentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2024, .</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
