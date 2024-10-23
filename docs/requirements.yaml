@@ -9,6 +9,7 @@ dependencies:
 
     - sphinx
     - mdanalysis-sphinx-theme
+    - sphinxcontrib-youtube
 
     - pyyaml
     - pydantic
