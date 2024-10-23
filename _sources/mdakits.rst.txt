@@ -218,7 +218,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: membrane-curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: membrane-curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -248,7 +248,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: pytim develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |pytim_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |pytim_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: pytim develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -267,7 +267,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: ProLIF develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |ProLIF_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: ProLIF develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -360,7 +360,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: zarrtraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |zarrtraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |zarrtraj_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: zarrtraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -393,7 +393,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: openmm-mdanalysis-reporter develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |openmm-mdanalysis-reporter_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |openmm-mdanalysis-reporter_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: openmm-mdanalysis-reporter develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
