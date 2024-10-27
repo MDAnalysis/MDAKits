@@ -45,7 +45,7 @@ The source code of zarrtraj can be installed using the following:
    :alt: zarrtraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |zarrtraj_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |zarrtraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: zarrtraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
