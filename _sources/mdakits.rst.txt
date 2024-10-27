@@ -378,7 +378,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`domhmm authors`:
    https://github.com/BioMemPhys-FAU/domhmm/blob/main/AUTHORS.md
 
-.. |domhmm_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+.. |domhmm_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: domhmm develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

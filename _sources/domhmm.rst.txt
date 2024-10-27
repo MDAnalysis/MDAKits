@@ -24,6 +24,11 @@ domhmm
 Installation instructions
 =========================
 
+The latest version of domhmm can be installed using the following:
+
+.. code-block:: bash
+
+    pip install domhmm
 
 The source code of domhmm can be installed using the following:
 
@@ -34,7 +39,7 @@ The source code of domhmm can be installed using the following:
 .. _`domhmm authors`:
    https://github.com/BioMemPhys-FAU/domhmm/blob/main/AUTHORS.md
 
-.. |domhmm_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+.. |domhmm_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: domhmm develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
