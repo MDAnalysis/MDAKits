@@ -21,7 +21,7 @@ kit dependencies, or even Python itself, can introduce/deprecate new/old
 functionality. 
 
 As part of the MDAKit Registry, your kits' tests (as specified in 
-``metadata.yaml``) are automatically rerun each week, so that you (and potential 
+``metadata.yaml``) are automatically rerun twice each week, so that you (and potential 
 users) have assurance that your code still works as intended, or are notified
 when it does not. 
 
