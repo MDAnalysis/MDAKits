@@ -8,7 +8,7 @@ If an MDAKit fails the weekly CI
 ================================
 
 In the event that a kit no longer passes its tests, an issue is automatically
-raised on the `MDAKits GitHub`_, the maintainers (as identified in 
+raised on the `MDAKits Registry GitHub issue tracker`_, the maintainers (as identified in 
 ``metadata.yaml``) are notified, and the kit's CI badges appearing on the 
 :ref:`Registry <mdakits>` will be updated.
 
