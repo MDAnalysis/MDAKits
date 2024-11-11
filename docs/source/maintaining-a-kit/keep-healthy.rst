@@ -116,7 +116,7 @@ intended.
 
 `SPEC0 <https://scientific-python.org/specs/spec-0000/>`_ is a standard outlining 
 a timeline of which versions of Python and common dependencies in the Scientific
-Python ecosystem should be supported and compatible with each other. You can
+Python ecosystem should minimally aim to be supported and compatible with each other. You can
 follow SPEC0 to determine which Python/dependency versions you should aim to
 support, and which old versions you can drop.
 
