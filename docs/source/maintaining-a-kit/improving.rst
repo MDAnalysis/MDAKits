@@ -45,7 +45,7 @@ MDAKit's registry - for example, to expand the description, add a publication,
 or update the installation instructions.
 
 If this is the case, simply edit your kit's ``metadata.yaml`` in your fork of 
-the ``MDAKits`` repository, then make a new PR. The MDAKits team will then 
+the ``MDAKits`` repository, then make a new Pull Request (PR). The MDAKits team will then 
 review and merge your PR to apply the changes.
 
 
