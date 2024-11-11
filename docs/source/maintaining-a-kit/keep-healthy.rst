@@ -84,7 +84,7 @@ Keeping an eye out for upstream changes
 Avoid failing tests before they happen!
 
 Just as you are likely to keep improving your kit, the upstream packages on
-which is relies - including MDAnalysis - will also continue to evolve. 
+which it relies - including MDAnalysis - will also continue to evolve. 
 Sometimes, this means that things your kit relies on will no longer work. 
 Keeping an eye out for such changes will allow you to modify your kit 
 appropriately *before* the upstream change is fully applied and your code 
