@@ -34,8 +34,8 @@ MDAKit after registration.
 .. toctree::
    :maxdepth: 2
 
-   maintaining-a-kit/keep-healthy
-   maintaining-a-kit/improving
+   maintaining_a_kit/keep-healthy
+   maintaining_a_kit/improving
 
 
 .. _`MDAnalysis GitHub Discussions`:
