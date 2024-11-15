@@ -1,0 +1,49 @@
+.. _helanal:
+
+************************************************
+helanal
+************************************************
+
+| 🖋️ **Authors**: `helanal authors`_
+| 🏠 **Project home:** https://github.com/MDAnalysis/helanal/
+| 📖 **Documentation:** https://helanal.readthedocs.io
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** protein, structure, helix
+| 🚀 **Development status:** Production/Stable
+| 📜 **Changelog:** https://github.com/MDAnalysis/helanal/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://doi.org/10.1002/bip.1967.360050708
+|    * https://doi.org/10.1080/07391102.2000.10506570
+| 🧪 **Tests (latest):** |helanal_latest| 
+| 🧪 **Tests (develop):** |helanal_develop| 
+| **Description:**
+| *helanal contains code to analyse protein helicies based on their Cα atoms, quantifying structural features such as local bending angles and global axes.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of helanal can be installed using the following:
+
+.. code-block:: bash
+
+    pip install helanal
+
+The source code of helanal can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/MDAnalysis/helanal@main
+
+.. _`helanal authors`:
+   https://github.com/MDAnalysis/helanal/blob/main/AUTHORS.md
+
+.. |helanal_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: helanal develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |helanal_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: helanal develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

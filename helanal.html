@@ -22,7 +22,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mdacli &mdash; MDAKits Registry  documentation</title>
+  <title>helanal &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="ProLIF" href="ProLIF.html" />
-    <link rel="prev" title="pytim" href="pytim.html" /> 
+    <link rel="next" title="mda-tui" href="mda-tui.html" />
+    <link rel="prev" title="zarrtraj" href="zarrtraj.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -95,10 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="maicos.html">maicos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdachecker.html">mdachecker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytim.html">pytim</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">mdacli</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="mdacli.html">mdacli</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ProLIF.html">ProLIF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdakit-sasa.html">mdakit-sasa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solvation-analysis.html">solvation-analysis</a></li>
@@ -109,7 +106,10 @@
 <li class="toctree-l2"><a class="reference internal" href="propkatraj.html">propkatraj</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdahole2.html">mdahole2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zarrtraj.html">zarrtraj</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helanal.html">helanal</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">helanal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="mda-tui.html">mda-tui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="domhmm.html">domhmm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openmm-mdanalysis-reporter.html">openmm-mdanalysis-reporter</a></li>
@@ -148,9 +148,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">mdacli</li>
+      <li class="breadcrumb-item active">helanal</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/mdacli.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/helanal.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -158,29 +158,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mdacli">
-<span id="id1"></span><h1>mdacli<a class="headerlink" href="#mdacli" title="Link to this heading"></a></h1>
+  <section id="helanal">
+<span id="id1"></span><h1>helanal<a class="headerlink" href="#helanal" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/MDAnalysis/mdacli/blob/main/docs/AUTHORS.rst">mdacli authors</a></div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/MDAnalysis/mdacli">https://github.com/MDAnalysis/mdacli</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://mdacli.readthedocs.io/">https://mdacli.readthedocs.io/</a></div>
-<div class="line">⚖️ <strong>License:</strong> GPLv3</div>
-<div class="line">🔑 <strong>Keywords:</strong> command line interface, molecular-dynamics</div>
-<div class="line">🚀 <strong>Development status:</strong> Beta</div>
-<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/MDAnalysis/mdacli/blob/main/docs/CHANGELOG.rst">https://github.com/MDAnalysis/mdacli/blob/main/docs/CHANGELOG.rst</a></div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="mdacli develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="mdacli develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
+<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/MDAnalysis/helanal/blob/main/AUTHORS.md">helanal authors</a></div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/MDAnalysis/helanal/">https://github.com/MDAnalysis/helanal/</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://helanal.readthedocs.io">https://helanal.readthedocs.io</a></div>
+<div class="line">⚖️ <strong>License:</strong> GPL-2.0-or-later</div>
+<div class="line">🔑 <strong>Keywords:</strong> protein, structure, helix</div>
+<div class="line">🚀 <strong>Development status:</strong> Production/Stable</div>
+<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/MDAnalysis/helanal/blob/main/CHANGELOG.md">https://github.com/MDAnalysis/helanal/blob/main/CHANGELOG.md</a></div>
+<div class="line">📑 <strong>Publications:</strong></div>
+<div class="line-block">
+<div class="line">* <a class="reference external" href="https://doi.org/10.1002/bip.1967.360050708">https://doi.org/10.1002/bip.1967.360050708</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1080/07391102.2000.10506570">https://doi.org/10.1080/07391102.2000.10506570</a></div>
+</div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="helanal develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="helanal develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>An ecosystem of command line interfaces for MDAnalysis analysis classes.</em></div>
+<div class="line"><em>helanal contains code to analyse protein helicies based on their Cα atoms, quantifying structural features such as local bending angles and global axes.</em></div>
 </div>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The latest version of mdacli can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>mdacli
+<p>The latest version of helanal can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>helanal
 </pre></div>
 </div>
-<p>The source code of mdacli can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MDAnalysis/mdacli@main
+<p>The source code of helanal can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MDAnalysis/helanal@main
 </pre></div>
 </div>
 </section>
@@ -190,8 +195,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="pytim.html" class="btn btn-neutral float-left" title="pytim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="ProLIF.html" class="btn btn-neutral float-right" title="ProLIF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="zarrtraj.html" class="btn btn-neutral float-left" title="zarrtraj" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mda-tui.html" class="btn btn-neutral float-right" title="mda-tui" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

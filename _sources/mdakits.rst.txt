@@ -101,6 +101,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - streaming, trajectory, zarr, h5md, hdf5, AWS S3 Buckets, Google Cloud Buckets, Azure Blob Storage, Azure Data Lake
       - `zarrtraj authors`_
       - |zarrtraj_latest| |zarrtraj_develop|
+    * - :ref:`helanal`
+      - protein, structure, helix
+      - `helanal authors`_
+      - |helanal_latest| |helanal_develop|
     * - :ref:`mda-tui`
       - transformations, TUI
       - `mda-tui authors`_
@@ -140,6 +144,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    propkatraj
    mdahole2
    zarrtraj
+   helanal
    mda-tui
    domhmm
    openmm-mdanalysis-reporter
@@ -362,6 +367,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |zarrtraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: zarrtraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`helanal authors`:
+   https://github.com/MDAnalysis/helanal/blob/main/AUTHORS.md
+
+.. |helanal_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: helanal develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |helanal_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: helanal develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`mda-tui authors`:
