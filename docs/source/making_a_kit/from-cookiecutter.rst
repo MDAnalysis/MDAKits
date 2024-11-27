@@ -1,4 +1,4 @@
-.. _guided-example:
+.. _guided_example:
 
 *********************************************
 Guided Example: Building an RMSF analysis Kit
@@ -41,11 +41,11 @@ requirements!
    :maxdepth: 1
    :caption: Steps for creating an MDAKit from the cookiecutter
 
-   guided-example/use-cookiecutter
-   guided-example/add-code
-   guided-example/add-tests
-   guided-example/to-github
-   guided-example/add-docs
-   guided-example/make-release
-   guided-example/registering
+   guided_example/use-cookiecutter
+   guided_example/add-code
+   guided_example/add-tests
+   guided_example/to-github
+   guided_example/add-docs
+   guided_example/make-release
+   guided_example/registering
 
