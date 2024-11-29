@@ -39,7 +39,7 @@ The source code of helanal can be installed using the following:
 .. _`helanal authors`:
    https://github.com/MDAnalysis/helanal/blob/main/AUTHORS.md
 
-.. |helanal_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |helanal_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: helanal develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

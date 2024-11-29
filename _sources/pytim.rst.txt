@@ -37,7 +37,7 @@ The source code of pytim can be installed using the following:
 .. _`pytim authors`:
    https://github.com/Marcello-Sega/pytim/blob/master/AUTHORS.md
 
-.. |pytim_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |pytim_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: pytim develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
