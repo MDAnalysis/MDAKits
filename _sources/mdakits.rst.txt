@@ -230,11 +230,11 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`maicos authors`:
    https://gitlab.com/maicos-devel/maicos/-/blob/main/AUTHORS.rst
 
-.. |maicos_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |maicos_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: maicos develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |maicos_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |maicos_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: maicos develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -291,7 +291,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: solvation-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |solvation-analysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |solvation-analysis_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: solvation-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -376,7 +376,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: helanal develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |helanal_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |helanal_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: helanal develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
