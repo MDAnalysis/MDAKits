@@ -41,7 +41,7 @@ The source code of zarrtraj can be installed using the following:
 .. _`zarrtraj authors`:
    https://github.com/Becksteinlab/zarrtraj/blob/main/AUTHORS.md
 
-.. |zarrtraj_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |zarrtraj_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: zarrtraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

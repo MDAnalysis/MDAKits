@@ -332,7 +332,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |lipyds_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |lipyds_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -361,7 +361,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`zarrtraj authors`:
    https://github.com/Becksteinlab/zarrtraj/blob/main/AUTHORS.md
 
-.. |zarrtraj_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |zarrtraj_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: zarrtraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
