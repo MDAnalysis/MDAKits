@@ -34,15 +34,16 @@ parser.add_argument(
     help="Print the DataFrame of results",
 )
 
+
 def find_prs_with_file(repo_name, github_token):
     """
     Find all pull requests that added a `metadata.yaml` file to the repository.
     """
     pattern = re.compile(r"metadata\.yaml$")
-    
+
     g = Github(github_token)
     repo = g.get_repo(repo_name)
-    
+
     prs_with_file = []
 
     # Iterate through all pull requests in the repository
