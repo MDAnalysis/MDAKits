@@ -25,9 +25,9 @@ src_install:
 python_requires: ">=3.10"
 mdanalysis_requires: ">=2.0.0"
 run_tests:
-  - pytest -n auto --pyargs lipyds.tests
+  - pytest -n auto --pyargs lipyds
 test_dependencies:
-  - pip install pytest
+  - pip install pytest pytest-xdist
 development_status: Beta
 publications:
   - https://doi.org/10.1016/j.bbadva.2021.100010
