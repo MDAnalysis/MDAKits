@@ -328,7 +328,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: spyrmsdkit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |lipyds_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+.. |lipyds_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
