@@ -12,7 +12,7 @@ keywords:
   - Confined Systems
 license: GPL-3.0-or-later
 project_home: https://gitlab.com/maicos-devel/maicos
-documentation_home: https://maicos.readthedocs.io/en/latest/
+documentation_home: https://maicos.readthedocs.io
 documentation_type: UserGuide + API
 
 ## Optional entries
