@@ -11,6 +11,8 @@ waterdynamics
 | 🔑 **Keywords:** water, hydrogenbonds, MSD
 | 🚀 **Development status:** Production/Stable
 | 📜 **Changelog:** https://github.com/MDAnalysis/waterdynamics/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://doi.org/10.1016/j.bpj.2014.05.037
 | 🧪 **Tests (latest):** |waterdynamics_latest| 
 | 🧪 **Tests (develop):** |waterdynamics_develop| 
 | **Description:**
