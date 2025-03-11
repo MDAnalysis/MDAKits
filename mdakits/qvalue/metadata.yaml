@@ -1,0 +1,55 @@
+
+project_name: qvalue
+
+authors:
+  - https://github.com/cabb99/qvalue/blob/main/AUTHORS.md
+
+maintainers:
+  - cabb99
+
+description:
+    Calculates the fraction of native contacts conserved during a protein simulation
+
+keywords:
+  - Q value
+  - Native Contacts
+
+license: GPL-2.0-or-later
+
+project_home: https://github.com/cabb99/qvalue/
+
+documentation_home: https://qvalue.readthedocs.io
+
+documentation_type: UserGuide + API + README
+
+src_install:
+  - pip install git+https://github.com/cabb99/qvalue@main
+
+import_name: qvalue
+
+python_requires: ">=3.10"
+
+mdanalysis_requires: ">=2.0.0"
+
+run_tests:
+  - pytest --pyargs qvalue
+
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+
+project_org: cabb99
+
+install:
+  - mamba -c conda-forge install qvalue
+
+development_status: Beta
+
+publications:
+  - https://doi.org/10.1371/journal.pcbi.1008308
+  - https://doi.org/10.1073/pnas.0509768103
+  - https://doi.org/10.1073/pnas.252753899
+
+community_home: https://github.com/cabb99/qvalue/discussions
+
+## str: a link to the MDAKit's changelog
+changelog: https://github.com/cabb99/qvalue/blob/main/CHANGELOG.md
