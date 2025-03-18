@@ -1,0 +1,77 @@
+project_name: Menger_Curvature
+
+authors:
+  - https://github.com/EtienneReboul/menger_curvature/blob/main/AUTHORS.md
+
+
+maintainers:
+  - IBPCREBOUL
+  - EtienneReboul
+
+description:
+    This project aims to provide a simple MDAkit for JIT accelerated Menger curvature calculation.
+    The idea is to associate a value of curvature to as many residues as possible in a polymer. 
+    If one has access to several conformations , the average value of the curvature (LC) and its standard deviation (LF) 
+    are valuable information to characterize the local dynamics of the backbone.
+
+
+keywords:
+  - IDP
+  - IDR
+  - flexibility
+  - Menger curvature
+  - protein
+
+license: GPL-2.0-or-later
+
+
+project_home: https://github.com/EtienneReboul/menger_curvature
+
+
+documentation_home: https://menger-curvature.readthedocs.io/
+
+
+documentation_type: UserGuide + API
+
+
+src_install:
+  - pip install git+https://github.com/EtienneReboul/menger_curvature@main
+
+
+import_name: menger
+
+
+python_requires: ">=3.10"
+
+
+mdanalysis_requires: ">=2.0.0"
+
+
+run_tests:
+  - pytest --pyargs menger
+
+
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+
+
+project_org: EtienneReboul
+
+
+install:
+  - pip install menger-curvature
+
+
+development_status: Production/Stable
+
+
+publications:
+  - https://pubs.acs.org/doi/abs/10.1021/acs.jcim.4c00742
+  - https://doi.org/10.1101/2025.02.22.639620
+  - https://doi.org/10.1101/2025.02.19.638976
+
+
+community_home: https://github.com/EtienneReboul/menger_curvature/discussions/
+
+
+changelog: https://github.com/EtienneReboul/menger_curvature/blob/main/CHANGELOG.md
