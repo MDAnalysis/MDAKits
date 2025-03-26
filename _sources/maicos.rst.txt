@@ -6,7 +6,7 @@ maicos
 
 | 🖋️ **Authors**: `maicos authors`_
 | 🏠 **Project home:** https://gitlab.com/maicos-devel/maicos
-| 📖 **Documentation:** https://maicos.readthedocs.io/en/latest/
+| 📖 **Documentation:** https://maicos.readthedocs.io
 | ⚖️ **License:** GPL-3.0-or-later
 | 🔑 **Keywords:** Molecular Dynamics, Confined Systems
 | 🚀 **Development status:** Beta
