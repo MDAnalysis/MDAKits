@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Troubleshooting" href="troubleshooting.html" />
-    <link rel="prev" title="The metadata.yaml file" href="registering-a-kit/metadata-yaml.html" /> 
+    <link rel="next" title="Keeping an MDAKit healthy" href="maintaining_a_kit/keep-healthy.html" />
+    <link rel="prev" title="The metadata.yaml file" href="registering_a_kit/metadata-yaml.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -94,7 +94,12 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="makingakit.html">Making an MDAKit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="addingakit.html">Adding an MDAKit to the Registry</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Maintaining an MDAKit</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Maintaining an MDAKit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maintaining_a_kit/keep-healthy.html">Keeping an MDAKit healthy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintaining_a_kit/updatemetadata.html">Updating the MDAKit’s metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintaining_a_kit/improving.html">Improving your MDAKit</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
@@ -135,26 +140,44 @@
 like to see covered here, please get in touch via
 <a class="reference external" href="https://github.com/MDAnalysis/mdanalysis/discussions">MDAnalysis Github Discussions</a>.</p>
 </div>
-<p>There are a variety of reasons a kit may behave unexpectedly after being
-submitted to the registry. Apart from actively developing the kit, changes in
-kit dependencies, or even Python itself, can introduce/deprecate new/old functionality.
-For this reason, the kits’ continuous integration is rerun weekly to
-confirm the kits expected behavior.</p>
-<p>In the event that a kit no longer passes its tests, an issue in
-MDAnalysis/MDAKits is automatically raised while notifying the maintainers
-indicated in the <cite>metadata.yaml</cite> file.
-While the registry developers will be happy to help where possible, ultimately,
-the maintainers of the MDAKit are responsible for resolving such issues and
-ensuring that the tests pass.
-The issue will automatically close after the next CI run if the tests pass again.</p>
+<p>Successfully registering an MDAKit is not the end of the journey! A
+software package still requires input to keep it healthy and thriving.
+This includes both expanding and adding new features and ensuring the MDAKit
+continues to run as intended. <strong>While not required for an MDAKit to remain in
+the registry, such activities are highly encouraged</strong>.</p>
+<p>Now that it is registered, your kit will be part of the <a class="reference internal" href="maintaining_a_kit/keep-healthy.html#mdakitsci"><span class="std std-ref">MDAKits Registry CI</span></a>:
+your kits’ tests (as specified in <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code>) are automatically rerun
+twice each week, so that you (and potential users) have assurance that your
+code still works as intended, or are notified when it does not.</p>
+<p><strong>However, the ultimate responsibility for maintaining your MDAKit remains with
+you.</strong></p>
+<p>The sections below provide some information to keep in mind for maintaining your
+MDAKit after registration.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="maintaining_a_kit/keep-healthy.html">Keeping an MDAKit healthy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintaining_a_kit/updatemetadata.html">Updating the MDAKit’s metadata</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="maintaining_a_kit/improving.html">Improving your MDAKit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maintaining_a_kit/improving.html#adding-new-features">Adding new features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maintaining_a_kit/improving.html#go-beyond-the-minimal-mdakit-registry-requirements">Go beyond the minimal MDAKit Registry requirements</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Want to go even further beyond your MDAKit? You can also help us out by
+<a class="reference internal" href="reviewersguide.html#reviewers-guide"><span class="std std-ref">reviewing other MDAKits</span></a>!</p>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="registering-a-kit/metadata-yaml.html" class="btn btn-neutral float-left" title="The metadata.yaml file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Troubleshooting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="registering_a_kit/metadata-yaml.html" class="btn btn-neutral float-left" title="The metadata.yaml file" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="maintaining_a_kit/keep-healthy.html" class="btn btn-neutral float-right" title="Keeping an MDAKit healthy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,0 +1,420 @@
+
+
+
+  
+
+
+
+  
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../../../../_static/mdakits-logo.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 5: Providing documentation &mdash; MDAKits Registry  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/site.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  
+    <link rel="shortcut icon" href="../../_static/mdakits-logo.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="../../_static/main.js?v=71e46913"></script>
+      <script src="../../_static/js/versions.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 6: Making an initial release" href="make-release.html" />
+    <link rel="prev" title="Part 4: Pushing to GitHub" href="to-github.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../../index.html">
+  
+    <img src="../../_static/mdakits-logo-1563x1563.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">MDAKit Registry</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About MDAKits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources for MDAKit Authors</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../makingakit.html">Making an MDAKit</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../makingakit.html#building-a-kit-using-the-cookiecutter">Building a Kit using the cookiecutter</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../from-cookiecutter.html">Guided Example: Building an RMSF analysis Kit</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="use-cookiecutter.html">Part 1: Using the MDAKit cookicutter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-code.html">Part 2: Adding code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-tests.html">Part 3: Adding tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="to-github.html">Part 4: Pushing to GitHub</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Part 5: Providing documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="make-release.html">Part 6: Making an initial release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="registering.html">Part 7: Registering an MDAKit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../makingakit.html#building-without-the-cookiecutter-or-from-an-existing-project">Building without the cookiecutter (or from an existing project)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../addingakit.html">Adding an MDAKit to the Registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../maintainingakit.html">Maintaining an MDAKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reviewersguide.html">Guide for reviewers</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MDAKits Registry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../makingakit.html">Making an MDAKit</a></li>
+          <li class="breadcrumb-item"><a href="../from-cookiecutter.html">Guided Example: Building an RMSF analysis Kit</a></li>
+      <li class="breadcrumb-item active">Part 5: Providing documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/making_a_kit/guided_example/add-docs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="part-5-providing-documentation">
+<h1>Part 5: Providing documentation<a class="headerlink" href="#part-5-providing-documentation" title="Link to this heading"></a></h1>
+<p><em>See our</em> <a class="reference external" href="https://www.youtube.com/watch?v=viCPUHkgSxg&amp;t=153s">YouTube tutorial</a>
+<em>for a video demonstration of this section.</em></p>
+<p>When registering an MDAKit, you’ll be asked to identify which of the following
+(or combination thereof) best describes your documentation (<em>note that these are
+very flexible descriptions, and may cover a range of documentation styles and
+levels of detail</em>):</p>
+<ul class="simple">
+<li><p><strong>README</strong>: a <code class="docutils literal notranslate"><span class="pre">README.md</span></code>-type file containing basic information
+(description, installation, usage).</p></li>
+<li><p><strong>API</strong>: ‘technical’ documentation, describing the functions/methods/etc and
+their input/outputs.</p></li>
+<li><p><strong>User Guide</strong>: more ‘user friendly’ documentation, similar to but likely
+expanding on README-style documentation; may include more detailed usage,
+descriptions, examples, etc.</p></li>
+</ul>
+<p>To keep registration easily attainable, MDAKits require only <strong>minimal
+documentation</strong> - e.g. only a <code class="docutils literal notranslate"><span class="pre">README.md</span></code>. However, more extensive
+documentation is a good idea. We demonstrate here the process for adding further
+documentation for <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code>.</p>
+<p><a class="reference external" href="https://readthedocs.org">Read the Docs</a> can be used to build and host documentation
+online. The cookiecutter includes a <em>Read the Docs</em> configuration as well a
+pre-made documentation environment file that is used by <em>Read the Docs</em> and for
+building locally. Frameworks for autogenerated API and basic User Guide
+documentation are also provided.</p>
+<section id="building-documentation-locally">
+<h2>Building documentation locally<a class="headerlink" href="#building-documentation-locally" title="Link to this heading"></a></h2>
+<p>You can build documentation locally to check on the appearance as you work on
+it.</p>
+<ol class="arabic">
+<li><p>First, add the required packages (listed in the autogenerated
+<code class="docutils literal notranslate"><span class="pre">requirements.yaml</span></code> file) to the environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>rmsfkit<span class="w"> </span>-f<span class="w"> </span>requirements.yaml
+</pre></div>
+</div>
+</li>
+<li><p>Then the documentation HTML files can be built by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>This uses instructions in the included <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> to convert
+reStructuredText files in the <code class="docutils literal notranslate"><span class="pre">source/</span></code> directory into HTML files in
+<code class="docutils literal notranslate"><span class="pre">_build</span></code>. These files can now be opened and viewed.</p>
+</li>
+</ol>
+<p>To view changes to the documentation after changing any of the source files,
+rerun <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> and refresh the browser.</p>
+</section>
+<section id="adding-to-the-documentation">
+<h2>Adding to the documentation<a class="headerlink" href="#adding-to-the-documentation" title="Link to this heading"></a></h2>
+<p><strong>The cookiecutter-generated template</strong></p>
+<p>The cookiecutter starts our documentation with three pages:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">index</span></code>: a “home” page with a table of contents, but otherwise blank.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getting_started</span></code>: a blank page intended to contain information for
+potential users.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">API</span></code>, containing API documentation autogenerated from the docstrings.</p></li>
+</ul>
+<p>These files are written in
+<a class="reference external" href="https://docutils.sourceforge.io/rst.html">reStructuredText syntax</a>, and can
+now be added to expand the documentation.</p>
+<ol class="arabic">
+<li><p><strong>Expanding the API documentation</strong>: for our <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code> example, the
+autogenerated API documentation does not currently contain all of the
+information found in the code docstrings. This is because the ‘autosummary’
+in <code class="docutils literal notranslate"><span class="pre">source/api.rst</span></code> by default specifies <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code>, rather than
+specifically the analysis class, <code class="docutils literal notranslate"><span class="pre">rmsfkit.RMSF</span></code>. We update it, so
+<code class="docutils literal notranslate"><span class="pre">api.rst</span></code> now reads:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">API Documentation</span>
+<span class="gh">=================</span>
+
+<span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+   <span class="nc">:toctree:</span> autosummary
+
+   rmsfkit.RMSF
+</pre></div>
+</div>
+<p>After rerunning <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> and refreshing, there will be a table entry
+for the RMSF class. Clicking this will open the documentation that was
+present in the docstrings.</p>
+</li>
+<li><p><strong>Updating the home page</strong>: <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> will be the landing page for our
+User Guide. To make it more welcoming, let’s add a short desciption of our
+code:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Welcome to rmsfkit&#39;s documentation!</span>
+<span class="gh">=========================================================</span>
+
+<span class="s">``rmsfkit``</span> is an example MDAKit that implements the functionality of the <span class="nv">`analysis.rms.RMSF`</span> class within the MDAnalysis package.
+This MDAKit does not serve as a replacement for this functionality and using this MDAKit for real work is discouraged.
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> 2
+   <span class="nc">:caption:</span> Contents:
+
+   getting_started
+   api
+
+
+<span class="gh">Indices and tables</span>
+<span class="gh">==================</span>
+
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`genindex`</span>
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`modindex`</span>
+<span class="m">*</span> <span class="na">:ref:</span><span class="nv">`search`</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Adding installation information</strong>: The <code class="docutils literal notranslate"><span class="pre">getting_started</span></code> page is intended
+to provide information for users to get started with our code. Let’s add some
+installation instructions for <code class="docutils literal notranslate"><span class="pre">rmsfkit</span></code>:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">Getting Started</span>
+<span class="gh">===============</span>
+
+The <span class="s">``rmsfkit``</span> package is installable from source.
+
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">bash</span>
+
+    git<span class="w"> </span>clone<span class="w"> </span>git@github.com:ianmkenney/rmsfkit.git
+    <span class="nb">cd</span><span class="w"> </span>rmsfkit/
+    pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+<p>We could add more information here (or in additional pages) demonstrating
+usage; but as this is covered by the API documentation, we will stop here
+for now.</p>
+</li>
+</ol>
+<p><strong>Citations in documentation</strong></p>
+<p>You can include citations in your docs using the bibtex format. We demonstrate
+this below to fix an unformatted citation (<code class="docutils literal notranslate"><span class="pre">:cite:p:`Welford1962`</span></code>) in the
+<code class="docutils literal notranslate"><span class="pre">rmsfkit.RMSF</span></code> class documentation.</p>
+<ol class="arabic">
+<li><p>We first create a bibtex file, <code class="docutils literal notranslate"><span class="pre">references.bib</span></code> in the <code class="docutils literal notranslate"><span class="pre">doc/source/</span></code>
+directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">Welford1962</span><span class="p">,</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">B</span><span class="o">.</span> <span class="n">P</span><span class="o">.</span> <span class="n">Welford</span><span class="p">},</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Note</span> <span class="n">on</span> <span class="n">a</span> <span class="n">Method</span> <span class="k">for</span> <span class="n">Calculating</span> <span class="n">Corrected</span> <span class="n">Sums</span> <span class="n">of</span> <span class="n">Squares</span> <span class="ow">and</span> <span class="n">Products</span><span class="p">},</span>
+    <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">Technometrics</span><span class="p">},</span>
+    <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">},</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">},</span>
+    <span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">419</span><span class="o">-</span><span class="mi">420</span><span class="p">},</span>
+    <span class="n">year</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">1962</span><span class="p">},</span>
+    <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">Taylor</span> <span class="o">&amp;</span> <span class="n">Francis</span><span class="p">},</span>
+    <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1080</span><span class="o">/</span><span class="mf">00401706.1962.10490022</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>In the confirguration file <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>, we need to add a new extension
+(<code class="docutils literal notranslate"><span class="pre">sphinxcontrib.bibtex</span></code>) as well as the name of the bibtex file:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autosummary&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.extlinks&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinxcontrib.bibtex&#39;</span><span class="p">,</span>  <span class="c1"># add this line</span>
+<span class="p">]</span>
+
+<span class="n">bibtex_bibfiles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;references.bib&#39;</span><span class="p">]</span> <span class="c1"># and this one!</span>
+</pre></div>
+</div>
+</li>
+<li><p>We also have to add this extension the install requirements in
+<code class="docutils literal notranslate"><span class="pre">docs/requirements.yaml</span></code> - add <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">sphinxcontrib-bibtex</span></code> as an additional
+dependency here.</p></li>
+<li><p>Finally, update the environment with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span>rmsfkit<span class="w"> </span>-f<span class="w"> </span>requirements.yaml
+</pre></div>
+</div>
+<p>before once again running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>.</p>
+</li>
+</ol>
+<p>Refreshing the documentation will now show a properly formatted citation using
+the information in the bibtex file.</p>
+</section>
+<section id="deploying-the-documentation">
+<h2>Deploying the documentation<a class="headerlink" href="#deploying-the-documentation" title="Link to this heading"></a></h2>
+<p>After pushing documentation changes to GitHub, you can then display them on
+their own shiny new website!</p>
+<ol class="arabic">
+<li><p>Make sure all changes are pushed to GitHub. Log into
+<a class="reference external" href="https://readthedocs.org">Read the Docs</a> (using your GitHub account) and navigate to
+the dashboard -  click the “Import a Project” button.</p>
+<img alt="Import a project into RTD" src="../../_images/import.png" />
+</li>
+<li><p>Find the Kit repository and click “+”. Confirm that the name, URL, and
+default branch (likely <cite>main</cite>) are correct.</p>
+<img alt="Adding your repository to RTD" src="../../_images/adding.png" />
+</li>
+<li><p>Clicking next will begin the deployment. This immediately starts the build
+process, which can be confirmed by clicking the “Builds” tab. Once the build
+is completed, you can view the deployed documentation (which is now public!).</p></li>
+</ol>
+<p>This completes the documentation requirement for an MDAKit! Notice that the “docs”
+badge in the GitHub rendered <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is now green.</p>
+</section>
+<section id="progress-mdakit-requirements">
+<h2>Progress: MDAKit requirements<a class="headerlink" href="#progress-mdakit-requirements" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>✓ Uses MDAnalysis</strong></p></li>
+<li><p><strong>✓ Open source + OSI license</strong></p></li>
+<li><p><strong>✓ Versioned + on a version-controlled repository</strong></p></li>
+<li><p><strong>✓ Designated authors and maintainers</strong></p></li>
+<li><p><strong>✓ (At least) minimal documentation</strong> - documentation is now included
+with the code and hosted online.</p></li>
+<li><p><strong>✓ (At least) minimal regression tests</strong></p></li>
+<li><p><strong>✓ Installable as a standard package</strong></p></li>
+<li><p><strong>✓ (Recommended) community information available</strong></p></li>
+<li><p><em>(Recommended) on a package distribution platform</em></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="to-github.html" class="btn btn-neutral float-left" title="Part 4: Pushing to GitHub" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="make-release.html" class="btn btn-neutral float-right" title="Part 6: Making an initial release" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2025, .</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

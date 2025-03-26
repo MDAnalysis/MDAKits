@@ -20,7 +20,7 @@ to registration, is provided below.
 .. toctree::
    :maxdepth: 2
 
-   making-a-kit/from-cookiecutter
+   making_a_kit/from-cookiecutter
 
 
 Building without the cookiecutter (or from an existing project)
@@ -38,7 +38,7 @@ information below.
 .. toctree::
    :maxdepth: 1
 
-   making-a-kit/license
-   making-a-kit/hosting
-   making-a-kit/testing
-   making-a-kit/documentation
+   making_a_kit/license
+   making_a_kit/hosting
+   making_a_kit/testing
+   making_a_kit/documentation

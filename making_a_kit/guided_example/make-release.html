@@ -1,0 +1,269 @@
+
+
+
+  
+
+
+
+  
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../../../../_static/mdakits-logo.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Part 6: Making an initial release &mdash; MDAKits Registry  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/site.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  
+    <link rel="shortcut icon" href="../../_static/mdakits-logo.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="../../_static/main.js?v=71e46913"></script>
+      <script src="../../_static/js/versions.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Part 7: Registering an MDAKit" href="registering.html" />
+    <link rel="prev" title="Part 5: Providing documentation" href="add-docs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../../index.html">
+  
+    <img src="../../_static/mdakits-logo-1563x1563.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">MDAKit Registry</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About MDAKits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources for MDAKit Authors</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../makingakit.html">Making an MDAKit</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../makingakit.html#building-a-kit-using-the-cookiecutter">Building a Kit using the cookiecutter</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../from-cookiecutter.html">Guided Example: Building an RMSF analysis Kit</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="use-cookiecutter.html">Part 1: Using the MDAKit cookicutter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-code.html">Part 2: Adding code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-tests.html">Part 3: Adding tests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="to-github.html">Part 4: Pushing to GitHub</a></li>
+<li class="toctree-l4"><a class="reference internal" href="add-docs.html">Part 5: Providing documentation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Part 6: Making an initial release</a></li>
+<li class="toctree-l4"><a class="reference internal" href="registering.html">Part 7: Registering an MDAKit</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../makingakit.html#building-without-the-cookiecutter-or-from-an-existing-project">Building without the cookiecutter (or from an existing project)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../addingakit.html">Adding an MDAKit to the Registry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../maintainingakit.html">Maintaining an MDAKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../reviewersguide.html">Guide for reviewers</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MDAKits Registry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../makingakit.html">Making an MDAKit</a></li>
+          <li class="breadcrumb-item"><a href="../from-cookiecutter.html">Guided Example: Building an RMSF analysis Kit</a></li>
+      <li class="breadcrumb-item active">Part 6: Making an initial release</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/making_a_kit/guided_example/make-release.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="part-6-making-an-initial-release">
+<h1>Part 6: Making an initial release<a class="headerlink" href="#part-6-making-an-initial-release" title="Link to this heading"></a></h1>
+<p><em>See our</em> <a class="reference external" href="https://www.youtube.com/watch?v=viCPUHkgSxg&amp;t=247s">YouTube tutorial</a>
+<em>for a video demonstration of this section.</em></p>
+<p>While using git does satisfy the requirement that our MDAKit code be versioned,
+it is a good idea to make numbered releases with (human-understandable) version
+numbers to easily track your code as changes and improvements are made.</p>
+<p>The MDAKit cookiecutter uses
+<a class="reference external" href="https://versioningit.readthedocs.io/en/stable/index.html">versioningit</a>
+for version management. In brief, software versions are set through
+<a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">git tags</a>.</p>
+<img alt="Process for creating a release by making a tag" src="../../_images/creating_a_release.gif" />
+<ol class="arabic">
+<li><p>Since the Kit is initiated without tags, the current version is set to
+<code class="docutils literal notranslate"><span class="pre">0.0.0</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>rmsfkit
+&gt;&gt;&gt;<span class="w"> </span>rmsfkit.__version__
+<span class="s1">&#39;0.0.0+3.g0b64a6c&#39;</span>
+</pre></div>
+</div>
+<p><em>Note: As commits are added, the version is updated with the commit hash. The
+exact output here differs between the YouTube tutorial and video embedded
+above, and from what you will see.</em></p>
+<p>Bump this to a <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> in preparation for an initial release on GitHub
+using a <cite>git tag</cite>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>tag<span class="w"> </span><span class="m">0</span>.1.0
+</pre></div>
+</div>
+<p>This should now be reflected in the interpreter (though may require a package
+reinstall):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>import<span class="w"> </span>rmsfkit
+&gt;&gt;&gt;<span class="w"> </span>rmsfkit.__version__
+<span class="s1">&#39;0.1.0&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Tags are not pushed to remote repositories by default. To push the <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code>
+tag, use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>git<span class="w"> </span>push<span class="w"> </span>--tags
+</pre></div>
+</div>
+</li>
+<li><p>Viewing the repository tags page on GitHub, you should now see a <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code>
+tag. Expanding its menu gives us the option to create a release based on the
+tagged code. Enter a release name, such as <cite>v0.1.0</cite> and publish!</p></li>
+</ol>
+<p>Going forward, you could publish this release to a package distribution
+platforms such as PyPi or Conda-Forge, though this is not covered in this
+example.</p>
+<p>Having met all the requirements, it’s now time to register our MDAKit!</p>
+<section id="progress-mdakit-requirements">
+<h2>Progress: MDAKit requirements<a class="headerlink" href="#progress-mdakit-requirements" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>✓ Uses MDAnalysis</strong></p></li>
+<li><p><strong>✓ Open source + OSI license</strong></p></li>
+<li><p><strong>✓ Versioned + on a version-controlled repository</strong></p></li>
+<li><p><strong>✓ Designated authors and maintainers</strong></p></li>
+<li><p><strong>✓ (At least) minimal documentation</strong></p></li>
+<li><p><strong>✓ (At least) minimal regression tests</strong></p></li>
+<li><p><strong>✓ Installable as a standard package</strong></p></li>
+<li><p><strong>✓ (Recommended) community information available</strong></p></li>
+<li><p><em>(Recommended) on a package distribution platform</em></p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="add-docs.html" class="btn btn-neutral float-left" title="Part 5: Providing documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="registering.html" class="btn btn-neutral float-right" title="Part 7: Registering an MDAKit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2025, .</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,330 @@
+
+
+
+  
+
+
+
+  
+
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="../../_static/mdakits-logo.ico">
+</head>
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keeping an MDAKit healthy &mdash; MDAKits Registry  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/site.css" />
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/mdakits-logo.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+      <script src="../_static/main.js?v=71e46913"></script>
+      <script src="../_static/js/versions.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Updating the MDAKit’s metadata" href="updatemetadata.html" />
+    <link rel="prev" title="Maintaining an MDAKit" href="../maintainingakit.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+
+  
+
+
+
+
+<a href="../index.html">
+  
+    <img src="../_static/mdakits-logo-1563x1563.png" class="logo" alt="Logo"/>
+</a>
+
+
+  
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+<div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+    
+        <p class="caption" role="heading"><span class="caption-text">MDAKit Registry</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About MDAKits</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Resources for MDAKit Authors</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../makingakit.html">Making an MDAKit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../addingakit.html">Adding an MDAKit to the Registry</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../maintainingakit.html">Maintaining an MDAKit</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Keeping an MDAKit healthy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-mdakit-registry-ci">The MDAKit Registry CI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-is-the-mdakit-registry-ci">What is the ‘MDAKit Registry CI’?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#why-did-ci-fail">Why did CI fail?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fixing-an-failure">Fixing an failure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#after-applying-a-fix">After applying a fix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="updatemetadata.html">Updating the MDAKit’s metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="improving.html">Improving your MDAKit</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reviewersguide.html">Guide for reviewers</a></li>
+</ul>
+
+</div>
+
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">MDAKits Registry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../maintainingakit.html">Maintaining an MDAKit</a></li>
+      <li class="breadcrumb-item active">Keeping an MDAKit healthy</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/maintaining_a_kit/keep-healthy.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="keeping-an-mdakit-healthy">
+<h1>Keeping an MDAKit healthy<a class="headerlink" href="#keeping-an-mdakit-healthy" title="Link to this heading"></a></h1>
+<section id="the-mdakit-registry-ci">
+<h2>The MDAKit Registry CI<a class="headerlink" href="#the-mdakit-registry-ci" title="Link to this heading"></a></h2>
+<section id="what-is-the-mdakit-registry-ci">
+<span id="mdakitsci"></span><h3>What is the ‘MDAKit Registry CI’?<a class="headerlink" href="#what-is-the-mdakit-registry-ci" title="Link to this heading"></a></h3>
+<p>The MDAKit Registry Continuous Integration is run twice a week and involves the
+(automatic) running of each kit’s tests (as specified in the <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code>
+file.</p>
+<p>If the tests <strong>pass</strong>, the kit’s ‘CI badges’, which appear on the
+<span class="xref std std-ref">Registry</span> and are visibile to all potential users, remain green.</p>
+<p>If the tests <strong>fail</strong>, an issue is automatically raised on the
+<a class="reference external" href="https://github.com/MDAnalysis/MDAKits/issues">MDAKits Registry GitHub issue tracker</a>,
+the maintainers (as identified in
+<code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code>) are notified, and the CI badges updated to red to inform
+others.</p>
+<p>Note that there are two CI runs:</p>
+<ul class="simple">
+<li><p><strong>develop</strong>, using the ‘source’ version (assumed to be the development
+version) of your MDAKit (i.e., what is installed when running the commands
+under <code class="docutils literal notranslate"><span class="pre">src_install</span></code> in <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code>), and the current <code class="docutils literal notranslate"><span class="pre">develop</span></code>
+(under active development) branch of MDAnalysis.</p></li>
+<li><p><strong>latest</strong>, (if applicable) using the latest release of your MDAKit (installed
+when running the commands under <code class="docutils literal notranslate"><span class="pre">install</span></code> in <code class="docutils literal notranslate"><span class="pre">metadata.yaml</span></code>), and the
+most recent release of MDAnalysis.</p></li>
+</ul>
+<p>Depending on the nature of the failure, one or both of <em>develop</em> and
+<em>latest</em> may be failing. In many cases it will be only <em>develop</em> failing, as the
+effects of new changes to your kit (or to MDAnalysis) will be seen here as they
+are made, but only in <em>latest</em> after the changes are published in a new release.
+Having <em>develop</em> gives you a chance to find and fix errors before they are
+carried through to a release, avoiding impacting (most) users.</p>
+</section>
+<section id="why-did-ci-fail">
+<span id="failingci"></span><h3>Why did CI fail?<a class="headerlink" href="#why-did-ci-fail" title="Link to this heading"></a></h3>
+<p>There are a number of reasons that the CI tests may fail - it could be an
+internal issue arising as you develop your kit, or it may indicate that updates
+are needed to keep in line with changes within MDAnalysis or other dependencies.
+It may reflect a single test that is no longer passing, or that a larger error
+is preventing your kit from being installed/any tests from being run.</p>
+<p>You may already know the likely source of your kit’s failure. If you have your own
+CI, this could be a place to start.</p>
+<p>Otherwise, you can read the CI log file for the MDAKit Registry CI run to find the
+exact point of failure and accompanying error messages:</p>
+<ol class="arabic simple">
+<li><p>Click on the <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions">Actions tab</a> on
+the MDAKits Github page.</p></li>
+<li><p>Click on the most recent <em>‘GH Actions Cron CI’</em> job.</p></li>
+<li><p>Under <em>‘Annotations’</em>, find and click the failing job(s) with your kit’s
+name. Failing jobs should show a red cross and be grouped at the top.</p></li>
+<li><p>You should be directed to the place in the CI log where the failure occurs.
+Some scrolling may be required to find the origin of the error.</p></li>
+</ol>
+<img alt="Finding the error message after being notified of a failing CI run" src="../_images/finding-ci-error.gif" />
+</section>
+<section id="fixing-an-failure">
+<h3>Fixing an failure<a class="headerlink" href="#fixing-an-failure" title="Link to this heading"></a></h3>
+<p>Once the point of failure has been identified, you can set about trying to fix
+it. The exact fix required will of course depend on exactly what went wrong, but
+hopefully the error message(s) in the log will be enough to get you started. If
+you believe the issue is due to a breaking behaviour change in MDAnalysis, we
+encourage you to raise an issue on the
+<a class="reference external" href="https://github.com/MDAnalysis/mdanalysis/issues">core library issue tracker</a>.</p>
+<p>Any fixes will be applied in your kit’s home repository - no direct interaction
+with the Registry is required.</p>
+<p>If you’re still not sure what’s gone wrong or how to fix it, you can comment on
+the issue that was raised on the <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/issues">MDAKits GitHub</a>. The MDAKits team, or
+other members of the community, may be able to help - but remember, ultimate
+responsibility remains with <strong>you</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your fix affects any your kit’s metadata.yaml, e.g. if the installation
+instructions changed, rember to
+<a class="reference internal" href="updatemetadata.html#update-metadata"><span class="std std-ref">update your metadata</span></a> as appropriate.</p>
+</div>
+</section>
+<section id="after-applying-a-fix">
+<h3>After applying a fix<a class="headerlink" href="#after-applying-a-fix" title="Link to this heading"></a></h3>
+<p>Once you have applied a fix to your MDAKit (and, if applicable, pushed a new
+release with these changes applied), no further action is required from you.</p>
+<p>Assuming that the fix does indeed solve the issue, the tests will pass the next
+time the automated CI is run. After the successful run, the CI badges on the
+<span class="xref std std-ref">Registry</span> will be restored to ‘passing’ and the issue raised on
+the <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/issues">MDAKits GitHub</a> will be automatically closed.</p>
+<section id="keeping-an-eye-out-for-upstream-changes">
+<h4>Keeping an eye out for upstream changes<a class="headerlink" href="#keeping-an-eye-out-for-upstream-changes" title="Link to this heading"></a></h4>
+<p>Avoid failing tests before they happen!</p>
+<p>Just as you are likely to keep improving your kit, the upstream packages on
+which it relies - including MDAnalysis - will also continue to evolve.
+Sometimes, this means that the parts of your kit that rely on these packages
+will no longer work.
+Keeping an eye out for such changes will allow you to modify your kit
+appropriately <em>before</em> the upstream change is fully applied and your code
+starts to fail.</p>
+<p>Usually, a package will warn users of any upcoming changes that may affect
+downstream usage (e.g. changing how a function is to be used), by raising
+a <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#DeprecationWarning">DeprecationWarning</a>
+indicating the upcoming change when used.
+If your kit relies on any such to-be-changed features, these warnings will
+be triggered when accessing the deprecated feature, and (assuming the relevant
+core is covered by your kit’s tests) will appear in the output logs, so it’s a
+good idea to keep an eye on these.</p>
+<p>Testing against <em>development</em> versions of packages, not just the latest release,
+can also allow you to catch issues early. The <a class="reference internal" href="#mdakitsci"><span class="std std-ref">MDAKits Registry CI</span></a>
+tests both the latest release and development versions of your kit and MDAnalysis.
+If you’ve used the MDAKits cookiecutter, the generated GitHub workflow tests with
+both the development and latest release of MDAnalysis.</p>
+<p>It is also a good idea check release notes for new releases of packages your kit
+uses and watch for any announcements of major upcoming changes.</p>
+</section>
+<section id="keeping-support-windows-in-mind">
+<h4>Keeping support windows in mind<a class="headerlink" href="#keeping-support-windows-in-mind" title="Link to this heading"></a></h4>
+<p>Your kit should specify which versions of the software it relies on (including
+Python) it works with. Ideally, as new versions of these dependencies are
+released, your kit will be updated to work with these.</p>
+<p>It is <em>not</em> expected that your kit remains compatible with <em>all</em> historic
+releases - and indeed, many old versions of these packages will not work with
+each other. These packages will also have <strong>support windows</strong> of how long after
+a given release the developers will keep an eye to make sure it still works as
+intended.</p>
+<p><a class="reference external" href="https://scientific-python.org/specs/spec-0000/">SPEC0</a> is a standard outlining
+a timeline of which versions of Python and common dependencies in the Scientific
+Python ecosystem should minimally aim to be supported and compatible with each other. You can
+follow SPEC0 to determine which Python/dependency versions you should aim to
+support, and which old versions you can drop.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../maintainingakit.html" class="btn btn-neutral float-left" title="Maintaining an MDAKit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="updatemetadata.html" class="btn btn-neutral float-right" title="Updating the MDAKit’s metadata" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022-2025, .</p>
+  </div>
+
+  
+
+<div class="footer"><p>Please see
+    our <a href="https://www.mdanalysis.org/pages/privacy/">Privacy Policy</a>
+    to learn how <a href="https://www.mdanalysis.org">MDAnalysis</a> collects data.</p>
+    <script data-goatcounter="https://mdanalysis.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</div>
+
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    var versions_json_url = ''
+</script>
+
+<div class="rst-versions" data-toggle="rst-versions" role="note"
+     aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"></span>
+        
+      <span class="fa fa-caret-down"></span>
+    </span>
+
+    <div class="rst-other-versions">
+        <dl id="versionselector">
+            <dt>Other Versions</dt>
+        </dl>
+
+    </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
