@@ -12,7 +12,7 @@ keywords:
   - Confined Systems
 license: GPL-3.0-or-later
 project_home: https://gitlab.com/maicos-devel/maicos
-documentation_home: https://maicos.readthedocs.io/en/latest/
+documentation_home: https://maicos.readthedocs.io
 documentation_type: UserGuide + API
 
 ## Optional entries
@@ -20,8 +20,8 @@ install:
   - pip install maicos
 src_install:
   - pip install git+https://gitlab.com/maicos-devel/maicos.git
-python_requires: ">=3.9"
-mdanalysis_requires: ">=2.5.0"
+python_requires: ">=3.10"
+mdanalysis_requires: ">=2.8.0"
 run_tests:
   - git clone latest
   - tox -e tests
