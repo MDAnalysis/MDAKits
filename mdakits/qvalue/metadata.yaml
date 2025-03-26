@@ -40,9 +40,9 @@ test_dependencies:
 project_org: cabb99
 
 install:
-  - mamba -c conda-forge install qvalue
+  - mamba install -c conda-forge qvalue
 
-development_status: Beta
+development_status: Development Status :: 4 - Beta
 
 publications:
   - https://doi.org/10.1371/journal.pcbi.1008308
