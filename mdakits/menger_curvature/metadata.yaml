@@ -62,7 +62,7 @@ install:
   - pip install menger-curvature
 
 
-development_status: Production/Stable
+development_status: "Development Status :: 5 - Production/Stable"
 
 
 publications:
