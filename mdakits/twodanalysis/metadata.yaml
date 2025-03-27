@@ -62,7 +62,7 @@ run_tests:
 
 
 test_dependencies:
-  - mamba install pytest MDAnalysisTests
+  - mamba install pytest MDAnalysisTests pooch
 
 
 project_org: monjegroup
