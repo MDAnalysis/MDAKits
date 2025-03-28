@@ -35,7 +35,7 @@ documentation_type: UserGuide + API
 
 
 src_install:
-  - mamba install -c conda-forge "numpy<=2.1" numba 
+  - mamba install -c conda-forge "numpy<=2.1" numba mdanalysis
   - pip install git+https://github.com/EtienneReboul/menger_curvature@main
 
 
@@ -49,7 +49,8 @@ mdanalysis_requires: ">=2.0.0"
 
 
 run_tests:
-  - pytest --pyargs menger
+  - git clone latest 
+  - pytest ./menger/tests
 
 
 test_dependencies:
