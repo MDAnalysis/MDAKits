@@ -61,6 +61,7 @@ project_org: EtienneReboul
 
 
 install:
+  - mamba install -c conda-forge "numpy<=2.1" numba 
   - pip install menger-curvature
 
 
