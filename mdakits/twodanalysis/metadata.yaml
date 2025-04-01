@@ -45,8 +45,7 @@ install:
 
 
 src_install:
-  - git clone https://github.com/monjegroup/twod-analysis-kit.git
-  - cd twod-analysis-kit && pip install . && cd ..
+  - pip install git+https://github.com/monjegroup/twod-analysis-kit.git
 
 import_name: twodanalysis
 
@@ -62,7 +61,7 @@ run_tests:
 
 
 test_dependencies:
-  - mamba install pytest MDAnalysisTests pooch
+  - mamba install pytest MDAnalysisTests pooch pytest-xdist
 
 
 project_org: monjegroup
