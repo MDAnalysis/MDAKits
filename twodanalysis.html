@@ -22,7 +22,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lipidorderkit &mdash; MDAKits Registry  documentation</title>
+  <title>twodanalysis &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="mdachecker" href="mdachecker.html" />
-    <link rel="prev" title="mda-tui" href="mda-tui.html" /> 
+    <link rel="next" title="domhmm" href="domhmm.html" />
+    <link rel="prev" title="Registry of MDAnalysis Toolkits (MDAKits)" href="mdakits.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -85,15 +85,15 @@
         <p class="caption" role="heading"><span class="caption-text">MDAKit Registry</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="twodanalysis.html">twodanalysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">twodanalysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="domhmm.html">domhmm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenMMDL.html">OpenMMDL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="openmm-mdanalysis-reporter.html">openmm-mdanalysis-reporter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mda-tui.html">mda-tui</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">lipidorderkit</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="lipidorderkit.html">lipidorderkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdachecker.html">mdachecker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdahole2.html">mdahole2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ProLIF.html">ProLIF</a></li>
@@ -149,9 +149,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">lipidorderkit</li>
+      <li class="breadcrumb-item active">twodanalysis</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/lipidorderkit.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/twodanalysis.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -159,34 +159,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lipidorderkit">
-<span id="id1"></span><h1>lipidorderkit<a class="headerlink" href="#lipidorderkit" title="Link to this heading"></a></h1>
+  <section id="twodanalysis">
+<span id="id1"></span><h1>twodanalysis<a class="headerlink" href="#twodanalysis" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/ricard1997/lipidorderkit/blob/main/AUTHORS.md">lipidorderkit authors</a></div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/ricard1997/lipidorderkit/">https://github.com/ricard1997/lipidorderkit/</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://lipidorderdocs.readthedocs.io/en/latest/">https://lipidorderdocs.readthedocs.io/en/latest/</a></div>
+<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/monjegroup/twod-analysis-kit.git/blob/main/AUTHORS.md">twodanalysis authors</a></div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/monjegroup/twod-analysis-kit.git">https://github.com/monjegroup/twod-analysis-kit.git</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://twodanalysis.readthedocs.io/en/latest/">https://twodanalysis.readthedocs.io/en/latest/</a></div>
 <div class="line">⚖️ <strong>License:</strong> GPL-2.0-or-later</div>
-<div class="line">🔑 <strong>Keywords:</strong> Lipids, Lipids order parameters, SCD, Lipid metrics, Lipid study</div>
+<div class="line">🔑 <strong>Keywords:</strong> Lipids, Lipids order parameters, 2D projections, Lipid metrics, Lipid study, Biopolymers, Proteins, Membrane, RNA</div>
 <div class="line">🚀 <strong>Development status:</strong> Production/Stable</div>
-<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/ricard1997/lipidorderkit/blob/main/CHANGELOG.md">https://github.com/ricard1997/lipidorderkit/blob/main/CHANGELOG.md</a></div>
+<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/ricard1997/twod-analysis-kit/blob/main/CHANGELOG.md">https://github.com/ricard1997/twod-analysis-kit/blob/main/CHANGELOG.md</a></div>
 <div class="line">📑 <strong>Publications:</strong></div>
 <div class="line-block">
 <div class="line">* <a class="reference external" href="https://doi.org/10.3389/fchem.2022.1088058">https://doi.org/10.3389/fchem.2022.1088058</a></div>
+<div class="line">* <a class="reference external" href="https://www.biorxiv.org/content/10.1101/2025.02.27.640563v1">https://www.biorxiv.org/content/10.1101/2025.02.27.640563v1</a></div>
 </div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="lipidorderkit develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="lipidorderkit develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="twodanalysis develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="twodanalysis develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>This MDAKit allow for the calculation of lipid order parameters for all atom molecular dynamics simulations.</em></div>
+<div class="line"><em>This MDAKit allow for the projection of lipid properties in 2D fashion. Some of these properties include lipid order parameters, membrane thickness, area per lipid, and packing defects. Furthermore, it allows to study biopolymers adsorbed in the membrane interface.</em></div>
 </div>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The latest version of lipidorderkit can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/ricard1997/lipidorderkit@main
+<p>The latest version of twodanalysis can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>twod-analysis-kit
 </pre></div>
 </div>
-<p>The source code of lipidorderkit can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ricard1997/lipidorderkit.git
-<span class="nb">cd</span><span class="w"> </span>lipidorderkit<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>.<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<p>The source code of twodanalysis can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/monjegroup/twod-analysis-kit.git
 </pre></div>
 </div>
 </section>
@@ -196,8 +196,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="mda-tui.html" class="btn btn-neutral float-left" title="mda-tui" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="mdachecker.html" class="btn btn-neutral float-right" title="mdachecker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mdakits.html" class="btn btn-neutral float-left" title="Registry of MDAnalysis Toolkits (MDAKits)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="domhmm.html" class="btn btn-neutral float-right" title="domhmm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
