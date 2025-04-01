@@ -58,7 +58,7 @@ mdanalysis_requires: ">=2.0.0"
 
 
 run_tests:
-  - pytest --pyargs twodanalysis
+  - pytest -n 2 --durations 10 --pyargs twodanalysis
 
 
 test_dependencies:
