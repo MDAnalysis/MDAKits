@@ -35,7 +35,7 @@ documentation_type: UserGuide + API
 
 
 src_install:
-  - mamba install -c conda-forge "numpy<=2.1" numba mdanalysis
+  - mamba install -c conda-forge numba mdanalysis
   - pip install git+https://github.com/EtienneReboul/menger_curvature@main
 
 
@@ -61,7 +61,7 @@ project_org: EtienneReboul
 
 
 install:
-  - mamba install -c conda-forge "numpy<=2.1" numba mdanalysis
+  - mamba install -c conda-forge numba mdanalysis
   - pip install menger-curvature
 
 
