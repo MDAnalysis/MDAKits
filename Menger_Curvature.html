@@ -22,7 +22,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>zarrtraj &mdash; MDAKits Registry  documentation</title>
+  <title>Menger_Curvature &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="solvation-analysis" href="solvation-analysis.html" />
-    <link rel="prev" title="domhmm" href="domhmm.html" /> 
+    <link rel="next" title="openmm-mdanalysis-reporter" href="openmm-mdanalysis-reporter.html" />
+    <link rel="prev" title="Registry of MDAnalysis Toolkits (MDAKits)" href="mdakits.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -85,7 +85,10 @@
         <p class="caption" role="heading"><span class="caption-text">MDAKit Registry</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Menger_Curvature.html">Menger_Curvature</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Menger_Curvature</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="openmm-mdanalysis-reporter.html">openmm-mdanalysis-reporter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lipidorderkit.html">lipidorderkit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PathSimAnalysis.html">PathSimAnalysis</a></li>
@@ -104,10 +107,7 @@
 <li class="toctree-l2"><a class="reference internal" href="maicos.html">maicos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MDANCE.html">MDANCE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="domhmm.html">domhmm</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">zarrtraj</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="zarrtraj.html">zarrtraj</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solvation-analysis.html">solvation-analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdachecker.html">mdachecker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twodanalysis.html">twodanalysis</a></li>
@@ -150,9 +150,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">zarrtraj</li>
+      <li class="breadcrumb-item active">Menger_Curvature</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/zarrtraj.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Menger_Curvature.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -160,36 +160,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="zarrtraj">
-<span id="id1"></span><h1>zarrtraj<a class="headerlink" href="#zarrtraj" title="Link to this heading"></a></h1>
+  <section id="menger-curvature">
+<span id="id1"></span><h1>Menger_Curvature<a class="headerlink" href="#menger-curvature" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/Becksteinlab/zarrtraj/blob/main/AUTHORS.md">zarrtraj authors</a></div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/Becksteinlab/zarrtraj">https://github.com/Becksteinlab/zarrtraj</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://zarrtraj.readthedocs.io/en/latest/?badge=latest">https://zarrtraj.readthedocs.io/en/latest/?badge=latest</a></div>
-<div class="line">⚖️ <strong>License:</strong> GPL-3.0-or-later</div>
-<div class="line">🔑 <strong>Keywords:</strong> streaming, trajectory, zarr, h5md, hdf5, AWS S3 Buckets, Google Cloud Buckets, Azure Blob Storage, Azure Data Lake</div>
-<div class="line">🚀 <strong>Development status:</strong> Development Status :: 4 - Beta</div>
-<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/Becksteinlab/zarrtraj/blob/main/CHANGELOG.md">https://github.com/Becksteinlab/zarrtraj/blob/main/CHANGELOG.md</a></div>
+<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/EtienneReboul/menger_curvature/blob/main/AUTHORS.md">Menger_Curvature authors</a></div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/EtienneReboul/menger_curvature">https://github.com/EtienneReboul/menger_curvature</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://menger-curvature.readthedocs.io/">https://menger-curvature.readthedocs.io/</a></div>
+<div class="line">⚖️ <strong>License:</strong> GPL-2.0-or-later</div>
+<div class="line">🔑 <strong>Keywords:</strong> IDP, IDR, flexibility, Menger curvature, protein</div>
+<div class="line">🚀 <strong>Development status:</strong> Development Status :: 5 - Production/Stable</div>
+<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/EtienneReboul/menger_curvature/blob/main/CHANGELOG.md">https://github.com/EtienneReboul/menger_curvature/blob/main/CHANGELOG.md</a></div>
 <div class="line">📑 <strong>Publications:</strong></div>
 <div class="line-block">
-<div class="line">* <a class="reference external" href="https://doi.org/10.25080/Majora-629e541a-00e">https://doi.org/10.25080/Majora-629e541a-00e</a></div>
-<div class="line">* <a class="reference external" href="https://doi.org/10.1002/jcc.21787">https://doi.org/10.1002/jcc.21787</a></div>
-<div class="line">* <a class="reference external" href="https://doi.org/10.1016/j.cpc.2014.01.018">https://doi.org/10.1016/j.cpc.2014.01.018</a></div>
-<div class="line">* <a class="reference external" href="https://doi.org/10.25080/majora-1b6fd038-005">https://doi.org/10.25080/majora-1b6fd038-005</a></div>
+<div class="line">* <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.4c00742">https://pubs.acs.org/doi/abs/10.1021/acs.jcim.4c00742</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1101/2025.02.22.639620">https://doi.org/10.1101/2025.02.22.639620</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1101/2025.02.19.638976">https://doi.org/10.1101/2025.02.19.638976</a></div>
 </div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="zarrtraj develop CI status" src="https://img.shields.io/badge/latest-failed-red.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="zarrtraj develop CI status" src="https://img.shields.io/badge/develop-failed-red.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="Menger_Curvature develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="Menger_Curvature develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>Zarrtraj is a kit that provides the ability to stream &amp; analyze H5MD trajectories from cloud storage.</em></div>
+<div class="line"><em>This project aims to provide a simple MDAkit for JIT accelerated Menger curvature calculation. The idea is to associate a value of curvature to as many residues as possible in a polymer. If one has access to several conformations , the average value of the curvature (LC) and its standard deviation (LF) are valuable information to characterize the local dynamics of the backbone.</em></div>
 </div>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The latest version of zarrtraj can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>zarrtraj
+<p>The latest version of Menger_Curvature can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numba<span class="w"> </span>mdanalysis
+pip<span class="w"> </span>install<span class="w"> </span>menger-curvature
 </pre></div>
 </div>
-<p>The source code of zarrtraj can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Becksteinlab/zarrtraj@main
+<p>The source code of Menger_Curvature can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numba<span class="w"> </span>mdanalysis
+pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/EtienneReboul/menger_curvature@main
 </pre></div>
 </div>
 </section>
@@ -199,8 +200,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="domhmm.html" class="btn btn-neutral float-left" title="domhmm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="solvation-analysis.html" class="btn btn-neutral float-right" title="solvation-analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mdakits.html" class="btn btn-neutral float-left" title="Registry of MDAnalysis Toolkits (MDAKits)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="openmm-mdanalysis-reporter.html" class="btn btn-neutral float-right" title="openmm-mdanalysis-reporter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

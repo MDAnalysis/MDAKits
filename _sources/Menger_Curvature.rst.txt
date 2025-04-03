@@ -1,0 +1,52 @@
+.. _Menger_Curvature:
+
+************************************************
+Menger_Curvature
+************************************************
+
+| 🖋️ **Authors**: `Menger_Curvature authors`_
+| 🏠 **Project home:** https://github.com/EtienneReboul/menger_curvature
+| 📖 **Documentation:** https://menger-curvature.readthedocs.io/
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** IDP, IDR, flexibility, Menger curvature, protein
+| 🚀 **Development status:** Development Status :: 5 - Production/Stable
+| 📜 **Changelog:** https://github.com/EtienneReboul/menger_curvature/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://pubs.acs.org/doi/abs/10.1021/acs.jcim.4c00742
+|    * https://doi.org/10.1101/2025.02.22.639620
+|    * https://doi.org/10.1101/2025.02.19.638976
+| 🧪 **Tests (latest):** |Menger_Curvature_latest| 
+| 🧪 **Tests (develop):** |Menger_Curvature_develop| 
+| **Description:**
+| *This project aims to provide a simple MDAkit for JIT accelerated Menger curvature calculation. The idea is to associate a value of curvature to as many residues as possible in a polymer. If one has access to several conformations , the average value of the curvature (LC) and its standard deviation (LF) are valuable information to characterize the local dynamics of the backbone.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of Menger_Curvature can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install -c conda-forge numba mdanalysis
+    pip install menger-curvature
+
+The source code of Menger_Curvature can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install -c conda-forge numba mdanalysis
+    pip install git+https://github.com/EtienneReboul/menger_curvature@main
+
+.. _`Menger_Curvature authors`:
+   https://github.com/EtienneReboul/menger_curvature/blob/main/AUTHORS.md
+
+.. |Menger_Curvature_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: Menger_Curvature develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |Menger_Curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: Menger_Curvature develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
