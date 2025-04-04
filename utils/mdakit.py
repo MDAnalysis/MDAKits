@@ -172,10 +172,10 @@ class MDAKit:
         self.status = Status(path / "status.yaml")
 
     def gen_badges(self):
-        try:
-            badges = self._get_class_badges(self.metadata.import_name)
-        except:
-            badges = BadgesStatusDict()
+        #try:
+        badges = self._get_class_badges(self.metadata.import_name)
+        #except:
+        #    badges = BadgesStatusDict()
 
         try:
             badges.coverage = self._get_codecov_status(
@@ -195,7 +195,7 @@ class MDAKit:
         # Get all the necessary MDAnalysis classes
         from MDAnalysis.analysis.base import AnalysisBase
         from MDAnalysis.coordinates.base import ProtoReader, WriterBase, ConverterBase
-        from MDAnalysis.topology.base import TopologyBase
+        from MDAnalysis.topology.base import TopologyReaderBase
         from MDAnalysis.transformations.base import TransformationBase
 
         def get_modules(mod):
