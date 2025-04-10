@@ -95,7 +95,13 @@
 <li class="toctree-l1"><a class="reference internal" href="makingakit.html">Making an MDAKit</a></li>
 <li class="toctree-l1"><a class="reference internal" href="addingakit.html">Adding an MDAKit to the Registry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="maintainingakit.html">Maintaining an MDAKit</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#failures-during-mdakit-registration-pr">Failures during MDAKit registration PR</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generate-matrix-step-fails">generate_matrix step fails</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
 <ul>
@@ -135,6 +141,41 @@ and notes on how to fix problems with MDAKits.</p>
 <p>If you have a problem and you can’t find an answer here or in the
 other documentation on this site, please get in touch via <a class="reference external" href="https://github.com/MDAnalysis/mdanalysis/discussions">MDAnalysis GitHub
 Discussions</a>.</p>
+<section id="failures-during-mdakit-registration-pr">
+<h2>Failures during MDAKit registration PR<a class="headerlink" href="#failures-during-mdakit-registration-pr" title="Link to this heading"></a></h2>
+<section id="generate-matrix-step-fails">
+<h3>generate_matrix step fails<a class="headerlink" href="#generate-matrix-step-fails" title="Link to this heading"></a></h3>
+<p>When you submit your MDAKit registration PR, the continuous integration (CI) tests will run.
+As part of this, the <strong>generate_matrix</strong> step will attempt to identify which mdakits
+recipes have changed and run their respective CI steps.
+You should look at the results of the CI and if it failed (red) then you should look
+more closely into the output.
+In particular, if the <strong>generate_matrix</strong> step fails with an
+error similar to the following (the commit hashes will differ):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Base</span> <span class="n">commit</span><span class="p">:</span> <span class="n">a1be0b27fe3828dbbb389d0ce01e0e9f1a986134</span>
+<span class="n">Head</span> <span class="n">commit</span><span class="p">:</span> <span class="n">ae10b54c38a2f68e3ac7769321b4b5c8f265655c</span>
+<span class="n">Error</span><span class="p">:</span> <span class="n">The</span> <span class="n">head</span> <span class="n">commit</span> <span class="k">for</span> <span class="n">this</span> <span class="n">pull_request</span> <span class="n">event</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">ahead</span> <span class="n">of</span> <span class="n">the</span> <span class="n">base</span> <span class="n">commit</span><span class="o">.</span> <span class="n">Please</span> <span class="n">submit</span> <span class="n">an</span> <span class="n">issue</span> <span class="n">on</span> <span class="n">this</span> <span class="n">action</span><span class="s1">&#39;s GitHub repo.</span>
+</pre></div>
+</div>
+<p>then you need to <em>update the main branch of the registry in your fork of the mdakits repository
+and merge it into your registration branch.</em></p>
+<p>For example, if your branch is named <em>register-mykit</em> then you could do the following.</p>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork">Sync fork</a> in your GitHub view of your forked MDAKits repository. This pulls in any
+changes that have accrued in the main branch since you submitted your PR.</p></li>
+<li><p>Merge these changes into your branch by pulling these changes and merging:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">switch</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">pull</span>
+<span class="n">git</span> <span class="n">switch</span> <span class="n">register</span><span class="o">-</span><span class="n">mykit</span>    <span class="c1"># change to your branch name</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">main</span>
+<span class="n">git</span> <span class="n">push</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>This should update the PR and make the checks run again.</p>
+</section>
+</section>
 </section>
 
 
