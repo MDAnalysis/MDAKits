@@ -20,16 +20,20 @@ Failures during MDAKit registration PR
 generate_matrix step fails
 --------------------------
 
-When you submit your MDAKit registration PR, the continuous integration tests will run. 
-Check if there are any failures. If the **generate_matrix** step fails with an 
+When you submit your MDAKit registration PR, the continuous integration (CI) tests will run. 
+As part of this, the **generate_matrix** step will attempt to identify which mdakits 
+recipes have changed and run their respective CI steps.
+You should look at the results of the CI and if it failed (red) then you should look
+more closely into the output.
+In particular, if the **generate_matrix** step fails with an 
 error similar to the following (the commit hashes will differ):: 
 
   Base commit: a1be0b27fe3828dbbb389d0ce01e0e9f1a986134
   Head commit: ae10b54c38a2f68e3ac7769321b4b5c8f265655c
   Error: The head commit for this pull_request event is not ahead of the base commit. Please submit an issue on this action's GitHub repo.
 
-then you need to update the main branch of the registry and merge it into your
-registration branch.
+then you need to *update the main branch of the registry in your fork of the mdakits repository
+and merge it into your registration branch.*
 
 For example, if your branch is named *register-mykit* then you could do the following.
 
