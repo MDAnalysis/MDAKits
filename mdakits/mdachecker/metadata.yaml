@@ -26,6 +26,7 @@ run_tests:
   - pytest --pyargs mdachecker.tests
 test_dependencies:
   - pip install pytest
+import_name: mdachecker
 codecov:
 development_status: Beta
 changelog:
