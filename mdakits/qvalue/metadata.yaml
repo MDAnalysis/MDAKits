@@ -40,7 +40,7 @@ test_dependencies:
 project_org: cabb99
 
 install:
-  - mamba install -c conda-forge qvalue
+  - pip install md-qvalue
 
 development_status: "Development Status :: 4 - Beta"
 
