@@ -38,7 +38,7 @@ The source code of mdaencore can be installed using the following:
 .. _`mdaencore authors`:
    https://github.com/MDAnalysis/mdaencore/blob/main/AUTHORS.md
 
-.. |mdaencore_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |mdaencore_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: mdaencore develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
