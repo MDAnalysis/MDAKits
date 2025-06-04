@@ -45,7 +45,25 @@ def read_yaml(filepath):
 
 
 class Status:
+    """
+    Class to handle status information for a given MDAKit
+    """
     def __init__(self, path):
+        """
+        Reads in and stores the status.yaml file information for an MDAKit.
+
+
+        Parameters
+        ----------
+        path : pathlib.Path
+            Path to the status yaml file.
+
+
+        Note
+        ----
+        * Should there be no status.yaml file, a blank set of information will
+          be generated.
+        """
         if path.is_file():
             status = read_yaml(path)
             develop = TestStatusDict(**status['develop'])
@@ -56,12 +74,25 @@ class Status:
             self.data = StatusData()
 
     def write_status(self, basepath):
+        """
+        Write out a status.yaml based on the current contents of the
+        Status class.
+
+
+        Parameters
+        ----------
+        basepath : pathlib.Path
+            Location where to write a status.yaml file.
+        """
         outfile = basepath / "status.yaml"
         with open(outfile, 'w') as f:
             yaml.dump(self.data.dict(), f, default_flow_style=False)
 
 
 class TestStatusDict(BaseModel):
+    """
+    Pydantic class to hold test status results
+    """
     install_python: bool = True
     install_mdakit: bool = True
     install_mdanalysis: bool = True
@@ -71,6 +102,9 @@ class TestStatusDict(BaseModel):
 
 
 class BadgesStatusDict(BaseModel):
+    """
+    Pydantic class to hold badge status results
+    """
     coverage: bool = False
     converter: bool = False
     reader: bool = False
@@ -111,35 +145,58 @@ class MetaData(BaseModel):
     install: Optional[List[str]] = None
     import_name: Optional[str] = None
     src_install: Optional[List[str]] = None
-    run_tests: Optional[List[str]] = None
-    test_dependencies: Optional[List[str]] = None
+    run_tests: Union[List[str], Dict[List[str]], None] = None
+    test_dependencies: Union[List[str], Dict[List[str]], None] = None
     development_status: Optional[str]
     changelog: Optional[str]
     publications: Optional[List[str]]
 
 
-    # TODO: what about authors, that can also optionally be a URL
-    #@validator('project_home', 'documentation_home', 'community_home',
-    #           'changelog')
-    #def url_exists(cls, v):
-    #    if v is not None:
-    #        user_agent = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.0.7) Gecko/2009021910 Firefox/3.0.7'
-    #        headers = {'User-Agent': user_agent,}
-    #        req = request.Request(v, None, headers)
-    #        code = request.urlopen(req).getcode()
-    #        if code != 200:
-    #            raise ValueError(f"unreachable URL: {v}")
+    # TODO LIST:
+    #   * what about authors, that can also optionally be a URL
+    #   * validate github handles for maintainers
+    #   * validate github repositories
+    #   * validate publications
+    @validator('project_home', 'documentation_home', 'community_home',
+               'changelog')
+    def url_exists(cls, v):
+        if v is not None:
+            try:
+                response = requests.get(v)
+            except requests.ConnectionError as e:
+                raise ValueError(f"unreachable URL: {v}")
+
+    @validator('run_tests', 'test_dependencies')
+    def optional_dictionaries(cls, v):
+        if isinstance(v, dict):
+            for entry in ['latest', 'develop']:
+                assert entry in v.keys(), f"{entry} not key in {v}"
 
 
 class MDAKit:
     def __init__(self, path):
+        """
+        Create the MDAKit object. Feed in the metadata and status YAML files.
+
+
+        Parameters
+        ---------
+        path : str
+            A path to the mdakit directory location
+        """
         self.path = Path(path)
         self._read_metadata(self.path)
         self._read_status(self.path)
 
     def _read_metadata(self, path):
         """
-        Read mdakit metadata yaml file
+        Read mdakit metadata yaml file.
+
+
+        Parameters
+        ----------
+        path : pathlib.Path
+            A path to the MDAKit directory entry.
         """
         metadata = read_yaml(path / "metadata.yaml")
 
@@ -167,11 +224,31 @@ class MDAKit:
 
     def _read_status(self, path):
         """
-        Read the status file or create one if it's missing
+        Read the status file or fill in an empty Status ojbect if missing.
+
+
+        Parameters
+        ----------
+        path : pathlib.Path
+            A path to the MDAKit directory entry.
         """
         self.status = Status(path / "status.yaml")
 
     def gen_badges(self):
+        """
+        Generate badges for the MDAKit.
+
+        Currently this will:
+          * Try to work out the MDAnalysis base classes being used by the code.
+            * Needs to have `import_name` defined in the metadata yaml file.
+          * Read in the current codecov status for the project.
+            * Needs to have `project_org` and `project_name` defined in the
+              yaml file.
+
+        TODO:
+        -----
+        * For mysterious reasons this is currently broken and needs fixing.
+        """
         try:
             badges = self._get_class_badges(self.metadata.import_name)
         except:
@@ -189,6 +266,17 @@ class MDAKit:
 
     @staticmethod
     def _get_class_badges(name: Optional[str]):
+        """
+        Uses `inspect` to check (up to 3 layers down), if there are any objects
+        in the MDAKit that subclasses one of the following MDAnalysis base
+        classes:
+          * AnalysisBase
+          * ProtoReader
+          * WriterBase
+          * ConverterBase
+          * TopologyBase
+          * TransformationBase
+        """
         if name is None:
             return BadgesStatusDict()
 
@@ -233,6 +321,9 @@ class MDAKit:
 
     @staticmethod
     def _get_codecov_status(orgname: Optional[str], projname: str):
+        """
+        Uses the codecov API to fetch coverage data for the MDAKit.
+        """
         # orgname is optional
         if orgname is None:
             return False
@@ -249,6 +340,11 @@ class MDAKit:
 
     def get_matching_version(self, max_ver: str = "3.11", min_ver: str = "3.8",
                              version_field: str = "python_requires"):
+        """
+        Find a version that matches both the input range (defined by `max_ver`
+        and `min_ver`) and the range version for the `version_field` entry in
+        the MDAKit metadata.
+        """
 
         version_pin = getattr(self.metadata, version_field)
         if version_pin is None:
@@ -281,7 +377,7 @@ class MDAKit:
 
     def raise_issues(self):
         """
-        Raise issues for statuses with > 1 fails
+        Raise issues in MDAKit repository for statuses with > 1 fails.
         """
         git = Github(os.environ['GITHUB_TOKEN'])
         repo = git.get_repo('MDAnalysis/MDAKits')
@@ -332,9 +428,36 @@ class MDAKit:
 
     @staticmethod
     def _get_custom_badge(left, right, colour):
+        """
+        Private method to create a custom badge using img.shields.io
+
+        Parameters
+        ----------
+        left : str
+          Text to be stored on the left side of the badge
+        right : str
+          Text to be stored on the right side of the badge
+        color : str
+          img.shields.io compatible color for the badge status
+        """
         return f"https://img.shields.io/badge/{left}-{right}-{colour}.svg"
 
     def gen_ci_badges(self, run_type):
+        """
+        Create a badge for the CI outcomes of a particular run type.
+
+        Parameters
+        ----------
+        run_type : str
+          Either `latest` or `develop`, indicates the run type for which a
+          badge should be created.
+
+
+        Returns
+        -------
+        str
+          Link to a custom img.shields.io badge for the status of the CI run.
+        """
         status = getattr(self.status.data, run_type)
 
         if ((self.metadata.run_tests is None) or
@@ -347,6 +470,10 @@ class MDAKit:
             return self._get_custom_badge(run_type, "passed", "green")
 
     def gen_code_badges(self):
+        """
+        Generate achivement badges for the MDAKit based on the badge data
+        currently stored under `self.data.badges`.
+        """
         badges = []
         
         # coverage
@@ -374,6 +501,16 @@ class MDAKit:
         return ' '.join(badges)
 
     def gen_authors(self, urls):
+        """
+        Create an authors entry for the MDAKit docs.
+
+
+        Parameters
+        ----------
+        urls : List[str]
+          A list of url entries so that sphinx knows how to link things
+          correctly.
+        """
         if 'https' in self.metadata.authors[0]:
             auths = f"`{self.metadata.project_name} authors`_"
             urls.append(f".. _`{self.metadata.project_name} authors`:\n"
@@ -384,6 +521,10 @@ class MDAKit:
         return auths
 
     def write_mdakit_page(self):
+        """
+        Write a ReST docs entry for the MDAKit giving a summary of current
+        status.
+        """
         name = self.metadata.project_name
         urls = []
         authors = self.gen_authors(urls)
@@ -491,6 +632,9 @@ class MDAKit:
                 kitf.write(entry)
 
     def write_table_entry(self, f, urls, toctree):
+        """
+        Write out a table entry for the MDAKits searchable summary table.
+        """
         name = self.metadata.project_name
         keywords = ', '.join(self.metadata.keywords)
         authors = self.gen_authors(urls)
@@ -512,6 +656,21 @@ class MDAKit:
         toctree.append(f'   {name}\n')
 
     def get_install(self, install_type):
+        """
+        Get shell appropriate install instructions for the MDAKit.
+
+
+        Parameters
+        ----------
+        install_type : str
+          If `src` will pass back source installation instructions, otherwise
+          will pass back the standard installation instructions.
+
+        Returns
+        -------
+        str
+          Shell executable string of installation instructions.
+        """
         if install_type == "src":
             if self.metadata.src_install is None:
                 return ""
@@ -523,13 +682,53 @@ class MDAKit:
             else:
                 return ';'.join(self.metadata.install)
 
-    def get_test_deps(self):
+    def get_test_deps(self, runtype=None):
+        """
+        Get a list of test dependency install instructions.
+
+
+        Parameters
+        ----------
+        runtype : Optional[str]
+          Either `latest` or `develop`, if `self.metadata.test_dependencies`
+          is a dictionary, will attempt to read list from the corresponding
+          key.
+
+
+        Returns
+        -------
+        str :
+          Semi-colon separated list of install instructions which can be
+          executed from shell.
+        """
         if self.metadata.test_dependencies is None:
             return ""
 
-        return ';'.join(self.metadata.test_dependencies)
+        if isinstance(self.metadata.test_dependencies, dict):
+            return ';'.join(self.metadata.test_dependencies[run_type])
+        else:
+            return ';'.join(self.metadata.test_dependencies)
 
-    def get_run_tests(self, runtype):
+    def get_run_tests(self, runtype=None):
+        """
+        Get a list of test dependency install instructions.
+
+
+        Parameters
+        ----------
+        runtype : Optional[str]
+          Either `latest` or `develop`, if `self.metadata.run_tests`
+          is a dictionary, will attempt to read list from the corresponding
+          key.
+
+
+        Returns
+        -------
+        str :
+          Semi-colon separated list of test run instructions which can be
+          executed from shell.
+
+        """
         if self.metadata.run_tests is None:
             return ""
 
@@ -537,8 +736,13 @@ class MDAKit:
             (runtype == "develop" and self.metadata.src_install is None)):
             return ""
 
+        if isinstance(self.metadata.run_tests, dict):
+            run_tests = self.metadata.run_tests[runtype]
+        else:
+            run_tests = self.metadata.run_tests
+
         test_steps = []
-        for step in self.metadata.run_tests:
+        for step in run_tests:
             # special case for cloning the latest tag
             if step == "git clone latest":
                 test_steps.append(f'git clone {self.metadata.project_home}.git && cd "$(basename "$_" .git)"')
