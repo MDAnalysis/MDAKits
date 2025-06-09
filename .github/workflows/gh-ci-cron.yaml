@@ -97,6 +97,16 @@ jobs:
           mamba install requests "setuptools<80.9" packaging pyyaml pydantic
           pip install PyGithub
 
+      - id: install-mdanalysis
+        name: install-mdanalysis
+        uses: MDAnalysis/install-mdanalysis@main
+        continue-on-error: true
+        with:
+          version: ${{ matrix.jobstep }}
+          install-tests: true
+          installer: mamba
+          shell: bash -l {0}
+
       - id: install-mdakit
         name: install-mdakit
         continue-on-error: true
@@ -119,15 +129,12 @@ jobs:
           echo "install tests:${install}"
           eval ${install}
 
-      - id: install-mdanalysis
-        name: install-mdanalysis
-        uses: MDAnalysis/install-mdanalysis@main
+      - id: list-deps
+        name: list-deps
         continue-on-error: true
-        with:
-          version: ${{ matrix.jobstep }}
-          install-tests: true
-          installer: mamba
-          shell: bash -l {0}
+        run: |
+          pip list
+          mamba list
 
       - id: run-tests
         name: run-tests
