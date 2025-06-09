@@ -94,7 +94,7 @@ jobs:
       - id: install-conda-base-deps
         name: install-conda-base-deps
         run: |
-          mamba install requests "setuptools<80.9" packaging pyyaml pydantic
+          mamba install requests "setuptools<80.9" packaging pyyaml pydantic "numpy<2.3"
           pip install PyGithub
 
       - id: install-mdanalysis
