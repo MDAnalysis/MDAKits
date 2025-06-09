@@ -40,7 +40,7 @@ The source code of MDonatello can be installed using the following:
    :alt: MDonatello develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |MDonatello_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |MDonatello_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: MDonatello develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

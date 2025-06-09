@@ -42,7 +42,7 @@ The source code of mdahole2 can be installed using the following:
    :alt: mdahole2 develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mdahole2_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |mdahole2_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: mdahole2 develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
