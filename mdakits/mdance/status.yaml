@@ -11,12 +11,12 @@ develop:
   install_mdanalysis: false
   install_python: true
   install_test_deps: true
-  numfails: 2
-  run_tests: false
+  numfails: 3
+  run_tests: true
 latest:
   install_mdakit: true
   install_mdanalysis: true
   install_python: true
   install_test_deps: true
-  numfails: 18
+  numfails: 19
   run_tests: false
