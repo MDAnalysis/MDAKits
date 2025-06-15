@@ -42,7 +42,7 @@ The source code of PathSimAnalysis can be installed using the following:
    :alt: PathSimAnalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |PathSimAnalysis_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |PathSimAnalysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: PathSimAnalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

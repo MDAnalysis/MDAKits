@@ -43,7 +43,7 @@ The source code of helanal can be installed using the following:
    :alt: helanal develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |helanal_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |helanal_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: helanal develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

@@ -43,7 +43,7 @@ The source code of propkatraj can be installed using the following:
    :alt: propkatraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |propkatraj_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |propkatraj_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: propkatraj develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

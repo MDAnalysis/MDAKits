@@ -42,7 +42,7 @@ The source code of waterdynamics can be installed using the following:
    :alt: waterdynamics develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |waterdynamics_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |waterdynamics_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: waterdynamics develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

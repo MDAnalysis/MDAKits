@@ -43,7 +43,7 @@ The source code of twodanalysis can be installed using the following:
    :alt: twodanalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |twodanalysis_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |twodanalysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: twodanalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

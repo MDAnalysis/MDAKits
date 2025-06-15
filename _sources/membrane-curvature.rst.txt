@@ -42,7 +42,7 @@ The source code of membrane-curvature can be installed using the following:
    :alt: membrane-curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: membrane-curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

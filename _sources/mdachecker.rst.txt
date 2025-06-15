@@ -36,7 +36,7 @@ The source code of mdachecker can be installed using the following:
    :alt: mdachecker develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mdachecker_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |mdachecker_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdachecker develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
