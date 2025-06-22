@@ -43,7 +43,7 @@ The source code of domhmm can be installed using the following:
    :alt: domhmm develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |domhmm_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |domhmm_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: domhmm develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

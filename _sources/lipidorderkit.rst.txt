@@ -43,7 +43,7 @@ The source code of lipidorderkit can be installed using the following:
    :alt: lipidorderkit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |lipidorderkit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |lipidorderkit_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: lipidorderkit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

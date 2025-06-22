@@ -40,7 +40,7 @@ The source code of mdacli can be installed using the following:
    :alt: mdacli develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mdacli_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |mdacli_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: mdacli develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
