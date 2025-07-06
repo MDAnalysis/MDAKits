@@ -41,7 +41,7 @@ The source code of lipyds can be installed using the following:
    :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |lipyds_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |lipyds_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

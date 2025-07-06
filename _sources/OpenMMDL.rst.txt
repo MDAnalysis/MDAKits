@@ -59,7 +59,7 @@ jupyter
    :alt: OpenMMDL develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |OpenMMDL_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |OpenMMDL_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: OpenMMDL develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

@@ -46,7 +46,7 @@ The source code of Menger_Curvature can be installed using the following:
    :alt: Menger_Curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |Menger_Curvature_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |Menger_Curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: Menger_Curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
