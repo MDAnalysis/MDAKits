@@ -42,7 +42,7 @@ The source code of MDANCE can be installed using the following:
    :alt: MDANCE develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |MDANCE_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |MDANCE_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: MDANCE develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

@@ -1,0 +1,51 @@
+.. _qvalue:
+
+************************************************
+qvalue
+************************************************
+
+| 🖋️ **Authors**: `qvalue authors`_
+| 🏠 **Project home:** https://github.com/cabb99/qvalue/
+| 📖 **Documentation:** https://qvalue.readthedocs.io
+| ⚖️ **License:** GPL-2.0-or-later
+| 🔑 **Keywords:** Q value, Native Contacts
+| 🚀 **Development status:** Development Status :: 4 - Beta
+| 📜 **Changelog:** https://github.com/cabb99/qvalue/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://doi.org/10.1371/journal.pcbi.1008308
+|    * https://doi.org/10.1073/pnas.0509768103
+|    * https://doi.org/10.1073/pnas.1410529111
+|    * https://doi.org/10.1073/pnas.252753899
+| 🧪 **Tests (latest):** |qvalue_latest| 
+| 🧪 **Tests (develop):** |qvalue_develop| 
+| **Description:**
+| *Calculates the fraction of native contacts conserved during a protein simulation*
+
+
+
+Installation instructions
+=========================
+
+The latest version of qvalue can be installed using the following:
+
+.. code-block:: bash
+
+    pip install md-qvalue
+
+The source code of qvalue can be installed using the following:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/cabb99/qvalue@main
+
+.. _`qvalue authors`:
+   https://github.com/cabb99/qvalue/blob/main/AUTHORS.md
+
+.. |qvalue_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: qvalue develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |qvalue_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: qvalue develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

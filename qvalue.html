@@ -22,7 +22,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menger_Curvature &mdash; MDAKits Registry  documentation</title>
+  <title>qvalue &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="qvalue" href="qvalue.html" />
-    <link rel="prev" title="OpenMMDL" href="OpenMMDL.html" /> 
+    <link rel="next" title="lipyds" href="lipyds.html" />
+    <link rel="prev" title="Menger_Curvature" href="Menger_Curvature.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -89,11 +89,11 @@
 <li class="toctree-l2"><a class="reference internal" href="MDANCE.html">MDANCE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdahole2.html">mdahole2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OpenMMDL.html">OpenMMDL</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Menger_Curvature</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Menger_Curvature.html">Menger_Curvature</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">qvalue</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="qvalue.html">qvalue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lipyds.html">lipyds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdakit-sasa.html">mdakit-sasa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MDonatello.html">MDonatello</a></li>
@@ -151,9 +151,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">Menger_Curvature</li>
+      <li class="breadcrumb-item active">qvalue</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/Menger_Curvature.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/qvalue.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -161,37 +161,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="menger-curvature">
-<span id="id1"></span><h1>Menger_Curvature<a class="headerlink" href="#menger-curvature" title="Link to this heading"></a></h1>
+  <section id="qvalue">
+<span id="id1"></span><h1>qvalue<a class="headerlink" href="#qvalue" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/EtienneReboul/menger_curvature/blob/main/AUTHORS.md">Menger_Curvature authors</a></div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/EtienneReboul/menger_curvature">https://github.com/EtienneReboul/menger_curvature</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://menger-curvature.readthedocs.io/">https://menger-curvature.readthedocs.io/</a></div>
+<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/cabb99/qvalue/blob/main/AUTHORS.md">qvalue authors</a></div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/cabb99/qvalue/">https://github.com/cabb99/qvalue/</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://qvalue.readthedocs.io">https://qvalue.readthedocs.io</a></div>
 <div class="line">⚖️ <strong>License:</strong> GPL-2.0-or-later</div>
-<div class="line">🔑 <strong>Keywords:</strong> IDP, IDR, flexibility, Menger curvature, protein</div>
-<div class="line">🚀 <strong>Development status:</strong> Development Status :: 5 - Production/Stable</div>
-<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/EtienneReboul/menger_curvature/blob/main/CHANGELOG.md">https://github.com/EtienneReboul/menger_curvature/blob/main/CHANGELOG.md</a></div>
+<div class="line">🔑 <strong>Keywords:</strong> Q value, Native Contacts</div>
+<div class="line">🚀 <strong>Development status:</strong> Development Status :: 4 - Beta</div>
+<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/cabb99/qvalue/blob/main/CHANGELOG.md">https://github.com/cabb99/qvalue/blob/main/CHANGELOG.md</a></div>
 <div class="line">📑 <strong>Publications:</strong></div>
 <div class="line-block">
-<div class="line">* <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.4c00742">https://pubs.acs.org/doi/abs/10.1021/acs.jcim.4c00742</a></div>
-<div class="line">* <a class="reference external" href="https://doi.org/10.1101/2025.02.22.639620">https://doi.org/10.1101/2025.02.22.639620</a></div>
-<div class="line">* <a class="reference external" href="https://doi.org/10.1101/2025.02.19.638976">https://doi.org/10.1101/2025.02.19.638976</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1371/journal.pcbi.1008308">https://doi.org/10.1371/journal.pcbi.1008308</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1073/pnas.0509768103">https://doi.org/10.1073/pnas.0509768103</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1073/pnas.1410529111">https://doi.org/10.1073/pnas.1410529111</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1073/pnas.252753899">https://doi.org/10.1073/pnas.252753899</a></div>
 </div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="Menger_Curvature develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="Menger_Curvature develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="qvalue develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="qvalue develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>This project aims to provide a simple MDAkit for JIT accelerated Menger curvature calculation. The idea is to associate a value of curvature to as many residues as possible in a polymer. If one has access to several conformations , the average value of the curvature (LC) and its standard deviation (LF) are valuable information to characterize the local dynamics of the backbone.</em></div>
+<div class="line"><em>Calculates the fraction of native contacts conserved during a protein simulation</em></div>
 </div>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The latest version of Menger_Curvature can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numba<span class="w"> </span>mdanalysis
-pip<span class="w"> </span>install<span class="w"> </span>menger-curvature
+<p>The latest version of qvalue can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>md-qvalue
 </pre></div>
 </div>
-<p>The source code of Menger_Curvature can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>numba<span class="w"> </span>mdanalysis
-pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/EtienneReboul/menger_curvature@main
+<p>The source code of qvalue can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/cabb99/qvalue@main
 </pre></div>
 </div>
 </section>
@@ -201,8 +200,8 @@ pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="OpenMMDL.html" class="btn btn-neutral float-left" title="OpenMMDL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="qvalue.html" class="btn btn-neutral float-right" title="qvalue" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Menger_Curvature.html" class="btn btn-neutral float-left" title="Menger_Curvature" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="lipyds.html" class="btn btn-neutral float-right" title="lipyds" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
