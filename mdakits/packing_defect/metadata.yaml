@@ -4,7 +4,7 @@
 project_name: packing_defect
 
 authors:
-  - R. Jay Braun
+  - R. Jay Braun Jr.
 
 maintainers:
   - jaybraunjr
@@ -12,11 +12,13 @@ maintainers:
 description: >-
   Analyze membrane packing defects from MD trajectories using grid-based
   stamping, leaflet classification, and connected-component clustering.
-  Exports per-class frames and size distributions; includes a radius-based workflow.
+  Quantify protein-membrane interactions and contains options for visualization.
+
 
 keywords:
   - MDAnalysis
   - membrane
+  - protein
   - packing defects
   - lipids
   - molecular dynamics
