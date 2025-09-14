@@ -380,7 +380,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: OpenMMDL develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |OpenMMDL_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |OpenMMDL_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: OpenMMDL develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
