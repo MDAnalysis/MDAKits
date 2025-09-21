@@ -264,7 +264,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`MDANCE authors`:
    https://github.com/mqcomplab/MDANCE/blob/main/AUTHORS.md
 
-.. |MDANCE_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |MDANCE_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: MDANCE develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

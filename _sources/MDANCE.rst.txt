@@ -38,7 +38,7 @@ The source code of MDANCE can be installed using the following:
 .. _`MDANCE authors`:
    https://github.com/mqcomplab/MDANCE/blob/main/AUTHORS.md
 
-.. |MDANCE_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |MDANCE_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: MDANCE develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
