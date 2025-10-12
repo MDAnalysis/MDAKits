@@ -376,7 +376,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`OpenMMDL authors`:
    https://github.com/wolberlab/OpenMMDL/blob/main/AUTHORS.md
 
-.. |OpenMMDL_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |OpenMMDL_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: OpenMMDL develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
