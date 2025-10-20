@@ -20,11 +20,11 @@ install:
   - mamba install -c conda-forge mdacli
 src_install:
   - pip install git+https://github.com/MDAnalysis/mdacli@main
-python_requires: ">=3.7"
-mdanalysis_requires: ">=2.1.0"
+python_requires: ">=3.11"
+mdanalysis_requires: ">=2.10.0"
 run_tests:
   - git clone latest
-  - tox -e test
+  - tox -e tests
 test_dependencies:
   - pip install tox
 project_org: MDAnalysis
