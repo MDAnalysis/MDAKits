@@ -37,7 +37,7 @@ The source code of lipyds can be installed using the following:
     cd lipyds
     python setup.py install
 
-.. |lipyds_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |lipyds_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: lipyds develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
