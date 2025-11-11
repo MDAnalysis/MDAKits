@@ -40,6 +40,7 @@ resources on MDAKits and how to write and/or add your own, follow the links belo
    addingakit
    maintainingakit
    troubleshooting
+   badge
 
 
 .. toctree::
