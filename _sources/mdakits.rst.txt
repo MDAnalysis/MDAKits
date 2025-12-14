@@ -320,7 +320,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: solvation-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |solvation-analysis_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |solvation-analysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: solvation-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
