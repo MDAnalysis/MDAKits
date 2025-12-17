@@ -1,0 +1,22 @@
+badges:
+  analysis: false
+  converter: false
+  coverage: false
+  reader: false
+  topology: false
+  transformation: false
+  writer: false
+develop:
+  install_mdakit: false
+  install_mdanalysis: true
+  install_python: true
+  install_test_deps: true
+  numfails: 12
+  run_tests: false
+latest:
+  install_mdakit: false
+  install_mdanalysis: true
+  install_python: true
+  install_test_deps: true
+  numfails: 8
+  run_tests: false

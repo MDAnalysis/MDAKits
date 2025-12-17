@@ -1,0 +1,52 @@
+project_name: helanal
+
+authors:
+  - https://github.com/MDAnalysis/helanal/blob/main/AUTHORS.md
+
+maintainers:
+  - fiona-naughton
+
+description:
+    helanal contains code to analyse protein helicies based on their Cα atoms,
+    quantifying structural features such as local bending angles and global axes.
+
+keywords:
+  - protein
+  - structure
+  - helix
+
+license: GPL-2.0-or-later
+
+project_home: https://github.com/MDAnalysis/helanal/
+
+documentation_home: https://helanal.readthedocs.io
+
+documentation_type: UserGuide + API
+
+src_install:
+  - pip install git+https://github.com/MDAnalysis/helanal@main
+
+install:
+  - pip install helanal
+
+import_name: helanal
+
+python_requires: ">=3.10"
+
+mdanalysis_requires: ">=2.0.0"
+
+run_tests:
+  - pytest --pyargs helanal
+
+test_dependencies:
+  - mamba install pytest MDAnalysisTests
+
+project_org: MDAnalysis
+
+development_status: Production/Stable
+
+publications:
+  - https://doi.org/10.1002/bip.1967.360050708
+  - https://doi.org/10.1080/07391102.2000.10506570
+
+changelog: https://github.com/MDAnalysis/helanal/blob/main/CHANGELOG.md
