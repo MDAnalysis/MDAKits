@@ -105,6 +105,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - protein, structure, helix
       - `helanal authors`_
       - |helanal_latest| |helanal_develop|
+    * - :ref:`packing_defect`
+      - MDAnalysis, membrane, protein, packing defects, lipids, molecular dynamics
+      - R. Jay Braun Jr.
+      - |packing_defect_latest| |packing_defect_develop|
     * - :ref:`domhmm`
       - membranes, molecular dynamics, nanodomains, microdomains, machine learning
       - `domhmm authors`_
@@ -157,6 +161,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    membrane-curvature
    MDANCE
    helanal
+   packing_defect
    domhmm
    maicos
    zarrtraj
@@ -396,6 +401,14 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |helanal_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: helanal develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |packing_defect_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+   :alt: packing_defect develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |packing_defect_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: packing_defect develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`domhmm authors`:
