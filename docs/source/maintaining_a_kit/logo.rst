@@ -20,8 +20,7 @@ on updating this.
 
 
 .. _`MDAKits cookiecutter documentation`:
-   https://cookiecutter-mdakit.readthedocs.io/en/latest/usage.html#documentation-configuration
-
+   https://www.mdanalysis.org/cookiecutter-mdakit/usage.html#documentation-configuration
 
 .. _`'empty gear' template`:
    https://github.com/MDAnalysis/branding/tree/main/templates/MDAKits
