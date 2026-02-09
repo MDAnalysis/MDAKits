@@ -19,7 +19,7 @@ documentation_type: UserGuide + API
 install:
   - pip install maicos
 src_install:
-  - pip install git+https://gitlab.com/maicos-devel/maicos.git
+  - pip install git+https://github.com/maicos-devel/maicos.git
 python_requires: ">=3.11"
 mdanalysis_requires: ">=2.10.0"
 run_tests:
