@@ -5,8 +5,8 @@ maicos
 ************************************************
 
 | 🖋️ **Authors**: `maicos authors`_
-| 🏠 **Project home:** https://gitlab.com/maicos-devel/maicos
-| 📖 **Documentation:** https://maicos.readthedocs.io
+| 🏠 **Project home:** https://github.com/maicos-devel/maicos
+| 📖 **Documentation:** https://maicos-analysis.org
 | ⚖️ **License:** GPL-3.0-or-later
 | 🔑 **Keywords:** Molecular Dynamics, Confined Systems
 | 🚀 **Development status:** Beta
@@ -30,10 +30,10 @@ The source code of maicos can be installed using the following:
 
 .. code-block:: bash
 
-    pip install git+https://gitlab.com/maicos-devel/maicos.git
+    pip install git+https://github.com/maicos-devel/maicos.git
 
 .. _`maicos authors`:
-   https://gitlab.com/maicos-devel/maicos/-/blob/main/AUTHORS.rst
+   https://github.com/maicos-devel/maicos/blob/main/AUTHORS.rst
 
 .. |maicos_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: maicos develop CI status
