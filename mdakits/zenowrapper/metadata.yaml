@@ -85,14 +85,12 @@ mdanalysis_requires: ">=2.0.0"
 ## Otherwise you need to include commands to make the tests available. 
 ## For example, if the tests are in the repository at the top level under `./tests`:
 ## First use `git clone latest` to either clone the top commit for "development code" checks or check out
-## the latest tag for "latest release" checks. Then then run pytest:
+## the latest tag for "latest release" checks. Then run pytest:
 ##    - git clone latest
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
 run_tests:
-  - export LD_LIBRARY_PATH=$HOME/ZENO/zeno-build:$LD_LIBRARY_PATH
-  - git clone latest
-  - pytest -n 2 -v src/tests/
+  - LD_LIBRARY_PATH=$HOME/ZENO/zeno-build:$LD_LIBRARY_PATH pytest -n 2 -v src/tests/
 
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests.
