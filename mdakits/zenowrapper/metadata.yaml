@@ -67,7 +67,7 @@ src_install:
   - pip cache purge
   - export ZENOPATH=$HOME/ZENO
   - cd $HOME/zenowrapper && python -m pip install -v --no-deps .
-  - python -c "from zenowrapper.zenowrapper_ext import zenolib; print('zenowrapper_ext compiled successfully')"
+  - LD_LIBRARY_PATH=$HOME/ZENO/zeno-build:$LD_LIBRARY_PATH python -c "from zenowrapper.zenowrapper_ext import zenolib; print('zenowrapper_ext compiled successfully')"
 
 ## str: the package name used to import the mdakit
 import_name: zenowrapper
