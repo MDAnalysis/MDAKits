@@ -49,22 +49,22 @@ documentation_type: UserGuide + API
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - conda install -c conda-forge boost
+  - mamba install -y -c conda-forge boost cmake make wget
   - cd $HOME
-  - wget http://sprng.org/Version5.0/sprng5.tar.bz2
+  - wget --tries=5 --retry-connrefused --waitretry=5 -O sprng5.tar.bz2 http://sprng.org/Version5.0/sprng5.tar.bz2
   - tar -xjf sprng5.tar.bz2
   - mkdir sprng5-build && cd sprng5-build
   - CXXFLAGS=-fPIC ../sprng5/configure --with-fortran=no --with-mpi=no --prefix=$HOME/sprng5-install
   - make && make install
   - cd $HOME
-  - git clone https://github.com/usnistgov/ZENO.git
+  - git clone --depth 1 https://github.com/usnistgov/ZENO.git
   - cd ZENO
   - mkdir zeno-build && cd zeno-build
-  - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ../cpp
-  - make
-  - pip install nanobind "scikit-build-core[pyproject]" setuptools-scm "setuptools>=61"
+  - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 $HOME/ZENO/cpp
+  - make && make install
+  - pip install scipy nanobind "scikit-build-core[pyproject]" setuptools-scm "setuptools>=61"
   - export ZENOPATH=$HOME/ZENO
-  - cd $HOME && git clone https://github.com/usnistgov/zenowrapper.git
+  - cd $HOME && git clone --depth 1 https://github.com/usnistgov/zenowrapper.git
   - cd $HOME/zenowrapper && pip install --no-build-isolation --no-deps .
 
 ## str: the package name used to import the mdakit
