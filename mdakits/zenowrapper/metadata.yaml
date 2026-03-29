@@ -94,6 +94,7 @@ run_tests:
 ## make sure that it is appropriate for how you run tests.
 test_dependencies:
   - export ZENOPATH=$HOME/ZENO
+  - pip install pytest-xdist pytest-timeout pytest-cov
 
 ## str: the organisation name the MDAKit falls under
 project_org: usnistgov
