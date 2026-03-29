@@ -49,6 +49,7 @@ documentation_type: UserGuide + API
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
+  - export ZENOPATH=$HOME/ZENO
   - pip install git+https://github.com/usnistgov/zenowrapper.git@main
 
 ## str: the package name used to import the mdakit
@@ -85,7 +86,6 @@ test_dependencies:
   - mkdir zeno-build && cd zeno-build
   - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ../cpp
   - make && make install
-  - export ZENOPATH=$HOME/ZENO
 
 ## str: the organisation name the MDAKit falls under
 project_org: usnistgov
