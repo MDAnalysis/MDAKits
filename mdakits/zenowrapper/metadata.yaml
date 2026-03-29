@@ -65,10 +65,8 @@ src_install:
   - cd $HOME && git clone https://github.com/usnistgov/zenowrapper.git
   - mamba env update --name test -f $HOME/zenowrapper/requirements.yaml
   - pip cache purge
-  - echo "DEBUG which python=$(which python) ZENOPATH=$HOME/ZENO conda_env=$CONDA_DEFAULT_ENV"
-  - echo "DEBUG nanobind=$(python -c 'import nanobind; print(nanobind.__version__)')"
-  - echo "DEBUG scikit_build_core=$(python -c 'import scikit_build_core; print(scikit_build_core.__version__)')"
-  - cd $HOME/zenowrapper && ZENOPATH=$HOME/ZENO python -m pip install -v --no-build-isolation --no-deps .
+  - export ZENOPATH=$HOME/ZENO
+  - cd $HOME/zenowrapper && python -m pip install -v --no-deps .
   - python -c "from zenowrapper.zenowrapper_ext import zenolib; print('zenowrapper_ext compiled successfully')"
 
 ## str: the package name used to import the mdakit
@@ -92,7 +90,7 @@ mdanalysis_requires: ">=2.0.0"
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
 run_tests:
-  - export ZENOPATH=$HOME/ZENO
+  - export LD_LIBRARY_PATH=$HOME/ZENO/zeno-build:$LD_LIBRARY_PATH
   - git clone latest
   - pytest -n 2 -v src/tests/
 
