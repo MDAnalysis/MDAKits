@@ -92,7 +92,7 @@ test_dependencies:
   - cd ZENO
   - mkdir zeno-build && cd zeno-build
   - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ../cpp
-  - make && make install
+  - make
 
 ## str: the organisation name the MDAKit falls under
 project_org: usnistgov
