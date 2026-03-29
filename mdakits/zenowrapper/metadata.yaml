@@ -49,7 +49,7 @@ documentation_type: UserGuide + API
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - mamba install -y -c conda-forge boost cmake make wget
+  - mamba install -y -c conda-forge cmake make wget
   - cd $HOME
   - wget --tries=5 --retry-connrefused --waitretry=5 -O sprng5.tar.bz2 http://sprng.org/Version5.0/sprng5.tar.bz2
   - tar -xjf sprng5.tar.bz2
@@ -57,15 +57,14 @@ src_install:
   - CXXFLAGS=-fPIC ../sprng5/configure --with-fortran=no --with-mpi=no --prefix=$HOME/sprng5-install
   - make && make install
   - cd $HOME
-  - git clone --depth 1 https://github.com/usnistgov/ZENO.git
+  - git clone https://github.com/usnistgov/ZENO.git
   - cd ZENO
   - mkdir zeno-build && cd zeno-build
   - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 $HOME/ZENO/cpp
   - make && make install
-  - pip install scipy nanobind "scikit-build-core[pyproject]" setuptools-scm "setuptools>=61"
-  - export ZENOPATH=$HOME/ZENO
-  - cd $HOME && git clone --depth 1 https://github.com/usnistgov/zenowrapper.git
-  - cd $HOME/zenowrapper && pip install --no-build-isolation --no-deps .
+  - cd $HOME && git clone https://github.com/usnistgov/zenowrapper.git
+  - mamba env update --name test --file $HOME/zenowrapper/devtools/conda-envs/ci_env.yaml
+  - cd $HOME/zenowrapper && ZENOPATH=$HOME/ZENO pip install --no-build-isolation --no-deps .
 
 ## str: the package name used to import the mdakit
 import_name: zenowrapper
@@ -90,7 +89,7 @@ mdanalysis_requires: ">=2.0.0"
 run_tests:
   - export ZENOPATH=$HOME/ZENO
   - git clone latest
-  - pytest -n 2 -v src/tests/
+  - cd zenowrapper && pytest -n 2 -v src/tests/
 
 ## List(str): a list of commands to use to install the necessary dependencies required
 ## to run the MDAKit's tests.
