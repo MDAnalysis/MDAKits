@@ -88,6 +88,7 @@ mdanalysis_requires: ">=2.0.0"
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
 run_tests:
+  - export ZENOPATH=$HOME/ZENO
   - git clone latest
   - pytest -n 2 -v src/tests/
 
@@ -96,7 +97,6 @@ run_tests:
 ## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
 ## make sure that it is appropriate for how you run tests.
 test_dependencies:
-  - export ZENOPATH=$HOME/ZENO
   - pip install pytest-xdist pytest-timeout pytest-cov
 
 ## str: the organisation name the MDAKit falls under
