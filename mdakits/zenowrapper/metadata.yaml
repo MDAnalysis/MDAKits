@@ -6,7 +6,11 @@ project_name: zenowrapper
 
 ## List(str): a link to the authors file (preferred) or a list of authors 
 authors:
-  - ["Jennifer A Clark", "Derek Juba", "Walid Keyrouz", "Debra Audus", "Jack Douglas"]
+  - Jennifer A Clark
+  - Derek Juba
+  - Walid Keyrouz
+  - Debra Audus
+  - Jack Douglas
 
 ## List(str): a list of maintainers
 ## Please note these _must_ be GitHub handles
@@ -45,7 +49,7 @@ documentation_type: UserGuide + API
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - pip install git@github.com:usnistgov/zenowrapper.git@main
+  - pip install git+https://github.com/usnistgov/zenowrapper.git@main
 
 ## str: the package name used to import the mdakit
 import_name: zenowrapper
@@ -78,11 +82,7 @@ test_dependencies:
   - git clone https://github.com/usnistgov/ZENO.git
   - cd ZENO
   - mkdir zeno-build && cd zeno-build
-  - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include \
-          -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a \
-          -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install \
-          -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
-           ../cpp
+  - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ../cpp
   - make && make install
   - export ZENOPATH=$HOME/ZENO
 
