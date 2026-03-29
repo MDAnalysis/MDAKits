@@ -62,9 +62,10 @@ src_install:
   - mkdir zeno-build && cd zeno-build
   - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 ../cpp
   - make
+  - pip install nanobind scikit-build-core[pyproject]
   - export ZENOPATH=$HOME/ZENO
   - cd $HOME && git clone https://github.com/usnistgov/zenowrapper.git
-  - cd $HOME/zenowrapper && pip install . --no-deps
+  - cd $HOME/zenowrapper && pip install --no-build-isolation --no-deps .
 
 ## str: the package name used to import the mdakit
 import_name: zenowrapper
