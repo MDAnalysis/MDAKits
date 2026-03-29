@@ -63,7 +63,7 @@ src_install:
   - cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 $HOME/ZENO/cpp
   - make && make install
   - cd $HOME && git clone https://github.com/usnistgov/zenowrapper.git
-  - mamba env update -f $HOME/zenowrapper/requirements.yaml
+  - mamba env update --name test -f $HOME/zenowrapper/requirements.yaml
   - pip cache purge
   - cd $HOME/zenowrapper && ZENOPATH=$HOME/ZENO python -m pip install --no-deps .
   - python -c "from zenowrapper.zenowrapper_ext import zenolib; print('zenowrapper_ext compiled successfully')"
