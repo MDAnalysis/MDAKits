@@ -81,6 +81,13 @@ run_tests:
 ## make sure that it is appropriate for how you run tests.
 test_dependencies:
   - conda install -c conda-forge boost
+  - cd $HOME
+  - wget http://sprng.org/Version5.0/sprng5.tar.bz2
+  - tar -xjf sprng5.tar.bz2
+  - mkdir sprng5-build && cd sprng5-build
+  - CXXFLAGS=-fPIC ../sprng5/configure --with-fortran=no --with-mpi=no --prefix=$HOME/sprng5-install
+  - make && make install
+  - cd $HOME
   - git clone https://github.com/usnistgov/ZENO.git
   - cd ZENO
   - mkdir zeno-build && cd zeno-build
