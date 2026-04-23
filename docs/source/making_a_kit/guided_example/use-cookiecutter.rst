@@ -1,6 +1,6 @@
-************************************
-Part 1: Using the MDAKit cookicutter
-************************************
+*************************************
+Part 1: Using the MDAKit cookiecutter
+*************************************
 
 *See our* `YouTube tutorial <https://www.youtube.com/watch?v=viCPUHkgSxg&t=38s>`_
 *for a video demonstration of this section.*
@@ -105,8 +105,11 @@ Progress: MDAKit requirements
 
 .. _`Cookiecutter tool`: https://cookiecutter.readthedocs.io/en/stable/
 
-.. _`MDAKit cookiecutter documentation`: https://cookiecutter-mdakit.readthedocs.io/en/latest/
+.. _`MDAKit cookiecutter documentation`:
+   https://www.mdanalysis.org/cookiecutter-mdakit
 
-.. _`cookiecutter options`: https://cookiecutter-mdakit.readthedocs.io/en/latest/options
+.. _`cookiecutter options`:
+   https://www.mdanalysis.org/cookiecutter-mdakit/getting_started.html#options.io/en/latest/options
 
-.. _`cookiecutter usage`: https://cookiecutter-mdakit.readthedocs.io/en/latest/usage
+.. _`cookiecutter usage`:
+   https://www.mdanalysis.org/cookiecutter-mdakit/getting_started.html#basic-usage
