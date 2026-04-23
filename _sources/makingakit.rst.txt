@@ -11,7 +11,7 @@ Building a Kit using the cookiecutter
 -------------------------------------
 
 Without prior experience, some of the MDAKit Registry requirements
-can be daunting. The `MDAKit cookiecutter <https://cookiecutter-mdakit.readthedocs.io/>`_
+can be daunting. The `MDAKit cookiecutter`_
 can be used to aid rapid development of a FAIR-compliant MDAKit
 by generating placeholder code for documentation, testing and 
 installation. A guided example of creating an MDAKit, from cookiecutter
@@ -42,3 +42,5 @@ information below.
    making_a_kit/hosting
    making_a_kit/testing
    making_a_kit/documentation
+
+.. _`MDAKit cookiecutter`: https://www.mdanalysis.org/cookiecutter-mdakit   
