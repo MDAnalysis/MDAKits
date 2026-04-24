@@ -51,7 +51,7 @@ documentation_type: UserGuide + API
 src_install:
   - mamba install -y -c conda-forge cmake make wget boost
   - cd $HOME
-  - wget --tries=5 --retry-connrefused --waitretry=5 -O sprng5.tar.bz2 http://sprng.org/Version5.0/sprng5.tar.bz2
+  - wget --tries=5 --retry-connrefused --waitretry=5 -O sprng5.tar.bz2 https://www.cs.fsu.edu/~sprng/Version5.0/sprng5.tar.bz2
   - tar -xjf sprng5.tar.bz2
   - mkdir sprng5-build && cd sprng5-build
   - CXXFLAGS=-fPIC ../sprng5/configure --with-fortran=no --with-mpi=no --prefix=$HOME/sprng5-install
