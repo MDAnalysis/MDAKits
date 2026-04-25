@@ -1,0 +1,60 @@
+.. _zenowrapper:
+
+************************************************
+zenowrapper
+************************************************
+
+| 🖋️ **Authors**: Jennifer A Clark, Derek Juba, Walid Keyrouz, Debra Audus, Jack Douglas
+| 🏠 **Project home:** https://github.com/usnistgov/zenowrapper
+| 📖 **Documentation:** https://pages.nist.gov/zenowrapper/en/main/index.html
+| ⚖️ **License:** NIST-PD-fallback
+| 🔑 **Keywords:** hydrodynamic, hydrodynamic radius, diffusion coefficient, intrinsic viscosity, sedimentation coefficient, electric polarizability, monte carlo, walk-on-spheres
+| 🚀 **Development status:** Development Status :: 5 - Production/Stable
+| 📜 **Changelog:** https://github.com/usnistgov/zenowrapper/blob/main/CHANGELOG.md
+| 📑 **Publications:**
+|    * https://doi.org/10.18434/mds2-4099
+|    * https://doi.org/10.1016/j.procs.2016.05.319
+|    * https://doi.org/10.6028/jres.122.020micro
+| 🧪 **Tests (latest):** |zenowrapper_latest| 
+| 🧪 **Tests (develop):** |zenowrapper_develop| 
+| **Description:**
+| *ZENO computes hydrodynamic and electronic properties using numerical path integration techniques based on Brownian motion Monte Carlo methods (MCMs).*
+
+
+
+Installation instructions
+=========================
+
+
+The source code of zenowrapper can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install -y -c conda-forge cmake make wget boost
+    cd $HOME
+    wget --tries=5 --retry-connrefused --waitretry=5 -O sprng5.tar.bz2 https://www.cs.fsu.edu/~sprng/Version5.0/sprng5.tar.bz2
+    tar -xjf sprng5.tar.bz2
+    mkdir sprng5-build && cd sprng5-build
+    CXXFLAGS=-fPIC ../sprng5/configure --with-fortran=no --with-mpi=no --prefix=$HOME/sprng5-install
+    make && make install
+    cd $HOME
+    git clone https://github.com/usnistgov/ZENO.git
+    cd ZENO
+    mkdir zeno-build && cd zeno-build
+    cmake -DSPRNG_INCLUDE_DIR=$HOME/sprng5-install/include -DSPRNG_LIBRARY=$HOME/sprng5-install/lib/libsprng.a -DCMAKE_INSTALL_PREFIX=$HOME/zeno-install -DCMAKE_POLICY_VERSION_MINIMUM=3.5 $HOME/ZENO/cpp
+    make && make install
+    cd $HOME && git clone https://github.com/usnistgov/zenowrapper.git
+    mamba env update --name test -f $HOME/zenowrapper/requirements.yaml
+    pip cache purge
+    export ZENOPATH=$HOME/ZENO
+    cd $HOME/zenowrapper && python -m pip install -v --no-deps .
+    LD_LIBRARY_PATH=$HOME/ZENO/zeno-build:$LD_LIBRARY_PATH python -c "from zenowrapper.zenowrapper_ext import zenolib; print('zenowrapper_ext compiled successfully')"
+
+.. |zenowrapper_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+   :alt: zenowrapper develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |zenowrapper_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: zenowrapper develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+

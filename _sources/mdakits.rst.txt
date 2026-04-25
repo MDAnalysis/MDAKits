@@ -33,6 +33,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - Q value, Native Contacts
       - `qvalue authors`_
       - |qvalue_latest| |qvalue_develop|
+    * - :ref:`zenowrapper`
+      - hydrodynamic, hydrodynamic radius, diffusion coefficient, intrinsic viscosity, sedimentation coefficient, electric polarizability, monte carlo, walk-on-spheres
+      - Jennifer A Clark, Derek Juba, Walid Keyrouz, Debra Audus, Jack Douglas
+      - |zenowrapper_latest| |zenowrapper_develop|
     * - :ref:`helanal`
       - protein, structure, helix
       - `helanal authors`_
@@ -143,6 +147,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    maicos
    mda-tui
    qvalue
+   zenowrapper
    helanal
    pytim
    spyrmsdkit
@@ -212,6 +217,14 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |qvalue_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: qvalue develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |zenowrapper_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+   :alt: zenowrapper develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |zenowrapper_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: zenowrapper develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`helanal authors`:

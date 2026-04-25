@@ -22,7 +22,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lipyds &mdash; MDAKits Registry  documentation</title>
+  <title>zenowrapper &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="About MDAKits" href="about.html" />
-    <link rel="prev" title="solvation-analysis" href="solvation-analysis.html" /> 
+    <link rel="next" title="helanal" href="helanal.html" />
+    <link rel="prev" title="qvalue" href="qvalue.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -89,7 +89,10 @@
 <li class="toctree-l2"><a class="reference internal" href="maicos.html">maicos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mda-tui.html">mda-tui</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qvalue.html">qvalue</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zenowrapper.html">zenowrapper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">zenowrapper</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="helanal.html">helanal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pytim.html">pytim</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spyrmsdkit.html">spyrmsdkit</a></li>
@@ -114,10 +117,7 @@
 <li class="toctree-l2"><a class="reference internal" href="domhmm.html">domhmm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twodanalysis.html">twodanalysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solvation-analysis.html">solvation-analysis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">lipyds</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="lipyds.html">lipyds</a></li>
 </ul>
 </li>
 </ul>
@@ -153,9 +153,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">lipyds</li>
+      <li class="breadcrumb-item active">zenowrapper</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/lipyds.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/zenowrapper.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -163,35 +163,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lipyds">
-<span id="id1"></span><h1>lipyds<a class="headerlink" href="#lipyds" title="Link to this heading"></a></h1>
+  <section id="zenowrapper">
+<span id="id1"></span><h1>zenowrapper<a class="headerlink" href="#zenowrapper" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: lilyminium</div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/lilyminium/lipyds">https://github.com/lilyminium/lipyds</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://lipyds.readthedocs.io/en/latest/">https://lipyds.readthedocs.io/en/latest/</a></div>
-<div class="line">⚖️ <strong>License:</strong> LGPL-3.0</div>
-<div class="line">🔑 <strong>Keywords:</strong> lipids, membranes</div>
-<div class="line">🚀 <strong>Development status:</strong> Beta</div>
+<div class="line">🖋️ <strong>Authors</strong>: Jennifer A Clark, Derek Juba, Walid Keyrouz, Debra Audus, Jack Douglas</div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/usnistgov/zenowrapper">https://github.com/usnistgov/zenowrapper</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://pages.nist.gov/zenowrapper/en/main/index.html">https://pages.nist.gov/zenowrapper/en/main/index.html</a></div>
+<div class="line">⚖️ <strong>License:</strong> NIST-PD-fallback</div>
+<div class="line">🔑 <strong>Keywords:</strong> hydrodynamic, hydrodynamic radius, diffusion coefficient, intrinsic viscosity, sedimentation coefficient, electric polarizability, monte carlo, walk-on-spheres</div>
+<div class="line">🚀 <strong>Development status:</strong> Development Status :: 5 - Production/Stable</div>
+<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/usnistgov/zenowrapper/blob/main/CHANGELOG.md">https://github.com/usnistgov/zenowrapper/blob/main/CHANGELOG.md</a></div>
 <div class="line">📑 <strong>Publications:</strong></div>
 <div class="line-block">
-<div class="line">* <a class="reference external" href="https://doi.org/10.1016/j.bbadva.2021.100010">https://doi.org/10.1016/j.bbadva.2021.100010</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.18434/mds2-4099">https://doi.org/10.18434/mds2-4099</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.1016/j.procs.2016.05.319">https://doi.org/10.1016/j.procs.2016.05.319</a></div>
+<div class="line">* <a class="reference external" href="https://doi.org/10.6028/jres.122.020micro">https://doi.org/10.6028/jres.122.020micro</a></div>
 </div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="lipyds develop CI status" src="https://img.shields.io/badge/latest-passed-green.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="lipyds develop CI status" src="https://img.shields.io/badge/develop-failed-red.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="zenowrapper develop CI status" src="https://img.shields.io/badge/latest-unavailable-inactive.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="zenowrapper develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>A toolkit for leaflet-based membrane analysis.</em></div>
+<div class="line"><em>ZENO computes hydrodynamic and electronic properties using numerical path integration techniques based on Brownian motion Monte Carlo methods (MCMs).</em></div>
 </div>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The latest version of lipyds can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>lipyds
-</pre></div>
-</div>
-<p>The source code of lipyds can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>pyvista<span class="w"> </span>cython<span class="w"> </span>matplotlib<span class="w"> </span>nptyping<span class="w"> </span><span class="s2">&quot;numpy&gt;=1.20.0&quot;</span><span class="w"> </span>pandas<span class="w"> </span><span class="s2">&quot;scikit-learn&gt;=0.21.0&quot;</span><span class="w"> </span>scipy
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lilyminium/lipyds.git
-<span class="nb">cd</span><span class="w"> </span>lipyds
-python<span class="w"> </span>setup.py<span class="w"> </span>install
+<p>The source code of zenowrapper can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mamba<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>cmake<span class="w"> </span>make<span class="w"> </span>wget<span class="w"> </span>boost
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
+wget<span class="w"> </span>--tries<span class="o">=</span><span class="m">5</span><span class="w"> </span>--retry-connrefused<span class="w"> </span>--waitretry<span class="o">=</span><span class="m">5</span><span class="w"> </span>-O<span class="w"> </span>sprng5.tar.bz2<span class="w"> </span>https://www.cs.fsu.edu/~sprng/Version5.0/sprng5.tar.bz2
+tar<span class="w"> </span>-xjf<span class="w"> </span>sprng5.tar.bz2
+mkdir<span class="w"> </span>sprng5-build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>sprng5-build
+<span class="nv">CXXFLAGS</span><span class="o">=</span>-fPIC<span class="w"> </span>../sprng5/configure<span class="w"> </span>--with-fortran<span class="o">=</span>no<span class="w"> </span>--with-mpi<span class="o">=</span>no<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$HOME</span>/sprng5-install
+make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/ZENO.git
+<span class="nb">cd</span><span class="w"> </span>ZENO
+mkdir<span class="w"> </span>zeno-build<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>zeno-build
+cmake<span class="w"> </span>-DSPRNG_INCLUDE_DIR<span class="o">=</span><span class="nv">$HOME</span>/sprng5-install/include<span class="w"> </span>-DSPRNG_LIBRARY<span class="o">=</span><span class="nv">$HOME</span>/sprng5-install/lib/libsprng.a<span class="w"> </span>-DCMAKE_INSTALL_PREFIX<span class="o">=</span><span class="nv">$HOME</span>/zeno-install<span class="w"> </span>-DCMAKE_POLICY_VERSION_MINIMUM<span class="o">=</span><span class="m">3</span>.5<span class="w"> </span><span class="nv">$HOME</span>/ZENO/cpp
+make<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>make<span class="w"> </span>install
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/usnistgov/zenowrapper.git
+mamba<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>--name<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-f<span class="w"> </span><span class="nv">$HOME</span>/zenowrapper/requirements.yaml
+pip<span class="w"> </span>cache<span class="w"> </span>purge
+<span class="nb">export</span><span class="w"> </span><span class="nv">ZENOPATH</span><span class="o">=</span><span class="nv">$HOME</span>/ZENO
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/zenowrapper<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-v<span class="w"> </span>--no-deps<span class="w"> </span>.
+<span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/ZENO/zeno-build:<span class="nv">$LD_LIBRARY_PATH</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from zenowrapper.zenowrapper_ext import zenolib; print(&#39;zenowrapper_ext compiled successfully&#39;)&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -201,8 +215,8 @@ python<span class="w"> </span>setup.py<span class="w"> </span>install
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="solvation-analysis.html" class="btn btn-neutral float-left" title="solvation-analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="about.html" class="btn btn-neutral float-right" title="About MDAKits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="qvalue.html" class="btn btn-neutral float-left" title="qvalue" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="helanal.html" class="btn btn-neutral float-right" title="helanal" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
