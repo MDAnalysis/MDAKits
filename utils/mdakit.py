@@ -418,7 +418,12 @@ class MDAKit:
                     f"  - installing mdanalysis: {_bool_status(stat.install_mdanalysis)}\n"
                     f"  - installing the test dependencies: {_bool_status(stat.install_test_deps)}\n"
                     f"  - running tests: {_bool_status(stat.run_tests)}\n"
-                    f"Pinging maintainers: {maint}"
+                    f"Pinging maintainers: {maint}\n\n"
+                    f"---\n"
+                    f"**How to resolve this:**\n\n"
+                    f"- **Check the `metadata.yaml`**: Ensure your kit's `metadata.yaml` is up-to-date.\n"
+                    f"- **Check why the pipeline is failing**: Look at the CI logs to find the exact point of failure. See the [documentation on finding the CI error](https://mdakits.mdanalysis.org/maintaining_a_kit/keep-healthy.html#why-did-ci-fail).\n"
+                    f"- **Pipeline details**: For an in-depth explanation of how the MDAKits Registry CI works, please see [the documentation here](https://mdakits.mdanalysis.org/maintaining_a_kit/keep-healthy.html#mdakitsci).\n"
             )
 
             repo.create_issue(title=issue_title, body=issue_body)
