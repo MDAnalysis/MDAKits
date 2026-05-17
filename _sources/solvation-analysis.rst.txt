@@ -38,7 +38,7 @@ The source code of solvation-analysis can be installed using the following:
    :alt: solvation-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |solvation-analysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |solvation-analysis_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: solvation-analysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
