@@ -24,12 +24,12 @@ jobs:
     outputs:
       matrix: ${{ steps.get-mdakits.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: get-python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - id: get-mdakits
         run: |
@@ -43,9 +43,9 @@ jobs:
       python-min: ${{ steps.get-compatible-python.outputs.oldest-python }}
 
     steps:
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - id: get-compatible-python
         uses: MDAnalysis/mdanalysis-compatible-python@main
@@ -61,7 +61,7 @@ jobs:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
         jobstep: ['latest', 'develop']
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: get-base-python-deps
         name: get-base-python-deps
@@ -79,7 +79,7 @@ jobs:
           
       - id: install-conda-env
         name: install-conda-env
-        uses: conda-incubator/setup-miniconda@v3
+        uses: conda-incubator/setup-miniconda@v4
         with:
           python-version: ${{ env.PYVER }}
           add-pip-as-python-dependency: true
@@ -87,6 +87,7 @@ jobs:
           use-mamba: true
           miniforge-version: latest
           channels: conda-forge
+          conda-remove-defaults: true
           channel-priority: flexible
           auto-update-conda: true
           show-channel-urls: true
@@ -126,7 +127,7 @@ jobs:
         with:
           version: ${{ matrix.jobstep }}
           install-tests: true
-          installer: mamba
+          installer: conda
           shell: bash -l {0}
 
       - id: run-tests
@@ -153,7 +154,7 @@ jobs:
 
       - id: upload-artifacts
         name: upload-artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: cron-statuses-${{ matrix.mdakit }}-${{ matrix.jobstep }}
           path: ${{ matrix.mdakit }}-${{ matrix.jobstep }}-statuses.json
@@ -163,16 +164,16 @@ jobs:
   process_results:
     if: ${{ always() }}
     needs: mdakit-ci
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
       pull-requests: write 
       packages: none
       issues: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           path: json-statuses/
 
@@ -191,7 +192,7 @@ jobs:
         env:
           GITHUB_TOKEN:  ${{ github.token }}
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: commit changes to status files
           skip_dirty_check: false
@@ -200,22 +201,22 @@ jobs:
   deploy_docs:
     if: ${{ always() }}
     needs: process_results
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: setup_micromamba
-        uses: mamba-org/setup-micromamba@v1
+        uses: mamba-org/setup-micromamba@v3
         with:
           environment-file: docs/requirements.yaml
           environment-name: MDAKitRegistry-docs
           create-args: >-
-            python=3.9
+            python=3.13
             pip
       - name: build_docs
         run: |
           cd docs && sphinx-build -b html source build
       - name: deploy docs
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/build
