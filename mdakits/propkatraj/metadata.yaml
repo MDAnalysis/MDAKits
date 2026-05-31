@@ -15,7 +15,7 @@ project_home: https://github.com/Becksteinlab/propkatraj/
 documentation_home: https://becksteinlab.github.io/propkatraj/
 documentation_type: UserGuide + API
 
-## Optional entries
+## Some optional entries
 install:
   - pip install propkatraj
 src_install:
