@@ -17,9 +17,9 @@ documentation_type: UserGuide + API
 
 ## Some optional entries
 install:
-  - pip install propkatraj
+  - python -m pip install propkatraj
 src_install:
-  - pip install git+https://github.com/Becksteinlab/propkatraj@main
+  - python -m pip install git+https://github.com/Becksteinlab/propkatraj@main
 python_requires: ">=3.8"
 mdanalysis_requires: ">=2.0.0"
 run_tests:

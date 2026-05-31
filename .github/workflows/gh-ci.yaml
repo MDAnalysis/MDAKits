@@ -69,7 +69,7 @@ jobs:
       - id: get-base-python-deps
         name: get-base-python-deps
         run: |
-          pip install requests setuptools packaging pyyaml pydantic PyGithub
+          python -m pip install requests setuptools packaging pyyaml pydantic PyGithub
 
       - id: check-set-python-bounds
         name: check-set-python-bounds
@@ -98,7 +98,7 @@ jobs:
         name: install-conda-base-deps
         run: |
           mamba install requests setuptools packaging pyyaml pydantic
-          pip install PyGithub
+          python -m pip install PyGithub
 
       - id: install-mdakit
         name: install-mdakit
@@ -118,7 +118,7 @@ jobs:
         name: debug-env
         run: |
           mamba list
-          pip list
+          python -m pip list
 
       - id: install-test-deps
         name: install-test-deps
