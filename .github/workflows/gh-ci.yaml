@@ -128,7 +128,7 @@ jobs:
         run: |
           install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
           echo "install tests:${install}"
-          eval "${install}"
+          eval "${install} -v"
 
       - id: install-mdanalysis
         name: install-mdanalysis
