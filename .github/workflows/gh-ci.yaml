@@ -118,6 +118,10 @@ jobs:
           mamba list
           python -m pip list
 
+      - id: debug-mdanalysistests
+        run: |
+          mamba install -vv -c conda-forge mdanalysistests
+
       - id: install-test-deps
         name: install-test-deps
         continue-on-error: false
