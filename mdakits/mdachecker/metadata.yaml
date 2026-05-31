@@ -15,7 +15,7 @@ project_home: https://github.com/IAlibay/CheckStructure/
 documentation_home: https://github.com/IAlibay/CheckStructure/blob/main/README.md
 documentation_type: README
 
-## Optional entries
+## Some optional entries
 install:
   - pip install git+https://github.com/IAlibay/CheckStructure@main
 src_install:
