@@ -20,16 +20,16 @@ defaults:
 
 jobs:
   gen_matrix:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.get-mdakits.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: get-python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - id: get-mdakits
         run: |
@@ -43,9 +43,9 @@ jobs:
       python-min: ${{ steps.get-compatible-python.outputs.oldest-python }}
 
     steps:
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - id: get-compatible-python
         uses: MDAnalysis/mdanalysis-compatible-python@main
