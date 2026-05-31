@@ -46,4 +46,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     kit = MDAKit(f"mdakits/{args.mdakit}")
     instructions = kit.get_test_deps()
-    print(instructions)
+    print(instructions.lower())
