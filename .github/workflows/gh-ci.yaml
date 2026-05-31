@@ -16,20 +16,20 @@ defaults:
 
 jobs:
   gen_matrix:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.get-changed-mdakits.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: get-python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: 3.9
+          python-version: 3.13
 
       - id: files
         name: get changed filed
-        uses: masesgroup/retrieve-changed-files@v3
+        uses: masesgroup/retrieve-changed-files@v4
         with:
           format: 'json'
       - id: get-changed-mdakits
@@ -46,9 +46,9 @@ jobs:
       python-stable: ${{ steps.get-compatible-python.outputs.stable-python }}
       python-min: ${{ steps.get-compatible-python.outputs.oldest-python }}
     steps:
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - id: get-compatible-python
         uses: MDAnalysis/mdanalysis-compatible-python@main
@@ -57,14 +57,14 @@ jobs:
 
   mdakit-ci:
     needs: [gen_matrix, env_config]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
         jobstep: ['latest', 'develop']
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: get-base-python-deps
         name: get-base-python-deps
@@ -82,7 +82,7 @@ jobs:
           
       - id: install-conda-env
         name: install-conda-env
-        uses: conda-incubator/setup-miniconda@v3
+        uses: conda-incubator/setup-miniconda@v4
         with:
           python-version: ${{ env.PYVER }}
           add-pip-as-python-dependency: true
