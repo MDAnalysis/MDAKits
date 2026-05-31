@@ -25,7 +25,7 @@ mdanalysis_requires: ">=2.0.0"
 run_tests:
   - pytest --pyargs propkatraj.tests
 test_dependencies:
-  - mamba install -v -c conda-forge pytest MDAnalysisTests
+  - mamba install -v -c conda-forge pytest mdanalysistests
 project_org: Becksteinlab 
 development_status: Mature
 publications:
