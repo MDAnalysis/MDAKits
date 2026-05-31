@@ -114,6 +114,12 @@ jobs:
          echo "install=${install}"
          eval ${install}
 
+      - id: debug-env
+        name: debug-env
+        run: |
+          mamba list
+          pip list
+
       - id: install-test-deps
         name: install-test-deps
         continue-on-error: false
