@@ -17,15 +17,15 @@ documentation_type: UserGuide + API
 
 ## Some optional entries
 install:
-  - python -m pip install propkatraj
+  - pip install propkatraj
 src_install:
-  - python -m pip install git+https://github.com/Becksteinlab/propkatraj@main
+  - pip install git+https://github.com/Becksteinlab/propkatraj@main
 python_requires: ">=3.8"
 mdanalysis_requires: ">=2.0.0"
 run_tests:
   - pytest --pyargs propkatraj.tests
 test_dependencies:
-  - mamba install -v -c conda-forge pytest mdanalysistests
+  - mamba install pytest MDAnalysisTests
 project_org: Becksteinlab 
 development_status: Mature
 publications:

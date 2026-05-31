@@ -89,6 +89,7 @@ jobs:
           use-mamba: true
           miniforge-version: latest
           channels: conda-forge
+          channel-priority: flexible
           auto-update-conda: true
           show-channel-urls: true
 
@@ -111,16 +112,6 @@ jobs:
          install=$(python utils/get_install.py --itype ${type} --mdakit ${{matrix.mdakit}})
          echo "install=${install}"
          eval ${install}
-
-      - id: debug-env
-        name: debug-env
-        run: |
-          mamba list
-          python -m pip list
-
-      #- id: debug-mdanalysistests
-      #  run: |
-      #    mamba install -c conda-forge mdanalysistests
 
       - id: install-test-deps
         name: install-test-deps
