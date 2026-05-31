@@ -127,8 +127,10 @@ jobs:
         continue-on-error: false
         run: |
           install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
-          echo "install tests:${install}"
-          eval "${install} -v"
+          echo "test installs: ${install}"
+          read -ra cmd <<< "$install"
+          "${cmd[@]}"
+          #eval "${install}"
 
       - id: install-mdanalysis
         name: install-mdanalysis
