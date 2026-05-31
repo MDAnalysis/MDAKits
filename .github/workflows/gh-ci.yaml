@@ -118,9 +118,9 @@ jobs:
           mamba list
           python -m pip list
 
-      - id: debug-mdanalysistests
-        run: |
-          mamba install -vv -c conda-forge mdanalysistests
+      #- id: debug-mdanalysistests
+      #  run: |
+      #    mamba install -c conda-forge mdanalysistests
 
       - id: install-test-deps
         name: install-test-deps
@@ -128,7 +128,7 @@ jobs:
         run: |
           install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
           echo "install tests:${install}"
-          eval ${install}
+          eval "${install}"
 
       - id: install-mdanalysis
         name: install-mdanalysis
