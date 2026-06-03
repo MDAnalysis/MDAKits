@@ -186,11 +186,11 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`mdakit-sasa authors`:
    https://github.com/pegerto/mdakit_sasa/blob/main/AUTHORS.md
 
-.. |mdakit-sasa_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |mdakit-sasa_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: mdakit-sasa develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mdakit-sasa_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |mdakit-sasa_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdakit-sasa develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -208,11 +208,11 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`membrane-curvature authors`:
    https://github.com/MDAnalysis/membrane-curvature/blob/main/AUTHORS
 
-.. |membrane-curvature_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |membrane-curvature_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: membrane-curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |membrane-curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: membrane-curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -231,18 +231,18 @@ Each of the MDAKits in the following table links to a page with more details abo
    :alt: packing_defect develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |packing_defect_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |packing_defect_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: packing_defect develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`PathSimAnalysis authors`:
    https://github.com/MDAnalysis/PathSimAnalysis/blob/main/AUTHORS.md
 
-.. |PathSimAnalysis_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |PathSimAnalysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: PathSimAnalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |PathSimAnalysis_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |PathSimAnalysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: PathSimAnalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -268,7 +268,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`domhmm authors`:
    https://github.com/BioMemPhys-FAU/domhmm/blob/main/AUTHORS.md
 
-.. |domhmm_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |domhmm_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: domhmm develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -279,11 +279,11 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`mdaencore authors`:
    https://github.com/MDAnalysis/mdaencore/blob/main/AUTHORS.md
 
-.. |mdaencore_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |mdaencore_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: mdaencore develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mdaencore_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |mdaencore_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: mdaencore develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -301,7 +301,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`mdacli authors`:
    https://github.com/MDAnalysis/mdacli/blob/main/docs/AUTHORS.rst
 
-.. |mdacli_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |mdacli_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: mdacli develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -320,18 +320,18 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`qvalue authors`:
    https://github.com/cabb99/qvalue/blob/main/AUTHORS.md
 
-.. |qvalue_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |qvalue_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: qvalue develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |qvalue_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |qvalue_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: qvalue develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`twodanalysis authors`:
    https://github.com/monjegroup/twod-analysis-kit.git/blob/main/AUTHORS.md
 
-.. |twodanalysis_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |twodanalysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: twodanalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -342,15 +342,15 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`waterdynamics authors`:
    https://github.com/MDAnalysis/waterdynamics/blob/main/AUTHORS.md
 
-.. |waterdynamics_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |waterdynamics_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: waterdynamics develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |waterdynamics_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |waterdynamics_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: waterdynamics develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |mdachecker_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |mdachecker_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: mdachecker develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -391,7 +391,7 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`MDANCE authors`:
    https://github.com/mqcomplab/MDANCE/blob/main/AUTHORS.md
 
-.. |MDANCE_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |MDANCE_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: MDANCE develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
@@ -413,29 +413,29 @@ Each of the MDAKits in the following table links to a page with more details abo
 .. _`Menger_Curvature authors`:
    https://github.com/EtienneReboul/menger_curvature/blob/main/AUTHORS.md
 
-.. |Menger_Curvature_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |Menger_Curvature_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: Menger_Curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |Menger_Curvature_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |Menger_Curvature_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: Menger_Curvature develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`lipidorderkit authors`:
    https://github.com/ricard1997/lipidorderkit/blob/main/AUTHORS.md
 
-.. |lipidorderkit_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |lipidorderkit_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: lipidorderkit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |lipidorderkit_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |lipidorderkit_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: lipidorderkit develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`maicos authors`:
    https://github.com/maicos-devel/maicos/blob/main/AUTHORS.rst
 
-.. |maicos_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |maicos_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: maicos develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 

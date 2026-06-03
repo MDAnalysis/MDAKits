@@ -41,11 +41,11 @@ The source code of qvalue can be installed using the following:
 .. _`qvalue authors`:
    https://github.com/cabb99/qvalue/blob/main/AUTHORS.md
 
-.. |qvalue_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
+.. |qvalue_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: qvalue develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |qvalue_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
+.. |qvalue_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
    :alt: qvalue develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
