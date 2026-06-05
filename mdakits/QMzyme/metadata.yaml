@@ -86,8 +86,6 @@ mdanalysis_requires: ">=2.0.0"
 ##    - pytest -v ./tests
 ## Feel free to ask for advice on your pull request!
 run_tests:
-  - git clone https://github.com/Klem-Research-Group/QMzyme
-  - cd QMzyme
   - pytest -v
 
 ## List(str): a list of commands to use to install the necessary dependencies required
@@ -95,6 +93,8 @@ run_tests:
 ## The default below _might_ be sufficient or you might not even need MDAnalysisTests:
 ## make sure that it is appropriate for how you run tests.
 test_dependencies:
+  - git clone https://github.com/Klem-Research-Group/QMzyme
+  - cd QMzyme
   - python -m pip install ".[test]"
   
 ## str: the organisation name the MDAKit falls under
