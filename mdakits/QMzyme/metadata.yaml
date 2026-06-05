@@ -110,7 +110,7 @@ project_org: Klem-Research-Group
 ## for a conda package installation).
 ## Here we use a simple PyPi installation:
 install:
-  - pip install QMzyme
+  - python3.11 -m pip install QMzyme
 
 ## str: the development status of the MDAKit
 ## See https://pypi.org/classifiers/ for development status classifiers.
