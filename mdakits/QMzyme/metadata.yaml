@@ -61,6 +61,8 @@ documentation_type: UserGuide + API
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
+  - conda create -n qmzyme -y python=3.11 
+  - conda activate qmzyme
   - pip install git+https://github.com/Klem-Research-Group/QMzyme@main
 
 ## str: the package name used to import the mdakit
