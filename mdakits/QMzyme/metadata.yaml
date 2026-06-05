@@ -69,7 +69,7 @@ src_install:
 import_name: QMzyme
 
 ## str: a specification for the range of Python versions supported by this MDAKit
-python_requires: ">=3.11, <=3.13.7"
+python_requires: ">=3.11"
 
 ## str: a specification for the range of MDAnalysis versions supported by this MDAKit
 mdanalysis_requires: ">=2.0.0"
@@ -103,18 +103,6 @@ project_org: Klem-Research-Group
 #------------------------------------------------------------
 # Optional entries
 #------------------------------------------------------------   
-## List(str): a list of commands to use when installing the latest
-## release of the code. Note: only one installation method can currently
-## be defined. We suggest using mamba where possible (e.g.
-##   mamba -c conda-forge install MYPROJECT
-## for a conda package installation).
-## Here we use a simple PyPi installation:
-install:
-  - python3.11 -m pip install QMzyme
-
-## str: the development status of the MDAKit
-## See https://pypi.org/classifiers/ for development status classifiers.
-development_status: Beta
 
 ## List(str) a list of publications to cite when using the MDAKit
 ## Links to scientific publications or stable URLs (typically of the form
@@ -125,5 +113,3 @@ publications:
 ## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
 community_home: https://qmzyme.readthedocs.io/
 
-## str: a link to the MDAKit's changelog
-changelog: https://github.com/MYNAME/MYPROJECT/blob/main/CHANGELOG.md
