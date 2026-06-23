@@ -4,8 +4,7 @@ authors:
   - Cédric Bouysset
 maintainers:
   - cbouy
-description:
-    Interaction Fingerprints for protein-ligand complexes and more
+description: Interaction Fingerprints for protein-ligand complexes and more
 keywords:
   - drug-design
   - cheminformatics
@@ -20,17 +19,18 @@ install:
   - mamba install -c conda-forge prolif
 src_install:
   - pip install rdkit
-  - pip install "prolif[dev] @ git+https://github.com/chemosim-lab/ProLIF@master"
-python_requires: ">=3.8"
+  - pip install git+https://github.com/chemosim-lab/ProLIF@master
+python_requires: ">=3.10"
 mdanalysis_requires: ">=2.2.0"
 run_tests:
-  - mamba install ipython py3Dmol "matplotlib>=3.5"
   - git clone latest
   - pytest -v ./tests
 test_dependencies:
-  - mamba install pytest
+  - mamba install pytest ipython py3Dmol "matplotlib>=3.5"
 project_org: chemosim-lab
 development_status: Production/Stable
 publications:
   - https://doi.org/10.1186/s13321-021-00548-6
   - https://zenodo.org/record/7332369
+community_home: https://github.com/chemosim-lab/ProLIF/discussions
+changelog: https://github.com/chemosim-lab/ProLIF/blob/master/CHANGELOG.md
