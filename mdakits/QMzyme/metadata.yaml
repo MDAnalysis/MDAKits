@@ -1,15 +1,5 @@
-# TEMPLATE MDAKit file
-# --------------------
-# 
-# Please replace ALL entries with appropriate content for YOUR MDAKit.
-# Below we use the placeholder GH_HOST_ACCOUNT for the GitHub account where
-# the source code repository is held, typically your username or the 
-# organization that you're part off.
-# MYPROJECT is the name of your project (the repository name and here
-# we assume that this is also the PyPi/conda package name) whereas 
-# MYPACKAGE is how you import it in python.
-#
-# See https://mdakits.mdanalysis.org/add.html for more information. 
+# QMzyme MDAKit
+# -------------
 #
 #------------------------------------------------------------
 # Required entries
@@ -61,8 +51,6 @@ documentation_type: UserGuide + API
 ## List(str): a list of commands to use when installing the mdakit from its
 ## source code.
 src_install:
-  - conda create -n qmzyme -y python=3.11 
-  - conda activate qmzyme
   - pip install git+https://github.com/Klem-Research-Group/QMzyme@main
 
 ## str: the package name used to import the mdakit
