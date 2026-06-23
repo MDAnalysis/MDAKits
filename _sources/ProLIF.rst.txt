@@ -10,6 +10,7 @@ ProLIF
 | ⚖️ **License:** Apache License 2.0
 | 🔑 **Keywords:** drug-design, cheminformatics, molecular-dynamics
 | 🚀 **Development status:** Production/Stable
+| 📜 **Changelog:** https://github.com/chemosim-lab/ProLIF/blob/master/CHANGELOG.md
 | 📑 **Publications:**
 |    * https://doi.org/10.1186/s13321-021-00548-6
 |    * https://zenodo.org/record/7332369
@@ -34,7 +35,7 @@ The source code of ProLIF can be installed using the following:
 .. code-block:: bash
 
     pip install rdkit
-    pip install "prolif[dev] @ git+https://github.com/chemosim-lab/ProLIF@master"
+    pip install git+https://github.com/chemosim-lab/ProLIF@master
 
 .. |ProLIF_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
    :alt: ProLIF develop CI status
