@@ -95,9 +95,9 @@ project_org: Klem-Research-Group
 ## List(str) a list of publications to cite when using the MDAKit
 ## Links to scientific publications or stable URLs (typically of the form
 ## https://doi.org/<DOI> or to a preprint server)
-publications:
-  - TBD
+#publications:
+#  - TBD
 
 ## str: a link to the MDAKit's community (mailing list, github discussions, etc...)
-community_home: https://qmzyme.readthedocs.io/
+#community_home: https://qmzyme.readthedocs.io/
 
