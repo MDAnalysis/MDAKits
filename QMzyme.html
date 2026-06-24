@@ -22,7 +22,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>helanal &mdash; MDAKits Registry  documentation</title>
+  <title>QMzyme &mdash; MDAKits Registry  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/site.css" />
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
@@ -41,8 +41,8 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="MDANCE" href="MDANCE.html" />
-    <link rel="prev" title="mdacli" href="mdacli.html" /> 
+    <link rel="next" title="mdachecker" href="mdachecker.html" />
+    <link rel="prev" title="propkatraj" href="propkatraj.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -102,17 +102,17 @@
 <li class="toctree-l2"><a class="reference internal" href="pytim.html">pytim</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ProLIF.html">ProLIF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mdacli.html">mdacli</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">helanal</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="helanal.html">helanal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MDANCE.html">MDANCE</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lipyds.html">lipyds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qvalue.html">qvalue</a></li>
 <li class="toctree-l2"><a class="reference internal" href="domhmm.html">domhmm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="twodanalysis.html">twodanalysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="propkatraj.html">propkatraj</a></li>
-<li class="toctree-l2"><a class="reference internal" href="QMzyme.html">QMzyme</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">QMzyme</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation instructions</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="mdachecker.html">mdachecker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maicos.html">maicos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zenowrapper.html">zenowrapper</a></li>
@@ -154,9 +154,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="mdakits.html">Registry of MDAnalysis Toolkits (MDAKits)</a></li>
-      <li class="breadcrumb-item active">helanal</li>
+      <li class="breadcrumb-item active">QMzyme</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/helanal.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/QMzyme.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -164,34 +164,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="helanal">
-<span id="id1"></span><h1>helanal<a class="headerlink" href="#helanal" title="Link to this heading"></a></h1>
+  <section id="qmzyme">
+<span id="id1"></span><h1>QMzyme<a class="headerlink" href="#qmzyme" title="Link to this heading"></a></h1>
 <div class="line-block">
-<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/MDAnalysis/helanal/blob/main/AUTHORS.md">helanal authors</a></div>
-<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/MDAnalysis/helanal/">https://github.com/MDAnalysis/helanal/</a></div>
-<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://helanal.readthedocs.io">https://helanal.readthedocs.io</a></div>
-<div class="line">⚖️ <strong>License:</strong> GPL-2.0-or-later</div>
-<div class="line">🔑 <strong>Keywords:</strong> protein, structure, helix</div>
-<div class="line">🚀 <strong>Development status:</strong> Production/Stable</div>
-<div class="line">📜 <strong>Changelog:</strong> <a class="reference external" href="https://github.com/MDAnalysis/helanal/blob/main/CHANGELOG.md">https://github.com/MDAnalysis/helanal/blob/main/CHANGELOG.md</a></div>
-<div class="line">📑 <strong>Publications:</strong></div>
-<div class="line-block">
-<div class="line">* <a class="reference external" href="https://doi.org/10.1002/bip.1967.360050708">https://doi.org/10.1002/bip.1967.360050708</a></div>
-<div class="line">* <a class="reference external" href="https://doi.org/10.1080/07391102.2000.10506570">https://doi.org/10.1080/07391102.2000.10506570</a></div>
-</div>
-<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="helanal develop CI status" src="https://img.shields.io/badge/latest-failed-red.svg" /></a></div>
-<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="helanal develop CI status" src="https://img.shields.io/badge/develop-failed-red.svg" /></a></div>
+<div class="line">🖋️ <strong>Authors</strong>: <a class="reference external" href="https://github.com/Klem-Research-Group/QMzyme#code-contributorsdevelopers">QMzyme authors</a></div>
+<div class="line">🏠 <strong>Project home:</strong> <a class="reference external" href="https://github.com/Klem-Research-Group/QMzyme/">https://github.com/Klem-Research-Group/QMzyme/</a></div>
+<div class="line">📖 <strong>Documentation:</strong> <a class="reference external" href="https://qmzyme.readthedocs.io/">https://qmzyme.readthedocs.io/</a></div>
+<div class="line">⚖️ <strong>License:</strong> MIT License</div>
+<div class="line">🔑 <strong>Keywords:</strong> theozyme, compuzyme, cluster, active-site, biocatalysis, enzyme-mechanisms, quantum-mechanics, QM-input</div>
+<div class="line">🧪 <strong>Tests (latest):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="QMzyme develop CI status" src="https://img.shields.io/badge/latest-unavailable-inactive.svg" /></a></div>
+<div class="line">🧪 <strong>Tests (develop):</strong> <a class="reference external" href="https://github.com/MDAnalysis/MDAKits/actions"><img alt="QMzyme develop CI status" src="https://img.shields.io/badge/develop-passed-green.svg" /></a></div>
 <div class="line"><strong>Description:</strong></div>
-<div class="line"><em>helanal contains code to analyse protein helicies based on their Cα atoms, quantifying structural features such as local bending angles and global axes.</em></div>
+<div class="line"><em>QM-based enzyme model generation and validation.</em></div>
 </div>
 <section id="installation-instructions">
 <h2>Installation instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading"></a></h2>
-<p>The latest version of helanal can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>helanal
-</pre></div>
-</div>
-<p>The source code of helanal can be installed using the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/MDAnalysis/helanal@main
+<p>The source code of QMzyme can be installed using the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/Klem-Research-Group/QMzyme@main
 </pre></div>
 </div>
 </section>
@@ -201,8 +190,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="mdacli.html" class="btn btn-neutral float-left" title="mdacli" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="MDANCE.html" class="btn btn-neutral float-right" title="MDANCE" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="propkatraj.html" class="btn btn-neutral float-left" title="propkatraj" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mdachecker.html" class="btn btn-neutral float-right" title="mdachecker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

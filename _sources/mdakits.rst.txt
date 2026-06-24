@@ -113,6 +113,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - pKa, protein
       - `propkatraj authors`_
       - |propkatraj_latest| |propkatraj_develop|
+    * - :ref:`QMzyme`
+      - theozyme, compuzyme, cluster, active-site, biocatalysis, enzyme-mechanisms, quantum-mechanics, QM-input
+      - `QMzyme authors`_
+      - |QMzyme_latest| |QMzyme_develop|
     * - :ref:`mdachecker`
       - structure analysis, conformation checks
       - IAlibay
@@ -167,6 +171,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    domhmm
    twodanalysis
    propkatraj
+   QMzyme
    mdachecker
    maicos
    zenowrapper
@@ -425,6 +430,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |propkatraj_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: propkatraj develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`QMzyme authors`:
+   https://github.com/Klem-Research-Group/QMzyme#code-contributorsdevelopers
+
+.. |QMzyme_latest| image:: https://img.shields.io/badge/latest-unavailable-inactive.svg
+   :alt: QMzyme develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |QMzyme_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: QMzyme develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. |mdachecker_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
