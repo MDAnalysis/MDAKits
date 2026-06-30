@@ -12,6 +12,7 @@ zarrtraj
 | 🚀 **Development status:** Development Status :: 4 - Beta
 | 📜 **Changelog:** https://github.com/Becksteinlab/zarrtraj/blob/main/CHANGELOG.md
 | 📑 **Publications:**
+|    * https://doi.org/10.21105/joss.07943
 |    * https://doi.org/10.25080/Majora-629e541a-00e
 |    * https://doi.org/10.1002/jcc.21787
 |    * https://doi.org/10.1016/j.cpc.2014.01.018
