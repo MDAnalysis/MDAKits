@@ -21,8 +21,8 @@ about this process and more detail about the ``metadata.yaml`` file.
 .. toctree::
    :maxdepth: 2
 
-   registering-a-kit/step-by-step
-   registering-a-kit/metadata-yaml
+   registering_a_kit/step-by-step
+   registering_a_kit/metadata-yaml
 
 
 .. _`MDAKit registry`: https://mdakits.mdanalysis.org/mdakits.html

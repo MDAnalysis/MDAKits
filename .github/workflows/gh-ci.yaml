@@ -16,20 +16,20 @@ defaults:
 
 jobs:
   gen_matrix:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.get-changed-mdakits.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: get-python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
-          python-version: 3.9
+          python-version: 3.13
 
       - id: files
         name: get changed filed
-        uses: masesgroup/retrieve-changed-files@v3
+        uses: masesgroup/retrieve-changed-files@v4
         with:
           format: 'json'
       - id: get-changed-mdakits
@@ -46,9 +46,9 @@ jobs:
       python-stable: ${{ steps.get-compatible-python.outputs.stable-python }}
       python-min: ${{ steps.get-compatible-python.outputs.oldest-python }}
     steps:
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: "3.13"
 
       - id: get-compatible-python
         uses: MDAnalysis/mdanalysis-compatible-python@main
@@ -57,19 +57,19 @@ jobs:
 
   mdakit-ci:
     needs: [gen_matrix, env_config]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         mdakit: ${{fromJSON(needs.gen_matrix.outputs.matrix)}}
         jobstep: ['latest', 'develop']
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: get-base-python-deps
         name: get-base-python-deps
         run: |
-          pip install requests setuptools packaging pyyaml pydantic PyGithub
+          python -m pip install requests setuptools packaging pyyaml pydantic PyGithub
 
       - id: check-set-python-bounds
         name: check-set-python-bounds
@@ -82,14 +82,13 @@ jobs:
           
       - id: install-conda-env
         name: install-conda-env
-        uses: conda-incubator/setup-miniconda@v3
+        uses: conda-incubator/setup-miniconda@v4
         with:
           python-version: ${{ env.PYVER }}
           add-pip-as-python-dependency: true
-          architecture: x64
           use-mamba: true
           miniforge-version: latest
-          channels: conda-forge, defaults
+          channels: conda-forge
           channel-priority: flexible
           auto-update-conda: true
           show-channel-urls: true
@@ -98,7 +97,7 @@ jobs:
         name: install-conda-base-deps
         run: |
           mamba install requests setuptools packaging pyyaml pydantic
-          pip install PyGithub
+          python -m pip install PyGithub
 
       - id: install-mdakit
         name: install-mdakit
@@ -119,8 +118,8 @@ jobs:
         continue-on-error: false
         run: |
           install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
-          echo "install tests:${install}"
-          eval ${install}
+          echo "test installs: ${install}"
+          eval "${install}"
 
       - id: install-mdanalysis
         name: install-mdanalysis

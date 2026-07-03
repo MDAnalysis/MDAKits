@@ -1,0 +1,59 @@
+# MDAKit metadata for packing_defect
+# See https://mdakits.mdanalysis.org/registering_a_kit/metadata-yaml.html
+
+project_name: packing_defect
+
+authors:
+  - R. Jay Braun Jr.
+
+maintainers:
+  - jaybraunjr
+
+description: >-
+  Analyze membrane packing defects from MD trajectories using grid-based
+  stamping, leaflet classification, and connected-component clustering.
+  Quantify protein-membrane interactions and contains options for visualization.
+
+
+keywords:
+  - MDAnalysis
+  - membrane
+  - protein
+  - packing defects
+  - lipids
+  - molecular dynamics
+
+license: GPL-2.0-only
+
+project_home: https://github.com/jaybraunjr/packing_defect
+
+documentation_home: https://packing-defect.readthedocs.io
+
+documentation_type: UserGuide + API
+
+src_install:
+  - pip install git+https://github.com/jaybraunjr/packing_defect@main
+
+import_name: packing_defect
+
+python_requires: ">=3.9"
+
+mdanalysis_requires: ">=2.0.0"
+
+run_tests:
+  - git clone latest
+  - pytest -v packing_defect/tests
+
+test_dependencies:
+  - mamba install -y -c conda-forge pytest MDAnalysis MDAnalysisTests
+
+project_org: jaybraunjr
+
+# Optional entries (uncomment and adjust when applicable)
+# install:
+#   - pip install packing_defect
+# development_status: Beta
+# publications:
+#   - https://doi.org/...
+# community_home: https://github.com/jaybraunjr/packing_defect/discussions
+# changelog: https://github.com/jaybraunjr/packing_defect/blob/main/CHANGELOG.md
