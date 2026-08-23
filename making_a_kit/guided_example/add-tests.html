@@ -159,12 +159,12 @@ preparing them for automatic running (continuous integration).</p>
 existing code in the MDAnalysis package. We take the
 <a class="reference external" href="https://github.com/MDAnalysis/mdanalysis/blob/develop/testsuite/MDAnalysisTests/analysis/test_rms.py">RMSF testing class</a>
 and update the contents of <code class="docutils literal notranslate"><span class="pre">rmsfkit/tests/test_rmsfkit.py</span></code> as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">"""</span>
 <span class="sd">Unit and regression test for the rmsfkit package.</span>
 
 <span class="sd">The TestRMSF class was taken from the MDAnalysis rms tests file and</span>
 <span class="sd">the relevant modules were switched.</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="c1"># Import package, test suite, and other packages as needed</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">MDAnalysisTests.datafiles</span><span class="w"> </span><span class="kn">import</span> <span class="n">GRO</span><span class="p">,</span> <span class="n">XTC</span><span class="p">,</span> <span class="n">rmsfArray</span>
@@ -179,8 +179,8 @@ and update the contents of <code class="docutils literal notranslate"><span clas
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">test_rmsfkit_imported</span><span class="p">():</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Sample test, will always pass so long as import statement worked&quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="s2">&quot;rmsfkit&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
+<span class="w">    </span><span class="sd">"""Sample test, will always pass so long as import statement worked"""</span>
+    <span class="k">assert</span> <span class="s2">"rmsfkit"</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span>
 
 
 <span class="k">class</span><span class="w"> </span><span class="nc">TestRMSF</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -189,23 +189,23 @@ and update the contents of <code class="docutils literal notranslate"><span clas
         <span class="k">return</span> <span class="n">mda</span><span class="o">.</span><span class="n">Universe</span><span class="p">(</span><span class="n">GRO</span><span class="p">,</span> <span class="n">XTC</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_rmsf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">universe</span><span class="p">):</span>
-        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">&#39;name CA&#39;</span><span class="p">))</span>
+        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">'name CA'</span><span class="p">))</span>
         <span class="n">rmsfs</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
         <span class="n">test_rmsfs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">rmsfArray</span><span class="p">)</span>
 
         <span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">rmsfs</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">rmsf</span><span class="p">,</span> <span class="n">test_rmsfs</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">&quot;error: rmsf profile should match test &quot;</span>
-                            <span class="s2">&quot;values&quot;</span><span class="p">)</span>
+                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">"error: rmsf profile should match test "</span>
+                            <span class="s2">"values"</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_rmsf_single_frame</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">universe</span><span class="p">):</span>
-        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">&#39;name CA&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">'name CA'</span><span class="p">))</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 
         <span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">rmsfs</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">rmsf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">&quot;error: rmsfs should all be zero&quot;</span><span class="p">)</span>
+                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">"error: rmsfs should all be zero"</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">test_rmsf_identical_frames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">universe</span><span class="p">,</span> <span class="n">tmpdir</span><span class="p">):</span>
 
-        <span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">),</span> <span class="s1">&#39;rmsf.xtc&#39;</span><span class="p">)</span>
+        <span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tmpdir</span><span class="p">),</span> <span class="s1">'rmsf.xtc'</span><span class="p">)</span>
 
         <span class="c1"># write a dummy trajectory of all the same frame</span>
         <span class="k">with</span> <span class="n">mda</span><span class="o">.</span><span class="n">Writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="n">universe</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">n_atoms</span><span class="p">)</span> <span class="k">as</span> <span class="n">W</span><span class="p">:</span>
@@ -213,10 +213,10 @@ and update the contents of <code class="docutils literal notranslate"><span clas
                 <span class="n">W</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">universe</span><span class="p">)</span>
 
         <span class="n">universe</span> <span class="o">=</span> <span class="n">mda</span><span class="o">.</span><span class="n">Universe</span><span class="p">(</span><span class="n">GRO</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
-        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">&#39;name CA&#39;</span><span class="p">))</span>
+        <span class="n">rmsfs</span> <span class="o">=</span> <span class="n">rmsfkit</span><span class="o">.</span><span class="n">RMSF</span><span class="p">(</span><span class="n">universe</span><span class="o">.</span><span class="n">select_atoms</span><span class="p">(</span><span class="s1">'name CA'</span><span class="p">))</span>
         <span class="n">rmsfs</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
         <span class="n">assert_almost_equal</span><span class="p">(</span><span class="n">rmsfs</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">rmsf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">&quot;error: rmsfs should all be 0&quot;</span><span class="p">)</span>
+                            <span class="n">err_msg</span><span class="o">=</span><span class="s2">"error: rmsfs should all be 0"</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -245,10 +245,10 @@ in two configuration files:</p>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, under <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code>:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
 <span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="s2">&quot;pytest&gt;=6.0&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;pytest-xdist&gt;=2.5&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;pytest-cov&gt;=3.0&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;MDAnalysisTests&gt;=2.0.0&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># &lt;-- add this!</span>
+<span class="w">    </span><span class="s2">"pytest&gt;=6.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"pytest-xdist&gt;=2.5"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"pytest-cov&gt;=3.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"MDAnalysisTests&gt;=2.0.0"</span><span class="p">,</span><span class="w"> </span><span class="c1"># &lt;-- add this!</span>
 <span class="p">]</span>
 </pre></div>
 </div>
