@@ -39,7 +39,7 @@ The source code of maicos can be installed using the following:
    :alt: maicos develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |maicos_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |maicos_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: maicos develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
