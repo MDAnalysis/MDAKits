@@ -15,7 +15,3 @@ dependencies:
     - requests
     - setuptools
     - packaging
-
-    # Pip-only installs
-    - pip:
-      - PyGithub

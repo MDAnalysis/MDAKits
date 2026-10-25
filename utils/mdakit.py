@@ -35,7 +35,6 @@ from yaml.loader import SafeLoader
 import version
 from pydantic import BaseModel, validator, Extra
 from typing import Dict, List, Union, Optional, Any, Iterable
-from github import Github
 
 
 def read_yaml(filepath):
@@ -278,62 +277,6 @@ class MDAKit:
                              "the python version specs")
 
         return current_version.to_string()
-
-    def raise_issues(self):
-        """
-        Raise issues for statuses with > 1 fails
-        """
-        git = Github(os.environ['GITHUB_TOKEN'])
-        repo = git.get_repo('MDAnalysis/MDAKits')
-        issues = [issue for issue in repo.get_issues()]
-
-        def _bool_status(arg: bool) -> str:
-            return 'passed' if arg else 'fail'
-
-        def _create_issue(run_type: str):
-            stat = getattr(self.status.data, run_type)
-
-            issue_tag = f"[{self.metadata.project_name}-{run_type}]"
-            issue_title = f"{issue_tag} Failed CI run"
-
-            # quit if issue already exists
-            for issue in issues:
-                if issue_tag in issue.title:
-                    # clear issues if resolved
-                    if stat.numfails == 0:
-                        issue.edit(state="closed")
-                    return
-
-            # if numfails < 1 and you've not done so yet return
-            if stat.numfails < 1:
-                return
-
-            # generate list of maintainers to tag
-            maint = ""
-            for m in self.metadata.maintainers:
-                maint += f"@{m} "
-
-            issue_body = (
-                    f"At least two repeated CI runs for "
-                    f"{self.metadata.project_name} have failed.\n"
-                    f"Here is the last recorded status of the tests:\n"
-                    f"  - installing python: {_bool_status(stat.install_python)}\n"
-                    f"  - installing the mdakit: {_bool_status(stat.install_mdakit)}\n"
-                    f"  - installing mdanalysis: {_bool_status(stat.install_mdanalysis)}\n"
-                    f"  - installing the test dependencies: {_bool_status(stat.install_test_deps)}\n"
-                    f"  - running tests: {_bool_status(stat.run_tests)}\n"
-                    f"Pinging maintainers: {maint}\n\n"
-                    f"---\n"
-                    f"**How to resolve this:**\n\n"
-                    f"- **Check the `metadata.yaml`**: Ensure your kit's `metadata.yaml` is up-to-date.\n"
-                    f"- **Check why the pipeline is failing**: Look at the CI logs to find the exact point of failure. See the [documentation on finding the CI error](https://mdakits.mdanalysis.org/maintaining_a_kit/keep-healthy.html#why-did-ci-fail).\n"
-                    f"- **Pipeline details**: For an in-depth explanation of how the MDAKits Registry CI works, please see [the documentation here](https://mdakits.mdanalysis.org/maintaining_a_kit/keep-healthy.html#mdakitsci).\n"
-            )
-
-            repo.create_issue(title=issue_title, body=issue_body)
-
-        for run_type in ['latest', 'develop']:
-            _create_issue(run_type)
 
     @staticmethod
     def _get_custom_badge(left, right, colour):
