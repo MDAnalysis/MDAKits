@@ -18,5 +18,5 @@ latest:
   install_mdanalysis: true
   install_python: true
   install_test_deps: true
-  numfails: 26
+  numfails: 27
   run_tests: false
