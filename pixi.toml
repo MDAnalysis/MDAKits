@@ -1,0 +1,41 @@
+[workspace]
+name = "mdakits-registry"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "osx-arm64"]
+
+# Registry tooling (utils/). This is not used to test the kits themselves:
+# each kit is installed into its own conda env from its metadata.yaml.
+[dependencies]
+python = "3.12.*"
+pyyaml = "*"
+pydantic = ">=2"
+packaging = "*"
+requests = "*"
+# utils/version.py imports packaging vendored by setuptools
+setuptools = "*"
+pygithub = "*"
+
+[tasks]
+matrix = "python utils/get_dir_matrix.py"
+process-status = "python utils/handle-status.py"
+
+[feature.docs.dependencies]
+sphinx = "*"
+mdanalysis-sphinx-theme = "*"
+sphinxcontrib-youtube = "*"
+
+[feature.docs.tasks]
+docs = { cmd = "sphinx-build -b html source build", cwd = "docs" }
+
+[feature.devtools.dependencies]
+numpy = "*"
+pandas = "*"
+matplotlib = "*"
+seaborn = "*"
+
+[feature.devtools.tasks]
+plot-growth = { cmd = "python plot-over-time.py", cwd = "devtools" }
+
+[environments]
+docs = ["docs"]
+devtools = ["devtools"]

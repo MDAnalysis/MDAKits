@@ -26,14 +26,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - id: get-python
-        uses: actions/setup-python@v6
+      - id: setup-pixi
+        uses: prefix-dev/setup-pixi@v0.11.2
         with:
-          python-version: "3.13"
+          environments: default
 
       - id: get-mdakits
         run: |
-          mdakit=$(python utils/get_dir_matrix.py)
+          mdakit=$(pixi run python utils/get_dir_matrix.py)
           echo "matrix=${mdakit}" >> $GITHUB_OUTPUT
 
   env_config:
@@ -63,10 +63,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - id: get-base-python-deps
-        name: get-base-python-deps
-        run: |
-          pip install requests setuptools packaging pyyaml pydantic PyGithub
+      - id: setup-pixi
+        name: setup-pixi
+        uses: prefix-dev/setup-pixi@v0.11.2
+        with:
+          environments: default
 
       - id: check-set-python-bounds
         name: check-set-python-bounds
@@ -74,7 +75,7 @@ jobs:
         run: |
           maxpy=${{needs.env_config.outputs.python-stable}}
           minpy=${{needs.env_config.outputs.python-min}}
-          pyver=$(python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${maxpy} --minpyver ${minpy})
+          pyver=$(pixi run python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${maxpy} --minpyver ${minpy})
           echo "PYVER=${pyver}" >> $GITHUB_ENV
           
       - id: install-conda-env
@@ -90,12 +91,6 @@ jobs:
           auto-update-conda: true
           show-channel-urls: true
 
-      - id: install-conda-base-deps
-        name: install-conda-base-deps
-        run: |
-          mamba install requests setuptools packaging pyyaml pydantic
-          pip install PyGithub
-
       - id: install-mdakit
         name: install-mdakit
         continue-on-error: true
@@ -106,7 +101,7 @@ jobs:
            type="install"
          fi
 
-         install=$(python utils/get_install.py --itype ${type} --mdakit ${{matrix.mdakit}})
+         install=$(pixi run python utils/get_install.py --itype ${type} --mdakit ${{matrix.mdakit}})
          echo "install=${install}"
          eval ${install}
 
@@ -114,7 +109,7 @@ jobs:
         name: install-test-deps
         continue-on-error: true
         run: |
-          install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
+          install=$(pixi run python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
           echo "install tests:${install}"
           eval ${install}
 
@@ -132,7 +127,7 @@ jobs:
         name: run-tests
         continue-on-error: true
         run: |
-          tests=$(python utils/get_runtests.py --mdakit ${{matrix.mdakit}} --runtype ${{matrix.jobstep}})
+          tests=$(pixi run python utils/get_runtests.py --mdakit ${{matrix.mdakit}} --runtype ${{matrix.jobstep}})
           echo "tests: ${tests}"
           eval ${tests}
 
@@ -148,7 +143,7 @@ jobs:
       - id: write-errors
         name: write-errors
         run: |
-          python utils/write-ci-status-json.py --tag ${{ matrix.jobstep }} --mdakit ${{ matrix.mdakit }}
+          pixi run python utils/write-ci-status-json.py --tag ${{ matrix.jobstep }} --mdakit ${{ matrix.mdakit }}
 
       - id: upload-artifacts
         name: upload-artifacts
@@ -178,15 +173,16 @@ jobs:
       - name: list-temp-files
         run: ls -l json-statuses/*/
 
-      - id: get-base-python-deps
-        name: get-base-python-deps
-        run: |
-          pip install requests setuptools packaging pyyaml pydantic PyGithub
+      - id: setup-pixi
+        name: setup-pixi
+        uses: prefix-dev/setup-pixi@v0.11.2
+        with:
+          environments: default
 
       - id: combine-write-raise-issues
         name: combine-write-raise-issues
         run: |
-          python utils/handle-status.py 
+          pixi run process-status
         env:
           GITHUB_TOKEN:  ${{ github.token }}
 
@@ -202,17 +198,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: setup_micromamba
-        uses: mamba-org/setup-micromamba@v3
+      - name: setup-pixi
+        uses: prefix-dev/setup-pixi@v0.11.2
         with:
-          environment-file: docs/requirements.yaml
-          environment-name: MDAKitRegistry-docs
-          create-args: >-
-            python=3.12
-            pip
+          environments: docs
       - name: build_docs
-        run: |
-          cd docs && sphinx-build -b html source build
+        run: pixi run -e docs docs
       - name: deploy docs
         uses: peaceiris/actions-gh-pages@v4
         with:
