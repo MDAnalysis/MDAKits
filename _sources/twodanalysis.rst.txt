@@ -39,11 +39,11 @@ The source code of twodanalysis can be installed using the following:
 .. _`twodanalysis authors`:
    https://github.com/monjegroup/twod-analysis-kit.git/blob/main/AUTHORS.md
 
-.. |twodanalysis_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+.. |twodanalysis_latest| image:: https://img.shields.io/badge/latest-failed-red.svg
    :alt: twodanalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
-.. |twodanalysis_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+.. |twodanalysis_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: twodanalysis develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
