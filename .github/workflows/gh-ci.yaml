@@ -22,10 +22,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - id: get-python
-        uses: actions/setup-python@v6
+      - id: setup-pixi
+        uses: prefix-dev/setup-pixi@v0.11.2
         with:
-          python-version: 3.13
+          environments: default
 
       - id: files
         name: get changed filed
@@ -36,7 +36,7 @@ jobs:
         name: build mdakit matrix
         run: |
           echo ${{ steps.files.outputs.all }}
-          mdakit=$(python utils/get_affected_mdakits.py --json '${{ steps.files.outputs.all }}')
+          mdakit=$(pixi run python utils/get_affected_mdakits.py --json '${{ steps.files.outputs.all }}')
           echo ${mdakit}
           echo "matrix=${mdakit}" >> $GITHUB_OUTPUT
 
@@ -66,10 +66,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - id: get-base-python-deps
-        name: get-base-python-deps
-        run: |
-          python -m pip install requests setuptools packaging pyyaml pydantic PyGithub
+      - id: setup-pixi
+        name: setup-pixi
+        uses: prefix-dev/setup-pixi@v0.11.2
+        with:
+          environments: default
 
       - id: check-set-python-bounds
         name: check-set-python-bounds
@@ -77,7 +78,7 @@ jobs:
         run: |
           maxpy=${{needs.env_config.outputs.python-stable}}
           minpy=${{needs.env_config.outputs.python-min}}
-          pyver=$(python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${maxpy} --minpyver ${minpy})
+          pyver=$(pixi run python utils/check_python_ver.py --mdakit "${{matrix.mdakit}}" --maxpyver ${maxpy} --minpyver ${minpy})
           echo "PYVER=${pyver}" >> $GITHUB_ENV
           
       - id: install-conda-env
@@ -93,12 +94,6 @@ jobs:
           auto-update-conda: true
           show-channel-urls: true
 
-      - id: install-conda-base-deps
-        name: install-conda-base-deps
-        run: |
-          mamba install requests setuptools packaging pyyaml pydantic
-          python -m pip install PyGithub
-
       - id: install-mdakit
         name: install-mdakit
         continue-on-error: false
@@ -109,7 +104,7 @@ jobs:
            type="install"
          fi
       
-         install=$(python utils/get_install.py --itype ${type} --mdakit ${{matrix.mdakit}})
+         install=$(pixi run python utils/get_install.py --itype ${type} --mdakit ${{matrix.mdakit}})
          echo "install=${install}"
          eval ${install}
 
@@ -117,7 +112,7 @@ jobs:
         name: install-test-deps
         continue-on-error: false
         run: |
-          install=$(python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
+          install=$(pixi run python utils/get_testdeps.py --mdakit ${{matrix.mdakit}})
           echo "test installs: ${install}"
           eval "${install}"
 
@@ -135,6 +130,6 @@ jobs:
         name: run-tests
         continue-on-error: false
         run: |
-          tests=$(python utils/get_runtests.py --mdakit ${{matrix.mdakit}} --runtype ${{matrix.jobstep}})
+          tests=$(pixi run python utils/get_runtests.py --mdakit ${{matrix.mdakit}} --runtype ${{matrix.jobstep}})
           echo "tests: ${tests}"
           eval ${tests}

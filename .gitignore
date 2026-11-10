@@ -134,3 +134,6 @@ dmypy.json
 json-statuses/
 
 .DS_Store
+
+# pixi environments
+.pixi/
