@@ -85,6 +85,10 @@ Each of the MDAKits in the following table links to a page with more details abo
       - hydrodynamic, hydrodynamic radius, diffusion coefficient, intrinsic viscosity, sedimentation coefficient, electric polarizability, monte carlo, walk-on-spheres
       - Jennifer A Clark, Derek Juba, Walid Keyrouz, Debra Audus, Jack Douglas
       - |zenowrapper_latest| |zenowrapper_develop|
+    * - :ref:`trvdos`
+      - VDoS, VACF
+      - `trvdos authors`_
+      - |trvdos_latest| |trvdos_develop|
     * - :ref:`mdacli`
       - command line interface, molecular-dynamics
       - `mdacli authors`_
@@ -164,6 +168,7 @@ Each of the MDAKits in the following table links to a page with more details abo
    lipyds
    openmm-mdanalysis-reporter
    zenowrapper
+   trvdos
    mdacli
    twodanalysis
    helanal
@@ -347,6 +352,17 @@ Each of the MDAKits in the following table links to a page with more details abo
 
 .. |zenowrapper_develop| image:: https://img.shields.io/badge/develop-failed-red.svg
    :alt: zenowrapper develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. _`trvdos authors`:
+   https://github.com/HeydenLabASU-collab/trvdos/blob/main/AUTHORS.md
+
+.. |trvdos_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: trvdos develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |trvdos_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: trvdos develop CI status
    :target: https://github.com/MDAnalysis/MDAKits/actions
 
 .. _`mdacli authors`:

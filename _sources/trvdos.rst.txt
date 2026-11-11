@@ -1,0 +1,47 @@
+.. _trvdos:
+
+************************************************
+trvdos
+************************************************
+
+| 🖋️ **Authors**: `trvdos authors`_
+| 🏠 **Project home:** https://github.com/HeydenLabASU-collab/trvdos
+| 📖 **Documentation:** https://trvdos.readthedocs.io/en/latest/
+| ⚖️ **License:** MIT
+| 🔑 **Keywords:** VDoS, VACF
+| 📜 **Changelog:** https://github.com/HeydenLabASU-collab/trvdos/blob/main/CHANGELOG.md
+| 🧪 **Tests (latest):** |trvdos_latest| 
+| 🧪 **Tests (develop):** |trvdos_develop| 
+| **Description:**
+| *An analysis module for calculating velocity autocorrelation functions (VACF) and velocity density of states (VDoS) from MD trajectories.*
+
+
+
+Installation instructions
+=========================
+
+The latest version of trvdos can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install gsl
+    pip install trvdos
+
+The source code of trvdos can be installed using the following:
+
+.. code-block:: bash
+
+    mamba install gsl
+    pip install git+https://github.com/HeydenLabASU-collab/trvdos@main
+
+.. _`trvdos authors`:
+   https://github.com/HeydenLabASU-collab/trvdos/blob/main/AUTHORS.md
+
+.. |trvdos_latest| image:: https://img.shields.io/badge/latest-passed-green.svg
+   :alt: trvdos develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
+.. |trvdos_develop| image:: https://img.shields.io/badge/develop-passed-green.svg
+   :alt: trvdos develop CI status
+   :target: https://github.com/MDAnalysis/MDAKits/actions
+
