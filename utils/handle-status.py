@@ -111,9 +111,6 @@ def handle_mdakit(maindir: str, statusdir: str,
     # upate the badges
     mdakit.gen_badges()
 
-    # raise issues
-    mdakit.raise_issues()
-
     # write out the status
     mdakit.status.write_status(mdakit.path)
 

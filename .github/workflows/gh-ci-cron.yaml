@@ -26,14 +26,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - id: get-python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.13"
-
       - id: get-mdakits
         run: |
-          mdakit=$(python utils/get_dir_matrix.py)
+          mdakit=$(find mdakits -mindepth 1 -maxdepth 1 -type d -printf '%f\n' \
+            | grep -vx template \
+            | jq -Rnc '[inputs]')
           echo "matrix=${mdakit}" >> $GITHUB_OUTPUT
 
   env_config:
@@ -66,7 +63,7 @@ jobs:
       - id: get-base-python-deps
         name: get-base-python-deps
         run: |
-          pip install requests setuptools packaging pyyaml pydantic PyGithub
+          pip install requests setuptools packaging pyyaml pydantic
 
       - id: check-set-python-bounds
         name: check-set-python-bounds
@@ -94,7 +91,6 @@ jobs:
         name: install-conda-base-deps
         run: |
           mamba install requests setuptools packaging pyyaml pydantic
-          pip install PyGithub
 
       - id: install-mdakit
         name: install-mdakit
@@ -136,19 +132,18 @@ jobs:
           echo "tests: ${tests}"
           eval ${tests}
 
-      - id: store-errors
-        name: store-errors
-        run: |
-          echo "install_python=${{ steps.check-set-python-bounds.outcome }}" >> $GITHUB_ENV
-          echo "install_mdakit=${{ steps.install-mdakit.outcome }}" >> $GITHUB_ENV
-          echo "install_test_deps=${{ steps.install-test-deps.outcome }}" >> $GITHUB_ENV
-          echo "install_mdanalysis=${{ steps.install-mdanalysis.outcome }}" >> $GITHUB_ENV
-          echo "run_tests=${{ steps.run-tests.outcome }}" >> $GITHUB_ENV
-
       - id: write-errors
         name: write-errors
+        env:
+          STEPS: ${{ toJSON(steps) }}
         run: |
-          python utils/write-ci-status-json.py --tag ${{ matrix.jobstep }} --mdakit ${{ matrix.mdakit }}
+          jq '{
+            install_python: ."check-set-python-bounds".outcome,
+            install_mdakit: ."install-mdakit".outcome,
+            install_test_deps: ."install-test-deps".outcome,
+            install_mdanalysis: ."install-mdanalysis".outcome,
+            run_tests: ."run-tests".outcome
+          }' <<< "${STEPS}" > ${{ matrix.mdakit }}-${{ matrix.jobstep }}-statuses.json
 
       - id: upload-artifacts
         name: upload-artifacts
@@ -181,14 +176,34 @@ jobs:
       - id: get-base-python-deps
         name: get-base-python-deps
         run: |
-          pip install requests setuptools packaging pyyaml pydantic PyGithub
+          pip install requests setuptools packaging pyyaml pydantic
 
-      - id: combine-write-raise-issues
-        name: combine-write-raise-issues
+      - id: summarise-results
+        name: summarise-results
         run: |
-          python utils/handle-status.py 
+          {
+            echo "| MDAKit | Run | Install Python | Install MDAKit | Install test deps | Install MDAnalysis | Run tests |"
+            echo "|---|---|---|---|---|---|---|"
+            for f in json-statuses/*/*-statuses.json; do
+              kit_run=$(basename "$f" -statuses.json)
+              jq -r --arg kit "${kit_run%-*}" --arg run "${kit_run##*-}" \
+                '[$kit, $run, .install_python, .install_mdakit, .install_test_deps, .install_mdanalysis, .run_tests]
+                 | map(if . == "success" then "✅" elif . == "failure" then "❌" else . end)
+                 | "| " + join(" | ") + " |"' "$f"
+            done
+          } >> $GITHUB_STEP_SUMMARY
+
+      - id: combine-write-statuses
+        name: combine-write-statuses
+        run: |
+          python utils/handle-status.py
+
+      - id: raise-issues
+        name: raise-issues
+        run: |
+          .github/scripts/ci-issues.sh
         env:
-          GITHUB_TOKEN:  ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
 
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
@@ -200,6 +215,12 @@ jobs:
     if: ${{ always() }}
     needs: process_results
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
       - name: setup_micromamba
@@ -213,11 +234,10 @@ jobs:
       - name: build_docs
         run: |
           cd docs && sphinx-build -b html source build
-      - name: deploy docs
-        uses: peaceiris/actions-gh-pages@v4
+      - name: upload docs
+        uses: actions/upload-pages-artifact@v5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/build
-          cname: mdakits.mdanalysis.org
-          user_name: 'github-actions'
-          user_email: 'github-action@users.noreply.github.com'
+          path: ./docs/build
+      - id: deployment
+        name: deploy docs
+        uses: actions/deploy-pages@v5
