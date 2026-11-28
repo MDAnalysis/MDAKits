@@ -6,17 +6,17 @@ membrane-curvature
 
 | 🖋️ **Authors**: `membrane-curvature authors`_
 | 🏠 **Project home:** https://github.com/MDAnalysis/membrane-curvature
-| 📖 **Documentation:** https://membrane-curvature.readthedocs.io
-| ⚖️ **License:** GPL-3.0
+| 📖 **Documentation:** https://mdanalysismembrane-curvature.readthedocs.io
+| ⚖️ **License:** GPL-3.0-or-later
 | 🔑 **Keywords:** membranes, curvature, molecular dynamics
 | 🚀 **Development status:** Production/Stable
 | 📜 **Changelog:** https://github.com/MDAnalysis/membrane-curvature/blob/main/CHANGELOG.rst
 | 📑 **Publications:**
-|    * https://zenodo.org/records/5553452
+|    * https://doi.org/10.64898/2026.11.25.769279
 | 🧪 **Tests (latest):** |membrane-curvature_latest| 
 | 🧪 **Tests (develop):** |membrane-curvature_develop| 
 | **Description:**
-| *Tool to calculate the Gaussian and mean curvature of membranes from Molecular Dynamics simulations.*
+| *Tool to calculate the mean and Gaussian curvature of membranes from Molecular Dynamics simulations, with Fourier, binning, and binning-nearest surface methods.*
 
 
 
