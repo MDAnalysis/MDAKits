@@ -30,8 +30,9 @@ maintainers:
 
 ## str: a free form description of the mdakit
 description:
-    Tool to calculate the Gaussian and mean curvature of membranes from
-    Molecular Dynamics simulations.
+    Tool to calculate the mean and Gaussian curvature of membranes from
+    Molecular Dynamics simulations, with Fourier, binning, and
+    binning-nearest surface methods.
 
 ## List(str): a list of keywords which describe the mdakit
 keywords:
@@ -41,14 +42,14 @@ keywords:
 
 ## str: the license the mdakit falls under
 ## See https://spdx.org/licenses/ for valid license specifiers
-license: GPL-3.0
+license: GPL-3.0-or-later
 
 ## str: the link to the project's code
 ## Please note that this is not limited to GitHub! Can be Gitlab, etc..
 project_home: https://github.com/MDAnalysis/membrane-curvature
 
 ## str: the link to the project's documentation
-documentation_home: https://membrane-curvature.readthedocs.io
+documentation_home: https://mdanalysismembrane-curvature.readthedocs.io
 
 ## str: the type of documentation available [UserGuide, API, README]
 documentation_type: UserGuide + API
@@ -111,7 +112,7 @@ development_status: Production/Stable
 ## Links to scientific publications or stable URLs (typically of the form
 ## https://doi.org/<DOI> or to a preprint server)
 publications:
-  - https://zenodo.org/records/5553452
+  - https://doi.org/10.64898/2026.11.25.769279
 
 ## str: a link to the MDAKit's changelog
 changelog: https://github.com/MDAnalysis/membrane-curvature/blob/main/CHANGELOG.rst
